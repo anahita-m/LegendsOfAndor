@@ -105,6 +105,15 @@ TagManager:
   - Player-Male-Warrior
   - based
   - Player-Male-Archer
+  - Male-Dwarf
+  - Sphere-based
+  - Male-Wizard
+  - Male-Warrior
+  - Male-Archer
+  - Sphere-Male-Dwarf
+  - Sphere-Male-Wizard
+  - Sphere-Male-Archer
+  - Sphere-Male-Warrior
   layers:
   - Default
   - TransparentFX
