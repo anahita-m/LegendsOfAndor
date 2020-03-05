@@ -5,5 +5,5 @@ using UnityEngine;
 public class Screen : MonoBehaviour
 {
     private string scene_name;
-    private Button[]
+    // private Button[] buttons;
 }

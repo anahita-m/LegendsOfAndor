@@ -8,19 +8,33 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +44 initGame.cs
-badd +93 Player.cs
+badd +1 Player.cs
 badd +63 term://.//2784:/bin/bash
-badd +34 ~/Documents/Mcgill/5th-year/fall-sem/andor/f2019-hexanome-14/hexanome-14/Assets/Heroes/Hero.cs
+badd +35 ~/Documents/Mcgill/5th-year/fall-sem/andor/f2019-hexanome-14/hexanome-14/Assets/Heroes/Hero.cs
 badd +73 BoardPosition.cs
 badd +196 masterClass.cs
 badd +36 term://.//15176:/bin/bash
 badd +40 term://.//30129:/bin/bash
 badd +177 initializeGameObjects.cs
-badd +0 ScreenManager.cs
-badd +0 CommandRouter.cs
+badd +1 ScreenManager.cs
+badd +15 CommandRouter.cs
 badd +8 Screen.cs
 badd +20 term://.//30104:/bin/bash
 badd +19 term://.//26567:/bin/bash
+badd +200 term://.//13316:/bin/bash
+badd +19 term://.//15142:/bin/bash
+badd +22 ~/dotfiles/bashh/.bash_exports
+badd +22 ~/dotfiles/bashh/.bash_aliases
+badd +103 term://.//15566:/bin/bash
+badd +1 ~/Documents/Mcgill/5th-year/fall-sem/andor/f2019-hexanome-14/hexanome-14/Assets/Interfaces/CommandImplementations/Fight.cs
+badd +73 term://.//18306:/bin/bash
+badd +22 term://.//19161:/bin/bash
+badd +29 genericButtonClickAction.cs
+badd +58 term://.//11270:/bin/bash
+badd +1 ~/Documents/Mcgill/5th-year/fall-sem/andor/f2019-hexanome-14/hexanome-14/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset
+badd +1 NetworkController.cs
+badd +1 term://.//13825:/bin/bash
+badd +1 Lobby.cs
 argglobal
 %argdel
 $argadd initGame.cs
@@ -44,14 +58,14 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 24 + 25) / 51)
-exe 'vert 1resize ' . ((&columns * 86 + 87) / 174)
-exe '2resize ' . ((&lines * 23 + 25) / 51)
-exe 'vert 2resize ' . ((&columns * 86 + 87) / 174)
-exe '3resize ' . ((&lines * 24 + 25) / 51)
-exe 'vert 3resize ' . ((&columns * 87 + 87) / 174)
-exe '4resize ' . ((&lines * 23 + 25) / 51)
-exe 'vert 4resize ' . ((&columns * 87 + 87) / 174)
+exe '1resize ' . ((&lines * 14 + 12) / 25)
+exe 'vert 1resize ' . ((&columns * 41 + 42) / 85)
+exe '2resize ' . ((&lines * 7 + 12) / 25)
+exe 'vert 2resize ' . ((&columns * 41 + 42) / 85)
+exe '3resize ' . ((&lines * 14 + 12) / 25)
+exe 'vert 3resize ' . ((&columns * 43 + 42) / 85)
+exe '4resize ' . ((&lines * 7 + 12) / 25)
+exe 'vert 4resize ' . ((&columns * 43 + 42) / 85)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -62,7 +76,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 93 - ((23 * winheight(0) + 12) / 24)
+let s:l = 93 - ((11 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -80,7 +94,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 7 - ((6 * winheight(0) + 11) / 23)
+let s:l = 7 - ((0 * winheight(0) + 3) / 7)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -98,7 +112,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 145 - ((22 * winheight(0) + 12) / 24)
+let s:l = 145 - ((0 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -116,22 +130,22 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 8 - ((7 * winheight(0) + 11) / 23)
+let s:l = 8 - ((0 * winheight(0) + 3) / 7)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 8
 normal! 05|
 wincmd w
-exe '1resize ' . ((&lines * 24 + 25) / 51)
-exe 'vert 1resize ' . ((&columns * 86 + 87) / 174)
-exe '2resize ' . ((&lines * 23 + 25) / 51)
-exe 'vert 2resize ' . ((&columns * 86 + 87) / 174)
-exe '3resize ' . ((&lines * 24 + 25) / 51)
-exe 'vert 3resize ' . ((&columns * 87 + 87) / 174)
-exe '4resize ' . ((&lines * 23 + 25) / 51)
-exe 'vert 4resize ' . ((&columns * 87 + 87) / 174)
-tabedit CommandRouter.cs
+exe '1resize ' . ((&lines * 14 + 12) / 25)
+exe 'vert 1resize ' . ((&columns * 41 + 42) / 85)
+exe '2resize ' . ((&lines * 7 + 12) / 25)
+exe 'vert 2resize ' . ((&columns * 41 + 42) / 85)
+exe '3resize ' . ((&lines * 14 + 12) / 25)
+exe 'vert 3resize ' . ((&columns * 43 + 42) / 85)
+exe '4resize ' . ((&lines * 7 + 12) / 25)
+exe 'vert 4resize ' . ((&columns * 43 + 42) / 85)
+tabedit ~/Documents/Mcgill/5th-year/fall-sem/andor/f2019-hexanome-14/hexanome-14/Assets/Interfaces/CommandImplementations/Fight.cs
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -142,8 +156,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 24 + 25) / 51)
-exe '2resize ' . ((&lines * 23 + 25) / 51)
+exe '1resize ' . ((&lines * 12 + 12) / 25)
+exe '2resize ' . ((&lines * 9 + 12) / 25)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -154,15 +168,64 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 15 - ((9 * winheight(0) + 12) / 24)
+let s:l = 1 - ((0 * winheight(0) + 6) / 12)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+wincmd w
+argglobal
+if bufexists("genericButtonClickAction.cs") | buffer genericButtonClickAction.cs | else | edit genericButtonClickAction.cs | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 15 - ((0 * winheight(0) + 4) / 9)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 15
+normal! 020|
+wincmd w
+exe '1resize ' . ((&lines * 12 + 12) / 25)
+exe '2resize ' . ((&lines * 9 + 12) / 25)
+tabedit Lobby.cs
+set splitbelow splitright
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe '1resize ' . ((&lines * 20 + 12) / 25)
+exe '2resize ' . ((&lines * 1 + 12) / 25)
+argglobal
+if bufexists("term://.//13825:/bin/bash") | buffer term://.//13825:/bin/bash | else | edit term://.//13825:/bin/bash | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 20 - ((19 * winheight(0) + 10) / 20)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+20
 normal! 0
 wincmd w
 argglobal
-if bufexists("~/Documents/Mcgill/5th-year/fall-sem/andor/f2019-hexanome-14/hexanome-14/Assets/Heroes/Hero.cs") | buffer ~/Documents/Mcgill/5th-year/fall-sem/andor/f2019-hexanome-14/hexanome-14/Assets/Heroes/Hero.cs | else | edit ~/Documents/Mcgill/5th-year/fall-sem/andor/f2019-hexanome-14/hexanome-14/Assets/Heroes/Hero.cs | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -172,16 +235,17 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 35 - ((6 * winheight(0) + 11) / 23)
+let s:l = 1 - ((0 * winheight(0) + 0) / 1)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-35
-normal! 020|
+1
+normal! 0
 wincmd w
-exe '1resize ' . ((&lines * 24 + 25) / 51)
-exe '2resize ' . ((&lines * 23 + 25) / 51)
-tabnext 1
+2wincmd w
+exe '1resize ' . ((&lines * 20 + 12) / 25)
+exe '2resize ' . ((&lines * 1 + 12) / 25)
+tabnext 3
 set stal=1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
