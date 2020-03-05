@@ -36,7 +36,7 @@ public class CustomMatchmakingRoomController : MonoBehaviourPunCallbacks
     void ListPlayers() 
     {
 
-        foreach (Player player in PhotonNetwork.PlayerList) //loop through each player and create a player listing
+        foreach (Photon.Realtime.Player player in PhotonNetwork.PlayerList) //loop through each player and create a player listing
         {
             GameObject tempListing = Instantiate(playerListingPrefab, playersContainer);
             Text tempText = tempListing.transform.GetChild(0).GetComponent<Text>();
@@ -63,12 +63,12 @@ public class CustomMatchmakingRoomController : MonoBehaviourPunCallbacks
         ListPlayers(); //relist all current player listings
     }
 
-    public override void OnPlayerEnteredRoom(Player newPlayer) //called whenever a new player enter the room
+    public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer) //called whenever a new player enter the room
     {
         ClearPlayerListings(); //remove all old player listings
         ListPlayers(); //relist all current player listings
     }
-    public override void OnPlayerLeftRoom(Player otherPlayer)//called whenever a player leave the room
+    public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)//called whenever a player leave the room
     {
         ClearPlayerListings();//remove all old player listings
         ListPlayers();//relist all current player listings

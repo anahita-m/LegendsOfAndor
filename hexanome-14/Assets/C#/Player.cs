@@ -12,12 +12,13 @@ public class Player : MonoBehaviour
     // and Sphere-Male-Dwarf. sphere object is attached to this script.
     private string myTag;
     private string heroType;
-    private Hero myHero;
 
+    private Hero myHero;
     // Will need to use this to verify things like: 
     // showTradeRequest() { if player.lookingAt != Battle then showTradeRequest() }
     // private Screen lookingAt;
 
+    public string NickName { get; internal set; }
 
     public void setTag(string ID)
     {
