@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private string heroType;
     private Hero myHero;
 
+    public string NickName { get; internal set; }
 
     public void setTag(string ID)
     {
