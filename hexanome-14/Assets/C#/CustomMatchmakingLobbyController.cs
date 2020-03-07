@@ -67,6 +67,7 @@ public class CustomMatchmakingLobbyController : MonoBehaviourPunCallbacks
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList) //Once in lobby this function is called every time there is an update to the room list
     {
+        base.OnRoomListUpdate(roomList); //
         int tempIndex;
         foreach (RoomInfo room in roomList) //loop through each room in room list
         {
