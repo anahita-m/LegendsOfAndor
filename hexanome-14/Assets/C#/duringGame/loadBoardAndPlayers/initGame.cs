@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
+using Photon.Pun;
 
 public class initGame : MonoBehaviour
 {
@@ -31,16 +32,30 @@ public class initGame : MonoBehaviour
     }
 
 
+    /* think solution is to create a function in turnmanager which returns
+     * init position based on photon players passing in their player #
+     * player # obtained by iterating over current room, if player.value = this
+     * then player# = player.Key
+     *
+     *
+     */
     private void createPlayers()
     {
-        foreach(string playerTag in initialPlayerOrder())
+        // loop over the players in room and call setTag()
+        // foreach(string playerTag in initialPlayerOrder())
+        string[] tags = initialPlayerOrder();
+        int i = 0;
+        // foreach(KeyValuePair<int,Photon.Realtime.Player> player in PhotonNetwork.CurrentRoom.Players)
+        foreach(Photon.Realtime.Player player in PhotonNetwork.PlayerList)
         {
-            GameObject playerObject = Instantiate(baseObject, transform.position, transform.rotation);
-            playerObject.AddComponent<Player>();
-            playerObject.tag = playerTag;
+            // GameObject playerObject = Instantiate(baseObject, transform.position, transform.rotation);
+            GameObject playerObject = (GameObject) Resources.Load("Player");
+            // playerObject.AddComponent<Andor.Player>();
+            playerObject.tag = setHeroType(tags[i]);
 
-            Player player = playerObject.GetComponent<Player>();
-            player.setTag(playerTag);
+            // Andor.Player player = playerObject.GetComponent<Andor.Player>();
+            // player.Value.tag = setHeroType(tags[i]);
+            i++;
         }
     }
 
@@ -102,5 +117,25 @@ public class initGame : MonoBehaviour
         GameObject masterClassObject = GameObject.FindWithTag(masterTag);
         masterClass master = masterClassObject.GetComponent<masterClass>();
         master.initMasterClass("MainCamera", heroAtlas, baseObject, initialPlayerOrder(), getInitialPositions());
+    }
+
+    private string setHeroType(string myTag)
+    {
+        // must initialize before adding strings
+        int ct = 0;
+        string[] partsOfTag = myTag.Split('-');
+        if (partsOfTag.Length != 3)
+        {
+            Debug.Log("Found a bad tag in Player.setHeroType: " + myTag);
+        }
+
+        return partsOfTag[1] + "-" + partsOfTag[2];
+        //foreach(string partOfTag in myTag.Split('-'))
+        //{
+        //    // skip first val: "Player"
+        //    if (ct++ == 0) continue;
+
+        //    heroType += partOfTag;
+        //}
     }
 }

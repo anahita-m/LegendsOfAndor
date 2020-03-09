@@ -1,9 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using System;
+using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+
+namespace Andor
 {
+public class Player : MonoBehaviourPun, IPunObservable
+{
+
+    [HideInInspector]
+    public GameObject sphere;
+
+    private Vector3 realPosition;
 
     private string userName;
 
@@ -20,9 +31,26 @@ public class Player : MonoBehaviour
 
     public string NickName { get; internal set; }
 
+    void Start()
+    {
+        if (photonView.IsMine)
+        {
+            sphere = PhotonNetwork.Instantiate("sphere", transform.position, transform.rotation, 0);
+        // sphere = (GameObject) Resources.Load("sphere");
+        // gameObject.AddComponent<Sphere>();
+        // sphere = GetComponent<Sphere>();
+            sphere.SetActive(true);
+            sphere.transform.localScale = new Vector3(2.2f, 2.2f, 0.12f);
+        }
+        if (!photonView.IsMine && GetComponent<PlayerController>() != null)
+            Destroy(GetComponent<PlayerController>());
+
+    }
+
     public void setTag(string ID)
     {
         myTag = ID;
+        gameObject.tag = ID;
         setHeroType();
     }
 
@@ -43,27 +71,51 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // first check if Input.GetButtonDown("buttonName") -- based on screens (iterate over button in screen)
-        // ie left-click
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name != "UnityMadeMeSaveToFile")
+            return;
+
+        if (PhotonNetwork.IsMasterClient){ setTag("Player-Male-Wizard"); }
+        else{ setTag("Player-Male-Dwarf"); }
+    }
+
+    private void checkClick()
+    {
+
+        if (realPosition != transform.position)
+            transform.position = realPosition;
         if (Input.GetMouseButtonDown(0))
         {
              Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-             RaycastHit hitInfo;
-             if (!Physics.Raycast(ray, out hitInfo))
+
+             // RaycastHit hitInfo;
+             RaycastHit2D hitInfo = Physics2D.GetRayIntersection(ray);
+            Debug.Log("clicked" );
+             if (hitInfo == null)
              {
                  return;
              }
 
             string colliderTag = hitInfo.collider.gameObject.tag;
+            Debug.Log("want to move to: " + colliderTag);
             if (colliderTag == null)
             {
                 return;
             }
-            // loop over button tags and then check if player.currSelected == player.selectedBoardPos
-
-            // GameObject gameObj = GameObject.FindWithTag("Master");
-            // masterClass master = GetComponent<masterClass>();
-            // master.notifyClick();
+            int cTag;
+            try
+            {
+                cTag = int.Parse(colliderTag);
+                GameObject go = GameObject.FindWithTag(colliderTag);
+                BoardPosition bp = go.GetComponent<BoardPosition>();
+                // player.gameObject.transform.position = bp.getMiddle();
+                sphere.transform.position = bp.getMiddle();
+                // newPos = player.sphere.transform.position;
+                // transform.position = new Vector3(-6.81f, 7.57f, 0.0f);
+            }
+            catch (InvalidCastException e)
+            {
+            }
         }
     }
 
@@ -90,5 +142,37 @@ public class Player : MonoBehaviour
         //}
     }
 
+    // public void moveSlowly(Vector3 newPos)
+    // {
 
+    // }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(sphere.transform.position);
+        }
+        else
+        {
+            sphere.transform.position = (Vector3) stream.ReceiveNext();
+        }
+    }
+
+    public static void RefreshInstance(ref Player player, string prefab)
+    {
+        var position = Vector3.zero;
+        var rotation = Quaternion.identity;
+        if (player != null)
+        {
+            position = player.transform.position;
+            rotation = player.transform.rotation;
+            PhotonNetwork.Destroy(player.gameObject);
+        }
+
+        player = PhotonNetwork.Instantiate(prefab, position, rotation).GetComponent<Player>();
+        // sphere = player;
+    }
+
+}
 }

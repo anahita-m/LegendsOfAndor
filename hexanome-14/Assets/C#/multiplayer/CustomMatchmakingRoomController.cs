@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
+namespace Andor{
 public class CustomMatchmakingRoomController : MonoBehaviourPunCallbacks
 {
     [SerializeField]
@@ -25,6 +26,11 @@ public class CustomMatchmakingRoomController : MonoBehaviourPunCallbacks
     [SerializeField]
     private Text roomNameDisplay; //display for the name of the room
 
+    [HideInInspector]
+    public Player localPlayer;
+
+    private string playerPrefabName = "sphere";
+
     void ClearPlayerListings()
     {
         for (int i = playersContainer.childCount - 1; i >= 0; i--) //loop through all child object of the playersContainer, removing each child
@@ -45,6 +51,7 @@ public class CustomMatchmakingRoomController : MonoBehaviourPunCallbacks
         
     }
 
+    // called after clicking create or joining an existing room.
     public override void OnJoinedRoom()//called when the local player joins the room
     {
         roomPanel.SetActive(true); //activate the display for being in a room
@@ -67,6 +74,8 @@ public class CustomMatchmakingRoomController : MonoBehaviourPunCallbacks
     {
         ClearPlayerListings(); //remove all old player listings
         ListPlayers(); //relist all current player listings
+
+        // Player.RefreshInstance(ref localPlayer, playerPrefabName);
     }
     public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)//called whenever a player leave the room
     {
@@ -78,12 +87,13 @@ public class CustomMatchmakingRoomController : MonoBehaviourPunCallbacks
         }
     }
 
+    //loads main menu scene
     public void StartGameOnClick() //paired to the start button. will load all players into the multiplayer scene through the master client and AutomaticallySyncScene
     {
         if(PhotonNetwork.IsMasterClient)
         {
             PhotonNetwork.CurrentRoom.IsOpen = false; //Comment out if you want player to join after the game has started
-            PhotonNetwork.LoadLevel(multiPlayerSceneIndex);   
+            PhotonNetwork.LoadLevel(8);   
         }
     }
 
@@ -103,4 +113,5 @@ public class CustomMatchmakingRoomController : MonoBehaviourPunCallbacks
     }
 
     
+}
 }

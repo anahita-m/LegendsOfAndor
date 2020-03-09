@@ -63,6 +63,9 @@ public class masterClass : MonoBehaviour
 
     }
 
+    public Transform getTransform(){ return transform; }
+
+
     private void setScriptParameters()
     {
         gameObject.tag = "Master";

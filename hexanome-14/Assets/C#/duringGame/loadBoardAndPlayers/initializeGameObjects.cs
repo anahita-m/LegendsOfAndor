@@ -13,13 +13,15 @@ public class initializeGameObjects : MonoBehaviour
     public void init(GameObject baseObj, Vector3 sphere_scale)
     {
         baseObject = baseObj;
+        masterClass master = GameObject.FindWithTag("Master").GetComponent<masterClass>();
+        transform.parent = master.getTransform();
         sphereScale = sphere_scale;
     }
 
     public void createAll(string[] orderedPlayerIDs)
     {
         loadBoard();
-        createHeros(orderedPlayerIDs);
+        // createHeros(orderedPlayerIDs);
     }
 
     // creates a object for each sprite ie game tile
@@ -43,22 +45,22 @@ public class initializeGameObjects : MonoBehaviour
         }
     }
 
-    private void createHeros(string[] orderedPlayerIDs)
-    {
-        // iterate over all players added to turnManager
-        // and create a hero per player.
-        TurnManager turnManager = gameObject.GetComponent<TurnManager>();
-        foreach(string playerID in orderedPlayerIDs)
-        {
-            Debug.Log("player id: " +playerID);
-            GameObject playerGameObject = GameObject.FindWithTag(playerID);
-            Player currPlayer = playerGameObject.GetComponent<Player>();
+    // private void createHeros(string[] orderedPlayerIDs)
+    // {
+    //     // iterate over all players added to turnManager
+    //     // and create a hero per player.
+    //     TurnManager turnManager = gameObject.GetComponent<TurnManager>();
+    //     foreach(string playerID in orderedPlayerIDs)
+    //     {
+    //         Debug.Log("player id: " +playerID);
+    //         GameObject playerGameObject = GameObject.FindWithTag(playerID);
+    //         Andor.Player currPlayer = playerGameObject.GetComponent<Andor.Player>();
 
-            string heroTag = currPlayer.getHeroType();
+    //         string heroTag = currPlayer.getHeroType();
 
-            createHero(heroTag, currPlayer.getPlayerTag());
-        }
-    }
+    //         createHero(heroTag, currPlayer.getPlayerTag());
+    //     }
+    // }
 
 
     // called in a loop, creates a object for each sprite ie game tile
@@ -119,16 +121,16 @@ public class initializeGameObjects : MonoBehaviour
 
         // assignHeroIcon(heroObject.tag);
         // maybe change this to pass a ref heroObject, avoid multiple findWithTag calls!
-        string sphereTag = createSphere(playerTag);
+        // string sphereTag = createSphere(playerTag);
 
-        GameObject playerObject = GameObject.FindWithTag(playerTag);
+        // GameObject playerObject = GameObject.FindWithTag(playerTag);
         // sets hero to be child of this player
         // heroObject.transform.parent = playerObject.transform;
 
-        GameObject sphereObject = GameObject.FindWithTag(sphereTag);
+        // GameObject sphereObject = GameObject.FindWithTag(sphereTag);
         // Hero theHero = heroObject.GetComponent<Hero>();
-        Player player = playerObject.GetComponent<Player>();
-        player.setHero(getHeroObject(player.getHeroType()));
+        // Andor.Player player = playerObject.GetComponent<Andor.Player>();
+        // player.setHero(getHeroObject(player.getHeroType()));
     }
 
 
@@ -153,22 +155,22 @@ public class initializeGameObjects : MonoBehaviour
     }
 
 
-    private string createSphere(string playerTag)
-    {
-        GameObject sphereObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        // GameObject sphereObject = Instantiate(sphereObject, transform.position, Quaternion.identity);
-        sphereObject.transform.localScale = sphereScale;
-        sphereObject.SetActive(true);
+    //private string createSphere(string playerTag)
+    //{
+    //    GameObject sphereObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+    //    // GameObject sphereObject = Instantiate(sphereObject, transform.position, Quaternion.identity);
+    //    sphereObject.transform.localScale = sphereScale;
+    //    sphereObject.SetActive(true);
 
-        GameObject playerObject = GameObject.FindWithTag(playerTag);
+    //    GameObject playerObject = GameObject.FindWithTag(playerTag);
 
-        // sets the sphere as a child gameObject of the heroObject.
-        sphereObject.transform.parent = playerObject.transform;
-        Player player = playerObject.GetComponent<Player>();
+    //    // sets the sphere as a child gameObject of the heroObject.
+    //    sphereObject.transform.parent = playerObject.transform;
+    //    Andor.Player player = playerObject.GetComponent<Player>();
 
-        sphereObject.tag = "Sphere-" + player.getHeroType();
-        return sphereObject.tag;
-    }
+    //    sphereObject.tag = "Sphere-" + player.getHeroType();
+    //    return sphereObject.tag;
+    //}
 
     private int convertToInt(string prev)
     {

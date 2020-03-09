@@ -58,6 +58,7 @@ public class CustomMatchmakingLobbyController : MonoBehaviourPunCallbacks
         PlayerPrefs.SetString("NickName", nameInput);
     }
 
+    // custom matchmaking button action
     public void JoinLobbyOnClick() //Paired to the Delay Start button
     {
         mainPanel.SetActive(false);
@@ -128,7 +129,8 @@ public class CustomMatchmakingLobbyController : MonoBehaviourPunCallbacks
         roomSize = int.Parse(sizeIn);
     }
 
-    public void CreateRoomOnClick() //function paired to the create room button
+    //function paired to the create room button
+    public void CreateRoomOnClick()
     {
         Debug.Log("Creating room now");
         RoomOptions roomOps = new RoomOptions() { IsVisible = true, IsOpen = true, MaxPlayers = (byte)roomSize };
