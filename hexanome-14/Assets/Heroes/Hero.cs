@@ -22,11 +22,11 @@ public class Hero : Movable, Fightable
     private bool hasThorald;
 
     private int numHoursLeft;
-<<<<<<< HEAD
-    private int goldCoins;
-=======
-    private int overTimeHours = 3; 
->>>>>>> f52af99283d4f09a037e9f62e13ec39ead9901c6
+    //<<<<<<< HEAD
+    private int goldCoins = 0;
+    //=======
+    //    private int overTimeHours = 3; 
+    //>>>>>>> f52af99283d4f09a037e9f62e13ec39ead9901c6
 
     // all heroes start with 1 strength point
     private int strength = 1;
@@ -34,8 +34,8 @@ public class Hero : Movable, Fightable
     private int willPower = 7;
     // rank differs per hero so initialize this in child classes.
     private int rank;
-    private int NumDice; 
-
+    private int NumDice;
+    private int overTimeHours;
 
     // use List not ArrayList -- see microsoft docs on arraylist
     private List<Article> myArticles;
@@ -78,14 +78,10 @@ public class Hero : Movable, Fightable
         diceRollStrat.roll(this);
     }
 
-<<<<<<< HEAD
+    //<<<<<<< HEAD
     public int getWillPower()
     {
         return this.willPower;
-    }
-    public int getStrength()
-    {
-        return this.strength;
     }
 
     public int getGold()
@@ -103,11 +99,8 @@ public class Hero : Movable, Fightable
         myArticles.Add(article);
     }
 
-    public void setStrength(int strength)
-    {
-        this.strength = strength;
-    }
-=======
+   
+    //=======
     //getters and setters for all private attributes. 
 
     public string getHeroType ()
@@ -166,7 +159,7 @@ public class Hero : Movable, Fightable
     }
     public int getOverTimeHours()
     {
-        return overTimeHours; 
+        return overTimeHours;
     }
 
 
@@ -174,5 +167,5 @@ public class Hero : Movable, Fightable
 
 
 
->>>>>>> f52af99283d4f09a037e9f62e13ec39ead9901c6
+    //>>>>>>> f52af99283d4f09a037e9f62e13ec39ead9901c6
 }

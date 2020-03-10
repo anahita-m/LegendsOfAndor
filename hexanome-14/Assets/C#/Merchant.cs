@@ -48,7 +48,9 @@ public class Merchant : MonoBehaviour
     public void loadAvailItems(Hero hero)
     {
         int heroGold = hero.getGold();
-        foreach(List<Article> articles in merchArticles.Values){
+        Text goldText = GameObject.Find("Canvas/hero-gold").GetComponent<Text>();
+        goldText.text = "Gold Coins" + heroGold;
+        foreach (List<Article> articles in merchArticles.Values){
 
             if (articles.Count == 0)
             {
@@ -94,11 +96,24 @@ public class Merchant : MonoBehaviour
         else
         {
             int heroStrength = hero.getStrength();
-            heroStrength += cost;//DONT KONW IF THIS IS TRUE
+            heroStrength += 1;//DONT KONW IF THIS IS TRUE
             hero.setStrength(heroStrength);
         }
         
      }
+
+    public void buyStrength(Hero hero)
+    {
+        
+        int heroGold = hero.getGold();
+        heroGold -= 2;
+        merchGold += 2;
+        hero.setGold(heroGold);
+        int heroStrength = hero.getStrength();
+        heroStrength += 1;
+        hero.setStrength(heroStrength);
+
+    }
 
     private void removeItem(Article ar)
     {
