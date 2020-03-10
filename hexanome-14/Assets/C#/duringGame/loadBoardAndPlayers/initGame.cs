@@ -51,9 +51,9 @@ public class initGame : MonoBehaviour
         foreach(Photon.Realtime.Player player in PhotonNetwork.PlayerList)
         {
             // GameObject playerObject = Instantiate(baseObject, transform.position, transform.rotation);
-            GameObject playerObject = (GameObject) Resources.Load("Player");
+            // GameObject playerObject = (GameObject) Resources.Load("Player");
             // playerObject.AddComponent<Andor.Player>();
-            playerObject.tag = setHeroType(tags[i]);
+            // playerObject.tag = setHeroType(tags[i]);
 
             // Andor.Player player = playerObject.GetComponent<Andor.Player>();
             // player.Value.tag = setHeroType(tags[i]);
@@ -112,15 +112,21 @@ public class initGame : MonoBehaviour
         // GameObject tagHandler = Instantiate(baseObject, transform.position, Quaternion.identity);
         // tagHandler.AddComponent<CreateTagList>();
         string masterTag = createMasterClass();
+        createBoard(masterTag);
+        GameObject masterClassObject = GameObject.FindWithTag(masterTag);
+        masterClass master = masterClassObject.GetComponent<masterClass>();
+        master.initMasterClass("MainCamera", heroAtlas, baseObject, initialPlayerOrder(), getInitialPositions());
+
         if (PhotonNetwork.IsMasterClient)
         {
-            createBoard(masterTag);
+            int x = 0;
+            foreach (Photon.Realtime.Player player in PhotonNetwork.PlayerList) //loop through each player and create a player listing
+            {
+                PhotonNetwork.Instantiate("Sphere", new Vector3(x, 0, 0), Quaternion.identity);
+                x++;
+            }
 
             createPlayers();
-
-            GameObject masterClassObject = GameObject.FindWithTag(masterTag);
-            masterClass master = masterClassObject.GetComponent<masterClass>();
-            master.initMasterClass("MainCamera", heroAtlas, baseObject, initialPlayerOrder(), getInitialPositions());
 
         }
     }

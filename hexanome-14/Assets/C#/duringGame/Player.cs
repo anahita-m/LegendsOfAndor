@@ -11,10 +11,10 @@ namespace Andor
 public class Player : MonoBehaviourPun, IPunObservable
 {
 
-    [HideInInspector]
-    public GameObject sphere;
+    // [HideInInspector]
+    // public GameObject sphere;
 
-    private Vector3 realPosition;
+    private Vector3 newPos;
 
     private string userName;
 
@@ -35,15 +35,18 @@ public class Player : MonoBehaviourPun, IPunObservable
     {
         if (photonView.IsMine)
         {
-            sphere = PhotonNetwork.Instantiate("sphere", transform.position, transform.rotation, 0);
+            Debug.Log("in player, view is mine");
+            // sphere = PhotonNetwork.Instantiate("sphere", transform.position, transform.rotation, 0);
         // sphere = (GameObject) Resources.Load("sphere");
         // gameObject.AddComponent<Sphere>();
         // sphere = GetComponent<Sphere>();
-            sphere.SetActive(true);
-            sphere.transform.localScale = new Vector3(2.2f, 2.2f, 0.12f);
+            // sphere.SetActive(true);
+            transform.localScale = new Vector3(2.2f, 2.2f, 0.12f);
+            if (PhotonNetwork.IsMasterClient){ setTag("Player-Male-Wizard"); }
+            else{ setTag("Player-Male-Dwarf"); }
         }
-        if (!photonView.IsMine && GetComponent<PlayerController>() != null)
-            Destroy(GetComponent<PlayerController>());
+        // if (!photonView.IsMine && GetComponent<PlayerController>() != null)
+            // Destroy(GetComponent<PlayerController>());
 
     }
 
@@ -74,16 +77,23 @@ public class Player : MonoBehaviourPun, IPunObservable
         Scene scene = SceneManager.GetActiveScene();
         if (scene.name != "UnityMadeMeSaveToFile")
             return;
-
-        if (PhotonNetwork.IsMasterClient){ setTag("Player-Male-Wizard"); }
-        else{ setTag("Player-Male-Dwarf"); }
+        if (photonView.IsMine)
+            checkClick();
+        else
+        {
+            float x1 = transform.position[0];
+            float x2 = transform.position[1];
+            float x3 = transform.position[2];
+            float newX = Mathf.MoveTowards(x1, newPos[0], 1);
+            float newY = Mathf.MoveTowards(x2, newPos[1], 1);
+            float newZ = Mathf.MoveTowards(x3, newPos[2], 1);
+            transform.position = new Vector3(newX, newY, newZ);
+        }
     }
 
     private void checkClick()
     {
 
-        if (realPosition != transform.position)
-            transform.position = realPosition;
         if (Input.GetMouseButtonDown(0))
         {
             string clickedTag = getClickedGameObjectTag();
@@ -138,7 +148,7 @@ public class Player : MonoBehaviourPun, IPunObservable
 
     public void moveTo(Vector3 newPos)
     {
-        sphere.transform.position = newPos;
+        transform.position = newPos;
 
     }
 
@@ -174,13 +184,14 @@ public class Player : MonoBehaviourPun, IPunObservable
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
+        Debug.Log("tryna write or read");
         if (stream.IsWriting)
         {
-            stream.SendNext(sphere.transform.position);
+            stream.SendNext(transform.position);
         }
         else
         {
-            sphere.transform.position = (Vector3) stream.ReceiveNext();
+            newPos = (Vector3) stream.ReceiveNext();
         }
     }
 

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Photon.Pun;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -26,7 +27,8 @@ public class TimerToGameboard : MonoBehaviour
         //timerSeconds.text = timer.ToString("f0");
         if (timer <= 0){
 
-            SceneManager.LoadScene("UnityMadeMeSaveToFile");
+            // note must change this to photonnetwork.loadlevel later!!!
+            // SceneManager.LoadScene("UnityMadeMeSaveToFile");
         }
         
     }
