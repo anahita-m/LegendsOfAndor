@@ -15,6 +15,8 @@ public class initGame : MonoBehaviour
     [SerializeField]
     private SpriteAtlas heroAtlas;
 
+    private static bool createdPlayers;
+    private static bool createdMaster;
 
 
     private string createMasterClass()
