@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 61884805}
   - component: {fileID: 61884804}
   m_Layer: 5
-  m_Name: Player 5
+  m_Name: Male Archer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,8 +285,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Waiting
+      - m_Target: {fileID: 1409756677}
+        m_MethodName: MaleArcherOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 159606482}
   - component: {fileID: 159606481}
   m_Layer: 5
-  m_Name: Player 3
+  m_Name: Male Dwarf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -414,8 +414,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Waiting
+      - m_Target: {fileID: 1409756677}
+        m_MethodName: MaleDwarfOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -473,13 +473,13 @@ GameObject:
   - component: {fileID: 204551102}
   - component: {fileID: 204551101}
   - component: {fileID: 204551100}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Start Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &204551099
 RectTransform:
   m_ObjectHideFlags: 0
@@ -545,6 +545,28 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2045834867}
         m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1409756677}
+        m_MethodName: OnConnectedToMaster
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1409756677}
+        m_MethodName: checkAllCharacters
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -680,7 +702,7 @@ GameObject:
   - component: {fileID: 537406419}
   - component: {fileID: 537406418}
   m_Layer: 5
-  m_Name: Player 4
+  m_Name: Female Dwarf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -749,8 +771,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Waiting
+      - m_Target: {fileID: 1409756677}
+        m_MethodName: FemaleDwarfOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -886,7 +908,7 @@ GameObject:
   - component: {fileID: 726042784}
   - component: {fileID: 726042783}
   m_Layer: 5
-  m_Name: Player 1
+  m_Name: Male Warrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -955,8 +977,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Waiting
+      - m_Target: {fileID: 1409756677}
+        m_MethodName: MaleWarriorOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1013,7 +1035,7 @@ GameObject:
   - component: {fileID: 734362237}
   - component: {fileID: 734362239}
   - component: {fileID: 734362238}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1204,7 +1226,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &973488905
 GameObject:
@@ -1217,7 +1239,7 @@ GameObject:
   - component: {fileID: 973488906}
   - component: {fileID: 973488908}
   - component: {fileID: 973488907}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1360,6 +1382,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066803521}
   m_CullTransparentMesh: 0
+--- !u!1 &1172027303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1172027305}
+  - component: {fileID: 1172027304}
+  m_Layer: 0
+  m_Name: NetworkController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1172027304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172027303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c65422fe868d4b47848b502e0e5de7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameVersion: 0
+--- !u!4 &1172027305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172027303}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 480.3011, y: 322.14526, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1187260318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,7 +1439,7 @@ GameObject:
   - component: {fileID: 1187260321}
   - component: {fileID: 1187260320}
   m_Layer: 5
-  m_Name: 'Player 6 '
+  m_Name: Female Archer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1442,8 +1508,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Waiting
+      - m_Target: {fileID: 1409756677}
+        m_MethodName: FemaleArcherOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1578,7 +1644,7 @@ GameObject:
   - component: {fileID: 1243566333}
   - component: {fileID: 1243566332}
   - component: {fileID: 1243566331}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: InputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1718,7 +1784,7 @@ GameObject:
   - component: {fileID: 1266680654}
   - component: {fileID: 1266680653}
   m_Layer: 5
-  m_Name: Player 2
+  m_Name: Female Warrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1787,8 +1853,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Waiting
+      - m_Target: {fileID: 1409756677}
+        m_MethodName: FemaleWarriorOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1898,7 +1964,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1339047355
 GameObject:
@@ -1909,7 +1975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1339047356}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: All players
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1943,6 +2009,82 @@ RectTransform:
   m_AnchoredPosition: {x: -183, y: 134}
   m_SizeDelta: {x: 893.6, y: 594.5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1409756674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1409756675}
+  - component: {fileID: 1409756676}
+  - component: {fileID: 1409756677}
+  m_Layer: 0
+  m_Name: ChooseCharacterController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1409756675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409756674}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 480.3011, y: 322.14526, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1409756676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409756674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51fbc1d801fe1b76b276d548b5881db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseCamera: {fileID: 0}
+  baseObject: {fileID: 0}
+  fullBoardSprite: {fileID: 0}
+  heroAtlas: {fileID: 0}
+--- !u!114 &1409756677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409756674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8a59b5c2b884c23a7c029bd916d542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  andorBoardIndex: 3
+  MaleWizardButton: {fileID: 1708567890}
+  FemaleWizardButton: {fileID: 1639128226}
+  MaleDwarfButton: {fileID: 159606479}
+  FemaleDwarfButton: {fileID: 537406416}
+  MaleArcherButton: {fileID: 61884802}
+  FemaleArcherButton: {fileID: 1187260318}
+  MaleWarriorButton: {fileID: 726042781}
+  FemaleWarriorButton: {fileID: 1266680651}
+  startButton: {fileID: 204551098}
+  i: 4
+  initialCharTurn:
+  - 
+  - 
+  - 
+  - 
 --- !u!1 &1637073738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,7 +2175,7 @@ GameObject:
   - component: {fileID: 1639128229}
   - component: {fileID: 1639128228}
   m_Layer: 5
-  m_Name: Player 7
+  m_Name: Female Wizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2102,8 +2244,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Waiting
+      - m_Target: {fileID: 1409756677}
+        m_MethodName: FemaleWizardOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2239,7 +2381,7 @@ GameObject:
   - component: {fileID: 1708567893}
   - component: {fileID: 1708567892}
   m_Layer: 5
-  m_Name: Player 8
+  m_Name: Male Wizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2308,8 +2450,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Waiting
+      - m_Target: {fileID: 1409756677}
+        m_MethodName: MaleWizardOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2443,7 +2585,7 @@ GameObject:
   - component: {fileID: 1763099323}
   - component: {fileID: 1763099325}
   - component: {fileID: 1763099324}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2546,7 +2688,7 @@ RectTransform:
   - {fileID: 1243566330}
   - {fileID: 1339047356}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2637,6 +2779,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a8a59b5c2b884c23a7c029bd916d542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  andorBoardIndex: 0
+  MaleWizardButton: {fileID: 1708567890}
+  FemaleWizardButton: {fileID: 1639128226}
+  MaleDwarfButton: {fileID: 159606479}
+  FemaleDwarfButton: {fileID: 537406416}
+  MaleArcherButton: {fileID: 61884802}
+  FemaleArcherButton: {fileID: 1187260318}
+  MaleWarriorButton: {fileID: 726042781}
+  FemaleWarriorButton: {fileID: 1266680651}
+  startButton: {fileID: 204551098}
+  i: 4
+  initialCharTurn:
+  - 
+  - 
+  - 
+  - 
 --- !u!1 &2066451963
 GameObject:
   m_ObjectHideFlags: 0
