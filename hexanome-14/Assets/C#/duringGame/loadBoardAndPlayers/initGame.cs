@@ -112,13 +112,17 @@ public class initGame : MonoBehaviour
         // GameObject tagHandler = Instantiate(baseObject, transform.position, Quaternion.identity);
         // tagHandler.AddComponent<CreateTagList>();
         string masterTag = createMasterClass();
-        createBoard(masterTag);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            createBoard(masterTag);
 
-        createPlayers();
+            createPlayers();
 
-        GameObject masterClassObject = GameObject.FindWithTag(masterTag);
-        masterClass master = masterClassObject.GetComponent<masterClass>();
-        master.initMasterClass("MainCamera", heroAtlas, baseObject, initialPlayerOrder(), getInitialPositions());
+            GameObject masterClassObject = GameObject.FindWithTag(masterTag);
+            masterClass master = masterClassObject.GetComponent<masterClass>();
+            master.initMasterClass("MainCamera", heroAtlas, baseObject, initialPlayerOrder(), getInitialPositions());
+
+        }
     }
 
     private string setHeroType(string myTag)

@@ -86,38 +86,63 @@ public class Player : MonoBehaviourPun, IPunObservable
             transform.position = realPosition;
         if (Input.GetMouseButtonDown(0))
         {
-             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            string clickedTag = getClickedGameObjectTag();
+            if (clickedTag == "") return;
 
-             // RaycastHit hitInfo;
-             RaycastHit2D hitInfo = Physics2D.GetRayIntersection(ray);
-            Debug.Log("clicked" );
-             if (hitInfo == null)
-             {
-                 return;
-             }
+            Vector3 newPos = getClickedPos(clickedTag);
 
-            string colliderTag = hitInfo.collider.gameObject.tag;
-            Debug.Log("want to move to: " + colliderTag);
-            if (colliderTag == null)
-            {
-                return;
-            }
-            int cTag;
-            try
-            {
-                cTag = int.Parse(colliderTag);
-                GameObject go = GameObject.FindWithTag(colliderTag);
-                BoardPosition bp = go.GetComponent<BoardPosition>();
-                // player.gameObject.transform.position = bp.getMiddle();
-                sphere.transform.position = bp.getMiddle();
-                // newPos = player.sphere.transform.position;
-                // transform.position = new Vector3(-6.81f, 7.57f, 0.0f);
-            }
-            catch (InvalidCastException e)
-            {
-            }
+            if (newPos != new Vector3(-10000, 1, 1))
+                moveTo(newPos);
         }
     }
+
+    private Vector3 getClickedPos(string clickedTag)
+    {
+        // right now we just assume clicked a boardPosition
+        int cTag;
+        try
+        {
+            cTag = int.Parse(clickedTag);
+            GameObject go = GameObject.FindWithTag(clickedTag);
+            BoardPosition bp = go.GetComponent<BoardPosition>();
+
+            Vector3 newPos = bp.getMiddle();
+            return newPos;
+
+            // player.gameObject.transform.position = bp.getMiddle();
+            // newPos = player.sphere.transform.position;
+            // transform.position = new Vector3(-6.81f, 7.57f, 0.0f);
+        }
+        catch (InvalidCastException e)
+        {
+            return new Vector3(-10000, 1, 1);
+        }
+    }
+
+    private string getClickedGameObjectTag()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        // RaycastHit hitInfo;
+        RaycastHit2D hitInfo = Physics2D.GetRayIntersection(ray);
+        Debug.Log("clicked" );
+        if (hitInfo == null)
+            return "";
+
+        string colliderTag = hitInfo.collider.gameObject.tag;
+        Debug.Log("want to move to: " + colliderTag);
+
+        return (colliderTag != null) ? colliderTag : "";
+
+    }
+
+    public void moveTo(Vector3 newPos)
+    {
+        sphere.transform.position = newPos;
+
+    }
+
+
 
     // extracts the hero tag from our own tag
     // EX.)   if (myTag == "Player-Male-Dwarf") -> output "Male-Dwarf"
@@ -170,7 +195,7 @@ public class Player : MonoBehaviourPun, IPunObservable
             PhotonNetwork.Destroy(player.gameObject);
         }
 
-        player = PhotonNetwork.Instantiate(prefab, position, rotation).GetComponent<Player>();
+        // player = PhotonNetwork.Instantiate(prefab, position, rotation).GetComponent<Player>();
         // sphere = player;
     }
 

@@ -45,6 +45,8 @@ public class initializeGameObjects : MonoBehaviour
         }
     }
 
+    // commented out cuz of multiplayer!
+
     // private void createHeros(string[] orderedPlayerIDs)
     // {
     //     // iterate over all players added to turnManager
@@ -104,6 +106,7 @@ public class initializeGameObjects : MonoBehaviour
     }
 
 
+    // commented out cuz of multiplayer!
     private void createHero(string heroTag, string playerTag)
     {
         // create a turnmanager before this which will store the starting positions for each hero.
