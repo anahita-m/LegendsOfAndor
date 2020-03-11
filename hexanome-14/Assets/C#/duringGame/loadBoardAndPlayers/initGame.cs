@@ -116,19 +116,20 @@ public class initGame : MonoBehaviour
         GameObject masterClassObject = GameObject.FindWithTag(masterTag);
         masterClass master = masterClassObject.GetComponent<masterClass>();
         master.initMasterClass("MainCamera", heroAtlas, baseObject, initialPlayerOrder(), getInitialPositions());
+        PhotonNetwork.Instantiate("Sphere", new Vector3(0, 0, 0), Quaternion.identity);
 
-        if (PhotonNetwork.IsMasterClient)
-        {
-            int x = 0;
-            foreach (Photon.Realtime.Player player in PhotonNetwork.PlayerList) //loop through each player and create a player listing
-            {
-                PhotonNetwork.Instantiate("Sphere", new Vector3(x, 0, 0), Quaternion.identity);
-                x++;
-            }
+        // if (PhotonNetwork.IsMasterClient)
+        // {
+        //     int x = 0;
+        //     foreach (Photon.Realtime.Player player in PhotonNetwork.PlayerList) //loop through each player and create a player listing
+        //     {
+        //         PhotonNetwork.Instantiate("Sphere", new Vector3(x, 0, 0), Quaternion.identity);
+        //         x++;
+        //     }
 
-            createPlayers();
+        //     createPlayers();
 
-        }
+        // }
     }
 
     private string setHeroType(string myTag)
