@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Pun.UtilityScripts;
+using Andor;
+using Photon.Realtime;
 
 public class TurnManager : MonoBehaviour, IPunTurnManagerCallbacks
 {
@@ -107,12 +109,13 @@ public class TurnManager : MonoBehaviour, IPunTurnManagerCallbacks
         throw new System.NotImplementedException();
     }
 
-    public void OnPlayerMove(Player player, int turn, object move)
+    public void OnPlayerMove(Andor.Player player, int turn, object move)
     {
         throw new System.NotImplementedException();
     }
 
-    public void OnPlayerFinished(Player player, int turn, object move)
+    //im guessing andor.player but could be photon realtime
+    public void OnPlayerFinished(Andor.Player player, int turn, object move)
     {
         throw new System.NotImplementedException();
     }
@@ -122,4 +125,13 @@ public class TurnManager : MonoBehaviour, IPunTurnManagerCallbacks
         throw new System.NotImplementedException();
     }
 
+    public void OnPlayerMove(Photon.Realtime.Player player, int turn, object move)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnPlayerFinished(Photon.Realtime.Player player, int turn, object move)
+    {
+        throw new System.NotImplementedException();
+    }
 }
