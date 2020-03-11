@@ -45,6 +45,14 @@ namespace Andor
                 if (PhotonNetwork.IsMasterClient) { setTag("Player-Male-Wizard"); }
                 else { setTag("Player-Male-Dwarf"); }
             }
+
+
+            myHero = new Hero();
+            playerGold = new Dictionary<string, int>();
+
+            myHero.setGold(UnityEngine.Random.Range(0, 10));
+            updateCoin(myTag, myHero.getGold());
+            Debug.Log("MY PLAYER HAS " + myHero.getGold() + " COINS!");
             // if (!photonView.IsMine && GetComponent<PlayerController>() != null)
             // Destroy(GetComponent<PlayerController>());
 
@@ -66,6 +74,44 @@ namespace Andor
         {
             return myTag;
         }
+
+        public Dictionary<string, int> playerGold;
+
+
+
+
+
+
+        [PunRPC]
+        public void serverUpdateCoin(string playerTag, int gold)
+        {
+            if (!playerGold.ContainsKey(playerTag))
+            {
+                playerGold.Add(playerTag, gold);
+            }
+            else
+            {
+                playerGold[playerTag] = gold;
+            }
+        }
+
+        public void updateCoin(string playerTag, int gold)
+        {
+            Debug.Log("HIHIHIHIHI");
+
+            if (photonView != null && photonView.IsMine)
+            {
+                Debug.Log("Im in!");
+
+                photonView.RPC("serverUpdateCoin", RpcTarget.All, playerTag, gold);
+            }
+        }
+
+
+
+
+
+
 
         public string getHeroType()
         {

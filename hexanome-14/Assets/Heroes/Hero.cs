@@ -22,6 +22,8 @@ public class Hero : MonoBehaviour, Movable, Fightable
 
     private int numHoursLeft;
 
+    private int gold;
+
     // all heroes start with 1 strength point
     private int strength = 1;
     // all heroes start with 7 willPower points
@@ -69,4 +71,16 @@ public class Hero : MonoBehaviour, Movable, Fightable
     {
         diceRollStrat.roll(this);
     }
+
+
+    public int getGold()
+    {
+        return gold;
+    }
+    public void setGold(int gold)
+    {
+        this.gold = gold;
+    }
+
+
 }
