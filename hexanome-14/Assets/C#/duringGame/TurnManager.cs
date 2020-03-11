@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Pun.UtilityScripts;
 
-public class TurnManager : MonoBehaviour
+public class TurnManager : MonoBehaviour, IPunTurnManagerCallbacks
 {
 
     // need a seperate queue for this to keep track of order players end their day in.
@@ -93,6 +95,31 @@ public class TurnManager : MonoBehaviour
 
         // int hoursInMove = boardGraph.getDistance(currentPos, boardPosTag);
         return true;
+    }
+
+     public void OnTurnBegins(int turn)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnTurnCompleted(int turn)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnPlayerMove(Player player, int turn, object move)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnPlayerFinished(Player player, int turn, object move)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnTurnTimeEnds(int turn)
+    {
+        throw new System.NotImplementedException();
     }
 
 }
