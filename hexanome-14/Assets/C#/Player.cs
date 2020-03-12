@@ -10,7 +10,6 @@ namespace Andor
 {
     public class Player : MonoBehaviourPun, IPunObservable
     {
-
         // [HideInInspector]
         // public GameObject sphere;
 
@@ -55,7 +54,6 @@ namespace Andor
             Debug.Log("MY PLAYER HAS " + myHero.getGold() + " COINS!");
             // if (!photonView.IsMine && GetComponent<PlayerController>() != null)
             // Destroy(GetComponent<PlayerController>());
-
         }
 
         public void setTag(string ID)
@@ -106,9 +104,6 @@ namespace Andor
                 photonView.RPC("serverUpdateCoin", RpcTarget.All, playerTag, gold);
             }
         }
-
-
-
 
 
 

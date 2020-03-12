@@ -69,55 +69,55 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
     // Start is called before the first frame update
     //Instantiates player prefab.
-    void Start()
-    {
-        IsSpawningPrefabs = true;
-        if (PhotonNetwork.IsConnected)
-        {
-            GameObject entry = CreatePlayer();
+    //void Start()
+    //{
+    //    IsSpawningPrefabs = true;
+    //    if (PhotonNetwork.IsConnected)
+    //    {
+    //        GameObject entry = CreatePlayer();
 
-            string playerName = PhotonNetwork.LocalPlayer.NickName;
-            int id = PhotonNetwork.LocalPlayer.ActorNumber;
-            entry.GetComponent<PhotonPlayer>().Initialize(id, playerName);
-        }
-    }
+    //        string playerName = PhotonNetwork.LocalPlayer.NickName;
+    //        int id = PhotonNetwork.LocalPlayer.ActorNumber;
+    //        entry.GetComponent<PhotonPlayer>().Initialize(id, playerName);
+    //    }
+    //}
 
-    private GameObject CreatePlayer()
-    {
-        Debug.Log("Creating Player");
-        return PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
+    //private GameObject CreatePlayer()
+    //{
+    //    Debug.Log("Creating Player");
+    //    return PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
 
-    }
+    //}
 
-    //Checks if all players were spawned.
-    private bool CheckPlayersReadyToBePlaced()
-    {
-        if (!PhotonNetwork.IsMasterClient)
-        {
-            return false;
-        }
+    ////Checks if all players were spawned.
+    //private bool CheckPlayersReadyToBePlaced()
+    //{
+    //    if (!PhotonNetwork.IsMasterClient)
+    //    {
+    //        return false;
+    //    }
 
-        //foreach (Photon.Realtime.Player p in PhotonNetwork.PlayerList)
-        //{
-        //    object isPlayerReady;
-        //    if (p.CustomProperties.TryGetValue(FlashPointGameConstants.PLAYER_READY_FOR_PLACEMENT, out isPlayerReady))
-        //    {
-        //        if (!(bool)isPlayerReady)
-        //        {
-        //            Debug.Log("Player " + p.NickName + " is not ready to be placed.");
-        //            return false;
-        //        }
+    //    //foreach (Photon.Realtime.Player p in PhotonNetwork.PlayerList)
+    //    //{
+    //    //    object isPlayerReady;
+    //    //    if (p.CustomProperties.TryGetValue(FlashPointGameConstants.PLAYER_READY_FOR_PLACEMENT, out isPlayerReady))
+    //    //    {
+    //    //        if (!(bool)isPlayerReady)
+    //    //        {
+    //    //            Debug.Log("Player " + p.NickName + " is not ready to be placed.");
+    //    //            return false;
+    //    //        }
 
-        //    }
-        //    else
-        //    {
+    //    //    }
+    //    //    else
+    //    //    {
 
-        //        return false;
-        //    }
+    //    //        return false;
+    //    //    }
 
-        //}
-        return true;
-    }
+    //    //}
+    //    return true;
+    //}
 
     //void Update()
     //{

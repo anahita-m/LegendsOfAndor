@@ -17,13 +17,57 @@ public class initGame : MonoBehaviour
     [SerializeField]
     private SpriteAtlas heroAtlas;
 
+    public string mySelectedCharacter;
 
-
-
-    private void CreatePlayer()
+    private GameObject CreatePlayer()
     {
         Debug.Log("Creating Player");
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
+        GameObject playerObject = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
+        Debug.Log("Reached Here");
+        playerObject.AddComponent<Player>();
+        playerObject.AddComponent<Hero>();
+        Debug.Log("Reached Here 3");
+        if (PlayerPrefs.HasKey("MyCharacter"))
+        {
+            mySelectedCharacter = PlayerPrefs.GetString("MyCharacter");
+            Debug.Log("Created character: " + PlayerPrefs.GetString("MyCharacter"));
+        }
+        playerObject.tag = mySelectedCharacter;
+
+        Player player = playerObject.GetComponent<Player>();
+        player.setTag(mySelectedCharacter);
+        return playerObject;
+    }
+
+
+    //private void createPlayers()
+    //{
+    //    foreach (string playerTag in initialPlayerOrder())
+    //    {
+    //        GameObject playerObject = Instantiate(baseObject, transform.position, transform.rotation);
+    //        playerObject.AddComponent<Player>();
+    //        playerObject.AddComponent<Hero>();
+    //        playerObject.tag = playerTag;
+
+    //        Player player = playerObject.GetComponent<Player>();
+    //        player.setTag(playerTag);
+    //    }
+    //}
+
+
+    private void CreateSkrals()
+    {
+
+        foreach(string skralTag in initialSkralOrder())
+        {
+            Debug.Log("Creating Skrals");
+            GameObject skralObject = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Skral"), Vector3.zero, Quaternion.identity);
+           // skralObject.AddComponent<Monster>();
+           // skralObject.AddComponent<Skral>();
+            skralObject.tag = skralTag;
+            Skral skral = skralObject.GetComponent<Skral>();
+            skral.setTag(skralTag);
+        }
     }
 
     private string createMasterClass()
@@ -40,20 +84,6 @@ public class initGame : MonoBehaviour
         return masterClassObject.tag;
     }
 
-
-    private void createPlayers()
-    {
-        foreach(string playerTag in initialPlayerOrder())
-        {
-            GameObject playerObject = Instantiate(baseObject, transform.position, transform.rotation);
-            playerObject.AddComponent<Player>();
-            playerObject.AddComponent<Hero>();
-            playerObject.tag = playerTag;
-
-            Player player = playerObject.GetComponent<Player>();
-            player.setTag(playerTag);
-        }
-    }
 
 
     private void setCameraPosition(Vector3 cameraPosition)
@@ -90,6 +120,13 @@ public class initGame : MonoBehaviour
         };
     }
 
+    private string[] initialSkralOrder()
+    {
+        return new string[]{
+            "Skral-1",
+        };
+    }
+
     private string[] getInitialPositions()
     {
         return new string[]{
@@ -108,8 +145,18 @@ public class initGame : MonoBehaviour
         string masterTag = createMasterClass();
         createBoard(masterTag);
 
+        if (PhotonNetwork.IsConnected)
+        {
+            GameObject entry = CreatePlayer();
+            string playerName = PhotonNetwork.LocalPlayer.NickName;
+            int id = PhotonNetwork.LocalPlayer.ActorNumber;
+            entry.GetComponent<PhotonPlayer>().Initialize(id, playerName);
+        }
+        //    {
+
+        //    }
         //createPlayers();
-        //CreatePlayer();
+        // CreateMonsters();
 
         GameObject masterClassObject = GameObject.FindWithTag(masterTag);
         masterClass master = masterClassObject.GetComponent<masterClass>();

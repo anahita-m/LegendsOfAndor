@@ -9,8 +9,25 @@ public class MenuController : MonoBehaviour
 	{
         if(PlayerInfo.PI != null)
 		{
-			PlayerInfo.PI.mySelectedCharacter = whichCharacter;
-			PlayerPrefs.SetInt("MyCharacter", whichCharacter);
+            PlayerInfo.PI.mySelectedCharacter = whichCharacter;
+
+            if (whichCharacter == 0 || whichCharacter == 1)
+            {
+                PlayerPrefs.SetString("MyCharacter", "wizard");
+            }
+            if (whichCharacter == 2 || whichCharacter == 3)
+            {
+                PlayerPrefs.SetString("MyCharacter", "wizard");
+            }
+            if (whichCharacter == 4 || whichCharacter == 5)
+            {
+                PlayerPrefs.SetString("MyCharacter", "wizard");
+            }
+            if (whichCharacter == 6 || whichCharacter == 7)
+            {
+                PlayerPrefs.SetString("MyCharacter", "wizard");
+            }
+			//PlayerPrefs.SetString("MyCharacter", whichCharacter);
 		}
 	}
 }
