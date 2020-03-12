@@ -41,8 +41,8 @@ namespace Andor
                 // sphere = GetComponent<Sphere>();
                 // sphere.SetActive(true);
                 transform.localScale = new Vector3(2.2f, 2.2f, 0.12f);
-                if (PhotonNetwork.IsMasterClient) { setTag("Player-Male-Wizard"); }
-                else { setTag("Player-Male-Dwarf"); }
+                //if (PhotonNetwork.IsMasterClient) { setTag("Player-Male-Wizard"); }
+                //else { setTag("Player-Male-Dwarf"); }
             }
 
 

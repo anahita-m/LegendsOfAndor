@@ -51,7 +51,7 @@ public class masterClass : MonoBehaviour
         // it to it's node.graphIndex to view information about the spot clicked
 
         // turnManager = new TurnManager(orderedPlayerIDs, startingPositions);
-        createHeros();
+        //createHeros();
         return;
     }
 
@@ -109,22 +109,23 @@ public class masterClass : MonoBehaviour
         }
     }
 
-    private void createHeros()
-    {
-        // iterate over all players added to turnManager
-        // and create a hero per player.
-        TurnManager turnManager = gameObject.GetComponent<TurnManager>();
-        foreach(string playerID in turnManager.playerTagsInOrder())
-        {
-            Debug.Log("player id: " +playerID);
-            GameObject playerGameObject = GameObject.FindWithTag(playerID);
-            Player currPlayer = playerGameObject.GetComponent<Player>();
+    //private void createHeros()
+    //{
+    //    // iterate over all players added to turnManager
+    //    // and create a hero per player.
+    //    TurnManager turnManager = gameObject.GetComponent<TurnManager>();
+    //    foreach(string playerID in turnManager.playerTagsInOrder())
+    //    {
+    //        Debug.Log("player id: " +playerID);
+    //        GameObject playerGameObject = GameObject.FindWithTag(playerID);
+    //        Player currPlayer = playerGameObject.GetComponent<Player>();
+    //        Debug.Log("player id: " + playerID);
 
-            string heroTag = currPlayer.getHeroType();
+    //        string heroTag = currPlayer.getHeroType();
 
-            createHero(heroTag, currPlayer.getPlayerTag());
-        }
-    }
+    //        createHero(heroTag, currPlayer.getPlayerTag());
+    //    }
+    //}
 
 
     // called in a loop, creates a object for each sprite ie game tile
@@ -168,34 +169,34 @@ public class masterClass : MonoBehaviour
     }
 
 
-    private void createHero(string heroTag, string playerTag)
-    {
-        // create a turnmanager before this which will store the starting positions for each hero.
+    //private void createHero(string heroTag, string playerTag)
+    //{
+    //    // create a turnmanager before this which will store the starting positions for each hero.
 
-        // later will pass in the "middle" parameter of the boardPosition
-        // object we created before calling this method.
-        Vector3 position = new Vector3(-29.13f, 24.02f, 0.0f);
-        // this is the initialPosition of this hero, see how it is passed to Instantiate below
+    //    // later will pass in the "middle" parameter of the boardPosition
+    //    // object we created before calling this method.
+    //    Vector3 position = new Vector3(-29.13f, 24.02f, 0.0f);
+    //    // this is the initialPosition of this hero, see how it is passed to Instantiate below
 
-        GameObject heroObject = Instantiate(baseObject, position, Quaternion.identity);
-        heroObject.AddComponent<SpriteRenderer>();
-        heroObject.AddComponent<Hero>();
-        heroObject.tag = heroTag;
+    //    GameObject heroObject = Instantiate(baseObject, position, Quaternion.identity);
+    //    heroObject.AddComponent<SpriteRenderer>();
+    //    heroObject.AddComponent<Hero>();
+    //    heroObject.tag = heroTag;
 
 
-        // assignHeroIcon(heroObject.tag);
-        // maybe change this to pass a ref heroObject, avoid multiple findWithTag calls!
-        string sphereTag = createSphere(playerTag, heroObject.tag);
+    //    // assignHeroIcon(heroObject.tag);
+    //    // maybe change this to pass a ref heroObject, avoid multiple findWithTag calls!
+    //    string sphereTag = createSphere(playerTag, heroObject.tag);
 
-        GameObject playerObject = GameObject.FindWithTag(playerTag);
-        // sets hero to be child of this player
-        heroObject.transform.parent = playerObject.transform;
+    //    GameObject playerObject = GameObject.FindWithTag(playerTag);
+    //    // sets hero to be child of this player
+    //    heroObject.transform.parent = playerObject.transform;
 
-        GameObject sphereObject = GameObject.FindWithTag(sphereTag);
-        Hero theHero = heroObject.GetComponent<Hero>();
+    //    GameObject sphereObject = GameObject.FindWithTag(sphereTag);
+    //    Hero theHero = heroObject.GetComponent<Hero>();
 
-        theHero.init(sphereObject.tag, heroTag);
-    }
+    //    theHero.init(sphereObject.tag, heroTag);
+    //}
 
 
     private string createSphere(string playerTag, string heroTag)

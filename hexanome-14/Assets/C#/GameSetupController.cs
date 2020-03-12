@@ -27,6 +27,7 @@ using Photon.Realtime;
 using System.IO;
 using System;
 using ExitGames.Client.Photon;
+using Andor;
 
 
 public class GameSetupController : MonoBehaviourPunCallbacks
@@ -37,6 +38,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     public bool IsSpawningPrefabs;
     public Transform[] spawnPoints;
 
+    public string mySelectedCharacter;
     //Initial Spawnpoints prior to start position selection.
     public Vector3[] initialPositions;
 
@@ -67,20 +69,40 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     }
 
 
+    private GameObject CreatePlayer()
+    {
+        Debug.Log("Creating Player");
+        GameObject playerObject = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
+        Debug.Log("Reached Here");
+        playerObject.AddComponent<Andor.Player>();
+        playerObject.AddComponent<Hero>();
+        Debug.Log("Reached Here 3");
+        if (PlayerPrefs.HasKey("MyCharacter"))
+        {
+            mySelectedCharacter = PlayerPrefs.GetString("MyCharacter");
+            Debug.Log("Created character: " + PlayerPrefs.GetString("MyCharacter"));
+        }
+        playerObject.tag = mySelectedCharacter;
+
+        Andor.Player player = playerObject.GetComponent<Andor.Player>();
+        player.setTag(mySelectedCharacter);
+        return playerObject;
+    }
+
     // Start is called before the first frame update
     //Instantiates player prefab.
-    //void Start()
-    //{
-    //    IsSpawningPrefabs = true;
-    //    if (PhotonNetwork.IsConnected)
-    //    {
-    //        GameObject entry = CreatePlayer();
+    void Start()
+    {
+        IsSpawningPrefabs = true;
+        if (PhotonNetwork.IsConnected)
+        {
+            GameObject entry = CreatePlayer();
 
-    //        string playerName = PhotonNetwork.LocalPlayer.NickName;
-    //        int id = PhotonNetwork.LocalPlayer.ActorNumber;
-    //        entry.GetComponent<PhotonPlayer>().Initialize(id, playerName);
-    //    }
-    //}
+            string playerName = PhotonNetwork.LocalPlayer.NickName;
+            int id = PhotonNetwork.LocalPlayer.ActorNumber;
+            entry.GetComponent<PhotonPlayer>().Initialize(id, playerName);
+        }
+    }
 
     //private GameObject CreatePlayer()
     //{

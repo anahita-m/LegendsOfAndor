@@ -17,15 +17,15 @@ public class MenuController : MonoBehaviour
             }
             if (whichCharacter == 2 || whichCharacter == 3)
             {
-                PlayerPrefs.SetString("MyCharacter", "wizard");
+                PlayerPrefs.SetString("MyCharacter", "archer");
             }
             if (whichCharacter == 4 || whichCharacter == 5)
             {
-                PlayerPrefs.SetString("MyCharacter", "wizard");
+                PlayerPrefs.SetString("MyCharacter", "dwarf");
             }
             if (whichCharacter == 6 || whichCharacter == 7)
             {
-                PlayerPrefs.SetString("MyCharacter", "wizard");
+                PlayerPrefs.SetString("MyCharacter", "warrior");
             }
 			//PlayerPrefs.SetString("MyCharacter", whichCharacter);
 		}
