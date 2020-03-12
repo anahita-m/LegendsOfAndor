@@ -14,6 +14,7 @@ namespace Andor
         // public GameObject sphere;
 
         private Vector3 newPos;
+        private Player_click_handler click_handler;
 
         private string userName;
 
@@ -29,6 +30,14 @@ namespace Andor
         // private Screen lookingAt;
 
         public string NickName { get; internal set; }
+
+        void Awake()
+        {
+            if (photonView.IsMine){
+                click_handler = GetComponent<Player_click_handler>();
+            }
+
+        }
 
         void Start()
         {
@@ -115,91 +124,21 @@ namespace Andor
 
         void Update()
         {
-            Scene scene = SceneManager.GetActiveScene();
-            if (scene.name != "AndorBoard")
-                return;
             if (photonView.IsMine)
-                checkClick();
-            else
-            {
-                float x1 = transform.position[0];
-                float x2 = transform.position[1];
-                float x3 = transform.position[2];
-                float newX = Mathf.MoveTowards(x1, newPos[0], 1);
-                float newY = Mathf.MoveTowards(x2, newPos[1], 1);
-                float newZ = Mathf.MoveTowards(x3, newPos[2], 1);
-                transform.position = new Vector3(newX, newY, newZ);
-            }
+                click_handler.checkClick(newPos);
         }
 
-        private void checkClick()
+        public void moveToNewPos()
         {
+            float x1 = transform.position[0];
+            float x2 = transform.position[1];
+            float x3 = transform.position[2];
 
-            if (Input.GetMouseButtonDown(0))
-            {
-                string clickedTag = getClickedGameObjectTag();
-                if (clickedTag == "") return;
+            float newX = Mathf.MoveTowards(x1, newPos[0], 1);
+            float newY = Mathf.MoveTowards(x2, newPos[1], 1);
+            float newZ = Mathf.MoveTowards(x3, newPos[2], 1);
 
-                Vector3 newPos = getClickedPos(clickedTag);
-
-                if (newPos != new Vector3(-10000, 1, 1))
-                    moveTo(newPos);
-            }
-        }
-
-        private Vector3 getClickedPos(string clickedTag)
-        {
-            // right now we just assume clicked a boardPosition
-            int cTag;
-            try
-            {
-                cTag = int.Parse(clickedTag);
-                GameObject go = GameObject.FindWithTag(clickedTag);
-                BoardPosition bp = go.GetComponent<BoardPosition>();
-
-                Vector3 newPos = bp.getMiddle();
-                return newPos;
-
-                // player.gameObject.transform.position = bp.getMiddle();
-                // newPos = player.sphere.transform.position;
-                // transform.position = new Vector3(-6.81f, 7.57f, 0.0f);
-            }
-            catch (InvalidCastException e)
-            {
-                return new Vector3(-10000, 1, 1);
-            }
-        }
-
-        private string getClickedGameObjectTag()
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            // RaycastHit hitInfo;
-            RaycastHit2D hitInfo = Physics2D.GetRayIntersection(ray);
-            Debug.Log("clicked");
-            if (hitInfo == null)
-                return "";
-
-            if (hitInfo.collider == null)
-                Debug.Log("hitInfo not null, collider is null");
-
-            if (hitInfo.collider.gameObject == null)
-                Debug.Log("hitInfo not null, collider.gameObject is null");
-
-            if (hitInfo.collider.gameObject.tag == "")
-                Debug.Log("hitInfo not null, collider.gameObject.tag is not set");
-
-            string colliderTag = hitInfo.collider.gameObject.tag;
-            Debug.Log("want to move to: " + colliderTag);
-
-            return (colliderTag != null) ? colliderTag : "";
-
-        }
-
-        public void moveTo(Vector3 newPos)
-        {
-            transform.position = newPos;
-
+            transform.position = new Vector3(newX, newY, newZ);
         }
 
 
@@ -227,11 +166,6 @@ namespace Andor
             //}
         }
 
-        // public void moveSlowly(Vector3 newPos)
-        // {
-
-        // }
-
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
             Debug.Log("tryna write or read");
@@ -245,21 +179,10 @@ namespace Andor
             }
         }
 
-        public static void RefreshInstance(ref Player player, string prefab)
+        public void setNewPos(Vector3 newPosition)
         {
-            var position = Vector3.zero;
-            var rotation = Quaternion.identity;
-            if (player != null)
-            {
-                position = player.transform.position;
-                rotation = player.transform.rotation;
-                PhotonNetwork.Destroy(player.gameObject);
-            }
-
-            // player = PhotonNetwork.Instantiate(prefab, position, rotation).GetComponent<Player>();
-            // sphere = player;
+            newPos = newPosition;
         }
 
     }
 }
-
