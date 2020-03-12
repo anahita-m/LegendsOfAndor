@@ -200,15 +200,15 @@ namespace Andor
         private void setHeroType()
         {
             // must initialize before adding strings
-            heroType = "";
-            int ct = 0;
-            string[] partsOfTag = myTag.Split('-');
-            if (partsOfTag.Length != 3)
-            {
-                Debug.Log("Found a bad tag in Player.setHeroType: " + myTag);
-            }
-
-            heroType = partsOfTag[1] + "-" + partsOfTag[2];
+            //heroType = "";
+            //int ct = 0;
+            //string[] partsOfTag = myTag.Split('-');
+            //if (partsOfTag.Length != 3)
+            //{
+            //    Debug.Log("Found a bad tag in Player.setHeroType: " + myTag);
+            //}
+            heroType = myTag;
+            //heroType = partsOfTag[1] + "-" + partsOfTag[2];
             //foreach(string partOfTag in myTag.Split('-'))
             //{
             //    // skip first val: "Player"
