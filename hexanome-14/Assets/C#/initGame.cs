@@ -19,26 +19,6 @@ public class initGame : MonoBehaviour
 
     public string mySelectedCharacter;
 
-    //private GameObject CreatePlayer()
-    //{
-    //    Debug.Log("Creating Player");
-    //    GameObject playerObject = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
-    //    Debug.Log("Reached Here");
-    //    playerObject.AddComponent<Player>();
-    //    playerObject.AddComponent<Hero>();
-    //    Debug.Log("Reached Here 3");
-    //    if (PlayerPrefs.HasKey("MyCharacter"))
-    //    {
-    //        mySelectedCharacter = PlayerPrefs.GetString("MyCharacter");
-    //        Debug.Log("Created character: " + PlayerPrefs.GetString("MyCharacter"));
-    //    }
-    //    playerObject.tag = mySelectedCharacter;
-
-    //    Player player = playerObject.GetComponent<Player>();
-    //    player.setTag(mySelectedCharacter);
-        //return playerObject;
-    //}
-
 
     //private void createPlayers()
     //{
@@ -154,6 +134,6 @@ public class initGame : MonoBehaviour
         GameObject masterClassObject = GameObject.FindWithTag(masterTag);
         masterClass master = masterClassObject.GetComponent<masterClass>();
         master.initMasterClass("MainCamera", heroAtlas, baseObject, initialPlayerOrder(), getInitialPositions());
-        
+
     }
 }

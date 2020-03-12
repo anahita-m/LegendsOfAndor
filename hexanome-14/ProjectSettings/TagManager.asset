@@ -105,6 +105,13 @@ TagManager:
   - Player-Male-Warrior
   - based
   - Player-Male-Archer
+  - wizard
+  - archer
+  - skral
+  - gor
+  - farmer
+  - dwarf
+  - warrior
   layers:
   - Default
   - TransparentFX

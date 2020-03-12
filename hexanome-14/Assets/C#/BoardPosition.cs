@@ -88,20 +88,13 @@ public class BoardPosition : MonoBehaviour
     void OnMouseDown()
     {
         masterClass master = GetComponentInParent<masterClass>();
+        if (master == null)
+            Debug.Log("could not find a parent gameobject with masterClass component");
+
         if (master.isCurrentlySelected(gameObject.tag))
             return;
 
         master.requestHighlight(gameObject.tag);
-        // Todo: make this better for turns, need to pass who clicked somehow
-        // should just only have highlight stuff here and no game logic
-        // could add a million colliders to each player
-        // or a button down check for each player each frame
-        // followed by code to figure out which spot they clicked on
-
-        // TODO: make this per player and also forward requests to
-        // unimplemented: playerstate.newPosition fxn
-
-        // master.setNewHeroLocation(getMiddle(), gameObject.tag);
 
         if(lineRenderer.enabled == false)
             lineRenderer.enabled = true;

@@ -72,7 +72,6 @@ public class Hero : MonoBehaviour, Movable, Fightable
         diceRollStrat.roll(this);
     }
 
-
     public int getGold()
     {
         return gold;

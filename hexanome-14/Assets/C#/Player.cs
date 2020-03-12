@@ -49,9 +49,9 @@ namespace Andor
             myHero = new Hero();
             playerGold = new Dictionary<string, int>();
 
-            myHero.setGold(UnityEngine.Random.Range(0, 10));
-            updateCoin(myTag, myHero.getGold());
-            Debug.Log("MY PLAYER HAS " + myHero.getGold() + " COINS!");
+            // myHero.setGold(UnityEngine.Random.Range(0, 10));
+            // updateCoin(myTag, myHero.getGold());
+            // Debug.Log("MY PLAYER HAS " + myHero.getGold() + " COINS!");
             // if (!photonView.IsMine && GetComponent<PlayerController>() != null)
             // Destroy(GetComponent<PlayerController>());
         }
@@ -80,30 +80,30 @@ namespace Andor
 
 
 
-        [PunRPC]
-        public void serverUpdateCoin(string playerTag, int gold)
-        {
-            if (!playerGold.ContainsKey(playerTag))
-            {
-                playerGold.Add(playerTag, gold);
-            }
-            else
-            {
-                playerGold[playerTag] = gold;
-            }
-        }
+        // [PunRPC]
+        // public void serverUpdateCoin(string playerTag, int gold)
+        // {
+        //     if (!playerGold.ContainsKey(playerTag))
+        //     {
+        //         playerGold.Add(playerTag, gold);
+        //     }
+        //     else
+        //     {
+        //         playerGold[playerTag] = gold;
+        //     }
+        // }
 
-        public void updateCoin(string playerTag, int gold)
-        {
-            Debug.Log("HIHIHIHIHI");
+        // public void updateCoin(string playerTag, int gold)
+        // {
+        //     Debug.Log("HIHIHIHIHI");
 
-            if (photonView != null && photonView.IsMine)
-            {
-                Debug.Log("Im in!");
+        //     if (photonView != null && photonView.IsMine)
+        //     {
+        //         Debug.Log("Im in!");
 
-                photonView.RPC("serverUpdateCoin", RpcTarget.All, playerTag, gold);
-            }
-        }
+        //         photonView.RPC("serverUpdateCoin", RpcTarget.All, playerTag, gold);
+        //     }
+        // }
 
 
 
@@ -179,6 +179,15 @@ namespace Andor
             Debug.Log("clicked");
             if (hitInfo == null)
                 return "";
+
+            if (hitInfo.collider == null)
+                Debug.Log("hitInfo not null, collider is null");
+
+            if (hitInfo.collider.gameObject == null)
+                Debug.Log("hitInfo not null, collider.gameObject is null");
+
+            if (hitInfo.collider.gameObject.tag == "")
+                Debug.Log("hitInfo not null, collider.gameObject.tag is not set");
 
             string colliderTag = hitInfo.collider.gameObject.tag;
             Debug.Log("want to move to: " + colliderTag);

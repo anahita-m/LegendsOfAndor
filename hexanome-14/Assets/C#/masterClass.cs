@@ -139,6 +139,7 @@ public class masterClass : MonoBehaviour
         GameObject newGameObject = Instantiate(baseObject, transform.position, transform.rotation);
         newGameObject.tag = gameCellNumber.ToString();
         newGameObject.name = "position-" + gameCellNumber.ToString();
+        newGameObject.transform.parent = this.transform;
 
         newGameObject.AddComponent<SpriteRenderer>();
         SpriteRenderer spriteRenderer = newGameObject.GetComponent<SpriteRenderer>();
@@ -251,19 +252,6 @@ public class masterClass : MonoBehaviour
     }
 
 
-    // note this is being moved to turnmanager.boardContents
-    // public void setNewHeroLocation(Vector3 newLocation, string boardPositionNumber)
-    // {
-        // Todo: make this better for turns, need to take who clicked as input somehow
-        // will do this by adding all polygonColliders to each players gameObject
-        // then they can pass in their tags to this object so we can verify
-        // which player is requesting to move
-
-        // doesn't work anymore !! on purpose!!
-        // GameObject currentTurnSphere = GameObject.FindWithTag("Sphere-" + turn);
-        // currentTurnSphere.transform.position = newLocation;
-    // }
-
 
     public void notifyClick()
     {
@@ -284,38 +272,4 @@ public class masterClass : MonoBehaviour
         }
         return newInt;
     }
-
 }
-
-    // maybe re-add this if we want to set players as the child of this script.
-
-    // // this script somehow needs to access the player attributes created
-    // // when the player signs up. (and pass them to player.setAttributes
-    // private string createPlayer()
-    // {
-    //     GameObject playerObject = Instantiate(baseObject, transform.position, transform.rotation);
-    //     playerObject.AddComponent<Player>();
-    //     playerObject.AddComponent<Hero>();
-
-    //     Player player = playerObject.GetComponent<Player>();
-    //     bool isTheirTurn = false;
-    //     if (playerCount == 0)
-    //     // in this implementation, a random player goes first.
-    //     {
-    //         isTheirTurn = true;
-    //     }
-    //     // player count meant for what ?
-    //     // maybe we can use it to arbitrarily assign player tags tho !
-    //     player.setAttributes(playerCount, "iD-yo", isTheirTurn);
-
-    //     // ie tag is "First", "Second", etc.
-    //     // should change this since the turn-order changes every round.
-    //     // Do we have something that assigns a unique player id yet?
-    //     playerObject.tag = getPlayerTag();
-    //     playerObject.name = "Player-" + playerObject.tag;
-
-    //     // sets player to be child of this script
-    //     playerObject.transform.parent = gameObject.transform;
-    //     return playerObject.tag;
-    // }
-

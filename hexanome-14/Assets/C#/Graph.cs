@@ -27,35 +27,42 @@ public class Graph : MonoBehaviour
         loadNeighbours();
     }
 
-    private void loadNeighbours()
+    public int getDistance(string src, string dest)
     {
-        readGraphCSV();
+        int srcIndex = convertToInt(src);
+        int destIndex = convertToInt(dest);
+
+        // destNode has its attribute: prev set correctly now
+        // Node destNode = ref bfs(nodes[srcIndex], nodes[destIndex]);
+        Node destNode = new Node(destIndex, new int[] {0,1,2});
+        bfs(nodes[srcIndex], nodes[destIndex], ref destNode);
+
+        return calculateDistance(ref destNode, destIndex);
     }
 
-
-    private void readGraphCSV()
+    public Dictionary<string, int> allDistancesFrom(string currPos)
     {
-        using(var reader = new StreamReader(@"./Assets/adjacencyList.txt"))
+        Dictionary<string, int> distances = new Dictionary<string, int>();
+        foreach(Node node in nodes)
         {
-            while (!reader.EndOfStream)
-            {
-                string line = reader.ReadLine().ToString().TrimEnd( Environment.NewLine.ToCharArray());
-                string[] neighbourIndices = line.Split(',');
-
-                // int[] neighbourIndices = toIntArray(tmp);
-
-                int currentPos = convertToInt(neighbourIndices[0]);
-
-                // have only added up to here in the csv
-                if (currentPos > 62)
-                {
-                    break;
-                }
-                // skip fstElem: currentPos so we don't add it as a neighbour of itself
-                addNeighboursOf(currentPos, neighbourIndices.Skip(1).ToArray());
-            }
+            string otherPos = node.getIndex().ToString();
+            distances.Add(otherPos, getDistance(currPos, otherPos));
         }
+        return distances;
     }
+
+    public Dictionary<string, int> getWithinDistance(string currPos, int maxDist)
+    {
+        Dictionary<string, int> withinDist = new Dictionary<string, int>();
+
+        foreach(KeyValuePair<string, int> distTo in allDistancesFrom(currPos))
+        {
+            if (distTo.Value <= maxDist)
+                withinDist.Add(distTo.Key, distTo.Value);
+        }
+        return withinDist;
+    }
+
 
 
     private void addNeighboursOf(int currentPos, string[] neighbours)
@@ -71,30 +78,16 @@ public class Graph : MonoBehaviour
 
 
         // for testing
-        Console.WriteLine("neighbours of node: " + currentPos.ToString());
-        Debug.Log("neighbours of node: " + currentPos.ToString());
+        // Debug.Log("neighbours of node: " + currentPos.ToString());
         string neighbourString = "";
         foreach(int idk in nodes[currentPos])
         {
             neighbourString += idk.ToString() + ", ";
         }
-        Debug.Log(neighbourString);
+        // Debug.Log(neighbourString);
     }
 
 
-
-    public int getDistance(string src, string dest)
-    {
-        int srcIndex = convertToInt(src);
-        int destIndex = convertToInt(dest);
-
-        // destNode has its attribute: prev set correctly now
-        // Node destNode = ref bfs(nodes[srcIndex], nodes[destIndex]);
-        Node destNode = new Node(destIndex, new int[] {0,1,2});
-        bfs(nodes[srcIndex], nodes[destIndex], ref destNode);
-
-        return calculateDistance(ref destNode, destIndex);
-    }
 
     private int calculateDistance(ref Node current, int destIndex)
     {
@@ -107,7 +100,6 @@ public class Graph : MonoBehaviour
 
         return dist;
     }
-
 
     // maybe should change the bfs to store a list of int[]'s indicating the path
     // instead of relying on ref variables.
@@ -146,6 +138,38 @@ public class Graph : MonoBehaviour
         return;
         // return ref new Node(0, new int[] {-1, -1, -1});
     }
+
+
+    private void loadNeighbours()
+    {
+        readGraphCSV();
+    }
+
+
+    private void readGraphCSV()
+    {
+        using(var reader = new StreamReader(@"./Assets/CSV/adjacencyList.txt"))
+        {
+            while (!reader.EndOfStream)
+            {
+                string line = reader.ReadLine().ToString().TrimEnd( Environment.NewLine.ToCharArray());
+                string[] neighbourIndices = line.Split(',');
+
+                // int[] neighbourIndices = toIntArray(tmp);
+
+                int currentPos = convertToInt(neighbourIndices[0]);
+
+                // have only added up to here in the csv
+                if (currentPos > 62)
+                {
+                    break;
+                }
+                // skip fstElem: currentPos so we don't add it as a neighbour of itself
+                addNeighboursOf(currentPos, neighbourIndices.Skip(1).ToArray());
+            }
+        }
+    }
+
 
 
 
