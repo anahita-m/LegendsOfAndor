@@ -10,6 +10,10 @@ public class PhotonPlayer : MonoBehaviour
     public GameObject myAvatar;
     public int Id;
     public string PlayerName;
+    public string initPosition;
+    public Vector3 initialPos;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,13 +22,20 @@ public class PhotonPlayer : MonoBehaviour
         PV = GetComponent<PhotonView>();
         //PV.TransferOwnership(PhotonNetwork.LocalPlayer);
         int spawnPicker = Random.Range(0, GameSetupController.GS.spawnPoints.Length);
+
+
         if (PV.IsMine)
         {
+            initPosition = PlayerPrefs.GetString("CharacterRank");
+            initialPos = GameObject.FindWithTag(initPosition).GetComponent<BoardPosition>().getMiddle();
+
             Debug.Log("Instantiating avatar2");
 
             int myPlayerNumber = PhotonNetwork.LocalPlayer.ActorNumber;
-            myAvatar = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Avatar"),
-                   GameSetupController.GS.spawnPoints[spawnPicker].position, GameSetupController.GS.spawnPoints[spawnPicker].rotation, 0);
+
+            //GameSetupController.GS.spawnPoints[spawnPicker].position
+            myAvatar = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Avatar"), initialPos
+                   , GameSetupController.GS.spawnPoints[spawnPicker].rotation, 0);
             Debug.Log("created avatar");
 
             //myAvatar.GetComponent<GameUnit>().setPhysicalObject(myAvatar);

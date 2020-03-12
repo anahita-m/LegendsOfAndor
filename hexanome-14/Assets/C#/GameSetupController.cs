@@ -32,6 +32,7 @@ using Andor;
 
 public class GameSetupController : MonoBehaviourPunCallbacks
 {
+    //Vector3 intPos = GameObject.FindWithTag().GetComponent<BoardPosition>().getMiddle();
 
     public static GameSetupController GS;
     //Allows to stop Update function once all Players are spawned.
@@ -40,7 +41,9 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
     public string mySelectedCharacter;
     //Initial Spawnpoints prior to start position selection.
-    public Vector3[] initialPositions;
+    //public Vector3[] initialPositions;
+    public String initPosition;
+    public Vector3 initialPos;
 
     private void Awake()
     {
@@ -48,13 +51,15 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         if (GameSetupController.GS == null)
         {
             GameSetupController.GS = this;
-            initialPositions = new Vector3[6];
-            Vector3 topPosition = new Vector3(-8.9f, -1.28f, 0);
-            for (int i = 0; i < initialPositions.Length; i++)
-            {
-                initialPositions[i] = topPosition;
-                topPosition = new Vector3(topPosition.x, topPosition.y - 0.92f, 0);
-            }
+            //initPosition = PlayerPrefs.GetString("CharacterRank");
+ //           initialPos = GameObject.FindWithTag("14").GetComponent<BoardPosition>().getMiddle();
+            //initPos = new Vector3[6];
+            //Vector3 topPosition = new Vector3(-8.9f, -1.28f, 0);
+            //for (int i = 0; i < initialPositions.Length; i++)
+            //{
+            //    initialPositions[i] = topPosition;
+            //    topPosition = new Vector3(topPosition.x, topPosition.y - 0.92f, 0);
+            //}
 
 
         }
@@ -70,9 +75,10 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
 
     private GameObject CreatePlayer()
-    {
+    { 
         Debug.Log("Creating Player");
         GameObject playerObject = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
+        //GameObject.FindWithTag("14").GetComponent<BoardPosition>().getMiddle(), Quaternion.identity, 0);//
         Debug.Log("Reached Here");
         playerObject.AddComponent<Andor.Player>();
         playerObject.AddComponent<Hero>();

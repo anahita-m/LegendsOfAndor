@@ -45,7 +45,7 @@ public class BoardContents : Graph
 
         _singleton = this;
         // this allows this gameObject to persist between different scenes.
-        DontDestroyOnLoad(this.gameObject);
+//        DontDestroyOnLoad(this.gameObject);
     }
 
 

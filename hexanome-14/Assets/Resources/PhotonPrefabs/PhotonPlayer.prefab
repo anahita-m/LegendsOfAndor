@@ -110,6 +110,8 @@ MonoBehaviour:
   myAvatar: {fileID: 0}
   Id: 0
   PlayerName: 
+  initPosition: 
+  initialPos: {x: 0, y: 0, z: 0}
 --- !u!114 &390522815359460828
 MonoBehaviour:
   m_ObjectHideFlags: 0

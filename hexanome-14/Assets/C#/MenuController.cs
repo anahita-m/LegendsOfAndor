@@ -14,24 +14,24 @@ public class MenuController : MonoBehaviour
             if (whichCharacter == 0 || whichCharacter == 1)
             {
                 PlayerPrefs.SetString("MyCharacter", "wizard");
-                PlayerPrefs.SetInt("CharacterRank", 34);
+                PlayerPrefs.SetString("CharacterRank", "34");
             }
             if (whichCharacter == 2 || whichCharacter == 3)
             {
                 PlayerPrefs.SetString("MyCharacter", "archer");
-                PlayerPrefs.SetInt("CharacterRank", 25);
+                PlayerPrefs.SetString("CharacterRank", "25");
 
             }
             if (whichCharacter == 4 || whichCharacter == 5)
             {
                 PlayerPrefs.SetString("MyCharacter", "dwarf");
-                PlayerPrefs.SetInt("CharacterRank", 7);
+                PlayerPrefs.SetString("CharacterRank", "7");
 
             }
             if (whichCharacter == 6 || whichCharacter == 7)
             {
                 PlayerPrefs.SetString("MyCharacter", "warrior");
-                PlayerPrefs.SetInt("CharacterRank", 14);
+                PlayerPrefs.SetString("CharacterRank", "14");
 
             }
             //PlayerPrefs.SetString("MyCharacter", whichCharacter);
