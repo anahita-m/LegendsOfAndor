@@ -5,7 +5,7 @@ using Photon.Pun;
 using System;
 using UnityEngine.SceneManagement;
 
-public class Monster : Fightable, Movable
+public class Monster : MonoBehaviour, Fightable, Movable
 {
     private MoveStrategy moveStrat;
     private DiceRollStrategy diceRollStrat;

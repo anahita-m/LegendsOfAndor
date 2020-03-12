@@ -112,6 +112,7 @@ MonoBehaviour:
   PlayerName: 
   initPosition: 
   initialPos: {x: 0, y: 0, z: 0}
+  skral: {fileID: 0}
 --- !u!114 &390522815359460828
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class PhotonPlayer : MonoBehaviour
     public string PlayerName;
     public string initPosition;
     public Vector3 initialPos;
-
+    public GameObject skral;
 
 
     // Start is called before the first frame update

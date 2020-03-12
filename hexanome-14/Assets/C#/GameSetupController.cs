@@ -29,7 +29,6 @@ using System;
 using ExitGames.Client.Photon;
 using Andor;
 
-
 public class GameSetupController : MonoBehaviourPunCallbacks
 {
     //Vector3 intPos = GameObject.FindWithTag().GetComponent<BoardPosition>().getMiddle();
@@ -95,6 +94,65 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         return playerObject;
     }
 
+
+    private void createSkral()
+    {
+        int spawnPicker = UnityEngine.Random.Range(0, GameSetupController.GS.spawnPoints.Length);
+
+        GameObject skralObject = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Skral"), GameObject.FindWithTag("9").GetComponent<BoardPosition>().getMiddle(), GameSetupController.GS.spawnPoints[spawnPicker].rotation, 0);
+        skralObject.AddComponent<Monster>();
+        // skralObject.SetActive(true);
+        skralObject.tag = "skral";
+    }
+
+    private void createGors()
+    {
+        foreach (string gorTile in gorLocations())
+        {
+            int spawnPicker = UnityEngine.Random.Range(0, GameSetupController.GS.spawnPoints.Length);
+
+            GameObject gorObject = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Gor"), GameObject.FindWithTag(gorTile).GetComponent<BoardPosition>().getMiddle(), GameSetupController.GS.spawnPoints[spawnPicker].rotation, 0);
+            gorObject.AddComponent<Monster>();
+            // skralObject.SetActive(true);
+            gorObject.tag = "gor";
+        }
+    }
+
+    private void createFarmers()
+    {
+        foreach (string farmerTile in farmerLocations())
+        {
+            int spawnPicker = UnityEngine.Random.Range(0, GameSetupController.GS.spawnPoints.Length);
+
+            GameObject farmerObject = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Farmer"), GameObject.FindWithTag(farmerTile).GetComponent<BoardPosition>().getMiddle(), GameSetupController.GS.spawnPoints[spawnPicker].rotation, 0);
+           //farmerObject.AddComponent<Monster>();
+            // skralObject.SetActive(true);
+            farmerObject.tag = "farmer";
+        }
+    }
+
+
+
+    private string[] gorLocations()
+    {
+        return new string[]{
+            "8",
+            "20",
+            "21",
+            "26",
+            "48"
+        };
+    }
+
+    private string[] farmerLocations()
+    {
+        return new string[]{
+            "24",
+            "36"
+        };
+    }
+
+
     // Start is called before the first frame update
     //Instantiates player prefab.
     void Start()
@@ -103,10 +161,12 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsConnected)
         {
             GameObject entry = CreatePlayer();
-
             string playerName = PhotonNetwork.LocalPlayer.NickName;
             int id = PhotonNetwork.LocalPlayer.ActorNumber;
             entry.GetComponent<PhotonPlayer>().Initialize(id, playerName);
+            createSkral();
+            createGors();
+            createFarmers();
         }
     }
 
