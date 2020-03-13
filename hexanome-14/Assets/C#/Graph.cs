@@ -159,11 +159,6 @@ public class Graph : MonoBehaviour
 
                 int currentPos = convertToInt(neighbourIndices[0]);
 
-                // have only added up to here in the csv
-                if (currentPos > 62)
-                {
-                    break;
-                }
                 // skip fstElem: currentPos so we don't add it as a neighbour of itself
                 addNeighboursOf(currentPos, neighbourIndices.Skip(1).ToArray());
             }

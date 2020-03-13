@@ -33,9 +33,14 @@ namespace Andor
 
         void Awake()
         {
-            if (photonView.IsMine){
-                click_handler = GetComponent<Player_click_handler>();
+            click_handler = gameObject.GetComponent<Player_click_handler>();
+            if (!gameObject.GetComponent<Player_click_handler>())
+            {
+                Debug.Log("don't got clicker");
+                // gameObject.AddComponent<Player_click_handler>();
+                // gameObject.GetComponent<Player_click_handler>().enabled = true;
             }
+ ;
 
         }
 
@@ -124,11 +129,20 @@ namespace Andor
 
         void Update()
         {
-            if (photonView.IsMine)
-                click_handler.checkClick(newPos);
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (photonView.IsMine)
+                    click_handler.checkClick(newPos, this);
+
+            }
+            moveToNewPos(newPos);
+            // if (!gameObject.GetComponent<Player_click_handler>())
+            // {
+            // }
+            // gameObject.GetComponent<Player_click_handler>().checkClick(newPos);
         }
 
-        public void moveToNewPos()
+        public void moveToNewPos(Vector3 newPos)
         {
             float x1 = transform.position[0];
             float x2 = transform.position[1];

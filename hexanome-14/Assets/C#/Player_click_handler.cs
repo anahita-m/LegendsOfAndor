@@ -7,30 +7,26 @@ using Photon.Pun;
 namespace Andor{
 public class Player_click_handler : MonoBehaviour
 {
-    private Player player;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        if (photonView.IsMine)
-            player = GetComponent<Player>();
+        // player = gameObject.GetComponent<Player>();
     }
 
-    public void checkClick(Vector3 currPos)
+
+    public void checkClick(Vector3 currPos, Andor.Player player)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            string clickedTag = getClickedGameObjectTag();
-            if (clickedTag == "") return;
+        string clickedTag = getClickedGameObjectTag();
+        if (clickedTag == "") return;
 
-            Vector3 clickedPos = getClickedPos(clickedTag);
-            Vector3 invalidFlag = new Vector3(-10000, 1, 1);
+        Vector3 clickedPos = getClickedPos(clickedTag);
+        Vector3 invalidFlag = new Vector3(-10000, 1, 1);
 
-            // sets player.newPos = clickedPos if clickedPos is valid
-            player.setNewPos((clickedPos != invalidFlag) ? clickedPos : currPos);
-        }
+        // sets player.newPos = clickedPos if clickedPos is valid
+        player.setNewPos((clickedPos != invalidFlag) ? clickedPos : currPos);
 
         // always do this, makes movement go slowly not jump from one spot to nxt
-        player.moveToNewPos();
+        // GetComponent<Player>().moveToNewPos();
     }
 
 
