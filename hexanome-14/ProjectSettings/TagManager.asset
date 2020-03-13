@@ -105,6 +105,8 @@ TagManager:
   - Player-Male-Warrior
   - based
   - Player-Male-Archer
+  - well
+  - chat_text_message
   layers:
   - Default
   - TransparentFX

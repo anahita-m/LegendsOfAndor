@@ -34,9 +34,11 @@ public class chat : MonoBehaviourPun
 
     public void buttonIsClicked()
     {
+        Debug.Log("chat button clicked");
         string message = input.text;
-        object[] data = { message, base.photonView.ViewID, PhotonNetwork.LocalPlayer.NickName };
-
+        Debug.Log("got the input");
+        object[] data = { message, photonView.ViewID, PhotonNetwork.LocalPlayer.NickName };
+        Debug.Log("sent the data");
         PhotonNetwork.RaiseEvent((byte)53, data, sendToAllOptions, SendOptions.SendReliable);
     }
 
@@ -44,9 +46,9 @@ public class chat : MonoBehaviourPun
     {
         string messageToBeSent = playerNickname + ": ";
         messageToBeSent += Message;
-
+        Debug.Log("reached boo");
         GameObject text = GameObject.Find("/Canvas/Chat/Scroll View/Viewport/Text");
-
+        Debug.Log("reached boo 2");
         text.GetComponent<Text>().text = messageToBeSent;
     }
 

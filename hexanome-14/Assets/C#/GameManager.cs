@@ -15,4 +15,29 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    void OnClickMovePlayer()
+    {
+
+    }
+
+    void OnClickPass()
+    {
+
+    }
+
+    void OnClickEndDay()
+    {
+        
+    }
+
+    void OnClick()
+    {
+
+    }
+
+    void OnClickBattle()
+    {
+
+    }
 }
