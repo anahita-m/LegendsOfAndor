@@ -82,5 +82,17 @@ public class Hero : MonoBehaviour, Movable, Fightable
         this.gold = gold;
     }
 
+    //void OnMouseOver()
+    //{
+    //    int g = this.getGold();
+    //    Debug.Log("Player has: " + g);
+    //}
 
+    void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0)){
+            int g = this.getGold();
+            Debug.Log("Player has: " + g);
+        }
+    }
 }

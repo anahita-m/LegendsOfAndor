@@ -103,6 +103,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         skralObject.AddComponent<Monster>();
         // skralObject.SetActive(true);
         skralObject.tag = "skral";
+        DontDestroyOnLoad(skralObject);
     }
 
     private void createGors()
@@ -115,6 +116,8 @@ public class GameSetupController : MonoBehaviourPunCallbacks
             gorObject.AddComponent<Monster>();
             // skralObject.SetActive(true);
             gorObject.tag = "gor";
+            DontDestroyOnLoad(gorObject);
+
         }
     }
 
@@ -128,10 +131,48 @@ public class GameSetupController : MonoBehaviourPunCallbacks
            //farmerObject.AddComponent<Monster>();
             // skralObject.SetActive(true);
             farmerObject.tag = "farmer";
+            DontDestroyOnLoad(farmerObject);
+        }
+    }
+
+    private void createWells()
+    {
+        foreach (string wellTile in wellLocations())
+        {
+            int spawnPicker = UnityEngine.Random.Range(0, GameSetupController.GS.spawnPoints.Length);
+
+            GameObject wellObject = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Well"), GameObject.FindWithTag(wellTile).GetComponent<BoardPosition>().getMiddle(), GameSetupController.GS.spawnPoints[spawnPicker].rotation, 0);
+            //farmerObject.AddComponent<Monster>();
+            // skralObject.SetActive(true);
+            wellObject.tag = "well";
+            DontDestroyOnLoad(wellObject);
+        }
+    }
+
+    private void createMerchants()
+    {
+        foreach (string merchantTile in merchantLocations())
+        {
+            int spawnPicker = UnityEngine.Random.Range(0, GameSetupController.GS.spawnPoints.Length);
+
+            GameObject merchantObject = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Merchant"), GameObject.FindWithTag(merchantTile).GetComponent<BoardPosition>().getMiddle(), GameSetupController.GS.spawnPoints[spawnPicker].rotation, 0);
+            //farmerObject.AddComponent<Monster>();
+            // skralObject.SetActive(true);
+            merchantObject.tag = "merchant";
+            DontDestroyOnLoad(merchantObject);
         }
     }
 
 
+    private string[] wellLocations()
+    {
+        return new string[]{
+            "5",
+            "35",
+            "45",
+            "55"
+        };
+    }
 
     private string[] gorLocations()
     {
@@ -152,6 +193,15 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         };
     }
 
+    private string[] merchantLocations()
+    {
+        return new string[]{
+            "18",
+            "57",
+            "71"
+        };
+    }
+
 
     // Start is called before the first frame update
     //Instantiates player prefab.
@@ -167,6 +217,8 @@ public class GameSetupController : MonoBehaviourPunCallbacks
             createSkral();
             createGors();
             createFarmers();
+            createWells();
+            createMerchants();
         }
     }
 

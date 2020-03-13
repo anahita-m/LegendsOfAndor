@@ -75,9 +75,14 @@ namespace Andor
 
         public Dictionary<string, int> playerGold;
 
-
-
-
+        void OnMouseOver()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                int g = myHero.getGold();
+                Debug.Log("Player has: " + g);
+            }
+        }
 
 
         [PunRPC]
@@ -225,7 +230,7 @@ namespace Andor
 
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
-            Debug.Log("tryna write or read");
+            //Debug.Log("tryna write or read");
             if (stream.IsWriting)
             {
                 stream.SendNext(transform.position);
