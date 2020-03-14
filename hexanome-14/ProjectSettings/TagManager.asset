@@ -107,6 +107,7 @@ TagManager:
   - Player-Male-Archer
   - well
   - chat_text_message
+  - startandorgame
   layers:
   - Default
   - TransparentFX
