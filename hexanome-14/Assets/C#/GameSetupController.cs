@@ -28,6 +28,7 @@ using System.IO;
 using System;
 using ExitGames.Client.Photon;
 using Andor;
+using UnityEngine.UI;
 
 public class GameSetupController : MonoBehaviourPunCallbacks
 {
@@ -43,6 +44,8 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     //public Vector3[] initialPositions;
     public String initPosition;
     public Vector3 initialPos;
+    public Button startButton;
+    public int c = 0;
 
     private void Awake()
     {
@@ -202,13 +205,20 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         };
     }
 
+    public bool StartGameOnClick()
+    {
+        Debug.Log("returning true");
+        return true;
+    }
+
 
     // Start is called before the first frame update
     //Instantiates player prefab.
     void Start()
     {
         IsSpawningPrefabs = true;
-        if (PhotonNetwork.IsConnected)
+        if (PhotonNetwork.IsConnected && StartGameOnClick())
+            Debug.Log("checked start");
         {
             GameObject entry = CreatePlayer();
             string playerName = PhotonNetwork.LocalPlayer.NickName;

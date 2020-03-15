@@ -1075,6 +1075,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6493355788534115835, guid: 60fb79643985068418713f9a1a7fb732,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834657012887923483, guid: 60fb79643985068418713f9a1a7fb732,
+        type: 3}
+      propertyPath: m_Text
+      value: Join Lobby!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60fb79643985068418713f9a1a7fb732, type: 3}
 --- !u!1 &7834657012677400654 stripped

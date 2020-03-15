@@ -195,6 +195,7 @@ namespace Andor
         public void moveTo(Vector3 newPos)
         {
             transform.position = newPos;
+            GameConsole.instance.UpdateFeedback("Player Has Moved");
 
         }
 
