@@ -84,6 +84,31 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         Debug.Log("Reached Here");
         playerObject.AddComponent<Andor.Player>();
         playerObject.AddComponent<Hero>();
+
+        int spawnPicker = UnityEngine.Random.Range(0, GameSetupController.GS.spawnPoints.Length);
+
+        if (PlayerPrefs.GetString("MyCharacter") == "archer")
+        {
+            Vector3 archPos = new Vector3(-6.13f, 29.90f, 0f);
+            GameObject timetrackerobj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "archerTimeTracker"), archPos, GameSetupController.GS.spawnPoints[spawnPicker].rotation);
+        }
+        if (PlayerPrefs.GetString("MyCharacter") == "wizard")
+        {
+            Vector3 wizPos = new Vector3(-8.13f, 29.90f, 0f);
+            GameObject timetrackerobj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "archerTimeTracker"), wizPos, GameSetupController.GS.spawnPoints[spawnPicker].rotation);
+        }
+        if (PlayerPrefs.GetString("MyCharacter") == "warrior")
+        {
+            Vector3 warPos = new Vector3(-10.13f, 29.90f, 0f);
+            GameObject timetrackerobj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "archerTimeTracker"), warPos, GameSetupController.GS.spawnPoints[spawnPicker].rotation);
+        }
+        if (PlayerPrefs.GetString("MyCharacter") == "dwarf")
+        {
+            Vector3 dwarfPos = new Vector3(-12.13f, 29.90f, 0f);
+            GameObject timetrackerobj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "archerTimeTracker"), dwarfPos, GameSetupController.GS.spawnPoints[spawnPicker].rotation);
+        }
+
+
         Debug.Log("Reached Here 3");
         if (PlayerPrefs.HasKey("MyCharacter"))
         {
