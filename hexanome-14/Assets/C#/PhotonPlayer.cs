@@ -13,6 +13,8 @@ public class PhotonPlayer : MonoBehaviour
     public string initPosition;
     public Vector3 initialPos;
     public GameObject skral;
+    public Dictionary<string, string> playerPositions = new Dictionary<string, string>();
+
 
 
     // Start is called before the first frame update
@@ -26,7 +28,20 @@ public class PhotonPlayer : MonoBehaviour
 
         if (PV.IsMine)
         {
+            //this is where
             initPosition = PlayerPrefs.GetString("CharacterRank");
+            string character = PlayerPrefs.GetString("MyCharacter");
+            playerPositions.Add(character, initPosition);
+            Debug.Log(playerPositions.Count);
+            Debug.Log(PhotonNetwork.PlayerList.Length);
+
+            if (playerPositions.Count == PhotonNetwork.PlayerList.Length)
+            {
+                BoardContents.initAndGet(playerPositions);
+                Debug.Log("Init positions");
+
+            }
+
             initialPos = GameObject.FindWithTag(initPosition).GetComponent<BoardPosition>().getMiddle();
 
             Debug.Log("Instantiating avatar2");

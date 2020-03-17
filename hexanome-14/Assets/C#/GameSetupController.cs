@@ -83,6 +83,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         //GameObject.FindWithTag("14").GetComponent<BoardPosition>().getMiddle(), Quaternion.identity, 0);//
         Debug.Log("Reached Here");
         playerObject.AddComponent<Andor.Player>();
+        //playerObject.AddComponent<Andor.Player>().setPlayerPos(PlayerPrefs.GetString("CharacterRank"));
         playerObject.AddComponent<Hero>();
 
         int spawnPicker = UnityEngine.Random.Range(0, GameSetupController.GS.spawnPoints.Length);

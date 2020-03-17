@@ -22,6 +22,9 @@ namespace Andor
         // and Sphere-Male-Dwarf. sphere object is attached to this script.
         private string myTag;
         private string heroType;
+        public string position;
+        public string hour;
+        public string playerTag;
 
         private Hero myHero;
         // Will need to use this to verify things like: 
@@ -29,6 +32,15 @@ namespace Andor
         // private Screen lookingAt;
 
         public string NickName { get; internal set; }
+
+        public Vector3 hour1 = new Vector3(1.13f, 30.11f, 0f);
+        public Vector3 hour2 = new Vector3(5.26f, 30.11f, 0f);
+        public Vector3 hour3 = new Vector3(9.48f, 30.11f, 0f);
+        public Vector3 hour4 = new Vector3(13.54f, 30.11f, 0f);
+        public Vector3 hour5 = new Vector3(17.79f, 30.11f, 0f);
+        public Vector3 hour6 = new Vector3(21.81f, 30.11f, 0f);
+        public Vector3 hour7 = new Vector3(26.06f, 30.11f, 0f);
+
 
         void Start()
         {
@@ -45,9 +57,10 @@ namespace Andor
                 //else { setTag("Player-Male-Dwarf"); }
             }
 
-
+            playerTag = PlayerPrefs.GetString("MyCharacter");
             myHero = new Hero();
             playerGold = new Dictionary<string, int>();
+            position = PlayerPrefs.GetString("CharacterRank");
 
             myHero.setGold(UnityEngine.Random.Range(0, 10));
             updateCoin(myTag, myHero.getGold());
@@ -55,6 +68,29 @@ namespace Andor
             // if (!photonView.IsMine && GetComponent<PlayerController>() != null)
             // Destroy(GetComponent<PlayerController>());
         }
+
+
+        public string getHour()
+        {
+            return this.hour;
+        }
+
+        public void setHour(string h)
+        {
+            hour = h;
+        }
+
+        //GET POSITIONS FROM BOARD POSITIONS!
+
+        //public string getPlayerPos()
+        //{
+        //    return this.position;
+        //}
+
+        //public void setPlayerPos(string pos)
+        //{
+        //    position = pos;
+        //}
 
         public void setTag(string ID)
         {
@@ -148,7 +184,7 @@ namespace Andor
                 Vector3 newPos = getClickedPos(clickedTag);
 
                 if (newPos != new Vector3(-10000, 1, 1))
-                    moveTo(newPos);
+                    moveTo(clickedTag, newPos);
             }
         }
 
@@ -192,10 +228,13 @@ namespace Andor
 
         }
 
-        public void moveTo(Vector3 newPos)
+        public void moveTo(string newLoc, Vector3 newPos)
         {
             transform.position = newPos;
-            GameConsole.instance.UpdateFeedback("Player Has Moved");
+
+            BoardContents.setNewPlayerPosition(playerTag, newLoc);
+            GameConsole.instance.UpdateFeedback("Player " + playerTag + " has moved to " + newLoc);
+
 
         }
 

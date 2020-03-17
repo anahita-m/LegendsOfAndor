@@ -90,7 +90,7 @@ public class Graph : MonoBehaviour
 
         // destNode has its attribute: prev set correctly now
         // Node destNode = ref bfs(nodes[srcIndex], nodes[destIndex]);
-        Node destNode = new Node(destIndex, new int[] {0,1,2});
+        Node destNode = new Node(destIndex, new int[] {0,1,2,3});
         bfs(nodes[srcIndex], nodes[destIndex], ref destNode);
 
         return calculateDistance(ref destNode, destIndex);
