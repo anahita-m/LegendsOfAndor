@@ -82,5 +82,14 @@ public class Hero : MonoBehaviour, Movable, Fightable
         this.gold = gold;
     }
 
+    public int getWillPower()
+    {
+        return this.willPower;
+    }
+
+    public int getStrength()
+    {
+        return this.strength;
+    }
 
 }

@@ -145,6 +145,7 @@ public class initGame : MonoBehaviour
         string masterTag = createMasterClass();
         createBoard(masterTag);
 
+
         //    {
 
         //    }
@@ -155,5 +156,6 @@ public class initGame : MonoBehaviour
         masterClass master = masterClassObject.GetComponent<masterClass>();
         master.initMasterClass("MainCamera", heroAtlas, baseObject, initialPlayerOrder(), getInitialPositions());
         
+
     }
 }
