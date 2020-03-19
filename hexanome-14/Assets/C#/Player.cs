@@ -17,12 +17,14 @@ namespace Andor
         private Player_click_handler click_handler;
 
         private string userName;
+        private string currentScene;
 
         // ie Player-Male-Dwarf
         // also encodes the corresponding hero type
         // and Sphere-Male-Dwarf. sphere object is attached to this script.
         private string myTag;
         private string heroType;
+        public ScreenManager screenManager;
 
         private Hero myHero;
         // Will need to use this to verify things like: 
@@ -33,6 +35,10 @@ namespace Andor
 
         void Awake()
         {
+            screenManager = gameObject.GetComponent<ScreenManager>();
+            if (!screenManager)
+                Debug.Log("couldnt find a screenManager script attached, note the player script is used in two diff prefabs, so this is probably cuz one of these doesnt have this script attached");
+
             click_handler = gameObject.GetComponent<Player_click_handler>();
             if (!gameObject.GetComponent<Player_click_handler>())
             {
@@ -40,7 +46,6 @@ namespace Andor
                 // gameObject.AddComponent<Player_click_handler>();
                 // gameObject.GetComponent<Player_click_handler>().enabled = true;
             }
- ;
 
         }
 
@@ -86,6 +91,7 @@ namespace Andor
         {
             return myTag;
         }
+
 
         public Dictionary<string, int> playerGold;
 
@@ -156,6 +162,14 @@ namespace Andor
         }
 
 
+        public void changeOfScene(string newSceneTag)
+        {
+            currentScene = newSceneTag;
+        }
+        public string currSceneTag()
+        {
+            return currentScene;
+        }
 
         // extracts the hero tag from our own tag
         // EX.)   if (myTag == "Player-Male-Dwarf") -> output "Male-Dwarf"

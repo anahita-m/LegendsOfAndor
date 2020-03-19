@@ -1,0 +1,29 @@
+create empty -> UI -> button
+
+change its rect transform
+
+COLOR::::::
+set source img of button to NONE -- click the thing in inspector n find none value
+
+THEN set color of image to desired color
+
+THEN set the color of the text child object of the button
+
+
+font BS:
+using just arial for everything
+
+--making it bold usually
+
+the exit game button looked like shit until I changed its text obj::
+    -- right ABOVE color, set best fit to true, then cap the max size.
+
+    note that im not using best fit actually^
+
+
+colors used:
+
+battle background color: 166,166,166
+
+roll dice text color: 111,87,58
+

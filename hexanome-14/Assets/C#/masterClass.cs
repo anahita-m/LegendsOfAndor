@@ -62,14 +62,6 @@ public class masterClass : MonoBehaviour
         // squished in z direction
         sphereScale = new Vector3(2.2f, 2.2f, 0.12f);
 
-        // what to do about this? should be per player..
-        // TODO: make a PlayerState Object that each player owns.
-        // stores strength, willpower, screen, sphereTag, currentlySelectedBoardPos
-        // all the mutable things.
-        //
-        // -- allows me to make simple common checks like don't move if currentlySelected = currentPosition
-        // all within one class.
-        //
         // -- actually a great idea since the cleaner the hero class's the better !
         currentlySelectedBoardPos = "8";
     }
@@ -87,7 +79,6 @@ public class masterClass : MonoBehaviour
         tm.initTurnManager(baseObject, orderedPlayerIDs, initialPositions);
     }
 
-
     // creates a object for each sprite ie game tile
     private void loadBoard()
     {
@@ -99,13 +90,6 @@ public class masterClass : MonoBehaviour
         foreach(Sprite sprite in sprites)
         {
             int gameCellNumber = createBoardPosition(sprite);
-
-            // ie hero is placed at game tile 8, Todo: not hard-code this
-            // I am pretty sure we don't need this anymore -- should be handled by creating this class's priv turnManager
-            // and passing in the initialPositions
-            if (gameCellNumber == 8)
-            {
-            }
         }
     }
 
@@ -249,13 +233,6 @@ public class masterClass : MonoBehaviour
         // locally we should defs show whatever relevant info at this point like the option to move
         // to this point if its their turn.
 
-    }
-
-
-
-    public void notifyClick()
-    {
-        // Todo: make this be where we check if the player who clicked may move their hero there.
     }
 
 

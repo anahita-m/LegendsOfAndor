@@ -8,16 +8,31 @@ namespace Andor{
 public class Player_click_handler : MonoBehaviour
 {
     // Start is called before the first frame update
+    private CommandRouter commands;
     void Start()
     {
         // player = gameObject.GetComponent<Player>();
+        CommandRouter commands = gameObject.GetComponent<CommandRouter>();
     }
 
 
+    // pass in current screen as parameter
     public void checkClick(Vector3 currPos, Andor.Player player)
     {
         string clickedTag = getClickedGameObjectTag();
         if (clickedTag == "") return;
+
+        List<string> clickables = player.screenManager.getClickables(player.currSceneTag());
+        if (!clickables.Contains(clickedTag))
+            return;
+
+        // now hook this up to the commandRouter and we can check
+
+        // Command cmd = commands
+        // if (cmd.isLegal())
+        // {
+        //     cmd.execute();
+        // }
 
         Vector3 clickedPos = getClickedPos(clickedTag);
         Vector3 invalidFlag = new Vector3(-10000, 1, 1);

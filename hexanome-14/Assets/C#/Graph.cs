@@ -5,7 +5,7 @@ using System.IO;
 using System;
 using System.Linq;
 
-public class Graph : MonoBehaviour
+public class Graph : MonoBehaviour, IEnumerable<Node>
 {
     //TODO: --make a getAllPaths(distance d) function so we can show all possible
     // moves from the current position upon turn change
@@ -16,11 +16,12 @@ public class Graph : MonoBehaviour
     // private Node[] nodes;
     // private Dictionary<int, int[]> nodes;
     private Node[] nodes;
+    private int numNodes;
 
 
     // protected constructor since this class is a singleton.
     // ie only children can call the constructor
-    protected Graph()
+    void Start()
     {
         // nodes = new Dictionary<int, int[]>();
         nodes = new Node[85];
@@ -63,6 +64,19 @@ public class Graph : MonoBehaviour
         return withinDist;
     }
 
+
+    // these allow IEnum fxns allow us to iterate over all nodes
+    // a foreach loop
+    public IEnumerator<Node> GetEnumerator()
+    {
+        for(int i = 0; i < nodes.Length; i++)
+            yield return nodes[i];
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
 
 
     private void addNeighboursOf(int currentPos, string[] neighbours)
@@ -148,6 +162,7 @@ public class Graph : MonoBehaviour
 
     private void readGraphCSV()
     {
+        numNodes = 0;
         using(var reader = new StreamReader(@"./Assets/CSV/adjacencyList.txt"))
         {
             while (!reader.EndOfStream)
@@ -161,11 +176,16 @@ public class Graph : MonoBehaviour
 
                 // skip fstElem: currentPos so we don't add it as a neighbour of itself
                 addNeighboursOf(currentPos, neighbourIndices.Skip(1).ToArray());
+                numNodes++;
             }
         }
     }
 
 
+    public int getNumBoardPos()
+    {
+        return numNodes;
+    }
 
 
 // ------ some helper functions -------

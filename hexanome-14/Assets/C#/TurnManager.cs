@@ -10,7 +10,7 @@ public class TurnManager : MonoBehaviour
     // maybe this is in a sunriseBox script ??
     private Queue turnOrder;
     // keys are player tags, values are their positions
-    private BoardContents boardContents;
+    public BoardContents boardContents;
 
 
     public void initTurnManager(GameObject baseObject, string[] orderPlayers, string[] initialPositions)
