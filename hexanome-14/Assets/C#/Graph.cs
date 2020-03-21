@@ -13,20 +13,39 @@ public class Graph : MonoBehaviour, IEnumerable<Node>
 
     // if a monster is on pos: nodes[i][0].
     // then it moves to   pos: nodes[i][1].
-    // private Node[] nodes;
-    // private Dictionary<int, int[]> nodes;
-    private Node[] nodes;
-    private int numNodes;
+    // protected Node[] nodes;
+    // protected Dictionary<int, int[]> nodes;
+    public Node[] nodes;
+    protected int numNodes;
 
-
-    // protected constructor since this class is a singleton.
-    // ie only children can call the constructor
-    void Start()
+    public void init()
     {
-        // nodes = new Dictionary<int, int[]>();
         nodes = new Node[85];
         loadNeighbours();
     }
+
+
+    // these allow IEnum fxns allow us to iterate over all nodes
+    // a foreach loop
+    public IEnumerator<Node> GetEnumerator()
+    {
+        for(int i = 0; i < nodes.Length; i++)
+            yield return nodes[i];
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+
+    public Node[] getNodes()
+    {
+        if (nodes == null)
+            loadNeighbours();
+        return nodes;
+    }
+
+
 
     public int getDistance(string src, string dest)
     {
@@ -65,21 +84,7 @@ public class Graph : MonoBehaviour, IEnumerable<Node>
     }
 
 
-    // these allow IEnum fxns allow us to iterate over all nodes
-    // a foreach loop
-    public IEnumerator<Node> GetEnumerator()
-    {
-        for(int i = 0; i < nodes.Length; i++)
-            yield return nodes[i];
-    }
-
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
-    }
-
-
-    private void addNeighboursOf(int currentPos, string[] neighbours)
+    protected void addNeighboursOf(int currentPos, string[] neighbours)
     {
         List<int> foundNeighbours = new List<int>();
 
@@ -103,7 +108,7 @@ public class Graph : MonoBehaviour, IEnumerable<Node>
 
 
 
-    private int calculateDistance(ref Node current, int destIndex)
+    protected int calculateDistance(ref Node current, int destIndex)
     {
         int dist = 0;
         while (current.getIndex() != destIndex)
@@ -118,7 +123,7 @@ public class Graph : MonoBehaviour, IEnumerable<Node>
     // maybe should change the bfs to store a list of int[]'s indicating the path
     // instead of relying on ref variables.
     // void since we use pathNode
-    private void bfs(Node src, Node dest, ref Node pathNode)
+    protected void bfs(Node src, Node dest, ref Node pathNode)
     {
         Queue queue = new Queue();
         // src.setPrev(null);
@@ -154,13 +159,13 @@ public class Graph : MonoBehaviour, IEnumerable<Node>
     }
 
 
-    private void loadNeighbours()
+    public void loadNeighbours()
     {
         readGraphCSV();
     }
 
 
-    private void readGraphCSV()
+    protected void readGraphCSV()
     {
         numNodes = 0;
         using(var reader = new StreamReader(@"./Assets/CSV/adjacencyList.txt"))
@@ -190,7 +195,7 @@ public class Graph : MonoBehaviour, IEnumerable<Node>
 
 // ------ some helper functions -------
 
-    private int convertToInt(string prev)
+    protected int convertToInt(string prev)
     {
         int newInt;
         bool success = Int32.TryParse(prev, out newInt);
@@ -204,7 +209,7 @@ public class Graph : MonoBehaviour, IEnumerable<Node>
         return newInt;
     }
 
-    private int[] toIntArray(string[] stringArr)
+    protected int[] toIntArray(string[] stringArr)
     {
         int[] intArr = new int[stringArr.Length];
         for (int i = 0; i < stringArr.Length; i++)

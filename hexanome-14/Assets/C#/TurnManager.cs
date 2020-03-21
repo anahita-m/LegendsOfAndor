@@ -16,7 +16,8 @@ public class TurnManager : MonoBehaviour
     public void initTurnManager(GameObject baseObject, string[] orderPlayers, string[] initialPositions)
     {
         gameObject.AddComponent<BoardContents>();
-        boardContents = gameObject.GetComponent<BoardContents>();
+        boardContents = BoardContents._singleton;
+        // boardContents = gameObject.GetComponent<BoardContents>();
 
 
         sunriseBox = new Queue();

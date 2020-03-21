@@ -86,7 +86,7 @@ public class CustomMatchmakingRoomController : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsMasterClient)
         {
             PhotonNetwork.CurrentRoom.IsOpen = false; //Comment out if you want player to join after the game has started
-            PhotonNetwork.LoadLevel(2);
+            PhotonNetwork.LoadLevel(3);
             roomPanel.SetActive(false);
           //  chooseCharacter.SetActive(true);
         }

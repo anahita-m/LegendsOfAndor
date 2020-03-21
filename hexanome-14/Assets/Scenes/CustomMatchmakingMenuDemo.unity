@@ -402,6 +402,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FemaleArcher
       objectReference: {fileID: 0}
+    - target: {fileID: 1487104242449703723, guid: 3848e8b03b9824e61afe33d692bc305c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1808165318599632928, guid: 3848e8b03b9824e61afe33d692bc305c,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -9,81 +9,54 @@ endif
 set shortmess=aoO
 badd +19 del.cs
 badd +39 term://.//24970:/bin/bash
-badd +6 Screens/fight/FightScreen.cs
+badd +24 Screens/fight/FightScreen.cs
 badd +54 term://.//26530:/bin/bash
-badd +47 Screens/ScreenManager.cs
+badd +1 Screens/ScreenManager.cs
 badd +47 term://.//28057:/bin/bash
-badd +172 C\#/Player.cs
-badd +25 C\#/Player_click_handler.cs
+badd +144 C\#/Player.cs
+badd +56 C\#/Player_click_handler.cs
 badd +43 term://.//21439:/bin/bash
 badd +25 term://.//22414:/bin/bash
-badd +144 C\#/Graph.cs
-badd +47 C\#/Node.cs
-badd +82 C\#/masterClass.cs
-badd +13 C\#/TurnManager.cs
-badd +28 C\#/BoardContents.cs
+badd +16 C\#/Graph.cs
+badd +28 C\#/Node.cs
+badd +88 C\#/masterClass.cs
+badd +19 C\#/TurnManager.cs
+badd +1 C\#/BoardContents.cs
 badd +28 term://.//32300:/bin/bash
-badd +39 Screens/Screen.cs
+badd +17 Screens/Screen.cs
 badd +47 term://.//5474:/bin/bash
-badd +11 Screens/AndorBoardScreen.cs
+badd +22 Screens/AndorBoardScreen.cs
 badd +20 term://.//16513:/bin/bash
 badd +20 term://.//20152:/bin/bash
 badd +21 term://.//20522:/bin/bash
+badd +124 term://.//25170:/bin/bash
+badd +20 term://.//18270:/bin/bash
+badd +20 term://.//29350:/bin/bash
+badd +89 C\#/CustomMatchmakingRoomController.cs
+badd +20 term://.//19404:/bin/bash
+badd +22 term://.//25984:/bin/bash
+badd +49 term://.//23671:/bin/bash
+badd +26 term://.//24065:/bin/bash
+badd +37 C\#/BoardPosition.cs
+badd +61 term://.//25883:/bin/bash
+badd +34 C\#/PhotonPlayer.cs
+badd +53 C\#/GameSetupController.cs
+badd +7910 ~/Documents/Mcgill/5th-year/fall-sem/andor/f2019-hexanome-14/tags
+badd +21 term://.//64000:/bin/bash
+badd +30 C\#/PlayerInfo.cs
+badd +38 C\#/MenuController.cs
+badd +136 Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerManager.cs
+badd +20 term://.//82480:/bin/bash
+badd +32 C\#/AvatarSetup.cs
+badd +68 term://.//83813:/bin/bash
+badd +21 term://.//85310:/bin/bash
+badd +46 Session.vim
+badd +23 term://.//86513:/bin/bash
 argglobal
 %argdel
 $argadd del.cs
 set stal=2
-edit del.cs
-set splitbelow splitright
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe '1resize ' . ((&lines * 24 + 26) / 53)
-exe '2resize ' . ((&lines * 25 + 26) / 53)
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 19 - ((8 * winheight(0) + 12) / 24)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-19
-normal! 09|
-wincmd w
-argglobal
-if bufexists("C\#/Graph.cs") | buffer C\#/Graph.cs | else | edit C\#/Graph.cs | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 69 - ((12 * winheight(0) + 12) / 25)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-69
-normal! 05|
-wincmd w
-exe '1resize ' . ((&lines * 24 + 26) / 53)
-exe '2resize ' . ((&lines * 25 + 26) / 53)
-tabedit C\#/Graph.cs
+edit C\#/BoardContents.cs
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -106,11 +79,61 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 70 - ((13 * winheight(0) + 12) / 25)
+let s:l = 37 - ((23 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-70
+37
+normal! 0
+wincmd w
+argglobal
+if bufexists("C\#/Node.cs") | buffer C\#/Node.cs | else | edit C\#/Node.cs | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 12) / 24)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+wincmd w
+exe '1resize ' . ((&lines * 25 + 26) / 53)
+exe '2resize ' . ((&lines * 24 + 26) / 53)
+tabedit C\#/Graph.cs
+set splitbelow splitright
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe '1resize ' . ((&lines * 24 + 26) / 53)
+exe '2resize ' . ((&lines * 25 + 26) / 53)
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 122 - ((1 * winheight(0) + 12) / 24)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+122
 normal! 0
 wincmd w
 argglobal
@@ -124,15 +147,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 18 - ((3 * winheight(0) + 12) / 24)
+let s:l = 19 - ((1 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
-normal! 0
+19
+normal! 013|
 wincmd w
-exe '1resize ' . ((&lines * 25 + 26) / 53)
-exe '2resize ' . ((&lines * 24 + 26) / 53)
+exe '1resize ' . ((&lines * 24 + 26) / 53)
+exe '2resize ' . ((&lines * 25 + 26) / 53)
 tabedit Screens/fight/FightScreen.cs
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -156,12 +179,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 14 - ((13 * winheight(0) + 25) / 50)
+let s:l = 24 - ((23 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-14
-normal! 015|
+24
+normal! 09|
 wincmd w
 argglobal
 if bufexists("Screens/Screen.cs") | buffer Screens/Screen.cs | else | edit Screens/Screen.cs | endif
@@ -174,22 +197,92 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 9 - ((8 * winheight(0) + 25) / 50)
+let s:l = 31 - ((24 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-9
-normal! 013|
+31
+normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 87 + 87) / 174)
 exe 'vert 2resize ' . ((&columns * 86 + 87) / 174)
-tabnew
+tabedit C\#/PlayerInfo.cs
 set splitbelow splitright
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+wincmd w
 wincmd t
 set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
+exe '1resize ' . ((&lines * 16 + 26) / 53)
+exe 'vert 1resize ' . ((&columns * 87 + 87) / 174)
+exe '2resize ' . ((&lines * 16 + 26) / 53)
+exe 'vert 2resize ' . ((&columns * 86 + 87) / 174)
+exe '3resize ' . ((&lines * 33 + 26) / 53)
+argglobal
+if bufexists("term://.//82480:/bin/bash") | buffer term://.//82480:/bin/bash | else | edit term://.//82480:/bin/bash | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 1 - ((0 * winheight(0) + 8) / 16)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+wincmd w
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 11 - ((4 * winheight(0) + 8) / 16)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+11
+normal! 05|
+wincmd w
+argglobal
+if bufexists("C\#/AvatarSetup.cs") | buffer C\#/AvatarSetup.cs | else | edit C\#/AvatarSetup.cs | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 13 - ((12 * winheight(0) + 16) / 33)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+13
+normal! 05|
+wincmd w
+exe '1resize ' . ((&lines * 16 + 26) / 53)
+exe 'vert 1resize ' . ((&columns * 87 + 87) / 174)
+exe '2resize ' . ((&lines * 16 + 26) / 53)
+exe 'vert 2resize ' . ((&columns * 86 + 87) / 174)
+exe '3resize ' . ((&lines * 33 + 26) / 53)
 tabnext 4
 set stal=1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

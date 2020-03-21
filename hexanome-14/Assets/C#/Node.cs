@@ -29,6 +29,7 @@ public class Node :  IEnumerable<int>
     public Node(int index, int[] neighbz)
     {
         graphIndex = index;
+        Debug.Log("just set a graphIndex to: " + graphIndex.ToString());
         neighbours = neighbz;
         // prev is set to a diff value each Graph.bfs call
     }

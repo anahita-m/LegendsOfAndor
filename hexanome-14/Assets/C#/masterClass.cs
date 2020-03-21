@@ -42,7 +42,10 @@ public class masterClass : MonoBehaviour
 
         setScriptParameters();
         createTurnManager(orderedPlayerIDs, startingPositions);
+        createScreenManager();
         loadBoard();
+        GameObject fight = (GameObject) Resources.Load("fight");
+        Instantiate(fight, new Vector3(0, 40, 0), Quaternion.identity);
 
         // TODO: map the integers in startingPositions to vector3 positions
         // maybe the best idea is for each "Node" to store it's position
@@ -77,6 +80,16 @@ public class masterClass : MonoBehaviour
         this.gameObject.AddComponent<TurnManager>();
         TurnManager tm = this.gameObject.GetComponent<TurnManager>();
         tm.initTurnManager(baseObject, orderedPlayerIDs, initialPositions);
+    }
+
+    private void createScreenManager()
+    {
+        if (GameObject.FindWithTag("ScreenManager"))
+            return;
+        GameObject baseObj = Instantiate(baseObject, gameObject.transform.position, gameObject.transform.rotation);
+        // baseObj.transform.parent = gameObject.transform;
+        baseObj.tag = "ScreenManager";
+        baseObj.AddComponent<ScreenManager>();
     }
 
     // creates a object for each sprite ie game tile

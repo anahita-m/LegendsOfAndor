@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 using System.Collections;
 
-public class BoardContents : Graph
+public class BoardContents : MonoBehaviour
 {
 
     /* This class inherits graph, a class which provides basic functions
@@ -19,34 +19,64 @@ public class BoardContents : Graph
     private Dictionary<string, string> playerPositions;
     private Dictionary<string, string> monsterPositions;
 
-    private static BoardContents _singleton;
+    public Graph graph;
+
+    public static BoardContents _singleton;
+
+    // protected constructor since this class is a singleton.
+    // ie only children can call the constructor
+    void Start()
+    {
+        // nodes = new Dictionary<int, int[]>();
+        OnEnable();
+        // loadNeighbours();
+        gameObject.AddComponent<Graph>();
+        graph = gameObject.GetComponent<Graph>();
+        graph.init();
+    }
 
     // wanted to use arraylist but the microsoft docs say it sucks, recommended this.
     // private List<Usable> articlesOnPos;
     // this should be a dictionary: <int, List<Usable>>
 
-    private bool initialized = false;
 
-    public static BoardContents getInstance
+    // public static BoardContents getInstance
+    // {
+    //     get { return _singleton; }
+    // }
+
+    void OnEnable()
     {
-        get { return _singleton; }
-    }
-
-
-    // called when a script with this object attached is loaded (before Start())
-    private void Awake()
-    {
-        if (_singleton != null && _singleton != this)
+        if (BoardContents._singleton == null)
         {
-        // only allow one gameObject with this script as a component
-            Destroy(this.gameObject);
-            return;
+            BoardContents._singleton = this;
         }
-
-        _singleton = this;
-        // this allows this gameObject to persist between different scenes.
-//        DontDestroyOnLoad(this.gameObject);
+        else
+        {
+            if (BoardContents._singleton != this)
+            {
+                Destroy(BoardContents._singleton.gameObject);
+                BoardContents._singleton = this;
+            }
+        }
+        DontDestroyOnLoad(this.gameObject);
     }
+
+
+//     // called when a script with this object attached is loaded (before Start())
+//     private void Awake()
+//     {
+//         if (_singleton != null && _singleton != this)
+//         {
+//         // only allow one gameObject with this script as a component
+//             Destroy(this.gameObject);
+//             return;
+//         }
+
+//         _singleton = this;
+//         // this allows this gameObject to persist between different scenes.
+// //        DontDestroyOnLoad(this.gameObject);
+//     }
 
 
 
@@ -76,7 +106,6 @@ public class BoardContents : Graph
     private void init(Dictionary<string, string> playerPos)
     {
         playerPositions = playerPos;
-        initialized = true;
     }
 
 

@@ -4,26 +4,23 @@ using UnityEngine;
 
 public class Screen : MonoBehaviour, IEnumerable<string>
 {
-    public ScreenManager screenManager;
     // Start is called before the first frame update
-    protected List<string> clickables;
+    protected List<string> clickables =  null;
 
-    // // for the click script
-    // public List<string> getClickableTags()
-    // {
-    // }
-
-    // // for if we can switch to this scene
-    // public void canSwitchScreens(string playerTag)
-    // {
-    // }
-
-
-
-    // Start is called before the first frame update
-    void Start()
+    // can't just run this function at Start()
+    // since the addAllClickables function likely references objects
+    // which only exist in the corresponding scene to this screen class
+    public void onSwitch()
     {
-        clickables = new List<>();
+        if (clickables == null)
+        {
+            addAllClickables();
+        }
+    }
+
+    protected virtual void addAllClickables()
+    {
+
     }
 
 
@@ -35,7 +32,12 @@ public class Screen : MonoBehaviour, IEnumerable<string>
 
     public List<string> getClickables()
     {
-        return GetEnumerator();
+        if (clickables == null)
+        {
+            Debug.Log("called GetClickables when clickables is still null");
+            return null;
+        }
+        return clickables;
     }
 
     public IEnumerator<string> GetEnumerator()

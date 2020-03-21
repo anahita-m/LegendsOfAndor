@@ -16,6 +16,7 @@ namespace Andor
         private Vector3 newPos;
         private Player_click_handler click_handler;
 
+        public bool initialized = false;
         private string userName;
         private string currentScene;
 
@@ -35,7 +36,9 @@ namespace Andor
 
         void Awake()
         {
-            screenManager = gameObject.GetComponent<ScreenManager>();
+
+            currentScene = SceneManager.GetActiveScene().name;
+            // screenManager = baseObj.GetComponent<ScreenManager>();
             if (!screenManager)
                 Debug.Log("couldnt find a screenManager script attached, note the player script is used in two diff prefabs, so this is probably cuz one of these doesnt have this script attached");
 
@@ -54,6 +57,9 @@ namespace Andor
             if (photonView.IsMine)
             {
                 Debug.Log("in player, view is mine");
+                Debug.Log("my tag is: " + gameObject.tag);
+
+
                 // sphere = PhotonNetwork.Instantiate("sphere", transform.position, transform.rotation, 0);
                 // sphere = (GameObject) Resources.Load("sphere");
                 // gameObject.AddComponent<Sphere>();
@@ -75,12 +81,12 @@ namespace Andor
             // Destroy(GetComponent<PlayerController>());
         }
 
-        public void setTag(string ID)
-        {
-            myTag = ID;
-            gameObject.tag = ID;
-            setHeroType();
-        }
+        // public void setTag(string ID)
+        // {
+        //     myTag = ID;
+        //     gameObject.tag = ID;
+        //     setHeroType();
+        // }
 
         public void setHero(Hero hero)
         {
@@ -135,10 +141,43 @@ namespace Andor
 
         void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (!GameObject.FindWithTag("ScreenManager"))
+                return;
+            updateCode();
+
+        }
+
+        public void updateCode()
+        {
+            // int i = 0;
+            // GameObject go= GameObject.FindWithTag("wizard");
+            //     // Debug.Log("no wizard");
+            // if (go == null)
+            //     i++;
+            // else{
+            //     Player p = go.GetComponent<Andor.Player>();
+            //     p.updateCode();
+            // }
+
+            if (photonView.IsMine)
             {
-                if (photonView.IsMine)
+
+                if (screenManager == null)
+                {
+                    screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
+                        // if (screenManager != null)
+                        // screenManager.init();
+                    // screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
+                }
+                    // Debug.Log("update");
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    string s = currSceneTag();
+                // Debug.Log("ismine!!!!");
+                    // if (screenManager != null)
                     click_handler.checkClick(newPos, this);
+                }
 
             }
             moveToNewPos(newPos);
@@ -146,6 +185,13 @@ namespace Andor
             // {
             // }
             // gameObject.GetComponent<Player_click_handler>().checkClick(newPos);
+        }
+
+
+        public void setTag(string tag)
+        {
+            gameObject.tag = tag;
+            initialized = true;
         }
 
         public void moveToNewPos(Vector3 newPos)
@@ -166,8 +212,14 @@ namespace Andor
         {
             currentScene = newSceneTag;
         }
+
         public string currSceneTag()
         {
+            if ( SceneManager.GetActiveScene().name != currentScene)
+            {
+                Debug.Log("currentScene tag in player different from SceneManager.GetActiveScene().name");
+                currentScene = SceneManager.GetActiveScene().name;
+            }
             return currentScene;
         }
 
@@ -196,7 +248,7 @@ namespace Andor
 
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
-            Debug.Log("tryna write or read");
+            // Debug.Log("tryna write or read");
             if (stream.IsWriting)
             {
                 stream.SendNext(transform.position);

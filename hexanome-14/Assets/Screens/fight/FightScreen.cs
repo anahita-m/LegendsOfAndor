@@ -5,26 +5,29 @@ using UnityEngine;
 public class FightScreen : Screen
 {
 
+    private ScreenManager screenManager;
+
     void Start()
     {
         screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
-        addAllClickables();
     }
 
-    public void addAllClickables()
+    public void canSwitchScreens(string playerTag)
+    {
+        Debug.Log("----------------- Player with tag: " + playerTag + "requested to switch to :" + gameObject.tag + "-----------------------------------");
+    }
+
+
+    protected override void addAllClickables()
     {
         // each button's gameObject tag is the buttons displayed text with spaces replaced with '-'
-        foreach(string s in new string[] { "roll-dice", "leave-battle", "exit-game" })
+        clickables = new List<string>();
+        foreach(string s in new string[] { "Roll-dice", "Leave-battle", "Exit-game" })
         {
             clickables.Add(s);
         }
     }
 
-
-    private void addSometimesClickable()
-    {
-        int x = 0;
-    }
 
     // private void addAlwaysClickable()
     // {

@@ -112,6 +112,14 @@ TagManager:
   - farmer
   - dwarf
   - warrior
+  - Start-Fight
+  - Exit-game
+  - FightScreen
+  - ScreenManager
+  - AndorBoardScreen
+  - fight-scene
+  - AndorBoard
+  - Leave-battle
   layers:
   - Default
   - TransparentFX
