@@ -59,7 +59,6 @@ namespace Andor
                 Debug.Log("in player, view is mine");
                 Debug.Log("my tag is: " + gameObject.tag);
 
-
                 // sphere = PhotonNetwork.Instantiate("sphere", transform.position, transform.rotation, 0);
                 // sphere = (GameObject) Resources.Load("sphere");
                 // gameObject.AddComponent<Sphere>();
@@ -141,8 +140,7 @@ namespace Andor
 
         void Update()
         {
-            if (!GameObject.FindWithTag("ScreenManager"))
-                return;
+
             updateCode();
 
         }
@@ -164,12 +162,25 @@ namespace Andor
 
                 if (screenManager == null)
                 {
-                    screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
-                        // if (screenManager != null)
-                        // screenManager.init();
-                    // screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
+                    GameObject baseObj = Instantiate((GameObject) Resources.Load("empty"), transform.position, transform.rotation);
+                    // baseObj.transform.parent = gameObject.transform;
+                    baseObj.tag = "ScreenManager";
+                    baseObj.AddComponent<ScreenManager>();
+
+                    screenManager = baseObj.GetComponent<ScreenManager>();
+                    initialized = true;
+                    Debug.Log("initialized!!!");
                 }
-                    // Debug.Log("update");
+
+                // if (screenManager == null)
+                // {
+                //     if (GameObject.FindWithTag("ScreenManager"))
+                //         screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
+                //         // if (screenManager != null)
+                //         // screenManager.init();
+                //     // screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
+                // }
+                //     // Debug.Log("update");
 
                 if (Input.GetMouseButtonDown(0))
                 {

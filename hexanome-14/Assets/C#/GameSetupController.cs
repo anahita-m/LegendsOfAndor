@@ -79,18 +79,18 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         GameObject playerObject = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
         //GameObject.FindWithTag("14").GetComponent<BoardPosition>().getMiddle(), Quaternion.identity, 0);//
         Debug.Log("Reached Here");
-        playerObject.AddComponent<Andor.Player>();
-        playerObject.AddComponent<Hero>();
+        // playerObject.AddComponent<Andor.Player>();
+        // playerObject.AddComponent<Hero>();
         Debug.Log("Reached Here 3");
         if (PlayerPrefs.HasKey("MyCharacter"))
         {
             mySelectedCharacter = PlayerPrefs.GetString("MyCharacter");
             Debug.Log("Created character: " + PlayerPrefs.GetString("MyCharacter"));
         }
-        playerObject.tag = mySelectedCharacter;
+        // playerObject.tag = mySelectedCharacter;
 
-        Andor.Player player = playerObject.GetComponent<Andor.Player>();
-        player.setTag(mySelectedCharacter);
+        // Andor.Player player = playerObject.GetComponent<Andor.Player>();
+        // player.setTag(mySelectedCharacter);
         return playerObject;
     }
 

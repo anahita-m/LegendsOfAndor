@@ -19,7 +19,7 @@ badd +43 term://.//21439:/bin/bash
 badd +25 term://.//22414:/bin/bash
 badd +16 C\#/Graph.cs
 badd +28 C\#/Node.cs
-badd +88 C\#/masterClass.cs
+badd +89 C\#/masterClass.cs
 badd +19 C\#/TurnManager.cs
 badd +1 C\#/BoardContents.cs
 badd +28 term://.//32300:/bin/bash
@@ -39,19 +39,22 @@ badd +49 term://.//23671:/bin/bash
 badd +26 term://.//24065:/bin/bash
 badd +37 C\#/BoardPosition.cs
 badd +61 term://.//25883:/bin/bash
-badd +34 C\#/PhotonPlayer.cs
+badd +45 C\#/PhotonPlayer.cs
 badd +53 C\#/GameSetupController.cs
 badd +7910 ~/Documents/Mcgill/5th-year/fall-sem/andor/f2019-hexanome-14/tags
 badd +21 term://.//64000:/bin/bash
 badd +30 C\#/PlayerInfo.cs
 badd +38 C\#/MenuController.cs
 badd +136 Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/PlayerManager.cs
-badd +20 term://.//82480:/bin/bash
-badd +32 C\#/AvatarSetup.cs
+badd +37 term://.//82480:/bin/bash
+badd +28 C\#/AvatarSetup.cs
 badd +68 term://.//83813:/bin/bash
 badd +21 term://.//85310:/bin/bash
 badd +46 Session.vim
 badd +23 term://.//86513:/bin/bash
+badd +20 term://.//238779:/bin/bash
+badd +30 term://.//247301:/bin/bash
+badd +48 term://.//248166:/bin/bash
 argglobal
 %argdel
 $argadd del.cs
@@ -67,8 +70,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 25 + 26) / 53)
-exe '2resize ' . ((&lines * 24 + 26) / 53)
+exe '1resize ' . ((&lines * 25 + 27) / 54)
+exe '2resize ' . ((&lines * 24 + 27) / 54)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -104,8 +107,8 @@ normal! zt
 1
 normal! 0
 wincmd w
-exe '1resize ' . ((&lines * 25 + 26) / 53)
-exe '2resize ' . ((&lines * 24 + 26) / 53)
+exe '1resize ' . ((&lines * 25 + 27) / 54)
+exe '2resize ' . ((&lines * 24 + 27) / 54)
 tabedit C\#/Graph.cs
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -117,8 +120,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 24 + 26) / 53)
-exe '2resize ' . ((&lines * 25 + 26) / 53)
+exe '1resize ' . ((&lines * 1 + 27) / 54)
+exe '2resize ' . ((&lines * 48 + 27) / 54)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -129,7 +132,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 122 - ((1 * winheight(0) + 12) / 24)
+let s:l = 122 - ((0 * winheight(0) + 0) / 1)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -147,15 +150,65 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 19 - ((1 * winheight(0) + 12) / 25)
+let s:l = 165 - ((17 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
-normal! 013|
+165
+normal! 052|
 wincmd w
-exe '1resize ' . ((&lines * 24 + 26) / 53)
-exe '2resize ' . ((&lines * 25 + 26) / 53)
+exe '1resize ' . ((&lines * 1 + 27) / 54)
+exe '2resize ' . ((&lines * 48 + 27) / 54)
+tabnew
+set splitbelow splitright
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe '1resize ' . ((&lines * 1 + 27) / 54)
+exe '2resize ' . ((&lines * 49 + 27) / 54)
+argglobal
+if bufexists("term://.//247301:/bin/bash") | buffer term://.//247301:/bin/bash | else | edit term://.//247301:/bin/bash | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 49 - ((0 * winheight(0) + 0) / 1)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+49
+normal! 0
+wincmd w
+argglobal
+if bufexists("term://.//247301:/bin/bash") | buffer term://.//247301:/bin/bash | else | edit term://.//247301:/bin/bash | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 36 - ((35 * winheight(0) + 24) / 49)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+36
+normal! 048|
+wincmd w
+2wincmd w
+exe '1resize ' . ((&lines * 1 + 27) / 54)
+exe '2resize ' . ((&lines * 49 + 27) / 54)
 tabedit Screens/fight/FightScreen.cs
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -167,7 +220,9 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
+exe '1resize ' . ((&lines * 50 + 27) / 54)
 exe 'vert 1resize ' . ((&columns * 87 + 87) / 174)
+exe '2resize ' . ((&lines * 50 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 86 + 87) / 174)
 argglobal
 setlocal fdm=manual
@@ -204,16 +259,21 @@ normal! zt
 31
 normal! 0
 wincmd w
+exe '1resize ' . ((&lines * 50 + 27) / 54)
 exe 'vert 1resize ' . ((&columns * 87 + 87) / 174)
+exe '2resize ' . ((&lines * 50 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 86 + 87) / 174)
-tabedit C\#/PlayerInfo.cs
+tabedit C\#/AvatarSetup.cs
 set splitbelow splitright
 wincmd _ | wincmd |
 split
 1wincmd k
 wincmd _ | wincmd |
 vsplit
-1wincmd h
+wincmd _ | wincmd |
+vsplit
+2wincmd h
+wincmd w
 wincmd w
 wincmd w
 wincmd t
@@ -221,28 +281,13 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 16 + 26) / 53)
-exe 'vert 1resize ' . ((&columns * 87 + 87) / 174)
-exe '2resize ' . ((&lines * 16 + 26) / 53)
+exe '1resize ' . ((&lines * 25 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 85 + 87) / 174)
+exe '2resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 86 + 87) / 174)
-exe '3resize ' . ((&lines * 33 + 26) / 53)
-argglobal
-if bufexists("term://.//82480:/bin/bash") | buffer term://.//82480:/bin/bash | else | edit term://.//82480:/bin/bash | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 8) / 16)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-wincmd w
+exe '3resize ' . ((&lines * 25 + 27) / 54)
+exe 'vert 3resize ' . ((&columns * 1 + 87) / 174)
+exe '4resize ' . ((&lines * 24 + 27) / 54)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -253,7 +298,43 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 11 - ((4 * winheight(0) + 8) / 16)
+let s:l = 30 - ((17 * winheight(0) + 12) / 25)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+30
+normal! 09|
+wincmd w
+argglobal
+if bufexists("C\#/GameSetupController.cs") | buffer C\#/GameSetupController.cs | else | edit C\#/GameSetupController.cs | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 90 - ((13 * winheight(0) + 12) / 25)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+90
+normal! 09|
+wincmd w
+argglobal
+if bufexists("C\#/PlayerInfo.cs") | buffer C\#/PlayerInfo.cs | else | edit C\#/PlayerInfo.cs | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 11 - ((0 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -261,7 +342,7 @@ normal! zt
 normal! 05|
 wincmd w
 argglobal
-if bufexists("C\#/AvatarSetup.cs") | buffer C\#/AvatarSetup.cs | else | edit C\#/AvatarSetup.cs | endif
+if bufexists("C\#/PhotonPlayer.cs") | buffer C\#/PhotonPlayer.cs | else | edit C\#/PhotonPlayer.cs | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -271,19 +352,21 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 13 - ((12 * winheight(0) + 16) / 33)
+let s:l = 41 - ((7 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-13
-normal! 05|
+41
+normal! 0
 wincmd w
-exe '1resize ' . ((&lines * 16 + 26) / 53)
-exe 'vert 1resize ' . ((&columns * 87 + 87) / 174)
-exe '2resize ' . ((&lines * 16 + 26) / 53)
+exe '1resize ' . ((&lines * 25 + 27) / 54)
+exe 'vert 1resize ' . ((&columns * 85 + 87) / 174)
+exe '2resize ' . ((&lines * 25 + 27) / 54)
 exe 'vert 2resize ' . ((&columns * 86 + 87) / 174)
-exe '3resize ' . ((&lines * 33 + 26) / 53)
-tabnext 4
+exe '3resize ' . ((&lines * 25 + 27) / 54)
+exe 'vert 3resize ' . ((&columns * 1 + 87) / 174)
+exe '4resize ' . ((&lines * 24 + 27) / 54)
+tabnext 3
 set stal=1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

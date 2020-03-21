@@ -15,8 +15,8 @@ public class AvatarSetup : MonoBehaviour
         PV = GetComponent<PhotonView>();
         if (PV.IsMine)
         {
-            if (GameObject.FindWithTag(getTheTag(PlayerInfo.PI.mySelectedCharacter)))
-                Destroy(GameObject.FindWithTag((getTheTag(PlayerInfo.PI.mySelectedCharacter))));
+            // if (GameObject.FindWithTag(getTheTag(PlayerInfo.PI.mySelectedCharacter)))
+            //     Destroy(GameObject.FindWithTag((getTheTag(PlayerInfo.PI.mySelectedCharacter))));
             PV.RPC("RPC_AddCharacter", RpcTarget.AllBuffered, PlayerInfo.PI.mySelectedCharacter);
         }
     }
@@ -28,7 +28,7 @@ public class AvatarSetup : MonoBehaviour
         characterValue = whichCharacter;
         myCharacter = Instantiate(PlayerInfo.PI.allcharacters[whichCharacter], transform.position, transform.rotation, transform);
         DontDestroyOnLoad(gameObject);
-        myCharacter.tag = tag;
+        // gameObject.tag = getTheTag(whichCharacter);
     }
 
     public string getTheTag(int whichCharacter)

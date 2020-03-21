@@ -31,11 +31,11 @@ public class PhotonPlayer : MonoBehaviour
             initialPos = GameObject.FindWithTag(initPosition).GetComponent<BoardPosition>().getMiddle();
             string heroType = getTag(PlayerPrefs.GetString("CharacterRank"));
 
-            // // prevents from creating multiple players of the same type upon scene change!
-            // if (GameObject.FindWithTag(heroType))
-            // {
-            //     Destroy(GameObject.FindWithTag(heroType));
-            // }
+            // prevents from creating multiple players of the same type upon scene change!
+            if (GameObject.FindWithTag(heroType))
+            {
+                Destroy(GameObject.FindWithTag(heroType));
+            }
 
             Debug.Log("Instantiating avatar2");
 
@@ -48,8 +48,8 @@ public class PhotonPlayer : MonoBehaviour
 
             Andor.Player p = myAvatar.GetComponent<Andor.Player>();
             p.setNewPos(initialPos);
-            // for some reason this onnnnly works for 1 client
             p.setTag(heroType);
+            // for some reason this second one onnnnly works for 1 client
 
             //myAvatar.GetComponent<GameUnit>().setPhysicalObject(myAvatar);
             //myAvatar.GetComponent<GameUnit>().setType(FlashPointGameConstants.GAMEUNIT_TYPE_FIREMAN);

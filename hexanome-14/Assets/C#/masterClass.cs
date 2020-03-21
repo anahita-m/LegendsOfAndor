@@ -84,12 +84,8 @@ public class masterClass : MonoBehaviour
 
     private void createScreenManager()
     {
-        if (GameObject.FindWithTag("ScreenManager"))
-            return;
-        GameObject baseObj = Instantiate(baseObject, gameObject.transform.position, gameObject.transform.rotation);
-        // baseObj.transform.parent = gameObject.transform;
-        baseObj.tag = "ScreenManager";
-        baseObj.AddComponent<ScreenManager>();
+        // if (GameObject.FindWithTag("ScreenManager"))
+        //     return;
     }
 
     // creates a object for each sprite ie game tile
