@@ -40,6 +40,7 @@ public class Monster : MonoBehaviour, Fightable
 
     public static void moveAllMonstersAtSunrise()
     {
+        tempMonsterPositions = monsterPositions;
         Debug.Log("Number of gors: " + BoardContents.getAllGorPositions().Count());
         move("gor");
         Debug.Log("Number of skrals: " + BoardContents.getAllSkralPositions().Count());
@@ -47,8 +48,6 @@ public class Monster : MonoBehaviour, Fightable
         BoardContents.initAndGetGor(gorMonsterLoc);
         BoardContents.initAndGetGor(skralMonsterLoc);
         BoardContents.initAndGetGor(monsterPositions);
-
-
         // move("wardrak");
         // move("troll");
         // move("Wardrak");
@@ -73,8 +72,6 @@ public class Monster : MonoBehaviour, Fightable
             Debug.Log("gor");
 
         }
-
-
         foreach (KeyValuePair<string, string> entry in monster)
             {
             i++;
@@ -103,12 +100,13 @@ public class Monster : MonoBehaviour, Fightable
                 monsterToMove.GetComponent<Monster>().position = nextLoc.ToString();
                 monsterToMove.transform.position = nex;
 
-           //THIS PART DOESN'T WORK 
-            //monsterPositions[entry.Key] = nextLoc.ToString();
-
+            //tempMonsterPositions[entry.Key] = nextLoc.ToString();
             //Dictionary<string, string> tempMonsterLoc = new Dictionary<string, string>();
             //tempMonsterLoc = BoardContents.getAllMonsterPositions();
 
+            //THIS PART DOESN'T WORK 
+
+            //HAD TO UNCOMMENT THE PARTS WHICH UPDATE THE MONSTER POSITIONS 
             char c = entry.Key[0];
             if (c == 's')
             {
@@ -117,8 +115,6 @@ public class Monster : MonoBehaviour, Fightable
 
                 //skralMonsterLoc[entry.Key] = nextLoc.ToString();
                 // monsterPositions[entry.Key] = nextLoc.ToString();
-                //tempMonsterLoc.Add(entry.Key, nextLoc.ToString());
-                //tempMonsterLoc[entry.Key] = nextLoc.ToString();
             }
             if (c == 'g')
             {
@@ -127,11 +123,6 @@ public class Monster : MonoBehaviour, Fightable
 
                 // gorMonsterLoc[entry.Key] = nextLoc.ToString();
                 // monsterPositions[entry.Key] = nextLoc.ToString();
-                //tempMonsterLoc[entry.Key] = nextLoc.ToString();
-                //tempMonsterLoc.Add(entry.Key, nextLoc.ToString());
-                //tempMonsterLoc[entry.Key] = nextLoc.ToString();
-
-
             }
             if (c == 'w')
             {
@@ -146,20 +137,18 @@ public class Monster : MonoBehaviour, Fightable
 
             }
         }
-        //updateMonsterPositions(tempMonsterLoc);
-        //monsterPositions = BoardContents.getAllMonsterPositions();
     }
 
-    public static void updateMonsterPositions(Dictionary<string, string> updatedLoc)
-    {
-        foreach (var entry in monsterPositions)
-        {
-            if (updatedLoc.ContainsKey(entry.Key))
-            {
-                monsterPositions[entry.Key] = updatedLoc[entry.Key];
-            }
-        }
-    }
+    //public static void updateMonsterPositions(Dictionary<string, string> updatedLoc)
+    //{
+    //    foreach (var entry in monsterPositions)
+    //    {
+    //        if (updatedLoc.ContainsKey(entry.Key))
+    //        {
+    //            monsterPositions[entry.Key] = updatedLoc[entry.Key];
+    //        }
+    //    }
+    //}
 
     public static void console()
     {
