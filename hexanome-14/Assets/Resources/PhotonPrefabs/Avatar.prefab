@@ -135,7 +135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4bf4db3febff3c08edfb0d42b8d949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: 
   hour: 
+  time: 0
+  playerTag: 
   hour1: {x: 1.13, y: 30.11, z: 0}
   hour2: {x: 5.26, y: 30.11, z: 0}
   hour3: {x: 9.48, y: 30.11, z: 0}
@@ -216,7 +219,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4bf4db3febff3c08edfb0d42b8d949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: 
   hour: 
+  time: 0
+  playerTag: 
   hour1: {x: 1.13, y: 30.11, z: 0}
   hour2: {x: 5.26, y: 30.11, z: 0}
   hour3: {x: 9.48, y: 30.11, z: 0}

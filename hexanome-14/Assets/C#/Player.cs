@@ -24,6 +24,8 @@ namespace Andor
         private string heroType;
         public string position;
         public string hour;
+        public int time;
+
         public string playerTag;
 
         private Hero myHero;
@@ -61,6 +63,7 @@ namespace Andor
             myHero = new Hero();
             playerGold = new Dictionary<string, int>();
             position = PlayerPrefs.GetString("CharacterRank");
+            time = 0;
 
             myHero.setGold(UnityEngine.Random.Range(0, 10));
             updateCoin(myTag, myHero.getGold());
@@ -231,8 +234,15 @@ namespace Andor
         public void moveTo(string newLoc, Vector3 newPos)
         {
             transform.position = newPos;
-
             BoardContents.setNewPlayerPosition(playerTag, newLoc);
+            string oldpos = BoardContents.getPlayerPosition(playerTag);
+            // int distance = Graph.getDistance(oldpos, newLoc);
+            // Monster.moveAllMonstersAtSunrise();
+            Monster.moveAllMonstersAtSunrise();
+            //foreach (KeyValuePair<string, string> entry in Monster.monsterPositions)
+            //{
+            //    Debug.Log(entry.Key + " " + entry.Value);
+            //}
             GameConsole.instance.UpdateFeedback("Player " + playerTag + " has moved to " + newLoc);
 
 
@@ -263,10 +273,7 @@ namespace Andor
             //}
         }
 
-        // public void moveSlowly(Vector3 newPos)
-        // {
-
-        // }
+  
 
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
@@ -292,8 +299,6 @@ namespace Andor
                 PhotonNetwork.Destroy(player.gameObject);
             }
 
-            // player = PhotonNetwork.Instantiate(prefab, position, rotation).GetComponent<Player>();
-            // sphere = player;
         }
 
     }

@@ -15,7 +15,7 @@ public class Graph : MonoBehaviour
     // then it moves to   pos: nodes[i][1].
     // private Node[] nodes;
     // private Dictionary<int, int[]> nodes;
-    private Node[] nodes;
+    public static Node[] nodes = new Node [85];
 
 
     // protected constructor since this class is a singleton.
@@ -23,7 +23,7 @@ public class Graph : MonoBehaviour
     protected Graph()
     {
         // nodes = new Dictionary<int, int[]>();
-        nodes = new Node[85];
+        //nodes = new Node[85];
         loadNeighbours();
     }
 
@@ -83,7 +83,7 @@ public class Graph : MonoBehaviour
 
 
 
-    public int getDistance(string src, string dest)
+    public static int getDistance(string src, string dest)
     {
         int srcIndex = convertToInt(src);
         int destIndex = convertToInt(dest);
@@ -96,7 +96,7 @@ public class Graph : MonoBehaviour
         return calculateDistance(ref destNode, destIndex);
     }
 
-    private int calculateDistance(ref Node current, int destIndex)
+    private static int calculateDistance(ref Node current, int destIndex)
     {
         int dist = 0;
         while (current.getIndex() != destIndex)
@@ -112,16 +112,22 @@ public class Graph : MonoBehaviour
     // maybe should change the bfs to store a list of int[]'s indicating the path
     // instead of relying on ref variables.
     // void since we use pathNode
-    private void bfs(Node src, Node dest, ref Node pathNode)
+    public static void bfs(Node src, Node dest, ref Node pathNode)
     {
         Queue queue = new Queue();
         // src.setPrev(null);
         queue.Enqueue(src);
+        Node node = (Node) queue.Peek();
+        
 
         HashSet<int> visited = new HashSet<int>();
         while(queue.Count != 0)
         {
-            Node node = (Node) queue.Dequeue();
+            if(queue.Count != 1)
+            {
+               node = (Node)queue.Dequeue();
+            }
+           
             int nodeIndex = node.getIndex();
 
             if (visited.Contains(nodeIndex)) { continue; }
@@ -151,7 +157,7 @@ public class Graph : MonoBehaviour
 
 // ------ some helper functions -------
 
-    private int convertToInt(string prev)
+    private static int convertToInt(string prev)
     {
         int newInt;
         bool success = Int32.TryParse(prev, out newInt);

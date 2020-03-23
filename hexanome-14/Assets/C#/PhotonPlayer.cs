@@ -37,7 +37,7 @@ public class PhotonPlayer : MonoBehaviour
 
             if (playerPositions.Count == PhotonNetwork.PlayerList.Length)
             {
-                BoardContents.initAndGet(playerPositions);
+                BoardContents.initAndGetPlayers(playerPositions);
                 Debug.Log("Init positions");
 
             }

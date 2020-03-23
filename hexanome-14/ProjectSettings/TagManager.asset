@@ -108,6 +108,20 @@ TagManager:
   - well
   - chat_text_message
   - startandorgame
+  - Bullet
+  - archer
+  - warrior
+  - wizard
+  - dwarf
+  - gor-1
+  - gor-2
+  - gor-3
+  - gor-4
+  - gor-5
+  - gor-6
+  - gor-7
+  - skral-1
+  - skral-2
   layers:
   - Default
   - TransparentFX

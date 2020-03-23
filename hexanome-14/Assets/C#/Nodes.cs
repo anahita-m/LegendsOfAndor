@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Node : MonoBehaviour, IEnumerable<int>
+public class Nodes : MonoBehaviour, IEnumerable<int>
 {
 
     // this is the same as the tag: ie 1||2, is the position on board.
@@ -26,7 +26,7 @@ public class Node : MonoBehaviour, IEnumerable<int>
     }
 
 
-    public Node(int index, int[] neighbz)
+    public void setNode(int index, int[] neighbz)
     {
         graphIndex = index;
         neighbours = neighbz;

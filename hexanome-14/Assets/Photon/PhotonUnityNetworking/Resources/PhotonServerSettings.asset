@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AppSettings:
     AppIdRealtime: 0a823660-ebf8-4341-9b40-c4d24a1c6a0f
-    AppIdChat: b2ee4404-e3f8-4949-95fa-982633b3a714
+    AppIdChat: 
     AppIdVoice: 
-    AppVersion: 0
+    AppVersion: 
     UseNameServer: 1
-    FixedRegion: cae
+    FixedRegion: 
     Server: 
     Port: 0
     Protocol: 0
@@ -37,4 +37,4 @@ MonoBehaviour:
   - RPC_AddCharacter
   - serverUpdateCoin
   DisableAutoOpenWizard: 1
-  ShowSettings: 1
+  ShowSettings: 0

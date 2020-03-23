@@ -37,7 +37,7 @@ public class TurnManager : MonoBehaviour
             // this class will store all known positions of heros.
             playerPositions[playerTag] = initialPositions[i];
         }
-        boardContents = BoardContents.initAndGet(playerPositions);
+        boardContents = BoardContents.initAndGetPlayers(playerPositions);
         // boardContents.setPlayerPositions();
     }
 

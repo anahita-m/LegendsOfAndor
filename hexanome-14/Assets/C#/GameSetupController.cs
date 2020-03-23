@@ -46,6 +46,14 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     public Vector3 initialPos;
     public Button startButton;
     public int c = 0;
+    public Dictionary<string, string> skralPositions = new Dictionary<string, string>();
+    public Dictionary<string, string> gorPositions = new Dictionary<string, string>();
+    public Dictionary<string, string> trollPositions = new Dictionary<string, string>();
+    public Dictionary<string, string> wardakPositions = new Dictionary<string, string>();
+
+    public Dictionary<string, string> monsterPositions = new Dictionary<string, string>();
+
+
 
     private void Awake()
     {
@@ -130,21 +138,34 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
         GameObject skralObject = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Skral"), GameObject.FindWithTag("9").GetComponent<BoardPosition>().getMiddle(), GameSetupController.GS.spawnPoints[spawnPicker].rotation, 0);
         skralObject.AddComponent<Monster>();
+        skralObject.GetComponent<Monster>().position = "9";
         // skralObject.SetActive(true);
-        skralObject.tag = "skral";
+        skralObject.tag = "skral-1";
         DontDestroyOnLoad(skralObject);
+        skralPositions.Add(skralObject.tag, skralObject.GetComponent<Monster>().position);
+        monsterPositions.Add(skralObject.tag, skralObject.GetComponent<Monster>().position);
+
     }
 
     private void createGors()
     {
+        int i = 1;
         foreach (string gorTile in gorLocations())
         {
             int spawnPicker = UnityEngine.Random.Range(0, GameSetupController.GS.spawnPoints.Length);
 
             GameObject gorObject = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Gor"), GameObject.FindWithTag(gorTile).GetComponent<BoardPosition>().getMiddle(), GameSetupController.GS.spawnPoints[spawnPicker].rotation, 0);
             gorObject.AddComponent<Monster>();
+            gorObject.GetComponent<Monster>().position = gorTile;
+            Debug.Log(gorObject.GetComponent<Monster>().position);
+
             // skralObject.SetActive(true);
-            gorObject.tag = "gor";
+            //
+            gorObject.tag = "gor" + "-" + i;
+            gorPositions.Add(gorObject.tag, gorObject.GetComponent<Monster>().position);
+            monsterPositions.Add(gorObject.tag, gorObject.GetComponent<Monster>().position);
+
+            i++;
             DontDestroyOnLoad(gorObject);
 
         }
@@ -152,6 +173,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
     private void createFarmers()
     {
+        int i = 1;
         foreach (string farmerTile in farmerLocations())
         {
             int spawnPicker = UnityEngine.Random.Range(0, GameSetupController.GS.spawnPoints.Length);
@@ -159,13 +181,15 @@ public class GameSetupController : MonoBehaviourPunCallbacks
             GameObject farmerObject = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Farmer"), GameObject.FindWithTag(farmerTile).GetComponent<BoardPosition>().getMiddle(), GameSetupController.GS.spawnPoints[spawnPicker].rotation, 0);
            //farmerObject.AddComponent<Monster>();
             // skralObject.SetActive(true);
-            farmerObject.tag = "farmer";
+            farmerObject.tag = "farmer" + "-" + i;
+            i++;
             DontDestroyOnLoad(farmerObject);
         }
     }
 
     private void createWells()
     {
+        int i = 1;
         foreach (string wellTile in wellLocations())
         {
             int spawnPicker = UnityEngine.Random.Range(0, GameSetupController.GS.spawnPoints.Length);
@@ -173,13 +197,15 @@ public class GameSetupController : MonoBehaviourPunCallbacks
             GameObject wellObject = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Well"), GameObject.FindWithTag(wellTile).GetComponent<BoardPosition>().getMiddle(), GameSetupController.GS.spawnPoints[spawnPicker].rotation, 0);
             //farmerObject.AddComponent<Monster>();
             // skralObject.SetActive(true);
-            wellObject.tag = "well";
+            wellObject.tag = "well" + "-" + i;
+            i++;
             DontDestroyOnLoad(wellObject);
         }
     }
 
     private void createMerchants()
     {
+        int i = 1;
         foreach (string merchantTile in merchantLocations())
         {
             int spawnPicker = UnityEngine.Random.Range(0, GameSetupController.GS.spawnPoints.Length);
@@ -187,7 +213,8 @@ public class GameSetupController : MonoBehaviourPunCallbacks
             GameObject merchantObject = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Merchant"), GameObject.FindWithTag(merchantTile).GetComponent<BoardPosition>().getMiddle(), GameSetupController.GS.spawnPoints[spawnPicker].rotation, 0);
             //farmerObject.AddComponent<Monster>();
             // skralObject.SetActive(true);
-            merchantObject.tag = "merchant";
+            merchantObject.tag = "merchant" + "-" + i;
+            i++;
             DontDestroyOnLoad(merchantObject);
         }
     }
@@ -250,8 +277,20 @@ public class GameSetupController : MonoBehaviourPunCallbacks
             string playerName = PhotonNetwork.LocalPlayer.NickName;
             int id = PhotonNetwork.LocalPlayer.ActorNumber;
             entry.GetComponent<PhotonPlayer>().Initialize(id, playerName);
+
+            BoardContents.initAndGetMonster(monsterPositions);
+            Monster.monsterPositions = monsterPositions;
+
+
             createSkral();
+            BoardContents.initAndGetSkral(skralPositions);
+            Monster.skralMonsterLoc = skralPositions;
+
             createGors();
+            BoardContents.initAndGetGor(gorPositions);
+            Monster.gorMonsterLoc = gorPositions;
+
+
             createFarmers();
             createWells();
             createMerchants();
