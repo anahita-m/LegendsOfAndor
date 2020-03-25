@@ -25,7 +25,8 @@ public class Player_click_handler : MonoBehaviour
         if (clickedTag == "") return;
 
         Debug.Log("clicked tag is: " + clickedTag);
-        List<string> clickables = player.screenManager.getClickables(player.currSceneTag());
+        // List<string> clickables = player.screenManager.getClickables(player.currSceneTag());
+        List<string> clickables = ScreenManager.getClickables(player.currSceneTag());
         if (clickables == null)
         {
             Debug.Log("found null list of clickables in click handler");
@@ -38,9 +39,6 @@ public class Player_click_handler : MonoBehaviour
         {
             string newScene ="fight-scene";
             player.changeOfScene(newScene);
-
-            if (PhotonNetwork.IsMasterClient)
-                PhotonNetwork.LoadLevel(newScene);
             return;
         }
 
@@ -49,8 +47,6 @@ public class Player_click_handler : MonoBehaviour
             string newScene ="AndorBoard";
             player.changeOfScene(newScene);
 
-            if (PhotonNetwork.IsMasterClient)
-                PhotonNetwork.LoadLevel(newScene);
             return;
         }
 

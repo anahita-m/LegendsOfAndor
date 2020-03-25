@@ -18,9 +18,9 @@ public class Screen : MonoBehaviour, IEnumerable<string>
         }
     }
 
+    // overriden by children
     protected virtual void addAllClickables()
     {
-
     }
 
 

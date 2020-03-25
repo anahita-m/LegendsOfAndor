@@ -9,7 +9,8 @@ public class FightScreen : Screen
 
     void Start()
     {
-        screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
+        screenManager = (ScreenManager)FindObjectOfType(typeof(ScreenManager));
+        // screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
     }
 
     public void canSwitchScreens(string playerTag)

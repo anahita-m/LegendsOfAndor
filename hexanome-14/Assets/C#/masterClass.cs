@@ -5,6 +5,7 @@ using UnityEngine;
 using System.Text.RegularExpressions;
 using UnityEngine.U2D;
 using Andor;
+using Photon.Pun;
 
 public class masterClass : MonoBehaviour
 {
@@ -65,7 +66,6 @@ public class masterClass : MonoBehaviour
         // squished in z direction
         sphereScale = new Vector3(2.2f, 2.2f, 0.12f);
 
-        // -- actually a great idea since the cleaner the hero class's the better !
         currentlySelectedBoardPos = "8";
     }
 
@@ -84,8 +84,16 @@ public class masterClass : MonoBehaviour
 
     private void createScreenManager()
     {
-        // if (GameObject.FindWithTag("ScreenManager"))
-        //     return;
+        // GameObject empty = (GameObject) Resources.Load("empty");
+        if (PhotonNetwork.IsMasterClient)
+        {
+            GameObject empty = PhotonNetwork.InstantiateSceneObject("networkedEmpty", transform.position, Quaternion.identity, 0, null);
+            Debug.Log("MADE EMPTY OBJECT FOR SCREENMANAGER");
+            // empty.AddComponent<ScreenManager>();
+            empty.tag = "ScreenManager";
+            DontDestroyOnLoad(empty);
+            // TurnManager tm = this.gameObject.GetComponent<TurnManager>();
+        }
     }
 
     // creates a object for each sprite ie game tile

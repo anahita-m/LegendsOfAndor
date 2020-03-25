@@ -12,6 +12,7 @@ public class TurnManager : MonoBehaviour
     // keys are player tags, values are their positions
     public BoardContents boardContents;
 
+    // public static TurnManager _singleton;
 
     public void initTurnManager(GameObject baseObject, string[] orderPlayers, string[] initialPositions)
     {

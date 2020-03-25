@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 public class ScreenManager : MonoBehaviour
 {
-    public Dictionary<string, Screen> screens;
+    public static Dictionary<string, Screen> screens;
     // have to map the scene name to loadlevels
     private GameObject baseObj;
 
@@ -31,14 +32,27 @@ public class ScreenManager : MonoBehaviour
 
     public void init()
     {
-        screens = new Dictionary<string, Screen>();
-        baseObj = (GameObject) Resources.Load("empty");
-        initScreens();
+        // screens = new Dictionary<string, Screen>();
+        // baseObj = (GameObject) Resources.Load("empty");
+        // initScreens();
         // DontDestroyOnLoad(gameObject);
 
     }
 
-    public void onSceneSwitch()
+    public static void sceneSwitch(string newScene){
+        if (PhotonNetwork.IsMasterClient){
+
+            PhotonNetwork.IsMessageQueueRunning = false;
+
+            PhotonNetwork.LoadLevel(newScene);
+
+            PhotonNetwork.IsMessageQueueRunning = true;
+            onSceneSwitch();
+        }
+    }
+
+
+    public static void onSceneSwitch()
     {
         Debug.Log("before tried to addAllClickables()");
         string newScene = SceneManager.GetActiveScene().name;
@@ -71,7 +85,7 @@ public class ScreenManager : MonoBehaviour
     }
 
 
-    public List<string> getClickables(string screenName)
+    public static List<string> getClickables(string screenName)
     {
         Debug.Log("requested clickables for scene with name: "+screenName);
         List<string> clickables = screens[screenName].getClickables();
@@ -82,7 +96,6 @@ public class ScreenManager : MonoBehaviour
             Debug.Log("clickables are still null after calling onSceneSwitch.");
 
         return clickables;
-
     }
 
     // Update is called once per frame

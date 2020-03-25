@@ -162,25 +162,16 @@ namespace Andor
 
                 if (screenManager == null)
                 {
-                    GameObject baseObj = Instantiate((GameObject) Resources.Load("empty"), transform.position, transform.rotation);
-                    // baseObj.transform.parent = gameObject.transform;
-                    baseObj.tag = "ScreenManager";
-                    baseObj.AddComponent<ScreenManager>();
-
-                    screenManager = baseObj.GetComponent<ScreenManager>();
-                    initialized = true;
-                    Debug.Log("initialized!!!");
+                    if (currSceneTag() == "AndorBoard" && !screenManager)
+                        screenManager = (ScreenManager)FindObjectOfType(typeof(ScreenManager));
+                        // screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
+                    else
+                        return;
+                        // if (screenManager != null)
+                        // screenManager.init();
+                    // screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
                 }
-
-                // if (screenManager == null)
-                // {
-                //     if (GameObject.FindWithTag("ScreenManager"))
-                //         screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
-                //         // if (screenManager != null)
-                //         // screenManager.init();
-                //     // screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
-                // }
-                //     // Debug.Log("update");
+                    // Debug.Log("update");
 
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -222,6 +213,7 @@ namespace Andor
         public void changeOfScene(string newSceneTag)
         {
             currentScene = newSceneTag;
+            ScreenManager.sceneSwitch(currentScene);
         }
 
         public string currSceneTag()
