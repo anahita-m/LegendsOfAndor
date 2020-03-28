@@ -94,28 +94,8 @@ public class Player_click_handler : MonoBehaviour
             }
         }
         return new Vector3(-10000, 1, 1);
-
-
-        // right now we just assume clicked a boardPosition
-        // int cTag;
-        // try
-        // {
-        //     cTag = int.Parse(clickedTag);
-        //     GameObject go = GameObject.FindWithTag(clickedTag);
-        //     BoardPosition bp = go.GetComponent<BoardPosition>();
-
-        //     Vector3 newPos = bp.getMiddle();
-        //     return newPos;
-
-        //     // player.gameObject.transform.position = bp.getMiddle();
-        //     // newPos = player.sphere.transform.position;
-        //     // transform.position = new Vector3(-6.81f, 7.57f, 0.0f);
-        // }
-        // catch (InvalidCastException e)
-        // {
-        //     return new Vector3(-10000, 1, 1);
-        // }
     }
+
 
     private string getClickedGameObjectTag()
     {

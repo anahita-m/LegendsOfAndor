@@ -87,11 +87,11 @@ public class masterClass : MonoBehaviour
         if (PhotonNetwork.IsMasterClient && !GameObject.FindWithTag("ScreenManager"))
         {
             // GameObject empty = PhotonNetwork.InstantiateSceneObject("networkedEmpty", transform.position, Quaternion.identity, 0, null);
-            GameObject empty = Instantiate((GameObject) Resources.Load("networkedEmpty"), transform.position, transform.rotation);
+            GameObject empty = Instantiate((GameObject) Resources.Load("empty"), transform.position, transform.rotation);
             Debug.Log("MADE EMPTY OBJECT FOR SCREENMANAGER");
+            empty.AddComponent<ScreenManager>();
+            // empty.tag = "ScreenManager";
             DontDestroyOnLoad(empty);
-            // empty.AddComponent<ScreenManager>();
-            empty.tag = "ScreenManager";
             // int x = int.Parse("asdas");
             // TurnManager tm = this.gameObject.GetComponent<TurnManager>();
         }

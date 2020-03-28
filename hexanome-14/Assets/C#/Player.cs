@@ -163,7 +163,10 @@ namespace Andor
                 if (screenManager == null)
                 {
                     if (currSceneTag() == "AndorBoard" && screenManager == null)
+                    {
                         screenManager = (ScreenManager)FindObjectOfType(typeof(ScreenManager));
+                        Debug.Log("added screenmanager to player");
+                    }
                         // screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
                     else
                         return;
