@@ -59,33 +59,11 @@ namespace Andor
                 Debug.Log("in player, view is mine");
                 Debug.Log("my tag is: " + gameObject.tag);
 
-                // sphere = PhotonNetwork.Instantiate("sphere", transform.position, transform.rotation, 0);
-                // sphere = (GameObject) Resources.Load("sphere");
-                // gameObject.AddComponent<Sphere>();
-                // sphere = GetComponent<Sphere>();
-                // sphere.SetActive(true);
                 transform.localScale = new Vector3(2.2f, 2.2f, 0.12f);
-                //if (PhotonNetwork.IsMasterClient) { setTag("Player-Male-Wizard"); }
-                //else { setTag("Player-Male-Dwarf"); }
             }
-
-
             myHero = new Hero();
             playerGold = new Dictionary<string, int>();
-
-            // myHero.setGold(UnityEngine.Random.Range(0, 10));
-            // updateCoin(myTag, myHero.getGold());
-            // Debug.Log("MY PLAYER HAS " + myHero.getGold() + " COINS!");
-            // if (!photonView.IsMine && GetComponent<PlayerController>() != null)
-            // Destroy(GetComponent<PlayerController>());
         }
-
-        // public void setTag(string ID)
-        // {
-        //     myTag = ID;
-        //     gameObject.tag = ID;
-        //     setHeroType();
-        // }
 
         public void setHero(Hero hero)
         {
@@ -101,38 +79,6 @@ namespace Andor
         public Dictionary<string, int> playerGold;
 
 
-
-
-
-
-        // [PunRPC]
-        // public void serverUpdateCoin(string playerTag, int gold)
-        // {
-        //     if (!playerGold.ContainsKey(playerTag))
-        //     {
-        //         playerGold.Add(playerTag, gold);
-        //     }
-        //     else
-        //     {
-        //         playerGold[playerTag] = gold;
-        //     }
-        // }
-
-        // public void updateCoin(string playerTag, int gold)
-        // {
-        //     Debug.Log("HIHIHIHIHI");
-
-        //     if (photonView != null && photonView.IsMine)
-        //     {
-        //         Debug.Log("Im in!");
-
-        //         photonView.RPC("serverUpdateCoin", RpcTarget.All, playerTag, gold);
-        //     }
-        // }
-
-
-
-
         public string getHeroType()
         {
             return heroType;
@@ -140,56 +86,39 @@ namespace Andor
 
         void Update()
         {
-
             updateCode();
-
         }
 
         public void updateCode()
         {
-            // int i = 0;
-            // GameObject go= GameObject.FindWithTag("wizard");
-            //     // Debug.Log("no wizard");
-            // if (go == null)
-            //     i++;
-            // else{
-            //     Player p = go.GetComponent<Andor.Player>();
-            //     p.updateCode();
-            // }
-
             if (photonView.IsMine)
             {
-
                 if (screenManager == null)
                 {
-                    if (currSceneTag() == "AndorBoard" && screenManager == null)
+                    if (screenManager == null && currSceneTag() == "AndorBoard")
                     {
-                        screenManager = (ScreenManager)FindObjectOfType(typeof(ScreenManager));
-                        Debug.Log("added screenmanager to player");
+                        addScreenManager();
                     }
-                        // screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
                     else
                         return;
-                        // if (screenManager != null)
-                        // screenManager.init();
-                    // screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
                 }
-                    // Debug.Log("update");
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    string s = currSceneTag();
-                // Debug.Log("ismine!!!!");
-                    // if (screenManager != null)
+                    // string s = currSceneTag();
                     click_handler.checkClick(newPos, this);
                 }
-
             }
             moveToNewPos(newPos);
-            // if (!gameObject.GetComponent<Player_click_handler>())
-            // {
-            // }
-            // gameObject.GetComponent<Player_click_handler>().checkClick(newPos);
+        }
+
+        private void addScreenManager()
+        {
+            GameObject e = (GameObject) Resources.Load("screenMan");
+            DontDestroyOnLoad(e);
+            screenManager = e.GetComponent<ScreenManager>();
+            screenManager.init();
+            Debug.Log("added screenmanager to player");
         }
 
 

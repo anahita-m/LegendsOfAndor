@@ -11,33 +11,17 @@ public class ScreenManager : MonoBehaviour
     private GameObject baseObj;
 
     private GameObject gameObj;
-    // public ScreenManager screenManager;
 
-    // void Awake()
-    // {
-    //     DontDestroyOnLoad(this.gameObject);
-    // }
-
-    // make this dont destroy on load cuz why not
-    // Start is called before the first frame update
     void Start()
     {
-        // ie don't show move if not your turn
-        // screenManager = GameObject.FindWithTag("ScreenManager").GetComponent<ScreenManager>();
         screens = new Dictionary<string, Screen>();
-        baseObj = (GameObject) Resources.Load("empty");
         initScreens();
-        // DontDestroyOnLoad(this.gameObject);
-        // baseObj.SetActive(false);
     }
 
     public void init()
     {
-        // screens = new Dictionary<string, Screen>();
-        // baseObj = (GameObject) Resources.Load("empty");
-        // initScreens();
-        // DontDestroyOnLoad(gameObject);
-
+        screens = new Dictionary<string, Screen>();
+        initScreens();
     }
 
     public static void sceneSwitch(string newScene){
@@ -61,34 +45,29 @@ public class ScreenManager : MonoBehaviour
         {
             Debug.Log("Attempted to switch to scene: " + newScene +" which is not known to the screenManager script. see this scripts' initScreens() fxn for how to add the missing scene");
         }
-        Debug.Log("well I tried to addAllClickables()");
+        // Debug.Log("well I tried to addAllClickables()");
         screens[newScene].onSwitch();
     }
 
-    private void initScreens()
+    public void initScreens()
     {
         string screenTag = "fight-scene";
-        createScreen(screenTag);
-        gameObj.AddComponent<FightScreen>();
-        screens.Add(screenTag, gameObj.GetComponent<FightScreen>());
+        screens.Add(screenTag, gameObject.GetComponent<FightScreen>());
 
         screenTag = "AndorBoard";
-        createScreen(screenTag);
-        gameObj.AddComponent<AndorBoardScreen>();
-        screens.Add(screenTag, gameObj.GetComponent<AndorBoardScreen>());
-    }
-
-    private void createScreen(string screenTag)
-    {
-        gameObj = Instantiate(baseObj, gameObject.transform.position, gameObject.transform.rotation);
-        gameObj.transform.parent = gameObject.transform;
-        gameObj.tag = screenTag;
+        screens.Add(screenTag, gameObject.GetComponent<AndorBoardScreen>());
+        Debug.Log("finished adding screens to screenManager's");
     }
 
 
     public static List<string> getClickables(string screenName)
     {
         Debug.Log("requested clickables for scene with name: "+screenName);
+        if (!screens.ContainsKey(screenName))
+        {
+            Debug.Log("never added screen with name: " + screenName + " to screen manager dict!");
+            return null;
+        }
         List<string> clickables = screens[screenName].getClickables();
         if (clickables == null)
             onSceneSwitch();

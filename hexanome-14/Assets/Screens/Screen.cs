@@ -37,6 +37,7 @@ public class Screen : MonoBehaviour, IEnumerable<string>
             Debug.Log("called GetClickables when clickables is still null");
             return null;
         }
+        // Debug.Log("returning clickables");
         return clickables;
     }
 

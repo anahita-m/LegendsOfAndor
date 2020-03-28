@@ -27,13 +27,24 @@ public class Player_click_handler : MonoBehaviour
         Debug.Log("clicked tag is: " + clickedTag);
         // List<string> clickables = player.screenManager.getClickables(player.currSceneTag());
         List<string> clickables = ScreenManager.getClickables(player.currSceneTag());
+        // Debug.Log("got a list of clickables");
         if (clickables == null)
         {
             Debug.Log("found null list of clickables in click handler");
-            return;
+            // return;
+            // gameObject.GetComponent<ScreenManager>().initScreens();
+            // clickables = ScreenManager.getClickables(player.currSceneTag());
+            // if (clickables == null)
+            //     Debug.Log("tried to initScreens from click handler, but still null for scene: " + player.currSceneTag());
         }
         if (!clickables.Contains(clickedTag))
+        {
+            Debug.Log("clickedTag not inside the list of clickables");
+            // foreach(string tag in clickables){
+            //     Debug.Log("has tag: " + tag);
+            // }
             return;
+        }
 
         if (clickedTag == "Start-Fight")
         {
