@@ -133,7 +133,7 @@ public class Player_click_handler : MonoBehaviour
 
     private bool clickedClickableObj(RaycastHit2D hitInfo)
     {
-        if (hitInfo == null)
+        if (hitInfo == false)
             return false;
         else if (hitInfo.collider == null)
         {

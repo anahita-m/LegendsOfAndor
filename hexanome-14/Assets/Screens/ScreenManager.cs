@@ -27,7 +27,8 @@ public class ScreenManager : MonoBehaviour
         screens = new Dictionary<string, Screen>();
         baseObj = (GameObject) Resources.Load("empty");
         initScreens();
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(this.gameObject);
+        // baseObj.SetActive(false);
     }
 
     public void init()
