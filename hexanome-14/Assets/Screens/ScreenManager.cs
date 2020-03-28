@@ -29,14 +29,13 @@ public class ScreenManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void init()
-    {
-        screens = new Dictionary<string, Screen>();
-        baseObj = (GameObject) Resources.Load("empty");
-        initScreens();
-        // DontDestroyOnLoad(gameObject);
-
-    }
+    // public void init()
+    // {
+    //     screens = new Dictionary<string, Screen>();
+    //     baseObj = (GameObject) Resources.Load("empty");
+    //     initScreens();
+    //     DontDestroyOnLoad(gameObject);
+    // }
 
     public void onSceneSwitch()
     {
