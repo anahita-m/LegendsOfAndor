@@ -23,7 +23,7 @@ namespace Andor
         private string myTag;
         private string heroType;
         public string position;
-        public string hour;
+        public static string hour;
         public int time;
 
         public string playerTag;
@@ -73,9 +73,10 @@ namespace Andor
         }
 
 
-        public string getHour()
+        public static string getHour()
         {
-            return this.hour;
+            return hour;
+            //this.hour
         }
 
         public void setHour(string h)
@@ -162,18 +163,19 @@ namespace Andor
             Scene scene = SceneManager.GetActiveScene();
             if (scene.name != "AndorBoard")
                 return;
-            if (photonView.IsMine)
-                checkClick();
-            else
-            {
-                float x1 = transform.position[0];
-                float x2 = transform.position[1];
-                float x3 = transform.position[2];
-                float newX = Mathf.MoveTowards(x1, newPos[0], 1);
-                float newY = Mathf.MoveTowards(x2, newPos[1], 1);
-                float newZ = Mathf.MoveTowards(x3, newPos[2], 1);
-                transform.position = new Vector3(newX, newY, newZ);
-            }
+            //check that it is also your turn
+            //if (photonView.IsMine)//
+               // checkClick();
+            //else
+            //{
+            //    float x1 = transform.position[0];
+            //    float x2 = transform.position[1];
+            //    float x3 = transform.position[2];
+            //    float newX = Mathf.MoveTowards(x1, newPos[0], 1);
+            //    float newY = Mathf.MoveTowards(x2, newPos[1], 1);
+            //    float newZ = Mathf.MoveTowards(x3, newPos[2], 1);
+            //    transform.position = new Vector3(newX, newY, newZ);
+            //}
         }
 
         private void checkClick()
@@ -183,11 +185,12 @@ namespace Andor
             {
                 string clickedTag = getClickedGameObjectTag();
                 if (clickedTag == "") return;
-
-                Vector3 newPos = getClickedPos(clickedTag);
-
-                if (newPos != new Vector3(-10000, 1, 1))
-                    moveTo(clickedTag, newPos);
+             
+                    Vector3 newPos = getClickedPos(clickedTag);
+                    //check if it is your turn for move
+                    if (newPos != new Vector3(-10000, 1, 1))
+                        moveTo(clickedTag, newPos);
+                
             }
         }
 
@@ -214,6 +217,21 @@ namespace Andor
             }
         }
 
+        public void OnClickPass()
+        {
+            
+                //GameObject player = GameObject.FindGameObjectWithTag(playerTag);
+                timeTracker t = GetComponent<timeTracker>();
+                t.setHour(5);
+            
+        }
+
+        public void OnClickEndDay()
+        {
+                //GameObject player = GameObject.FindGameObjectWithTag(playerTag);
+                timeTracker t = GetComponent<timeTracker>();
+                t.setHour(8);
+        }
         private string getClickedGameObjectTag()
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -233,17 +251,18 @@ namespace Andor
 
         public void moveTo(string newLoc, Vector3 newPos)
         {
+            //check if it is legal in terms of hours 
             transform.position = newPos;
             BoardContents.setNewPlayerPosition(playerTag, newLoc);
             string oldpos = BoardContents.getPlayerPosition(playerTag);
-            // int distance = Graph.getDistance(oldpos, newLoc);
+            // int distance = Graph.getDistance(oldpos, newLoc)
             // Monster.moveAllMonstersAtSunrise();
             Monster.moveAllMonstersAtSunrise();
             //foreach (KeyValuePair<string, string> entry in Monster.monsterPositions)
             //{
             //    Debug.Log(entry.Key + " " + entry.Value);
             //}
-            GameConsole.instance.UpdateFeedback("Player " + playerTag + " has moved to " + newLoc);
+            GameConsole.instance.UpdateFeedback("Player " + playerTag + " has moved to " + BoardContents.getPlayerPosition(playerTag));
 
 
         }

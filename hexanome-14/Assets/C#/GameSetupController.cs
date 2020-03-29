@@ -93,6 +93,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         playerObject.AddComponent<Andor.Player>();
         //playerObject.AddComponent<Andor.Player>().setPlayerPos(PlayerPrefs.GetString("CharacterRank"));
         playerObject.AddComponent<Hero>();
+        playerObject.AddComponent<timeTracker>();
 
         int spawnPicker = UnityEngine.Random.Range(0, GameSetupController.GS.spawnPoints.Length);
 
@@ -277,6 +278,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
             string playerName = PhotonNetwork.LocalPlayer.NickName;
             int id = PhotonNetwork.LocalPlayer.ActorNumber;
             entry.GetComponent<PhotonPlayer>().Initialize(id, playerName);
+            GameManager.addPlayer(entry.tag);
 
             BoardContents.initAndGetMonster(monsterPositions);
             Monster.monsterPositions = monsterPositions;

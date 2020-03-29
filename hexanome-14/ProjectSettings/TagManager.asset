@@ -122,6 +122,8 @@ TagManager:
   - gor-7
   - skral-1
   - skral-2
+  - end_day
+  - pass
   layers:
   - Default
   - TransparentFX

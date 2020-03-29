@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using System.IO;
 using System.Linq;
 
-public class Monster : MonoBehaviour, Fightable
+public class Monster : MonoBehaviourPun, Fightable
 {
     private MoveStrategy moveStrat;
     private DiceRollStrategy diceRollStrat;
@@ -72,13 +72,18 @@ public class Monster : MonoBehaviour, Fightable
             Debug.Log("gor");
 
         }
+
+        //Dictionary<string, string> tempMonsterLoc = new Dictionary<string, string>();
+        //tempMonsterLoc = monsterPositions;
+
         foreach (KeyValuePair<string, string> entry in monster)
             {
             i++;
             Debug.Log("MonsterCount: "+ monster.Count());
             Debug.Log("num of loops: " + i);
             int nextLoc;
-            int currLoc = convertToInt(entry.Value);	        if(currLoc == 0)
+            int currLoc = convertToInt(entry.Value);
+	        if(currLoc == 0)
             {
                 nextLoc = 0;
                 //implement method for placing monsters on shields 
@@ -86,6 +91,7 @@ public class Monster : MonoBehaviour, Fightable
             else
             {
                 nextLoc = monsterLoc[currLoc];
+                //if a monster already exists on the spot, we find the next available spot
                 while (monsterPositions.ContainsValue(nextLoc.ToString()))
                 {
                     //loop til you find spot
@@ -101,25 +107,25 @@ public class Monster : MonoBehaviour, Fightable
                 monsterToMove.transform.position = nex;
 
             //tempMonsterPositions[entry.Key] = nextLoc.ToString();
-            //Dictionary<string, string> tempMonsterLoc = new Dictionary<string, string>();
-            //tempMonsterLoc = BoardContents.getAllMonsterPositions();
+       
 
-            //THIS PART DOESN'T WORK 
+            //THIS PART DOESN'T WORK!!!!
+            //monsterPositions[entry.Key] = nextLoc.ToString();
 
             //HAD TO UNCOMMENT THE PARTS WHICH UPDATE THE MONSTER POSITIONS 
             char c = entry.Key[0];
             if (c == 's')
             {
-                //BoardContents.setNewSkralPosition(entry.Key, nextLoc.ToString());
-                //BoardContents.setNewMonsterPosition(entry.Key, nextLoc.ToString());
+               // BoardContents.setNewSkralPosition(entry.Key, nextLoc.ToString());
+               // BoardContents.setNewMonsterPosition(entry.Key, nextLoc.ToString());
 
                 //skralMonsterLoc[entry.Key] = nextLoc.ToString();
-                // monsterPositions[entry.Key] = nextLoc.ToString();
+                //monsterPositions[entry.Key] = nextLoc.ToString();
             }
             if (c == 'g')
             {
-                //BoardContents.setNewSkralPosition(entry.Key, nextLoc.ToString());
-                //BoardContents.setNewMonsterPosition(entry.Key, nextLoc.ToString());
+               // BoardContents.setNewSkralPosition(entry.Key, nextLoc.ToString());
+               // BoardContents.setNewMonsterPosition(entry.Key, nextLoc.ToString());
 
                 // gorMonsterLoc[entry.Key] = nextLoc.ToString();
                 // monsterPositions[entry.Key] = nextLoc.ToString();
@@ -137,6 +143,7 @@ public class Monster : MonoBehaviour, Fightable
 
             }
         }
+        //monsterPositions = tempMonsterLoc;
     }
 
     //public static void updateMonsterPositions(Dictionary<string, string> updatedLoc)

@@ -51,6 +51,7 @@ public class PhotonPlayer : MonoBehaviour
             //GameSetupController.GS.spawnPoints[spawnPicker].position
             myAvatar = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Avatar"), initialPos
                    , GameSetupController.GS.spawnPoints[spawnPicker].rotation, 0);
+            
             Debug.Log("created avatar");
 
             //myAvatar.GetComponent<GameUnit>().setPhysicalObject(myAvatar);

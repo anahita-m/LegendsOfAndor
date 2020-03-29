@@ -25,5 +25,6 @@ public class AvatarSetup : MonoBehaviour
     {
         characterValue = whichCharacter;
         myCharacter = Instantiate(PlayerInfo.PI.allcharacters[whichCharacter], transform.position, transform.rotation, transform);
+        
     }
 }
