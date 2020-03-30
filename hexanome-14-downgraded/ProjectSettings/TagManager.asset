@@ -138,6 +138,23 @@ TagManager:
   - gor-8
   - gor-9
   - gor-10
+  - end_day
+  - pass
+  - well-1
+  - well-2
+  - well-3
+  - well-4
+  - well-5
+  - merchant-1
+  - merchant-2
+  - merchant-3
+  - merchant-4
+  - merchant-5
+  - farmer-1
+  - farmer-2
+  - farmer-3
+  - farmer-4
+  - farmer-5
   layers:
   - Default
   - TransparentFX

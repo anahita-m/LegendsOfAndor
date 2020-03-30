@@ -20,12 +20,12 @@ public class GameConsole : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FeedbackText.text = "";
+        instance.FeedbackText.text = "";
     }
 
     public void UpdateFeedback(string messageToPlayers)
     {
-        FeedbackText.text = messageToPlayers;
+        instance.FeedbackText.text = messageToPlayers;
     }
 
 }
