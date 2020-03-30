@@ -114,6 +114,29 @@ TagManager:
   - Sphere-Male-Wizard
   - Sphere-Male-Archer
   - Sphere-Male-Warrior
+  - Bullet
+  - skral-1
+  - gor-1
+  - archer
+  - wizard
+  - warrior
+  - dwarf
+  - gor-2
+  - gor-3
+  - gor-4
+  - gor-5
+  - farmer-1
+  - farmer-2
+  - well-1
+  - well-2
+  - well-3
+  - well-4
+  - merchant-1
+  - merchant-2
+  - merchant-3
+  - end_day
+  - pass
+  - Start-Fight
   layers:
   - Default
   - TransparentFX

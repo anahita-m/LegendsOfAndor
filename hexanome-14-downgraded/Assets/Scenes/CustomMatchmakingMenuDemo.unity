@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -96,7 +96,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -418,9 +417,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945294294}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 9
   m_Type: 1
-  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -622,6 +620,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8779304197668093243, guid: 9d464e49491d947e4821483e27cc4c9c,
+        type: 3}
+      propertyPath: m_Name
+      value: dwarfTimeTracker
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779304197668093243, guid: 9d464e49491d947e4821483e27cc4c9c,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: 5827285919933642539, guid: 9d464e49491d947e4821483e27cc4c9c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -677,17 +686,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8779304197668093243, guid: 9d464e49491d947e4821483e27cc4c9c,
-        type: 3}
-      propertyPath: m_Name
-      value: dwarfTimeTracker
-      objectReference: {fileID: 0}
-    - target: {fileID: 8779304197668093243, guid: 9d464e49491d947e4821483e27cc4c9c,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000,
-        type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d464e49491d947e4821483e27cc4c9c, type: 3}
 --- !u!1001 &4316014729283952382
@@ -697,6 +695,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3008137178628420502, guid: a2bda8d52be38479a840ef40c3f74736,
+        type: 3}
+      propertyPath: m_Name
+      value: wizardTimeTracker
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008137178628420502, guid: a2bda8d52be38479a840ef40c3f74736,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: 498133435079583963, guid: a2bda8d52be38479a840ef40c3f74736,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -752,17 +761,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3008137178628420502, guid: a2bda8d52be38479a840ef40c3f74736,
-        type: 3}
-      propertyPath: m_Name
-      value: wizardTimeTracker
-      objectReference: {fileID: 0}
-    - target: {fileID: 3008137178628420502, guid: a2bda8d52be38479a840ef40c3f74736,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000,
-        type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2bda8d52be38479a840ef40c3f74736, type: 3}
 --- !u!1001 &5301057872290666712
@@ -772,6 +770,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9031488910945584156, guid: a618c5e3fbb3f445f916649c9132d58a,
+        type: 3}
+      propertyPath: m_Name
+      value: warriorTimeTracker
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031488910945584156, guid: a618c5e3fbb3f445f916649c9132d58a,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: 3456443120455361225, guid: a618c5e3fbb3f445f916649c9132d58a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -832,17 +841,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 9031488910945584156, guid: a618c5e3fbb3f445f916649c9132d58a,
-        type: 3}
-      propertyPath: m_Name
-      value: warriorTimeTracker
-      objectReference: {fileID: 0}
-    - target: {fileID: 9031488910945584156, guid: a618c5e3fbb3f445f916649c9132d58a,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000,
-        type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a618c5e3fbb3f445f916649c9132d58a, type: 3}
 --- !u!1001 &6404522648239539582
@@ -852,6 +850,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3411717939215407635, guid: fdca81c317f174c1cbe8dea7f39be7ae,
+        type: 3}
+      propertyPath: m_Name
+      value: archerTimeTracker
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411717939215407635, guid: fdca81c317f174c1cbe8dea7f39be7ae,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: -6563437792044163989, guid: fdca81c317f174c1cbe8dea7f39be7ae,
         type: 3}
       propertyPath: viewIdField
@@ -912,17 +921,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3411717939215407635, guid: fdca81c317f174c1cbe8dea7f39be7ae,
-        type: 3}
-      propertyPath: m_Name
-      value: archerTimeTracker
-      objectReference: {fileID: 0}
-    - target: {fileID: 3411717939215407635, guid: fdca81c317f174c1cbe8dea7f39be7ae,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000,
-        type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdca81c317f174c1cbe8dea7f39be7ae, type: 3}
 --- !u!1001 &7834657012677400653
@@ -932,6 +930,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6742690693417377141, guid: 60fb79643985068418713f9a1a7fb732,
+        type: 3}
+      propertyPath: m_Name
+      value: PhotonCustomMatchmaking
+      objectReference: {fileID: 0}
     - target: {fileID: 183650433528118417, guid: 60fb79643985068418713f9a1a7fb732,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1226,11 +1229,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 6742690693417377141, guid: 60fb79643985068418713f9a1a7fb732,
-        type: 3}
-      propertyPath: m_Name
-      value: PhotonCustomMatchmaking
       objectReference: {fileID: 0}
     - target: {fileID: 7018663105047695215, guid: 60fb79643985068418713f9a1a7fb732,
         type: 3}

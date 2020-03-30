@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Node : MonoBehaviour, IEnumerable<int>
+public class Node :  IEnumerable<int>
 {
 
     // this is the same as the tag: ie 1||2, is the position on board.

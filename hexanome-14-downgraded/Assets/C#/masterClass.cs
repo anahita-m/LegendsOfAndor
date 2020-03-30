@@ -139,6 +139,7 @@ public class masterClass : MonoBehaviour
         GameObject newGameObject = Instantiate(baseObject, transform.position, transform.rotation);
         newGameObject.tag = gameCellNumber.ToString();
         newGameObject.name = "position-" + gameCellNumber.ToString();
+        newGameObject.transform.parent = gameObject.transform;
 
         newGameObject.AddComponent<SpriteRenderer>();
         SpriteRenderer spriteRenderer = newGameObject.GetComponent<SpriteRenderer>();

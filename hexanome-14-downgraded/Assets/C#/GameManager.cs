@@ -6,7 +6,7 @@ using Photon.Realtime;
 
 public class GameManager : MonoBehaviourPun
 {
-    public static string [] playerTagList = new string [PhotonNetwork.CountOfPlayers];
+    public static string [] playerTagList = new string [PhotonNetwork.CountOfPlayers + 1];
     public static int playerCount = 0;
 
     //public static int NumberOfPlayers;

@@ -90,7 +90,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         GameObject playerObject = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
         //GameObject.FindWithTag("14").GetComponent<BoardPosition>().getMiddle(), Quaternion.identity, 0);//
         Debug.Log("Reached Here");
-        playerObject.AddComponent<Andor.Player>();
+        // playerObject.AddComponent<Andor.Player>();
         //playerObject.AddComponent<Andor.Player>().setPlayerPos(PlayerPrefs.GetString("CharacterRank"));
         playerObject.AddComponent<Hero>();
         playerObject.AddComponent<timeTracker>();

@@ -27,7 +27,7 @@ public class Graph : MonoBehaviour
         loadNeighbours();
     }
 
-    private void loadNeighbours()
+    public void loadNeighbours()
     {
         readGraphCSV();
     }
@@ -35,7 +35,7 @@ public class Graph : MonoBehaviour
 
     private void readGraphCSV()
     {
-        using(var reader = new StreamReader(@"./Assets/adjacencyList.txt"))
+        using(var reader = new StreamReader(@"./Assets/C#/adjacencyList.txt"))
         {
             while (!reader.EndOfStream)
             {
@@ -47,10 +47,6 @@ public class Graph : MonoBehaviour
                 int currentPos = convertToInt(neighbourIndices[0]);
 
                 // have only added up to here in the csv
-                if (currentPos > 62)
-                {
-                    break;
-                }
                 // skip fstElem: currentPos so we don't add it as a neighbour of itself
                 addNeighboursOf(currentPos, neighbourIndices.Skip(1).ToArray());
             }
@@ -67,18 +63,19 @@ public class Graph : MonoBehaviour
             foundNeighbours.Add(convertToInt(neighbour));
         }
         // this sets nodes[currentPos].neighbours to below value
-        nodes[currentPos] = new Node(currentPos, foundNeighbours.ToArray());
+        Graph.nodes[currentPos] = new Node(currentPos, foundNeighbours.ToArray());
+        // Debug.Log("added: " + currentPos);
 
 
         // for testing
         Console.WriteLine("neighbours of node: " + currentPos.ToString());
-        Debug.Log("neighbours of node: " + currentPos.ToString());
+        // Debug.Log("neighbours of node: " + currentPos.ToString());
         string neighbourString = "";
         foreach(int idk in nodes[currentPos])
         {
             neighbourString += idk.ToString() + ", ";
         }
-        Debug.Log(neighbourString);
+        // Debug.Log(neighbourString);
     }
 
 

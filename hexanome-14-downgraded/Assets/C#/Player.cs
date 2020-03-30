@@ -14,8 +14,11 @@ namespace Andor
         // public GameObject sphere;
 
         private Vector3 newPos;
+        private Player_click_handler click_handler;
+        public ScreenManager screenManager;
 
         private string userName;
+        private string currentScene;
 
         // ie Player-Male-Dwarf
         // also encodes the corresponding hero type
@@ -43,34 +46,52 @@ namespace Andor
         public Vector3 hour6 = new Vector3(21.81f, 30.11f, 0f);
         public Vector3 hour7 = new Vector3(26.06f, 30.11f, 0f);
 
+        void Awake()
+        {
+            currentScene = SceneManager.GetActiveScene().name;
+            if (!screenManager)
+                Debug.Log("couldnt find a screenManager script attached, note the player script is used in two diff prefabs, so this is probably cuz one of these doesnt have this script attached");
+
+            if (!gameObject.GetComponent<Player_click_handler>())
+            {
+                Debug.Log("don't got clicker");
+            }
+            else
+            {
+                click_handler = gameObject.GetComponent<Player_click_handler>();
+            }
+        }
 
         void Start()
         {
             if (photonView.IsMine)
             {
                 Debug.Log("in player, view is mine");
-                // sphere = PhotonNetwork.Instantiate("sphere", transform.position, transform.rotation, 0);
-                // sphere = (GameObject) Resources.Load("sphere");
-                // gameObject.AddComponent<Sphere>();
-                // sphere = GetComponent<Sphere>();
-                // sphere.SetActive(true);
                 transform.localScale = new Vector3(2.2f, 2.2f, 0.12f);
-                //if (PhotonNetwork.IsMasterClient) { setTag("Player-Male-Wizard"); }
-                //else { setTag("Player-Male-Dwarf"); }
             }
 
             playerTag = PlayerPrefs.GetString("MyCharacter");
-            myHero = new Hero();
+            // addScreenManager();
+            // myHero = new Hero();
             playerGold = new Dictionary<string, int>();
             position = PlayerPrefs.GetString("CharacterRank");
             time = 0;
 
-            myHero.setGold(UnityEngine.Random.Range(0, 10));
-            updateCoin(myTag, myHero.getGold());
-            Debug.Log("MY PLAYER HAS " + myHero.getGold() + " COINS!");
+            // myHero.setGold(UnityEngine.Random.Range(0, 10));
+            // updateCoin(myTag, myHero.getGold());
+            // Debug.Log("MY PLAYER HAS " + myHero.getGold() + " COINS!");
             // if (!photonView.IsMine && GetComponent<PlayerController>() != null)
             // Destroy(GetComponent<PlayerController>());
         }
+
+        // private void addScreenManager()
+        // {
+        //     GameObject e = (GameObject) Resources.Load("screenMan");
+        //     DontDestroyOnLoad(e);
+        //     screenManager = e.GetComponent<ScreenManager>();
+        //     screenManager.init();
+        //     Debug.Log("added screenmanager to player");
+        // }
 
 
         public static string getHour()
@@ -115,40 +136,40 @@ namespace Andor
 
         public Dictionary<string, int> playerGold;
 
-        void OnMouseOver()
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                int g = myHero.getGold();
-                Debug.Log("Player has: " + g);
-            }
-        }
+        // void OnMouseOver()
+        // {
+        //     if (Input.GetMouseButtonDown(0))
+        //     {
+        //         int g = myHero.getGold();
+        //         Debug.Log("Player has: " + g);
+        //     }
+        // }
 
 
-        [PunRPC]
-        public void serverUpdateCoin(string playerTag, int gold)
-        {
-            if (!playerGold.ContainsKey(playerTag))
-            {
-                playerGold.Add(playerTag, gold);
-            }
-            else
-            {
-                playerGold[playerTag] = gold;
-            }
-        }
+        // [PunRPC]
+        // public void serverUpdateCoin(string playerTag, int gold)
+        // {
+        //     if (!playerGold.ContainsKey(playerTag))
+        //     {
+        //         playerGold.Add(playerTag, gold);
+        //     }
+        //     else
+        //     {
+        //         playerGold[playerTag] = gold;
+        //     }
+        // }
 
-        public void updateCoin(string playerTag, int gold)
-        {
-            Debug.Log("HIHIHIHIHI");
+        // public void updateCoin(string playerTag, int gold)
+        // {
+        //     Debug.Log("HIHIHIHIHI");
 
-            if (photonView != null && photonView.IsMine)
-            {
-                Debug.Log("Im in!");
+        //     if (photonView != null && photonView.IsMine)
+        //     {
+        //         Debug.Log("Im in!");
 
-                photonView.RPC("serverUpdateCoin", RpcTarget.All, playerTag, gold);
-            }
-        }
+        //         photonView.RPC("serverUpdateCoin", RpcTarget.All, playerTag, gold);
+        //     }
+        // }
 
 
 
@@ -160,70 +181,52 @@ namespace Andor
 
         void Update()
         {
-            Scene scene = SceneManager.GetActiveScene();
-            if (scene.name != "AndorBoard")
-                return;
-           // check that it is also your turn
-            if (photonView.IsMine)//
-                checkClick();
-            else
-            {
-                float x1 = transform.position[0];
-                float x2 = transform.position[1];
-                float x3 = transform.position[2];
-                float newX = Mathf.MoveTowards(x1, newPos[0], 1);
-                float newY = Mathf.MoveTowards(x2, newPos[1], 1);
-                float newZ = Mathf.MoveTowards(x3, newPos[2], 1);
-                transform.position = new Vector3(newX, newY, newZ);
-            }
+            // if (updateCode())
+            updateCode();
+            moveToNewPos(newPos);
         }
 
-        private void checkClick()
+        // void FixedUpdate()
+        // {
+        //     updateCode();
+        //     moveToNewPos(newPos);
+
+        // }
+
+        public bool updateCode()
         {
-
-            if (Input.GetMouseButtonDown(0))
+            if (photonView.IsMine)
             {
-                string clickedTag = getClickedGameObjectTag();
-                if (clickedTag == "") return;
-             
-                    Vector3 newPos = getClickedPos(clickedTag);
-                    //check if it is your turn for move
-                    if (newPos != new Vector3(-10000, 1, 1))
-                        moveTo(clickedTag, newPos);
-                
-            }
-        }
+                if (ScreenManager.screens == null)
+                {
+                    screenManager.init();
+                }
+                //     if (screenManager == null && currSceneTag() == "AndorBoard")
+                //     {
+                //         addScreenManager();
+                //     }
+                //     else
+                //         return false;
+                // }
 
-        private Vector3 getClickedPos(string clickedTag)
-        {
-            // right now we just assume clicked a boardPosition
-            int cTag;
-            try
-            {
-                cTag = int.Parse(clickedTag);
-                GameObject go = GameObject.FindWithTag(clickedTag);
-                BoardPosition bp = go.GetComponent<BoardPosition>();
-
-                Vector3 newPos = bp.getMiddle();
-                return newPos;
-
-                // player.gameObject.transform.position = bp.getMiddle();
-                // newPos = player.sphere.transform.position;
-                // transform.position = new Vector3(-6.81f, 7.57f, 0.0f);
+                if (Input.GetMouseButtonDown(0))
+                {
+                    if (click_handler != null)
+                    {
+                        click_handler.checkClick(newPos, this);
+                    }
+                    else return false;
+                    // string s = currSceneTag();
+                }
             }
-            catch (InvalidCastException e)
-            {
-                return new Vector3(-10000, 1, 1);
-            }
+            return true;
         }
 
         public void OnClickPass()
         {
-            
-                //GameObject player = GameObject.FindGameObjectWithTag(playerTag);
-                timeTracker t = GetComponent<timeTracker>();
-                t.setHour(5);
-            
+            //GameObject player = GameObject.FindGameObjectWithTag(playerTag);
+            timeTracker t = GetComponent<timeTracker>();
+            t.setHour(5);
         }
 
         public void OnClickEndDay()
@@ -231,22 +234,6 @@ namespace Andor
                 //GameObject player = GameObject.FindGameObjectWithTag(playerTag);
                 timeTracker t = GetComponent<timeTracker>();
                 t.setHour(8);
-        }
-        private string getClickedGameObjectTag()
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            // RaycastHit hitInfo;
-            RaycastHit2D hitInfo = Physics2D.GetRayIntersection(ray);
-            Debug.Log("clicked");
-            if (hitInfo == null)
-                return "";
-
-            string colliderTag = hitInfo.collider.gameObject.tag;
-            Debug.Log("want to move to: " + colliderTag);
-
-            return (colliderTag != null) ? colliderTag : "";
-
         }
 
         public void moveTo(string newLoc, Vector3 newPos)
@@ -292,7 +279,25 @@ namespace Andor
             //}
         }
 
-  
+
+        public void moveToNewPos(Vector3 newPos)
+        {
+            float x1 = transform.position[0];
+            float x2 = transform.position[1];
+            float x3 = transform.position[2];
+
+            float newX = Mathf.MoveTowards(x1, newPos[0], 1);
+            float newY = Mathf.MoveTowards(x2, newPos[1], 1);
+            float newZ = Mathf.MoveTowards(x3, newPos[2], 1);
+
+            transform.position = new Vector3(newX, newY, newZ);
+        }
+
+        public void setNewPos(Vector3 newPosition)
+        {
+            newPos = newPosition;
+        }
+
 
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
@@ -320,6 +325,22 @@ namespace Andor
 
         }
 
+        public void changeOfScene(string newSceneTag)
+        {
+            currentScene = newSceneTag;
+            ScreenManager.sceneSwitch(currentScene);
+        }
+
+
+        public string currSceneTag()
+        {
+            if ( SceneManager.GetActiveScene().name != currentScene)
+            {
+                Debug.Log("currentScene tag in player different from SceneManager.GetActiveScene().name");
+                currentScene = SceneManager.GetActiveScene().name;
+            }
+            return currentScene;
+        }
     }
 }
 

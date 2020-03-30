@@ -24,7 +24,7 @@ public class BoardContents : Graph
     private Dictionary<string, string> wardakPositions;
 
 
-    private static BoardContents _singleton;
+    public static BoardContents _singleton;
 
     // wanted to use arraylist but the microsoft docs say it sucks, recommended this.
     // private List<Usable> articlesOnPos;

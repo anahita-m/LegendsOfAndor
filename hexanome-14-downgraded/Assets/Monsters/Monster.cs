@@ -15,6 +15,7 @@ public class Monster : MonoBehaviourPun, Fightable
     private string monsterType;
     public string position;
 
+    public static bool initialized = false;
     private Monster myMonster;
     public static Dictionary<int, int> monsterLoc = new Dictionary<int, int>();
     public static Dictionary<string, string> gorMonsterLoc = new Dictionary<string, string>();
@@ -183,7 +184,7 @@ public class Monster : MonoBehaviourPun, Fightable
     void Start()
     {
         readGraphCSV();
-        myMonster = new Monster();
+        myMonster = this;
     }
 
 
@@ -208,13 +209,17 @@ public class Monster : MonoBehaviourPun, Fightable
 
     private void readGraphCSV()
     {
+        if (initialized)
+            return;
+        else
+            Monster.initialized = true;
         using (var reader = new StreamReader(@"./Assets/C#/adjacencyList.txt"))
         {
             int i = 1;
-            foreach(KeyValuePair<int, int> kv in monsterLoc)
-            {
-                Debug.Log(kv.Key + " " + kv.Value);
-            }
+            // foreach(KeyValuePair<int, int> kv in monsterLoc)
+            // {
+            //     Debug.Log(kv.Key + " " + kv.Value);
+            // }
             while (!reader.EndOfStream)
             {
                 string line = reader.ReadLine().ToString().TrimEnd(Environment.NewLine.ToCharArray());
