@@ -114,6 +114,30 @@ TagManager:
   - Sphere-Male-Wizard
   - Sphere-Male-Archer
   - Sphere-Male-Warrior
+  - archer
+  - wizard
+  - dwarf
+  - warrior
+  - skral-1
+  - skral-2
+  - skral-3
+  - skral-4
+  - skral-5
+  - skral-6
+  - skral-7
+  - skral-8
+  - skral-9
+  - skral-10
+  - gor-1
+  - gor-2
+  - gor-3
+  - gor-4
+  - gor-5
+  - gor-6
+  - gor-7
+  - gor-8
+  - gor-9
+  - gor-10
   layers:
   - Default
   - TransparentFX
