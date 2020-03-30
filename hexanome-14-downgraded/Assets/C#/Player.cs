@@ -70,6 +70,11 @@ namespace Andor
                 transform.localScale = new Vector3(2.2f, 2.2f, 0.12f);
             }
 
+            if (ScreenManager.screens == null)
+            {
+                screenManager.init();
+            }
+
             playerTag = PlayerPrefs.GetString("MyCharacter");
             // addScreenManager();
             // myHero = new Hero();
@@ -179,48 +184,48 @@ namespace Andor
             return heroType;
         }
 
-        void Update()
-        {
-            // if (updateCode())
-            updateCode();
-            moveToNewPos(newPos);
-        }
+//         void Update()
+//         {
+//             // if (updateCode())
+//             updateCode();
+//             moveToNewPos(newPos);
+//         }
 
-        // void FixedUpdate()
-        // {
-        //     updateCode();
-        //     moveToNewPos(newPos);
+//         // void FixedUpdate()
+//         // {
+//         //     updateCode();
+//         //     moveToNewPos(newPos);
 
-        // }
+//         // }
 
-        public bool updateCode()
-        {
-            if (photonView.IsMine)
-            {
-                if (ScreenManager.screens == null)
-                {
-                    screenManager.init();
-                }
-                //     if (screenManager == null && currSceneTag() == "AndorBoard")
-                //     {
-                //         addScreenManager();
-                //     }
-                //     else
-                //         return false;
-                // }
+//         public bool updateCode()
+//         {
+//             if (photonView.IsMine)
+//             {
+//                 if (ScreenManager.screens == null)
+//                 {
+//                     screenManager.init();
+//                 }
+//                 //     if (screenManager == null && currSceneTag() == "AndorBoard")
+//                 //     {
+//                 //         addScreenManager();
+//                 //     }
+//                 //     else
+//                 //         return false;
+//                 // }
 
-                if (Input.GetMouseButtonDown(0))
-                {
-                    if (click_handler != null)
-                    {
-                        click_handler.checkClick(newPos, this);
-                    }
-                    else return false;
-                    // string s = currSceneTag();
-                }
-            }
-            return true;
-        }
+//                 if (Input.GetMouseButtonDown(0))
+//                 {
+//                     if (click_handler != null)
+//                     {
+//                         click_handler.checkClick(newPos, this);
+//                     }
+//                     else return false;
+//                     // string s = currSceneTag();
+//                 }
+//             }
+//             return true;
+//         }
 
         public void OnClickPass()
         {
@@ -280,7 +285,7 @@ namespace Andor
         }
 
 
-        public void moveToNewPos(Vector3 newPos)
+        public void moveToNewPos()
         {
             float x1 = transform.position[0];
             float x2 = transform.position[1];
@@ -323,6 +328,11 @@ namespace Andor
                 PhotonNetwork.Destroy(player.gameObject);
             }
 
+        }
+
+        public Vector3 getPos()
+        {
+            return newPos;
         }
 
         public void changeOfScene(string newSceneTag)

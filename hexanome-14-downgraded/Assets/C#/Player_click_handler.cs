@@ -5,16 +5,29 @@ using UnityEngine;
 using Photon.Pun;
 
 namespace Andor{
-public class Player_click_handler : MonoBehaviour
+public class Player_click_handler : MonoBehaviourPun
 {
     // need to add this and command router and screenmanager scripts to the player prefab
     //
     // Start is called before the first frame update
     private CommandRouter commands;
+    private Andor.Player player;
+
     void Start()
     {
         // player = gameObject.GetComponent<Player>();
-        CommandRouter commands = gameObject.GetComponent<CommandRouter>();
+        commands = gameObject.GetComponent<CommandRouter>();
+        player = gameObject.GetComponent<Andor.Player>();
+    }
+
+    void Update()
+    {
+        if (photonView.IsMine)
+        {
+            if (Input.GetMouseButtonDown(0))
+                checkClick(player.getPos(), player);
+        }
+        player.moveToNewPos();
     }
 
 
