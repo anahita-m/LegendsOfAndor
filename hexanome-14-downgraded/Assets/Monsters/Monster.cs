@@ -9,6 +9,7 @@ using System.Linq;
 
 public class Monster : MonoBehaviourPun, Fightable
 {
+    public static bool initialized = false;
     private MoveStrategy moveStrat;
     private DiceRollStrategy diceRollStrat;
     private string myTag;
@@ -208,6 +209,12 @@ public class Monster : MonoBehaviourPun, Fightable
 
     private void readGraphCSV()
     {
+        if (initialized) {
+            return; }
+        else
+        {
+            Monster.initialized = true;
+        }
         using (var reader = new StreamReader(@"./Assets/C#/adjacencyList.txt"))
         {
             int i = 1;

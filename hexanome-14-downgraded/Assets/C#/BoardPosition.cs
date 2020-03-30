@@ -88,10 +88,10 @@ public class BoardPosition : MonoBehaviour
     void OnMouseDown()
     {
         masterClass master = GetComponentInParent<masterClass>();
-        if (master.isCurrentlySelected(gameObject.tag))
+        if (master.isCurrentlySelected(this.gameObject.tag))
             return;
 
-        master.requestHighlight(gameObject.tag);
+        master.requestHighlight(this.gameObject.tag);
         // Todo: make this better for turns, need to pass who clicked somehow
         // should just only have highlight stuff here and no game logic
         // could add a million colliders to each player
