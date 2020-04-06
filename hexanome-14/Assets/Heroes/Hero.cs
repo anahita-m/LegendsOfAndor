@@ -11,7 +11,8 @@ public class Hero : MonoBehaviour, Movable, Fightable
 
     // this is the tag of the sphere gameObject which we show
     // as a hero's position! (currently the gray squished sphere)
-    private string sphereTag;
+    public string sphereTag;
+    public string position;
 
     private MoveStrategy moveStrat;
     private DiceRollStrategy diceRollStrat;
@@ -22,7 +23,7 @@ public class Hero : MonoBehaviour, Movable, Fightable
 
     private int numHoursLeft;
 
-    private int gold;
+    private int gold = 2;
 
     // all heroes start with 1 strength point
     private int strength = 1;
@@ -31,8 +32,9 @@ public class Hero : MonoBehaviour, Movable, Fightable
     // rank differs per hero so initialize this in child classes.
     private int rank;
 
+
     // use List not ArrayList -- see microsoft docs on arraylist
-    // private List<Usable> myArticles;
+    private List<merchArticle> myArticles = new List<merchArticle>();
 
     // Will need to use this to verify things like: 
     // showTradeRequest() { if player.lookingAt != Battle then showTradeRequest() }
@@ -41,6 +43,20 @@ public class Hero : MonoBehaviour, Movable, Fightable
 
     // called AFTER gameObject for this script has been created
     // AND the necessary components have been added.
+
+    public void Start()
+    {
+        
+    }
+
+    //public Hero(string mySphereTag, string thisMyTag)
+    //{
+    //    myTag = thisMyTag;
+    //    heroType = myTag;
+
+    //    // need to keep track of this things location.
+    //    sphereTag = mySphereTag;
+    //}
     public void init(string mySphereTag, string thisMyTag)
     {
         myTag = thisMyTag;
@@ -72,7 +88,7 @@ public class Hero : MonoBehaviour, Movable, Fightable
         diceRollStrat.roll(this);
     }
 
-
+    
     public int getGold()
     {
         return gold;
@@ -82,14 +98,98 @@ public class Hero : MonoBehaviour, Movable, Fightable
         this.gold = gold;
     }
 
-    public int getWillPower()
+    //void OnMouseOver()
+    //{
+    //    int g = this.getGold();
+    //    Debug.Log("Player has: " + g);
+    //}
+
+    void OnMouseOver()
     {
-        return this.willPower;
+        if (Input.GetMouseButtonDown(0)){
+            int g = this.getGold();
+            Debug.Log("Player has: " + g);
+        }
     }
 
     public int getStrength()
     {
         return this.strength;
+
     }
+
+    public void setStrength(int strength)
+    {
+        this.strength = strength;
+    }
+
+    public int getWillPower()
+    {
+        return this.willPower;
+    }
+
+    public void addArticle(merchArticle ar)
+    {
+        this.myArticles.Add(ar);
+    }
+
+    //MERCHANT METHODS
+    public bool onMerchant;
+
+    public void setOnMerchant(bool onMerchant)
+    {
+        this.onMerchant = onMerchant;
+    }
+
+
+
+    public void buyArticle(string article)
+    {
+        //Debug.Log("Player current list " + articleList());
+        merchArticle ar = Article.stringToArticle(article);
+        if (this.gold >= 2)
+        {
+            this.gold -= 2;
+
+            this.addArticle(ar);
+        }
+        //Debug.Log("Player new list " + articleList());
+        //Debug.Log("Player gold " + this.gold);
+        
+    }
+
+    //bought from merchant
+    public void buyStrength()
+    {
+
+
+        if (this.gold >= 2)
+        {
+            //decrease gold
+            this.gold -= 2;
+
+            //increase strength
+            this.strength += 1;
+
+        }
+        Debug.Log("Player buying strength");
+        Debug.Log("Player gold " + this.gold);
+        Debug.Log("Player strength " + this.strength);
+
+
+    }
+
+    private string articleList()
+    {
+        string articleList = "";
+        foreach(merchArticle ar in myArticles)
+        {
+            articleList += (" " + ar.ToString());
+        }
+        articleList += "\n";
+        return articleList;
+    }
+
+
 
 }

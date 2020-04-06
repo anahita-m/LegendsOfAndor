@@ -71,14 +71,14 @@ public class Graph : MonoBehaviour
 
 
         // for testing
-        Console.WriteLine("neighbours of node: " + currentPos.ToString());
-        Debug.Log("neighbours of node: " + currentPos.ToString());
+        //Console.WriteLine("neighbours of node: " + currentPos.ToString());
+        //Debug.Log("neighbours of node: " + currentPos.ToString());
         string neighbourString = "";
         foreach(int idk in nodes[currentPos])
         {
             neighbourString += idk.ToString() + ", ";
         }
-        Debug.Log(neighbourString);
+        //Debug.Log(neighbourString);
     }
 
 
@@ -90,7 +90,7 @@ public class Graph : MonoBehaviour
 
         // destNode has its attribute: prev set correctly now
         // Node destNode = ref bfs(nodes[srcIndex], nodes[destIndex]);
-        Node destNode = new Node(destIndex, new int[] {0,1,2});
+        Node destNode = new Node(destIndex, new int[] {0,1,2,3});
         bfs(nodes[srcIndex], nodes[destIndex], ref destNode);
 
         return calculateDistance(ref destNode, destIndex);

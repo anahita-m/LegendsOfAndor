@@ -20,8 +20,11 @@ namespace Andor
         // ie Player-Male-Dwarf
         // also encodes the corresponding hero type
         // and Sphere-Male-Dwarf. sphere object is attached to this script.
-        private string myTag;
+        public string myTag;
         private string heroType;
+        public string position;
+        public string hour;
+        public string playerTag;
 
         private Hero myHero;
         // Will need to use this to verify things like: 
@@ -29,6 +32,15 @@ namespace Andor
         // private Screen lookingAt;
 
         public string NickName { get; internal set; }
+
+        public Vector3 hour1 = new Vector3(1.13f, 30.11f, 0f);
+        public Vector3 hour2 = new Vector3(5.26f, 30.11f, 0f);
+        public Vector3 hour3 = new Vector3(9.48f, 30.11f, 0f);
+        public Vector3 hour4 = new Vector3(13.54f, 30.11f, 0f);
+        public Vector3 hour5 = new Vector3(17.79f, 30.11f, 0f);
+        public Vector3 hour6 = new Vector3(21.81f, 30.11f, 0f);
+        public Vector3 hour7 = new Vector3(26.06f, 30.11f, 0f);
+
 
         void Start()
         {
@@ -45,16 +57,48 @@ namespace Andor
                 //else { setTag("Player-Male-Dwarf"); }
             }
 
-
-            myHero = new Hero();
+            playerTag = PlayerPrefs.GetString("MyCharacter");
+            //myHero = new Hero();
+            //myHero.init(playerTag, position);
+            //myHero = new Hero(playerTag, position);
             playerGold = new Dictionary<string, int>();
+            position = PlayerPrefs.GetString("CharacterRank");
+            //Debug.Log("From player " + this.position);
+            //myHero.position = this.position;
 
-            myHero.setGold(UnityEngine.Random.Range(0, 10));
-            updateCoin(myTag, myHero.getGold());
-            Debug.Log("MY PLAYER HAS " + myHero.getGold() + " COINS!");
+            //myHero.init(playerTag, position);
+            //myHero.setGold(UnityEngine.Random.Range(0, 10));
+
+            //updateCoin(myTag, myHero.getGold());
+
+            //Debug.Log("MY PLAYER HAS " + myHero.getGold() + " COINS!");
             // if (!photonView.IsMine && GetComponent<PlayerController>() != null)
             // Destroy(GetComponent<PlayerController>());
         }
+
+
+        public string getHour()
+        {
+            return this.hour;
+        }
+
+        public void setHour(string h)
+        {
+            hour = h;
+        }
+
+
+        //GET POSITIONS FROM BOARD POSITIONS!
+
+        //public string getPlayerPos()
+        //{
+        //    return this.position;
+        //}
+
+        //public void setPlayerPos(string pos)
+        //{
+        //    position = pos;
+        //}
 
         public void setTag(string ID)
         {
@@ -75,9 +119,14 @@ namespace Andor
 
         public Dictionary<string, int> playerGold;
 
-
-
-
+        void OnMouseOver()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                int g = myHero.getGold();
+                Debug.Log("Player has: " + g);
+            }
+        }
 
 
         [PunRPC]
@@ -95,18 +144,21 @@ namespace Andor
 
         public void updateCoin(string playerTag, int gold)
         {
-            Debug.Log("HIHIHIHIHI");
+            //Debug.Log("HIHIHIHIHI");
 
             if (photonView != null && photonView.IsMine)
             {
-                Debug.Log("Im in!");
+                Debug.Log("Player tag: " + playerTag + ".");
 
                 photonView.RPC("serverUpdateCoin", RpcTarget.All, playerTag, gold);
             }
         }
 
 
-
+        public bool isMine()
+        {
+            return photonView.IsMine;
+        }
 
         public string getHeroType()
         {
@@ -143,7 +195,7 @@ namespace Andor
                 Vector3 newPos = getClickedPos(clickedTag);
 
                 if (newPos != new Vector3(-10000, 1, 1))
-                    moveTo(newPos);
+                    moveTo(clickedTag, newPos);
             }
         }
 
@@ -187,9 +239,14 @@ namespace Andor
 
         }
 
-        public void moveTo(Vector3 newPos)
+        public void moveTo(string newLoc, Vector3 newPos)
         {
             transform.position = newPos;
+
+            BoardContents.setNewPlayerPosition(playerTag, newLoc);
+            GameConsole.instance.UpdateFeedback("Player " + playerTag + " has moved to " + newLoc);
+            this.position = newLoc;
+            myHero.position = this.position;
 
         }
 
@@ -225,7 +282,7 @@ namespace Andor
 
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
-            Debug.Log("tryna write or read");
+            //Debug.Log("tryna write or read");
             if (stream.IsWriting)
             {
                 stream.SendNext(transform.position);
@@ -250,6 +307,85 @@ namespace Andor
             // player = PhotonNetwork.Instantiate(prefab, position, rotation).GetComponent<Player>();
             // sphere = player;
         }
+
+        public Hero getHero()
+        {
+            return this.myHero;
+        }
+
+
+        //MERCHAT METHODS
+        //public bool onMerchant;
+
+        //public void setOnMerchant(bool onMerchant)
+        //{
+        //    this.onMerchant = onMerchant;
+        //}
+
+       
+        ////public void clickMerchantBoard()
+        ////{
+            
+        ////    Debug.Log("FUNCTION: clickMerchantBoard");
+        ////    Merchant merchant = this.returnMerchant();
+        ////    merchant.loadAvailItems();
+        ////}
+
+        //public void buyArticle(string article)
+        //{
+        //    merchArticle ar = Article.stringToArticle(article);
+        //    if (this.myHero.getGold() >= 2)
+        //    {
+        //        int gold = this.myHero.getGold() - 2;
+        //        this.myHero.setGold(gold);
+        //        this.myHero.addArticle(ar);
+        //    }
+        //    Debug.Log("Player buying " + article);
+        //    Debug.Log("Player gold " + this.myHero.getGold());
+        //    //Merchant merch = returnMerchant();
+        //    //if (merch != null)
+        //    //{
+        //    //    if (this.myHero.getGold() >= 2)
+        //    //    {
+        //    //        int gold = this.myHero.getGold() - 2;
+        //    //        this.myHero.setGold(gold);
+        //    //        merch.sellItem(this, ar);
+        //    //        this.myHero.addArticle(ar);
+        //    //    }
+
+        //    //}
+
+
+        //}
+
+        ////bought from merchant
+        //public void buyStrength()
+        //{
+
+
+        //    if (this.myHero.getGold() >= 2)
+        //    {
+        //        //decrease gold
+        //        int gold = this.myHero.getGold() - 2;
+        //        this.myHero.setGold(gold);
+        //        //increase strength
+        //        int strength = this.myHero.getStrength() + 1;
+        //        this.myHero.setStrength(strength);
+        //    }
+        //    Debug.Log("Player buying strength");
+        //    Debug.Log("Player gold " + this.myHero.getGold());
+        //    Debug.Log("Player strength " + this.myHero.getStrength());
+
+
+        //}
+
+        ////public void closeMerchant()
+        ////{
+        ////    Merchant merch = returnMerchant();
+        ////    merch.closeBoard();
+        ////}
+
+
 
     }
 }

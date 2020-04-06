@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using UnityEngine;
@@ -11,7 +10,7 @@ public class chat : MonoBehaviourPun
     public Button button;
     public InputField input;
     PhotonView PV;
-
+    //public string messages;
     static Photon.Realtime.RaiseEventOptions sendToAllOptions = new Photon.Realtime.RaiseEventOptions()
     {
         CachingOption = Photon.Realtime.EventCaching.DoNotCache,
@@ -34,20 +33,26 @@ public class chat : MonoBehaviourPun
 
     public void buttonIsClicked()
     {
+        Debug.Log("chat button clicked");
         string message = input.text;
-        object[] data = { message, base.photonView.ViewID, PhotonNetwork.LocalPlayer.NickName };
-
+        Debug.Log("got the input");
+        object[] data = { message, photonView.ViewID, PhotonNetwork.LocalPlayer.NickName };
+        Debug.Log("sent the data");
         PhotonNetwork.RaiseEvent((byte)53, data, sendToAllOptions, SendOptions.SendReliable);
     }
 
     public void sendMessageToPlayers(string Message, string playerNickname)
     {
         string messageToBeSent = playerNickname + ": ";
-        messageToBeSent += Message;
-
+        messageToBeSent += Message + " \n";
+        //messages += messageToBeSent;
+        Debug.Log("reached boo");
         GameObject text = GameObject.Find("/Canvas/Chat/Scroll View/Viewport/Text");
-
-        text.GetComponent<Text>().text = messageToBeSent;
+        Debug.Log("reached boo 2");
+        string all_messages = text.GetComponent<Text>().text;
+        all_messages = String.Concat(all_messages, messageToBeSent);
+        text.GetComponent<Text>().text = all_messages;
+        //text.GetComponent<Text>().text = messageToBeSent;
     }
 
     //  =============== NETWORK SYNCRONIZATION SECTION ===============

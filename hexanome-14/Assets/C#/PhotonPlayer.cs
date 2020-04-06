@@ -13,12 +13,14 @@ public class PhotonPlayer : MonoBehaviour
     public string initPosition;
     public Vector3 initialPos;
     public GameObject skral;
+    public Dictionary<string, string> playerPositions = new Dictionary<string, string>();
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Instantiating avatar");
+        //Debug.Log("Instantiating avatar");
         PV = GetComponent<PhotonView>();
         //PV.TransferOwnership(PhotonNetwork.LocalPlayer);
         int spawnPicker = Random.Range(0, GameSetupController.GS.spawnPoints.Length);
@@ -26,17 +28,30 @@ public class PhotonPlayer : MonoBehaviour
 
         if (PV.IsMine)
         {
+            //this is where
             initPosition = PlayerPrefs.GetString("CharacterRank");
+            string character = PlayerPrefs.GetString("MyCharacter");
+            playerPositions.Add(character, initPosition);
+            //Debug.Log(playerPositions.Count);
+            //Debug.Log(PhotonNetwork.PlayerList.Length);
+
+            if (playerPositions.Count == PhotonNetwork.PlayerList.Length)
+            {
+                BoardContents.initAndGet(playerPositions);
+                //Debug.Log("Init positions");
+
+            }
+
             initialPos = GameObject.FindWithTag(initPosition).GetComponent<BoardPosition>().getMiddle();
 
-            Debug.Log("Instantiating avatar2");
+            //Debug.Log("Instantiating avatar2");
 
             int myPlayerNumber = PhotonNetwork.LocalPlayer.ActorNumber;
 
             //GameSetupController.GS.spawnPoints[spawnPicker].position
             myAvatar = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Avatar"), initialPos
                    , GameSetupController.GS.spawnPoints[spawnPicker].rotation, 0);
-            Debug.Log("created avatar");
+            //Debug.Log("created avatar");
 
             //myAvatar.GetComponent<GameUnit>().setPhysicalObject(myAvatar);
             //myAvatar.GetComponent<GameUnit>().setType(FlashPointGameConstants.GAMEUNIT_TYPE_FIREMAN);

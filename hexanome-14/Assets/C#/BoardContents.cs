@@ -67,7 +67,7 @@ public class BoardContents : Graph
     }
 
 
-    public void setNewPlayerPosition(string playerTag, string posTag)
+    public static void setNewPlayerPosition(string playerTag, string posTag)
     {
         _singleton.playerPositions[playerTag] = posTag;
     }

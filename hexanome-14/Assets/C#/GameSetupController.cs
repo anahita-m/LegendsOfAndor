@@ -28,6 +28,7 @@ using System.IO;
 using System;
 using ExitGames.Client.Photon;
 using Andor;
+using UnityEngine.UI;
 
 public class GameSetupController : MonoBehaviourPunCallbacks
 {
@@ -43,6 +44,8 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     //public Vector3[] initialPositions;
     public String initPosition;
     public Vector3 initialPos;
+    public Button startButton;
+    public int c = 0;
 
     private void Awake()
     {
@@ -75,22 +78,60 @@ public class GameSetupController : MonoBehaviourPunCallbacks
 
     private GameObject CreatePlayer()
     { 
-        Debug.Log("Creating Player");
+        //Debug.Log("CREATING A PLAYERRRRRR!!!!!");
+
         GameObject playerObject = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
+        
         //GameObject.FindWithTag("14").GetComponent<BoardPosition>().getMiddle(), Quaternion.identity, 0);//
-        Debug.Log("Reached Here");
-        playerObject.AddComponent<Andor.Player>();
-        playerObject.AddComponent<Hero>();
-        Debug.Log("Reached Here 3");
+        //Debug.Log("Reached Here");
+        Andor.Player player = playerObject.AddComponent<Andor.Player>();
+        Hero hero = playerObject.AddComponent<Hero>();
+        //playerObject.AddComponent<Andor.Player>().setPlayerPos(PlayerPrefs.GetString("CharacterRank"));
+
+        //string heroPos = "";
+        int spawnPicker = UnityEngine.Random.Range(0, GameSetupController.GS.spawnPoints.Length);
+
+        if (PlayerPrefs.GetString("MyCharacter") == "archer")
+        {
+            Vector3 archPos = new Vector3(-6.13f, 29.90f, 0f);
+            GameObject timetrackerobj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "archerTimeTracker"), archPos, GameSetupController.GS.spawnPoints[spawnPicker].rotation);
+            
+        }
+        if (PlayerPrefs.GetString("MyCharacter") == "wizard")
+        {
+            Vector3 wizPos = new Vector3(-8.13f, 29.90f, 0f);
+            GameObject timetrackerobj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "archerTimeTracker"), wizPos, GameSetupController.GS.spawnPoints[spawnPicker].rotation);
+        }
+        if (PlayerPrefs.GetString("MyCharacter") == "warrior")
+        {
+            Vector3 warPos = new Vector3(-10.13f, 29.90f, 0f);
+            GameObject timetrackerobj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "archerTimeTracker"), warPos, GameSetupController.GS.spawnPoints[spawnPicker].rotation);
+        }
+        if (PlayerPrefs.GetString("MyCharacter") == "dwarf")
+        {
+            Vector3 dwarfPos = new Vector3(-12.13f, 29.90f, 0f);
+            GameObject timetrackerobj = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "archerTimeTracker"), dwarfPos, GameSetupController.GS.spawnPoints[spawnPicker].rotation);
+        }
+
+
+        //Debug.Log("Reached Here 3");
         if (PlayerPrefs.HasKey("MyCharacter"))
         {
             mySelectedCharacter = PlayerPrefs.GetString("MyCharacter");
-            Debug.Log("Created character: " + PlayerPrefs.GetString("MyCharacter"));
+            //Debug.Log("Created character: " + PlayerPrefs.GetString("MyCharacter"));
         }
         playerObject.tag = mySelectedCharacter;
 
-        Andor.Player player = playerObject.GetComponent<Andor.Player>();
         player.setTag(mySelectedCharacter);
+        //Hero hero = playerObject.GetComponent<Hero>();
+        player.setHero(hero);
+        //hero.init(playerTag, position);
+        //hero.setGold(UnityEngine.Random.Range(0, 10));
+        hero.position = player.position;
+        //Debug.Log("Set up player pos: " + player.position);
+        //player.updateCoin(mySelectedCharacter, hero.getGold());
+        //Hero hero = Hero(player.getPlayerTag(), );
+        //Debug.Log("Player tag " + player.getPlayerTag());
         return playerObject;
     }
 
@@ -103,6 +144,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         skralObject.AddComponent<Monster>();
         // skralObject.SetActive(true);
         skralObject.tag = "skral";
+        DontDestroyOnLoad(skralObject);
     }
 
     private void createGors()
@@ -115,6 +157,8 @@ public class GameSetupController : MonoBehaviourPunCallbacks
             gorObject.AddComponent<Monster>();
             // skralObject.SetActive(true);
             gorObject.tag = "gor";
+            DontDestroyOnLoad(gorObject);
+
         }
     }
 
@@ -128,10 +172,54 @@ public class GameSetupController : MonoBehaviourPunCallbacks
            //farmerObject.AddComponent<Monster>();
             // skralObject.SetActive(true);
             farmerObject.tag = "farmer";
+            DontDestroyOnLoad(farmerObject);
+        }
+    }
+
+    private void createWells()
+    {
+        foreach (string wellTile in wellLocations())
+        {
+            int spawnPicker = UnityEngine.Random.Range(0, GameSetupController.GS.spawnPoints.Length);
+
+            GameObject wellObject = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Well"), GameObject.FindWithTag(wellTile).GetComponent<BoardPosition>().getMiddle(), GameSetupController.GS.spawnPoints[spawnPicker].rotation, 0);
+            //farmerObject.AddComponent<Monster>();
+            // skralObject.SetActive(true);
+            wellObject.tag = "well";
+            DontDestroyOnLoad(wellObject);
+        }
+    }
+
+    private void createMerchants()
+    {
+        
+        foreach (string merchantTile in merchantLocations())
+        {
+            int spawnPicker = UnityEngine.Random.Range(0, GameSetupController.GS.spawnPoints.Length);
+
+            GameObject merchantObject = PhotonNetwork.InstantiateSceneObject(Path.Combine("PhotonPrefabs", "Merchant"), GameObject.FindWithTag(merchantTile).GetComponent<BoardPosition>().getMiddle(), GameSetupController.GS.spawnPoints[spawnPicker].rotation, 0);
+            //merchantObject.AddComponent<Inventory>();
+            //farmerObject.AddComponent<Monster>();
+            // skralObject.SetActive(true);
+            merchantObject.tag = "merchant";
+            merchantObject.AddComponent<Merchant>();
+            
+            //Merchant merchant = merchantObject.GetComponent(typeof(Merchant)) as Merchant;
+            //merchant.setPosition(merchantTile);
+            DontDestroyOnLoad(merchantObject);
         }
     }
 
 
+    private string[] wellLocations()
+    {
+        return new string[]{
+            "5",
+            "35",
+            "45",
+            "55"
+        };
+    }
 
     private string[] gorLocations()
     {
@@ -152,13 +240,29 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         };
     }
 
+    private string[] merchantLocations()
+    {
+        return new string[]{
+            "18",
+            "57",
+            "71"
+        };
+    }
+
+    public bool StartGameOnClick()
+    {
+        Debug.Log("returning true");
+        return true;
+    }
+
 
     // Start is called before the first frame update
     //Instantiates player prefab.
     void Start()
     {
         IsSpawningPrefabs = true;
-        if (PhotonNetwork.IsConnected)
+        if (PhotonNetwork.IsConnected && StartGameOnClick())
+            Debug.Log("checked start");
         {
             GameObject entry = CreatePlayer();
             string playerName = PhotonNetwork.LocalPlayer.NickName;
@@ -167,6 +271,8 @@ public class GameSetupController : MonoBehaviourPunCallbacks
             createSkral();
             createGors();
             createFarmers();
+            createWells();
+            createMerchants();
         }
     }
 
