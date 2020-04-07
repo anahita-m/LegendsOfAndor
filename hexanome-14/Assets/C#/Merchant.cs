@@ -16,6 +16,8 @@ public class Merchant : MonoBehaviour
     private Hero myClient;
     private static List<GameObject> gameBoardPos = new List<GameObject>();
     private Button merchButton;
+    private static string currentSale = "";
+
 
     public void Start()
     {
@@ -100,23 +102,17 @@ public class Merchant : MonoBehaviour
     //should be called on a merchant button click
     public void loadAvailItems(/*Andor.Player player*/)
     {
-       
-        //Debug.Log("Load avail items");
-        //get the player
-        //GameObject players; //find
-        var heroes = FindObjectsOfType(typeof(Hero));
-        //Andor.Player player = new Andor.Player();
-        //Debug.Log("num clients " + this.clients.Count);
-        //check that player photon is mine
-        foreach (Hero h in heroes)
+        Debug.Log("num photo players " + GameSetupController.playerObjects.Count);
+        foreach(GameObject playerObject in GameSetupController.playerObjects)
         {
-            if (/*h.isMine() &&*/ h.onMerchant)
+            Hero hero_cmpnt = playerObject.GetComponent<Hero>();
+            Andor.Player player_cmpnt = playerObject.GetComponent<Andor.Player>();
+            if(hero_cmpnt.onMerchant && player_cmpnt.isMine())
             {
-                myClient = h;
-                break;
+                myClient = hero_cmpnt;
             }
         }
-
+        
 
         GameObject parent = GameObject.Find("Canvas");
         GameObject merchBoard = FindObject(parent, "MerchantBoard");
@@ -167,6 +163,8 @@ public class Merchant : MonoBehaviour
 
                     //disable button corresponding to item
                     articleButton.interactable = false;
+                    Button strengthButton = GameObject.Find("Strength").GetComponent<Button>();
+                    strengthButton.interactable = false;
 
                 }
                 else
@@ -176,9 +174,9 @@ public class Merchant : MonoBehaviour
                     articleButton.interactable = true;
                 }
             }
+            
 
-            Button strengthButton = GameObject.Find("Strength").GetComponent<Button>();
-            strengthButton.interactable = true;
+
         }
         //Debug.Log("getting here");
         for (int i = 0; i <= 84; i++)
@@ -196,6 +194,43 @@ public class Merchant : MonoBehaviour
 
     }
 
+    public void pleaseConfirm(string item)
+    {
+        //Debug.Log("CONFIRMING");
+        currentSale = item;
+        GameObject parent = GameObject.Find("MerchantBoard");
+        GameObject confirmBoard = FindObject(parent, "Confirm");
+        confirmBoard.SetActive(true);
+        Text confirmText = GameObject.Find("Canvas/MerchantBoard/Confirm/ConfirmText").GetComponent<Text>();
+        confirmText.text = "Would you like to buy " + item + " for 2 gold coins?";
+    }
+
+    public void clickOk()
+    {
+        Debug.Log("CLICKING OK");
+        Debug.Log("currentSale " + currentSale);
+        if (currentSale.Equals("Strength"))
+        {
+            this.sellStrength();
+        }
+        else {
+            this.sellItem(currentSale);
+        }
+        
+        GameObject parent = GameObject.Find("MerchantBoard");
+        GameObject confirmBoard = FindObject(parent, "Confirm");
+        confirmBoard.SetActive(false);
+    }
+
+    public void back()
+    {
+        Debug.Log("CLICKING BACK");
+        GameObject parent = GameObject.Find("MerchantBoard");
+        GameObject confirmBoard = FindObject(parent, "Confirm");
+        confirmBoard.SetActive(false);
+        loadAvailItems();
+    }
+    
     //called on an item button click
     public void sellItem(string article)
     {
@@ -241,14 +276,13 @@ public class Merchant : MonoBehaviour
         this.loadAvailItems();
 
     }
-    public void setPosition(string position)
-    {
-        this.position = position;
-    }
+    //public void setPosition(string position)
+    //{
+    //    this.position = position;
+    //}
 
     public void closeBoard()
     {
-        
         
         foreach (GameObject pos in gameBoardPos)
         {
@@ -265,7 +299,7 @@ public class Merchant : MonoBehaviour
         GameObject merchBoard = FindObject(parent, "MerchantBoard");
         merchBoard.SetActive(false);
         myClient = null;
-        
+        currentSale = "";
        
 
 

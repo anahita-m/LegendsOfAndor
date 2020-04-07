@@ -46,6 +46,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
     public Vector3 initialPos;
     public Button startButton;
     public int c = 0;
+    public static List<GameObject> playerObjects = new List<GameObject>();
 
     private void Awake()
     {
@@ -132,6 +133,7 @@ public class GameSetupController : MonoBehaviourPunCallbacks
         //player.updateCoin(mySelectedCharacter, hero.getGold());
         //Hero hero = Hero(player.getPlayerTag(), );
         //Debug.Log("Player tag " + player.getPlayerTag());
+        playerObjects.Add(playerObject);
         return playerObject;
     }
 
