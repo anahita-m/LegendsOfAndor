@@ -153,7 +153,7 @@ public class Hero : MonoBehaviour, Movable, Fightable
 
             this.addArticle(ar);
         }
-        //Debug.Log("Player new list " + articleList());
+        Debug.Log("Player new list " + articleList());
         //Debug.Log("Player gold " + this.gold);
         
     }
@@ -161,7 +161,7 @@ public class Hero : MonoBehaviour, Movable, Fightable
     //bought from merchant
     public void buyStrength()
     {
-
+        
 
         if (this.gold >= 2)
         {
@@ -179,17 +179,60 @@ public class Hero : MonoBehaviour, Movable, Fightable
 
     }
 
+    //private string articleList()
+    //{
+    //    string arList = "";
+
+    //    foreach (merchArticle ar in myArticles)
+    //    {
+    //        arList += (" " + ar.ToString());
+    //    }
+    //    arList += "\n";
+    //    return arList;
+
+    //}
+
     private string articleList()
     {
-        string articleList = "";
-        foreach(merchArticle ar in myArticles)
+        Dictionary<merchArticle, int> quantityArticles = new Dictionary<merchArticle, int>();
+        
+        foreach (merchArticle ar in myArticles)
         {
-            articleList += (" " + ar.ToString());
+            int count = 0;
+            if (quantityArticles.TryGetValue(ar, out count))
+            {
+                count++;
+                quantityArticles[ar] = count;
+            }
+            else
+            {
+                quantityArticles.Add(ar, 1);
+            }
         }
-        articleList += "\n";
-        return articleList;
+
+        string arList = "";
+        int i = 0;
+        int size = quantityArticles.Values.Count;
+        foreach(merchArticle ar in quantityArticles.Keys)
+        {
+            
+            int qty = 0;
+            if(quantityArticles.TryGetValue(ar, out qty))
+            {
+                string addString = "";
+                
+                arList += (qty.ToString() + "x " + ar.ToString());
+                if (i < size - 1)
+                {
+                    arList += ", ";
+                }
+                i++;
+            }
+            
+        }
+
+        return arList;
+
     }
-
-
 
 }

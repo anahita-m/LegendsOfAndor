@@ -13,7 +13,7 @@ public class Merchant : MonoBehaviour
     private string[] positions = {"18",
             "57",
             "71" };
-    private Hero myClient;
+    private static Hero myClient;
     private static List<GameObject> gameBoardPos = new List<GameObject>();
     private Button merchButton;
     private static string currentSale = "";
@@ -56,6 +56,7 @@ public class Merchant : MonoBehaviour
 
     public void Update()
     {
+        
         //Debug.Log("LENGTH " + gameBoardPos.Count);
         var heroes = FindObjectsOfType(typeof(Hero));
         //Debug.Log("num heroes " + heroes.Length);
@@ -102,7 +103,7 @@ public class Merchant : MonoBehaviour
     //should be called on a merchant button click
     public void loadAvailItems(/*Andor.Player player*/)
     {
-        Debug.Log("num photo players " + GameSetupController.playerObjects.Count);
+        //Debug.Log("num photo players " + GameSetupController.playerObjects.Count);
         foreach(GameObject playerObject in GameSetupController.playerObjects)
         {
             Hero hero_cmpnt = playerObject.GetComponent<Hero>();
@@ -202,7 +203,12 @@ public class Merchant : MonoBehaviour
         GameObject confirmBoard = FindObject(parent, "Confirm");
         confirmBoard.SetActive(true);
         Text confirmText = GameObject.Find("Canvas/MerchantBoard/Confirm/ConfirmText").GetComponent<Text>();
-        confirmText.text = "Would you like to buy " + item + " for 2 gold coins?";
+        if (item.Equals("Strength"))
+        {
+            currentSale = "strength point";
+        }
+        
+        confirmText.text = "Would you like to buy one " + currentSale.ToLower() + " for 2 gold coins?";
     }
 
     public void clickOk()
@@ -238,17 +244,17 @@ public class Merchant : MonoBehaviour
         merchArticle ar = Article.stringToArticle(article);
         inventory.removeItem(ar);
         //player buys item
-        var heroes = FindObjectsOfType(typeof(Hero));
-        //Debug.Log("hero length " + heroes.Length);
-        foreach (Hero h in heroes)
-        {
-            //Debug.Log("hero pos " + h.position);
-            if (/*h.isMine() &&*/ h.onMerchant)
-            {
-                myClient = h;
-                break;
-            }
-        }
+        //var heroes = FindObjectsOfType(typeof(Hero));
+        ////Debug.Log("hero length " + heroes.Length);
+        //foreach (Hero h in heroes)
+        //{
+        //    //Debug.Log("hero pos " + h.position);
+        //    if (/*h.isMine() &&*/ h.onMerchant)
+        //    {
+        //        myClient = h;
+        //        break;
+        //    }
+        //}
         myClient.buyArticle(article);
         //update the board
         loadAvailItems();
@@ -260,16 +266,16 @@ public class Merchant : MonoBehaviour
     public void sellStrength()
     {
         
-        var heroes = FindObjectsOfType(typeof(Hero));
+        //var heroes = FindObjectsOfType(typeof(Hero));
         
-        foreach (Hero h in heroes)
-        {
-            if (/*h.isMine() &&*/ h.onMerchant)
-            {
-                myClient = h;
-                break;
-            }
-        }
+        //foreach (Hero h in heroes)
+        //{
+        //    if (/*h.isMine() &&*/ h.onMerchant)
+        //    {
+        //        myClient = h;
+        //        break;
+        //    }
+        //}
         myClient.buyStrength();
 
         //update the board
