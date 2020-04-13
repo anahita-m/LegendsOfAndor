@@ -22,10 +22,21 @@ public class Monster : Fightable, MoveStrategy
     public void move()
     {
         location = location.toCastleNode();
+
     }
     public int getLocation()
     {
         return location.getIndex();
+    }
+
+    public void setLocationNode(Node x)
+    {
+        location = x ;
+    }
+
+    public Node getLocationNode()
+    {
+        return location;
     }
     public GameObject getPrefab()
     {

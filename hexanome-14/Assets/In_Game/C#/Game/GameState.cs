@@ -6,6 +6,9 @@ using UnityEngine;
 using System.Linq;
 using Newtonsoft.Json;
 
+
+//add code to enforce how many monsters can enter the castle 
+
 [JsonObject(MemberSerialization.Fields)]
 public class GameState
 {
@@ -13,8 +16,14 @@ public class GameState
 
 	private Dictionary<string, Player> players;
     private List<Monster> monsters;
+    //private Dictionary<String, Monster> monsters2;
+    private Dictionary<Skral, int> skrals;
+    private Dictionary<Gor, int> gors;
+
     public string difficulty = "-1";
     public Dictionary<string, int> playerLocations;
+    public static int monstersInCastle;
+    public static int maxMonstersToLose;
 
     public TurnManager turnManager;
 
@@ -22,8 +31,9 @@ public class GameState
 	{
 		players = new Dictionary<string, Player>();
         monsters = new List<Monster>();
-
+        //monsters2 = new Dictionary<string, Monster>();
         playerLocations = new Dictionary<string, int>();
+
     }
 
     public void addPlayer(Player p)
@@ -62,7 +72,7 @@ public class GameState
         }
         else
         {
-            Debug.Log("Player is not regestered!");
+            Debug.Log("Player is not registered!");
         }
 
         if (!Game.started)
@@ -70,6 +80,19 @@ public class GameState
             if (RoomLobbyController.preLoadedGameState == null)
             {
                 RoomLobbyController.instance.playerListUpdate(Game.gameState.getPlayers());
+                int numPlayers = Game.gameState.getPlayers().Count;
+                if (numPlayers == 2)
+                {
+                    maxMonstersToLose = 1;
+                }
+                else if (numPlayers == 3)
+                {
+                    maxMonstersToLose = 1;
+                }
+                else if (numPlayers == 4)
+                {
+                    maxMonstersToLose = 3;
+                }
             }
             else
             {
@@ -90,6 +113,25 @@ public class GameState
     public void addMonster(Monster m)
     {
         monsters.Add(m);
+    }
+
+    ////////////////////////////////////////////////////////////////////////////
+    public Dictionary<Skral, int> getSkrals()
+    {
+        return skrals;
+    }
+    public void addSkral(Skral s)
+    {
+        skrals.Add(s,s.getLocation());
+    }
+    //////////////////////////////////gors//////////////////////////////////
+    public Dictionary<Gor,int> getGors()
+    {
+        return gors;
+    }
+    public void addGor(Gor g)
+    {
+        gors.Add(g, g.getLocation());
     }
 
     public void processAction(Action a)
@@ -153,4 +195,5 @@ public class GameState
     {
         return SavedGameController.deserializeGameState(SavedGameController.serializeGameState(this));
     }
+
 }
