@@ -1981,6 +1981,24 @@ MonoBehaviour:
   timeObjectBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+  event_cards: 020000000b0000000d0000000e00000011000000180000001c0000001f0000002000000001000000
+  fogTokens:
+  - event
+  - strength
+  - willpower3
+  - willpower2
+  - brew
+  - wineskin
+  - gor
+  - event
+  - gor
+  - gold1
+  - gold1
+  - gold1
+  - event
+  - event
+  - event
+  eventCardNum: 0
 --- !u!1 &418087399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3668,7 +3686,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1927870170}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99998903
+  m_Size: 0.87753916
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3900,7 +3918,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000026578444}
+  m_AnchoredPosition: {x: 0, y: 0.00083978934}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1304936245
@@ -3927,7 +3945,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304936245}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -100}
+  m_LocalPosition: {x: 0, y: 0, z: -500}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 482379406}
@@ -4422,7 +4440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00007212887}
+  m_AnchoredPosition: {x: 0, y: 0.0008550511}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1439509341
@@ -5505,7 +5523,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7235615}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99997693
+  m_Size: 0.74386287
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

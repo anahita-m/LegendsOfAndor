@@ -1,4 +1,4 @@
 ﻿public interface Interactable
 {
-    public void executeAction();
+    void executeAction();
 }
