@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
     public Transform playerTimeContainer;
     public Transform monsterContainer;
     public Transform heroInfoContainer;
+    public static ScreenManager screenManager;
 
 
     public Button moveButton;
@@ -109,7 +110,8 @@ public class GameController : MonoBehaviour
                 turnLabel.color = UnityEngine.Color.black;
             }
         }
-        
+        screenManager = new ScreenManager();
+        DontDestroyOnLoad(this.gameObject);
     }
 
     void Update()
