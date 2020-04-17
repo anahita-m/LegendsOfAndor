@@ -5,7 +5,7 @@ using System.IO;
 using System;
 using System.Linq;
 
-public class Graph
+public class Graph: IEnumerable<Node>
 {
 
     private Dictionary<int, Node> nodes;
@@ -152,5 +152,18 @@ public class Graph
             intArr[i] = Int32.Parse(stringArr[i]);
         }
         return intArr;
+    }
+
+    public IEnumerator<Node> GetEnumerator()
+    {
+        foreach(KeyValuePair<int,Node> n in nodes)
+        {
+            yield return n.Value;
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 }

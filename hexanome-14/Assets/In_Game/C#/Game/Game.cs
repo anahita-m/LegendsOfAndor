@@ -20,7 +20,6 @@ public static class Game
     public static Graph positionGraph;
 
 
-        
     public static void initGame(Andor.Player player, bool addPlayer = true)
     {
 
