@@ -911,6 +911,8 @@ public class GameController : MonoBehaviour
     public void fightClick()
     {
         Debug.Log("fight clicked");
+        Game.sendAction(new FightScreen(Game.myPlayer.getNetworkID()));
+
     }
     public void passClick()
     {

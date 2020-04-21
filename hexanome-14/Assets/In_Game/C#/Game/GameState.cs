@@ -15,8 +15,8 @@ public class GameState
     private List<Monster> monsters;
     public string difficulty = "-1";
     public Dictionary<string, int> playerLocations;
-    private Dictionary<Skral, int> skrals;
-    private Dictionary<Gor, int> gors;
+    public Dictionary<Skral, int> skrals;
+    public Dictionary<Gor, int> gors;
     public TurnManager turnManager;
     public string outcome;
     public int maxMonstersAllowedInCastle;
