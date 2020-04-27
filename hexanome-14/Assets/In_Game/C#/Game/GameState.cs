@@ -31,7 +31,8 @@ public class GameState
     private Dictionary<int, Merchant> merchants;
     private Dictionary<FogToken, int> fogTokens;
     // private Dictionary<PrinceThorald, int> princeThor;
-    private List<PrinceThorald> princeThor;
+    // private List<PrinceThorald> princeThor;
+    private PrinceThorald princeThor = null;
     private List<MedicinalHerb> medicinalHerb;
     public int[] event_cards;
     public string[] fogtoken_order;
@@ -48,6 +49,8 @@ public class GameState
     public bool witchFound;
     public Dictionary<string, List<Article>> equipmentBoard;
 
+    public bool equipmentInitialized = false;
+
     public GameState()
 	{
         players = new Dictionary<string, Player>();
@@ -63,7 +66,7 @@ public class GameState
         maxMonstersAllowedInCastle = 0;
         wells = new Dictionary<Well, int>();
         fogTokens = new Dictionary<FogToken, int>();
-        princeThor = new List<PrinceThorald>();
+        // princeThor = new List<PrinceThorald>();
         day = 1;
         farmers = new List<Farmer>();
         merchants = new Dictionary<int, Merchant>();
@@ -171,7 +174,12 @@ public class GameState
 
     public void addMerchant(int location, Merchant m)
     {
-        merchants.Add(location, m);
+        // merchants will already contain the key if we're switching back
+        // from fight-scene
+        if (!merchants.ContainsKey(location))
+        {
+            merchants.Add(location, m);
+        }
     }
 
     public Merchant getMerchant(int location)
@@ -216,13 +224,22 @@ public class GameState
 
 
 
-    public List<PrinceThorald> getPrinceThorald()
+    public PrinceThorald getPrinceThorald()
     {
         return princeThor;
     }
-    public void addPrince(PrinceThorald prince)
+    // public void addPrince(PrinceThorald prince)
+    // {
+    //     if (alreadyMadePrince())
+    //     {
+    //         princeThor.Remove(princeThor[0]);
+    //     }
+    //     princeThor.Add(prince);
+    // }
+
+    public bool alreadyMadePrince()
     {
-        princeThor.Add(prince);
+        return princeThor != null;
     }
 
     public MedicinalHerb getMedicinalHerb()

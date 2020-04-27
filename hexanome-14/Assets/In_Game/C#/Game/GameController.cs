@@ -104,8 +104,9 @@ public class GameController : MonoBehaviour
     public Bounds timeObjectBounds;
     public Dictionary<string, Vector3> rndPosInTimeBox;
     public Dictionary<Monster, GameObject> monsterObjects;
-    //public PrinceThorald princeThor;
-    public Dictionary<PrinceThorald, GameObject> princeThoraldObject;
+    public PrinceThorald princeT;
+    // public Dictionary<PrinceThorald, GameObject> princeThoraldObject;
+    public GameObject princeThoraldObject;
     public Dictionary<MedicinalHerb, GameObject> medicinalHerbObject;
 
     //private int[] event_cards = { 2, 11, 13, 14, 17, 24, 28, 31, 32, 1 };
@@ -160,6 +161,8 @@ public class GameController : MonoBehaviour
         //this.players = new string[2];
         Game.started = true;
         Game.createPV();
+        instance = this;
+        invitedFighters = new string[4];
 
         tiles = new Dictionary<int, BoardPosition>();
         playerObjects = new Dictionary<string, GameObject>();
@@ -167,7 +170,7 @@ public class GameController : MonoBehaviour
         timeTileBounds = new Dictionary<int, Bounds>();
         rndPosInTimeBox = new Dictionary<string, Vector3>();
         monsterObjects = new Dictionary<Monster, GameObject>();
-        princeThoraldObject = new Dictionary<PrinceThorald, GameObject>();
+        // princeThoraldObject = new Dictionary<PrinceThorald, GameObject>();
         medicinalHerbObject = new Dictionary<MedicinalHerb,GameObject>();
         initTransform = transform;
 
@@ -343,12 +346,12 @@ public class GameController : MonoBehaviour
             {
                 // hack for when loading scene
                 // maybe best option is to destroy this object every new scene.
-                if (!playerObjects[player.getNetworkID()])
-                {
-                    loadPlayers();
-                    loadMonsters();
-                    loadWells();
-                }
+                // if (!playerObjects[player.getNetworkID()])
+                // {
+                //     loadPlayers();
+                //     loadMonsters();
+                //     loadWells();
+                // }
                 playerObjects[player.getNetworkID()].transform.position =
                     moveTowards(playerObjects[player.getNetworkID()].transform.position, tiles[Game.gameState.playerLocations[player.getNetworkID()]].getMiddle(), 0.5f);
 
@@ -432,11 +435,14 @@ public class GameController : MonoBehaviour
                 monsterObjects[monster].transform.position =
                     moveTowards(monsterObjects[monster].transform.position, tiles[monster.getLocation()].getMiddle(), 0.5f);
             }
-            foreach(PrinceThorald princeT in Game.gameState.getPrinceThorald())
+            // foreach(PrinceThorald princeT in Game.gameState.getPrinceThorald())
+            // {
+            if (Game.gameState.alreadyMadePrince())
             {
-                princeThoraldObject[princeT].transform.position = moveTowards(princeThoraldObject[princeT].transform.position, tiles[princeT.getLocation()].getMiddle(), 0.5f);
-
+                loc = Game.gameState.getPrinceThorald().getLocation();
+                princeThoraldObject.transform.position = moveTowards(princeThoraldObject.transform.position, tiles[loc].getMiddle(), 0.5f);
             }
+            // }
            // Update player turn
             //turnLabel.text = Game.gameState.turnManager.currentPlayerTurn();
             if (Game.gameState.turnManager.currentPlayerTurn().Equals(Game.myPlayer.getNetworkID()))
@@ -523,7 +529,7 @@ public class GameController : MonoBehaviour
             
         }
 
-        if (Game.myPlayer.getNetworkID().Equals(invitedFighters[0])
+        if (invitedFighters[0] != null && Game.myPlayer.getNetworkID().Equals(invitedFighters[0])
             && fsc.allResponded())
         {
             fsc.fightReady();
@@ -809,6 +815,7 @@ public void updateGameConsoleText(string message)
 
     public void updateShieldCount(int shieldLeft)
     {
+        Debug.Log("update shield count");
         shieldCountText.text = "Shields Left: " + shieldLeft.ToString();
     }
 
@@ -838,6 +845,10 @@ public void updateGameConsoleText(string message)
             Game.gameState.brewCost = 5;
 
         }
+        if (Game.gameState == null)
+            Debug.Log("null gamestate");
+        if (instance == null)
+            Debug.Log("instance is null");
         GameController.instance.updateShieldCount(Game.gameState.maxMonstersAllowedInCastle - Game.gameState.monstersInCastle);
         GameController.instance.updateDayCount(Game.gameState.day);
         ms = merchantScreenController.gameObject.GetComponent<MerchantScreen>();
@@ -881,6 +892,11 @@ public void updateGameConsoleText(string message)
 
     public void setupEquipmentBoard()
     {
+        if (Game.gameState.equipmentInitialized)
+        {
+            Debug.Log("equipment board is already setup, probably just switched to game scene from fight.");
+            return;
+        }
 
         //4 shields
         List<Article> shields = new List<Article>();
@@ -939,6 +955,7 @@ public void updateGameConsoleText(string message)
         {
             Game.gameState.equipmentBoard["WitchBrew"].Add(new WitchBrew());
         }
+        Game.gameState.equipmentInitialized = true;
     }
 
    
@@ -1119,12 +1136,22 @@ public void updateGameConsoleText(string message)
 
     private void loadPrinceThorald()
     {
-        GameObject princeThorald = Instantiate(prince, tiles[72].getMiddle(), transform.rotation);
-        PrinceThorald princeT = new PrinceThorald(Game.gameState.positionGraph.getNode(72), princeThorald);
-        Game.gameState.addPrince(princeT);
-        princeThoraldObject.Add(princeT, princeThorald);
+        // instantiate prince at his location if we've already created him.
+        // already created him when switching back to game scene.
+        bool madePrince = Game.gameState.alreadyMadePrince();
+        int location = madePrince ? Game.gameState.getPrinceThorald().getLocation() : 72;
+
+        princeThoraldObject = Instantiate(prince, tiles[location].getMiddle(), transform.rotation);
+
+        princeT = madePrince ? Game.gameState.getPrinceThorald() : new PrinceThorald(Game.gameState.positionGraph.getNode(location), prince);
+
+        // storePrince(ref princeThorald, new PrinceThorald(Game.gameState.positionGraph.getNode(location), princeThorald));
+        // PrinceThorald princeT = new PrinceThorald(Game.gameState.positionGraph.getNode(location), princeThorald);
+        // Game.gameState.addPrince(princeT);
+        // princeThoraldObject.Add(princeT, princeThorald);
         Debug.Log("Added prince at position: " + princeT.getLocation());
     }
+
 
     public void instantiateEventGor(int location)
     {
@@ -1512,7 +1539,7 @@ public void updateGameConsoleText(string message)
 
         if (movePrinceSelected)
         {
-            Game.sendAction(new MovePrinceThorald(Game.myPlayer.getNetworkID(), Game.getGame().getPrinceThorald()[0].getLocation(), tile.tileID));
+            Game.sendAction(new MovePrinceThorald(Game.myPlayer.getNetworkID(), Game.getGame().getPrinceThorald().getLocation(), tile.tileID));
 
             ColorBlock cb = movePrinceButton.colors;
             cb.normalColor = new Color32(229, 175, 81, 255);

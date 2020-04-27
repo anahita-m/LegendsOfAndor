@@ -45,7 +45,7 @@ public class MovePrinceThorald : Action
         {
             //Debug.Log("thread is alllliiiiiivvvvvvveeeeee");
         }
-        GameController.instance.updateGameConsoleText("Prince Thorald has moved to position " + gs.getPrinceThorald()[0].getLocation());
+        GameController.instance.updateGameConsoleText("Prince Thorald has moved to position " + gs.getPrinceThorald().getLocation());
         //checkMove(gs);
         gs.turnManager.passTurn();
 
@@ -62,7 +62,7 @@ public class MovePrinceThorald : Action
         for (int i = 1; i < path.Count; i++)
         {
             // Move
-            gs.getPrinceThorald()[0].setLocationNode(path[i]);
+            gs.getPrinceThorald().setLocationNode(path[i]);
             Debug.Log(path[i].getIndex());
 
             // Take an hour for every 4 spaces moved by prince thorald
