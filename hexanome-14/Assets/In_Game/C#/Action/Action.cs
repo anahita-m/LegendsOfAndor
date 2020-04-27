@@ -17,7 +17,11 @@ public enum Type
     EmptyWell,
     BuyBrew,
     SendChat,
-    UseTelescope
+    UseTelescope,
+    InviteFighter,
+    RespondFight,
+    UseWineskin
+
 }
 
 public interface Action

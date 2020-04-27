@@ -48,7 +48,10 @@ public static class Game
         ExitGames.Client.Photon.PhotonPeer.RegisterType(typeof(UseTelescope), 14, NetworkHandler.SerializeThis, NetworkHandler.Deserialize);
 
         ExitGames.Client.Photon.PhotonPeer.RegisterType(typeof(Interact), 15, NetworkHandler.SerializeThis, NetworkHandler.Deserialize);
+        ExitGames.Client.Photon.PhotonPeer.RegisterType(typeof(UseWineskin), 16, NetworkHandler.SerializeThis, NetworkHandler.Deserialize);
 
+        ExitGames.Client.Photon.PhotonPeer.RegisterType(typeof(InviteFighter), 17, NetworkHandler.SerializeThis, NetworkHandler.Deserialize);
+        ExitGames.Client.Photon.PhotonPeer.RegisterType(typeof(RespondFight), 18, NetworkHandler.SerializeThis, NetworkHandler.Deserialize);
 
         // ExitGames.Client.Photon.PhotonPeer.RegisterType(typeof(MovePrinceThorald), 9, NetworkHandler.SerializeThis, NetworkHandler.Deserialize);
 
