@@ -2524,6 +2524,8 @@ FetchRevisionsCallback	hexanome-14/Library/PackageCache/com.unity.collab-proxy@1
 FetchServerTimestamp	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs	/^        public static void FetchServerTimestamp()$/;"	m	class:Photon.Pun.PhotonNetwork
 FightScreen	hexanome-14/Assets/In_Game/C#/Screens/fight/FightScreen.cs	/^    public FightScreen(string name) : base(name)$/;"	m	class:FightScreen
 FightScreen	hexanome-14/Assets/In_Game/C#/Screens/fight/FightScreen.cs	/^public class FightScreen : Screen$/;"	c
+FightScreenController	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public FightScreenController()$/;"	m	class:FightScreenController
+FightScreenController	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^public class FightScreenController : MonoBehaviour$/;"	c
 Fightable	hexanome-14/Assets/In_Game/C#/Interfaces/Fightable.cs	/^interface Fightable$/;"	i
 FileNameWithoutExtension	hexanome-14/Library/PackageCache/com.unity.ide.rider@1.1.0/Rider/Editor/Util/FileSystemUtil.cs	/^    public static string FileNameWithoutExtension(string path)$/;"	m	class:Packages.Rider.Editor.Util.FileSystemUtil
 FileNameWithoutExtension	hexanome-14/Library/PackageCache/com.unity.ide.vscode@1.1.2/Editor/Utility.cs	/^        public static string FileNameWithoutExtension(string path)$/;"	m	class:VSCodeEditor.Utility
@@ -10820,6 +10822,7 @@ addMonster	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public void add
 addPlayer	hexanome-14/Assets/In_Game/C#/Game/Game.cs	/^    public static void addPlayer(Andor.Player p)$/;"	m	class:Game
 addPlayer	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public void addPlayer(Player p)$/;"	m	class:GameState
 addPlayerInteractable	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public void addPlayerInteractable(string playerID, Interactable interactable)$/;"	m	class:GameState
+addPlayerToInvite	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public void addPlayerToInvite()$/;"	m	class:FightScreenController
 addPrince	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public void addPrince(PrinceThorald prince)$/;"	m	class:GameState
 addSkral	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public void addSkral(Skral s)$/;"	m	class:GameState
 addWell	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public void addWell(Well w)$/;"	m	class:GameState
@@ -10849,7 +10852,6 @@ alignment	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/R
 alignmentButtonLeft	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Editor/TMP_UIStyleManager.cs	/^        public static GUIStyle alignmentButtonLeft;$/;"	f	class:TMPro.EditorUtilities.TMP_UIStyleManager
 alignmentButtonMid	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Editor/TMP_UIStyleManager.cs	/^        public static GUIStyle alignmentButtonMid;$/;"	f	class:TMPro.EditorUtilities.TMP_UIStyleManager
 alignmentButtonRight	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Editor/TMP_UIStyleManager.cs	/^        public static GUIStyle alignmentButtonRight;$/;"	f	class:TMPro.EditorUtilities.TMP_UIStyleManager
-allArticles	hexanome-14/Assets/Room/C#/Hero.cs	/^    public string allArticles()$/;"	m	class:Hero
 allArticlesAsString	hexanome-14/Assets/Room/C#/Hero.cs	/^    public string allArticlesAsString()$/;"	m	class:Hero
 allArticlesAsStringList	hexanome-14/Assets/Room/C#/Hero.cs	/^    public List<string> allArticlesAsStringList()$/;"	m	class:Hero
 allClients	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkClient.cs	/^        public static List<NetworkClient> allClients { get { return s_Clients; } }$/;"	p	class:UnityEngine.Networking.NetworkClient
@@ -10869,8 +10871,6 @@ apiProfile	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/Unit
 apiProfile	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestSettings/TestSettings.cs	/^        public ApiCompatibilityLevel? apiProfile { get; set; }$/;"	p	class:UnityEditor.TestTools.TestRunner.TestSettings
 apiProfiles	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/RequireApiProfileAttribute.cs	/^        public ApiCompatibilityLevel[] apiProfiles { get; private set; }$/;"	p	class:UnityEditor.TestTools.RequireApiProfileAttribute
 app	hexanome-14/Assets/TextMesh Pro/Sprites/EmojiOne.json	/^	"app": "http:\/\/www.codeandweb.com\/texturepacker",$/;"	s	object:meta
-app_contents_path	hexanome-14/Library/EditorInstance.json	/^	"app_contents_path" : "\/home\/brendon\/Unity\/Hub\/Editor\/2019.2.11f1\/Editor\/Data"$/;"	s
-app_path	hexanome-14/Library/EditorInstance.json	/^	"app_path" : "\/home\/brendon\/Unity\/Hub\/Editor\/2019.2.11f1\/Editor\/Unity",$/;"	s
 appleDeveloperTeamID	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestSettings/ITestSettings.cs	/^        string appleDeveloperTeamID { get; set; }$/;"	p	interface:UnityEditor.TestTools.TestRunner.ITestSettings
 appleDeveloperTeamID	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestSettings/TestSettings.cs	/^        public string appleDeveloperTeamID { get; set; }$/;"	p	class:UnityEditor.TestTools.TestRunner.TestSettings
 appleEnableAutomaticSigning	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestSettings/ITestSettings.cs	/^        bool? appleEnableAutomaticSigning { get; set; }$/;"	p	interface:UnityEditor.TestTools.TestRunner.ITestSettings
@@ -10900,7 +10900,6 @@ articleToString	hexanome-14/Assets/In_Game/C#/Articles/Shield.cs	/^    public st
 articleToString	hexanome-14/Assets/In_Game/C#/Articles/Telescope.cs	/^    public string articleToString()$/;"	m	class:Telescope
 articleToString	hexanome-14/Assets/In_Game/C#/Articles/Wineskin.cs	/^    public string articleToString()$/;"	m	class:Wineskin
 articleToString	hexanome-14/Assets/In_Game/C#/Articles/WitchBrew.cs	/^	public string articleToString()$/;"	m	class:WitchBrew
-articles	hexanome-14/Assets/Room/C#/Hero.cs	/^    private List<string> articles = new List<string>();$/;"	f	class:Hero	file:
 ascender	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_CharacterInfo.cs	/^        public float ascender;$/;"	f	struct:TMPro.TMP_CharacterInfo
 ascender	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_LineInfo.cs	/^        public float ascender;$/;"	f	struct:TMPro.TMP_LineInfo
 ascender	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMPro_MeshUtilities.cs	/^        public float ascender;$/;"	f	struct:TMPro.TMP_PageInfo
@@ -10962,6 +10961,7 @@ autoSizeTextContainer	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0
 automaticallySyncScene	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs	/^        private static bool automaticallySyncScene = false;$/;"	f	class:Photon.Pun.PhotonNetwork	file:
 availableCategories	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/GUI/TestListBuilder/TestFilterSettings.cs	/^        public string[] availableCategories;$/;"	f	class:UnityEditor.TestTools.TestRunner.GUI.TestFilterSettings
 availableCategories	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/GUI/TestRunnerUIFilter.cs	/^        public string[] availableCategories = new string[0];$/;"	f	class:UnityEditor.TestTools.TestRunner.GUI.TestRunnerUIFilter
+availablePlayers	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    private List<string> availablePlayers; \/\/players that are eligible to fight$/;"	f	class:FightScreenController	file:
 availableRegionCodes	hexanome-14/Assets/Photon/PhotonRealtime/Code/RegionHandler.cs	/^        private string availableRegionCodes;$/;"	f	class:Photon.Realtime.RegionHandler	file:
 axis	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/Editor/SeedXRInputBindings/SeedXRInputBindings.cs	/^            public int axis = 0;$/;"	f	class:UnityEditor.XR.LegacyInputHelpers.SeedXRInputBindings.InputAxis
 axisList	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/Editor/SeedXRInputBindings/SeedXRInputBindings.cs	/^        internal List<InputAxis> axisList = new List<InputAxis>$/;"	f	class:UnityEditor.XR.LegacyInputHelpers.SeedXRInputBindings	file:
@@ -11174,10 +11174,12 @@ close	hexanome-14/Assets/In_Game/C#/Screens/MerchantScreen.cs	/^    public void 
 close	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/Editor/PhotonEditor.cs	/^        private bool close = false;$/;"	f	class:Photon.Pun.PhotonEditor	file:
 closeChatButton	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public Button closeChatButton;$/;"	f	class:GameController
 closeChatClick	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public void closeChatClick()$/;"	m	class:GameController
+closeFightScreen	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public void closeFightScreen()$/;"	m	class:FightScreenController
 closeNotif	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public void closeNotif()$/;"	m	class:GameController
 closeTradeMenu	hexanome-14/Assets/In_Game/C#/Screens/TradeScreen.cs	/^    public void closeTradeMenu()$/;"	m	class:TradeScreen
 clusterList	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/WorldGenerator.cs	/^        private Dictionary<int, GameObject> clusterList;$/;"	f	class:Photon.Pun.Demo.Procedural.WorldGenerator	file:
 clusterSizeDropdown	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/IngameControlPanel.cs	/^        private Dropdown clusterSizeDropdown;$/;"	f	class:Photon.Pun.Demo.Procedural.IngameControlPanel	file:
+collabButton	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public Transform collabButton;$/;"	f	class:FightScreenController
 collider	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Spaceship.cs	/^        private new Collider collider;$/;"	f	class:Photon.Pun.Demo.Asteroids.Spaceship	file:
 color	hexanome-14/Assets/Room/C#/Player.cs	/^        private byte[] color;$/;"	f	class:Andor.Player	file:
 color	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_CharacterInfo.cs	/^        public Color32 color;$/;"	f	struct:TMPro.TMP_CharacterInfo
@@ -11337,7 +11339,6 @@ day	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public int day;$/;"	f	
 dayCountText	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public Text dayCountText;$/;"	f	class:GameController
 dead	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/Editor/SeedXRInputBindings/SeedXRInputBindings.cs	/^            public float dead = 0.001f;$/;"	f	class:UnityEditor.XR.LegacyInputHelpers.SeedXRInputBindings.InputAxis
 debug	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/PunCockpit.cs	/^		public bool debug = false;$/;"	f	class:Photon.Pun.Demo.Cockpit.PunCockpit
-decGold	hexanome-14/Assets/Room/C#/Hero.cs	/^    public void decGold(int amount)$/;"	m	class:Hero
 decimalType	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Editor/Tools/Weaver/UNetWeaver.cs	/^        public TypeReference decimalType;$/;"	f	class:Unity.UNetWeaver.Weaver
 decimalValue	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkBuffer.cs	/^        public decimal decimalValue;$/;"	f	struct:UnityEngine.Networking.UIntDecimal
 decreaseGold	hexanome-14/Assets/Room/C#/Hero.cs	/^    public void decreaseGold(int gold)$/;"	m	class:Hero
@@ -11435,6 +11436,7 @@ displayPauseMenu	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    publ
 displayPlayerInfo	hexanome-14/Assets/In_Game/C#/Screens/TradeScreen.cs	/^    public void displayPlayerInfo(Andor.Player player, int i)$/;"	m	class:TradeScreen
 displayPlayers	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public void displayPlayers()$/;"	m	class:GameState
 displayTradeType	hexanome-14/Assets/In_Game/C#/Screens/TradeScreen.cs	/^    public void displayTradeType()$/;"	m	class:TradeScreen
+displayTypeOfFight	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public void displayTypeOfFight()$/;"	m	class:FightScreenController
 displayUnavailable	hexanome-14/Assets/In_Game/C#/Screens/TradeScreen.cs	/^    public void displayUnavailable(string title, string msg)$/;"	m	class:TradeScreen
 distance	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/CameraWork.cs	/^	    private float distance = 7.0f;$/;"	f	class:Photon.Pun.Demo.PunBasics.CameraWork	file:
 doDisconnect	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Tests/Runtime/ReadyStateBehavesCorrectly/ReadyStateBehavesCorrectly.cs	/^    private bool doDisconnect = false;$/;"	f	class:ReadyStateBehavesCorrectly	file:
@@ -11605,9 +11607,12 @@ farmer	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public GameObj
 farmers	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    private List<Farmer> farmers;$/;"	f	class:GameState	file:
 featureLookupFlags	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_FontFeaturesCommon.cs	/^        public FontFeatureLookupFlags featureLookupFlags { get { return m_FeatureLookupFlags; } /;"	p	class:TMPro.TMP_GlyphPairAdjustmentRecord
 feedbackText	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/Launcher.cs	/^		private Text feedbackText;$/;"	f	class:Photon.Pun.Demo.PunBasics.Launcher	file:
+fightChoice	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public Transform fightChoice;$/;"	f	class:FightScreenController
 fightClick	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public void fightClick()$/;"	m	class:GameController
 fightSceenButton	hexanome-14/Assets/In_Game/C#/Screens/fight/clickRouter.cs	/^    public void fightSceenButton()$/;"	m	class:clickRouter
 fightSceneUpdate	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    private void fightSceneUpdate()$/;"	m	class:GameController	file:
+fightScreenController	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public Transform fightScreenController;$/;"	f	class:GameController
+fightType	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    private int fightType; \/\/solo = 0, collab = 1$/;"	f	class:FightScreenController	file:
 filename	hexanome-14/Assets/TextMesh Pro/Sprites/EmojiOne.json	/^	"filename": "1f600.png",$/;"	s	object:frames.4
 filename	hexanome-14/Assets/TextMesh Pro/Sprites/EmojiOne.json	/^	"filename": "1f601.png",$/;"	s	object:frames.5
 filename	hexanome-14/Assets/TextMesh Pro/Sprites/EmojiOne.json	/^	"filename": "1f602.png",$/;"	s	object:frames.6
@@ -11749,6 +11754,7 @@ friendListItemLUT	hexanome-14/Assets/Photon/PhotonChat/Demos/DemoChat/ChatGui.cs
 friendListRequested	hexanome-14/Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs	/^        private string[] friendListRequested;$/;"	f	class:Photon.Realtime.LoadBalancingClient	file:
 from	hexanome-14/Assets/In_Game/C#/Action/Move.cs	/^    public int from;$/;"	f	class:Move
 from	hexanome-14/Assets/In_Game/C#/Action/MovePrinceThorald.cs	/^    public int from;$/;"	f	class:MovePrinceThorald
+fsc	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public static FightScreenController fsc;$/;"	f	class:GameController
 fullBoardSprite	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public Sprite fullBoardSprite;$/;"	f	class:GameController
 fullName	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/GUI/TestRunnerResult.cs	/^        public string fullName;$/;"	f	class:UnityEditor.TestTools.TestRunner.GUI.TestRunnerResult
 fullName	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestResultSerializer.cs	/^        [SerializeField] public string fullName;$/;"	f	class:UnityEditor.TestTools.TestRunner.TestResultSerializer
@@ -11794,7 +11800,6 @@ getArticle	hexanome-14/Assets/In_Game/C#/Articles/Shield.cs	/^    public Article
 getArticle	hexanome-14/Assets/In_Game/C#/Articles/Telescope.cs	/^    public ArticleType getArticle()$/;"	m	class:Telescope
 getArticle	hexanome-14/Assets/In_Game/C#/Articles/Wineskin.cs	/^    public ArticleType getArticle()$/;"	m	class:Wineskin
 getArticle	hexanome-14/Assets/In_Game/C#/Articles/WitchBrew.cs	/^	public ArticleType getArticle()$/;"	m	class:WitchBrew
-getArticles	hexanome-14/Assets/Room/C#/Hero.cs	/^    public List<string> getArticles()$/;"	m	class:Hero
 getArticlesOfType	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public List<Article> getArticlesOfType(string key)$/;"	m	class:GameState
 getClickables	hexanome-14/Assets/In_Game/C#/Screens/Screen.cs	/^    public List<string> getClickables()$/;"	m	class:Screen
 getClickables	hexanome-14/Assets/In_Game/C#/Screens/ScreenManager.cs	/^    public static List<string> getClickables(string screenName, string playerName)$/;"	m	class:ScreenManager
@@ -12105,7 +12110,6 @@ in2DMode	hexanome-14/Library/StateCache/SceneView/fcc556-mainStage.json	/^{"came
 inProgressRevision	hexanome-14/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/CollabHistoryWindow.cs	/^        public string inProgressRevision$/;"	p	class:UnityEditor.CollabHistoryWindow
 inProgressRevision	hexanome-14/Library/PackageCache/com.unity.collab-proxy@1.2.16/Tests/Editor/HistoryTests.cs	/^        public string inProgressRevision { get; set; }$/;"	p	class:UnityEditor.Collaboration.Tests.TestHistoryWindow
 inRoomText	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/FriendListCell.cs	/^        public GameObject inRoomText;$/;"	f	class:Photon.Pun.Demo.Cockpit.FriendListCell
-incGold	hexanome-14/Assets/Room/C#/Hero.cs	/^    public void incGold(int amount)$/;"	m	class:Hero
 include	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEngine.TestRunner/NUnitExtensions/Attributes/UnityPlatformAttribute.cs	/^        public RuntimePlatform[] include { get; set; }$/;"	p	class:UnityEngine.TestTools.UnityPlatformAttribute
 includeFontFeatures	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_FontAssetCommon.cs	/^        public bool includeFontFeatures;$/;"	f	struct:TMPro.FontAssetCreationSettings
 inconclusive	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/GUI/TestListBuilder/ResultSummarizer.cs	/^        public int inconclusive$/;"	p	class:UnityEditor.TestTools.TestRunner.GUI.ResultSummarizer
@@ -12182,9 +12186,12 @@ interpolateRotation	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi
 inventory	hexanome-14/Assets/In_Game/C#/BoardElements/Merchant.cs	/^    private Dictionary<string, List<Article>> inventory;$/;"	f	class:Merchant	file:
 invert	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/Editor/SeedXRInputBindings/SeedXRInputBindings.cs	/^            public bool invert = false;$/;"	f	class:UnityEditor.XR.LegacyInputHelpers.SeedXRInputBindings.InputAxis
 inviteContainer	hexanome-14/Assets/Main_Menu/C#/Create_Game.cs	/^    public GameObject inviteContainer;$/;"	f	class:Create_Game
+invitePlayers	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public void invitePlayers()$/;"	m	class:FightScreenController
+invitedPlayers	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    private List<string> invitedPlayers; \/\/players that are invited to the fight$/;"	f	class:FightScreenController	file:
 invokeClass	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkBehaviour.cs	/^            public Type invokeClass;$/;"	f	class:UnityEngine.Networking.NetworkBehaviour.Invoker
 invokeFunction	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkBehaviour.cs	/^            public CmdDelegate invokeFunction;$/;"	f	class:UnityEngine.Networking.NetworkBehaviour.Invoker
 invokeType	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkBehaviour.cs	/^            public UNetInvokeType invokeType;$/;"	f	class:UnityEngine.Networking.NetworkBehaviour.Invoker
+involvedPlayers	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    private List<string> involvedPlayers; \/\/players that have accepted the fight invite$/;"	f	class:FightScreenController	file:
 isAssetDirty	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Editor/TMP_FontAssetEditor.cs	/^        private bool isAssetDirty = false;$/;"	f	class:TMPro.EditorUtilities.TMP_FontAssetEditor	file:
 isAssetDirty	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Editor/TMP_SpriteAssetEditor.cs	/^        bool isAssetDirty;$/;"	f	class:TMPro.EditorUtilities.TMP_SpriteAssetEditor	file:
 isAutoFitting	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TextContainer.cs	/^        public bool isAutoFitting$/;"	p	class:TMPro.TextContainer
@@ -14827,7 +14834,9 @@ newDataIndex	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.
 newGuid	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Editor/TMP_PackageUtilities.cs	/^            public string newGuid;$/;"	f	struct:TMPro.TMP_PackageUtilities.AssetRemappingRecord
 newHostAddress	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkMigrationManager.cs	/^        public string newHostAddress$/;"	p	class:UnityEngine.Networking.NetworkMigrationManager
 newResultList	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/GUI/Views/TestListGUIBase.cs	/^        public List<TestRunnerResult> newResultList = new List<TestRunnerResult>();$/;"	f	class:UnityEditor.TestTools.TestRunner.GUI.TestListGUI
+nextButton	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public Button nextButton;$/;"	f	class:FightScreenController
 nextButton	hexanome-14/Assets/In_Game/C#/Screens/TradeScreen.cs	/^    public Transform nextButton;$/;"	f	class:TradeScreen
+nextClick	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public void nextClick()$/;"	m	class:FightScreenController
 nextClick	hexanome-14/Assets/In_Game/C#/Screens/TradeScreen.cs	/^    public void nextClick()$/;"	m	class:TradeScreen
 nextLegend	hexanome-14/Assets/In_Game/C#/BoardElements/LegendCard.cs	/^    public void nextLegend()$/;"	m	class:LegendCard
 nextSendTickCount	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs	/^        private int nextSendTickCount;$/;"	f	class:Photon.Pun.PhotonHandler	file:
@@ -15213,7 +15222,6 @@ private_button	hexanome-14/Assets/Main_Menu/C#/Create_Game.cs	/^    public Butto
 processAction	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public void processAction(Action a)$/;"	m	class:GameState
 processId	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/UnityTestProtocol/Message.cs	/^        public int processId;$/;"	f	class:UnityEditor.TestTools.TestRunner.UnityTestProtocol.Message
 processTradeRequest	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public void processTradeRequest()$/;"	m	class:GameController
-process_id	hexanome-14/Library/EditorInstance.json	/^	"process_id" : 924399,$/;"	n
 progress	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/SplineWalker.cs	/^		private float progress;$/;"	f	class:Photon.Pun.Demo.SlotRacer.Utils.SplineWalker	file:
 pronouns	hexanome-14/Assets/Room/C#/Hero.cs	/^    private string[] pronouns;$/;"	f	class:Hero	file:
 properties	hexanome-14/Assets/Photon/PhotonChat/Code/ChatChannel.cs	/^        private Dictionary<object, object> properties;$/;"	f	class:Photon.Chat.ChatChannel	file:
@@ -15465,6 +15473,7 @@ removeFromEquimentBoard	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    pu
 removeInteractable	hexanome-14/Assets/In_Game/C#/Board/Node.cs	/^    public void removeInteractable(Interactable interactable)$/;"	m	class:Node
 removePauseMenu	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public void removePauseMenu()$/;"	m	class:GameController
 removePlayerBorders	hexanome-14/Assets/Room/C#/RoomLobbyController.cs	/^    private void removePlayerBorders()$/;"	m	class:RoomLobbyController	file:
+removePlayerFromInvite	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public void removePlayerFromInvite()$/;"	m	class:FightScreenController
 removePlayerInteractable	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public Interactable removePlayerInteractable(string playerID, Interactable interactable)$/;"	m	class:GameState
 removePlayers	hexanome-14/Assets/Room/C#/RoomLobbyController.cs	/^    private void removePlayers()$/;"	m	class:RoomLobbyController	file:
 removePrevRooms	hexanome-14/Assets/Network/C#/RoomController.cs	/^    private void removePrevRooms()$/;"	m	class:RoomController	file:
@@ -15734,6 +15743,7 @@ rotation	hexanome-14/Library/StateCache/SceneView/fcc556-mainStage.json	/^{"came
 rotationRatioLabel	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/Editor/ArmModels/SwingArmModelEditor.cs	/^            public static GUIContent rotationRatioLabel = EditorGUIUtility.TrTextContent("Rotati/;"	f	class:UnityEditor.XR.LegacyInputHelpers.SwingArmModelEditor.SwingArmModelStyles
 rotationSyncCompression	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkTranformChild.cs	/^        public NetworkTransform.CompressionSyncMode rotationSyncCompression { get { return m_Rot/;"	p	class:UnityEngine.Networking.NetworkTransformChild
 rotationSyncCompression	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkTransform.cs	/^        public CompressionSyncMode  rotationSyncCompression { get { return m_RotationSyncCompres/;"	p	class:UnityEngine.Networking.NetworkTransform
+round	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    private int round;$/;"	f	class:FightScreenController	file:
 roundDone	hexanome-14/Assets/In_Game/C#/Game/TurnManager.cs	/^    public bool roundDone()$/;"	m	class:TurnManager
 rpcCrc	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/Editor/ServerSettingsInspector.cs	/^    private string rpcCrc;$/;"	f	class:ServerSettingsInspector	file:
 rpcEvent	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetworkPart.cs	/^        static ExitGames.Client.Photon.Hashtable  rpcEvent = new ExitGames.Client.Photon.Hashtab/;"	f	class:Photon.Pun.PhotonNetwork	file:
@@ -15989,6 +15999,7 @@ selectTradeType	hexanome-14/Assets/In_Game/C#/Screens/TradeScreen.cs	/^    publi
 selected	hexanome-14/Assets/In_Game/C#/Board/BoardPosition.cs	/^    private bool selected = false;$/;"	f	class:BoardPosition	file:
 selectedCategoryMask	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/GUI/TestRunnerUIFilter.cs	/^        private int selectedCategoryMask;$/;"	f	class:UnityEditor.TestTools.TestRunner.GUI.TestRunnerUIFilter	file:
 selectedChannelName	hexanome-14/Assets/Photon/PhotonChat/Demos/DemoChat/ChatGui.cs	/^	private string selectedChannelName; \/\/ mainly used for GUI\/input$/;"	f	class:ChatGui	file:
+selectedChoiceText	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public Text selectedChoiceText;$/;"	f	class:FightScreenController
 selectedHero	hexanome-14/Assets/In_Game/C#/Screens/TradeScreen.cs	/^    string selectedHero;$/;"	f	class:TradeScreen	file:
 selectedIndex	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/BezierSplineInspector.cs	/^		private int selectedIndex = -1;$/;"	f	class:Photon.Pun.Demo.SlotRacer.Utils.BezierSplineInspector	file:
 selectionAnchorPosition	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_InputField.cs	/^        public int selectionAnchorPosition$/;"	p	class:TMPro.TMP_InputField
@@ -16002,6 +16013,7 @@ sendAction	hexanome-14/Assets/Network/C#/NetworkHandler.cs	/^    public void sen
 sendChat	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public void sendChat()$/;"	m	class:GameController
 sendCommandInternal	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Editor/Tools/Weaver/UNetWeaver.cs	/^        public MethodReference sendCommandInternal;$/;"	f	class:Unity.UNetWeaver.Weaver
 sendEventInternal	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Editor/Tools/Weaver/UNetWeaver.cs	/^        public MethodReference sendEventInternal;$/;"	f	class:Unity.UNetWeaver.Weaver
+sendFightRequest	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public void sendFightRequest()$/;"	m	class:FightScreenController
 sendFrequency	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs	/^        private static int sendFrequency = 50; \/\/ in milliseconds.$/;"	f	class:Photon.Pun.PhotonNetwork	file:
 sendInterval	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/CustomAttributes.cs	/^        public float sendInterval = 0.1f;$/;"	f	class:UnityEngine.Networking.NetworkSettingsAttribute
 sendInterval	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkTranformChild.cs	/^        public float                                sendInterval { get { return m_SendInterval; /;"	p	class:UnityEngine.Networking.NetworkTransformChild
@@ -16039,6 +16051,7 @@ serverOnly	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Ru
 serverPort	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkClient.cs	/^        public int serverPort { get { return m_ServerPort; } }$/;"	p	class:UnityEngine.Networking.NetworkClient
 serverReady	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Tests/Runtime/NetworkManagerSpawnSpecialPrefab/NetworkManagerSpawnSpecialPrefab.cs	/^        public static bool serverReady;$/;"	f	class:NetworkManagerSpawnSpecialPrefab.NetworkManagerSpawnerScript
 serverRecievedConnection	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Tests/Runtime/ClientCanConnectAfterFailure/ClientCanConnectAfterFailure.cs	/^    bool serverRecievedConnection = false;$/;"	f	class:ClientCanConnectAfterFailure	file:
+setAvailablePlayers	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    private bool setAvailablePlayers()$/;"	m	class:FightScreenController	file:
 setClassAttributes	hexanome-14/Assets/In_Game/C#/Board/BoardPosition.cs	/^    private void setClassAttributes()$/;"	m	class:BoardPosition	file:
 setColor	hexanome-14/Assets/Room/C#/Player.cs	/^        public void setColor(byte[] color)$/;"	m	class:Andor.Player
 setEventCardOrder	hexanome-14/Assets/In_Game/C#/Game/Game.cs	/^    public static void setEventCardOrder(int[] event_cards)$/;"	m	class:Game
@@ -16080,6 +16093,7 @@ setTradeType	hexanome-14/Assets/In_Game/C#/Screens/TradeScreen.cs	/^    public v
 setTradeType	hexanome-14/Assets/In_Game/C#/Screens/TradeScreen.cs	/^    public void setTradeType(string[] tradeType)$/;"	m	class:TradeScreen
 setTurnManager	hexanome-14/Assets/In_Game/C#/Game/Game.cs	/^    public static void setTurnManager(List<Andor.Player> players)$/;"	m	class:Game
 setTurnManager	hexanome-14/Assets/Network/C#/NetworkHandler.cs	/^    public void setTurnManager(List<string> order)$/;"	m	class:NetworkHandler
+setTypeOfFight	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public void setTypeOfFight(int type)$/;"	m	class:FightScreenController
 setUp	hexanome-14/Assets/In_Game/C#/BoardElements/eventCards.cs	/^    private void setUp()$/;"	m	class:eventCards	file:
 setWells	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public void setWells(Dictionary<Well, int> updatedWells)$/;"	m	class:GameState
 setWillpower	hexanome-14/Assets/In_Game/C#/Monsters/Monster.cs	/^    public void setWillpower(int willpower)$/;"	m	class:Monster
@@ -16763,7 +16777,6 @@ updatePlayerList	hexanome-14/Assets/Network/C#/NetworkHandler.cs	/^    public vo
 updateShieldCount	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public void updateShieldCount(int shieldLeft)$/;"	m	class:GameController
 updateSkralLocations	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public void updateSkralLocations()$/;"	m	class:GameState
 updateStatusOfInventory	hexanome-14/Assets/In_Game/C#/Screens/MerchantScreen.cs	/^    public void updateStatusOfInventory()$/;"	m	class:MerchantScreen
-updateStrength	hexanome-14/Assets/Room/C#/Hero.cs	/^    public void updateStrength(int numPoints)$/;"	m	class:Hero
 updateType	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/Runtime/TrackedPoseDriver/TrackedPoseDriver.cs	/^        public UpdateType updateType$/;"	p	class:UnityEngine.SpatialTracking.TrackedPoseDriver
 uppercase	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_RichTextTagStack.cs	/^        public byte uppercase;$/;"	f	struct:TMPro.TMP_FontStyleStack
 url	hexanome-14/Library/PackageCache/com.unity.collab-proxy@1.2.16/package.json	/^    "url": "https:\/\/gitlab.cds.internal.unity3d.com\/upm-packages\/cloud-services\/collab-prox/;"	s	object:repository
@@ -16850,7 +16863,6 @@ vector3Type	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/E
 vector4Type	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Editor/Tools/Weaver/UNetWeaver.cs	/^        public TypeReference vector4Type;$/;"	f	class:Unity.UNetWeaver.Weaver
 velocityThreshold	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkTransform.cs	/^        public float                velocityThreshold { get { return m_VelocityThreshold; } set /;"	p	class:UnityEngine.Networking.NetworkTransform
 version	hexanome-14/Assets/TextMesh Pro/Sprites/EmojiOne.json	/^	"version": "1.0",$/;"	s	object:meta
-version	hexanome-14/Library/EditorInstance.json	/^	"version" : "2019.2.11f1",$/;"	s
 version	hexanome-14/Library/PackageCache/com.unity.collab-proxy@1.2.16/package.json	/^  "version": "1.2.16",$/;"	s
 version	hexanome-14/Library/PackageCache/com.unity.ext.nunit@1.0.0/package.json	/^  "version": "1.0.0",$/;"	s
 version	hexanome-14/Library/PackageCache/com.unity.ide.rider@1.1.0/package.json	/^  "version": "1.1.0",$/;"	s
