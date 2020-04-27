@@ -11898,6 +11898,7 @@ getPlayerInteractable	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    publ
 getPlayerLocations	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public Dictionary<string, int> getPlayerLocations()$/;"	m	class:GameState
 getPlayerNames	hexanome-14/Assets/In_Game/C#/Game/Game.cs	/^    public static List<string> getPlayerNames(List<Andor.Player> players)$/;"	m	class:Game
 getPlayers	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public List<Player> getPlayers()$/;"	m	class:GameState
+getPos	hexanome-14/Assets/In_Game/C#/Interactable/PickDrop.cs	/^    public int getPos()$/;"	m	class:PickDrop
 getPrefab	hexanome-14/Assets/In_Game/C#/BoardElements/FogToken.cs	/^	public GameObject getPrefab()$/;"	m	class:FogToken
 getPrefab	hexanome-14/Assets/In_Game/C#/BoardElements/MedicinalHerb.cs	/^	public GameObject getPrefab()$/;"	m	class:MedicinalHerb
 getPrefab	hexanome-14/Assets/In_Game/C#/BoardElements/PrinceThorald.cs	/^    public GameObject getPrefab()$/;"	m	class:PrinceThorald
@@ -12717,6 +12718,7 @@ loadNarrator	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public v
 loadPlayers	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    private void loadPlayers()$/;"	m	class:GameController	file:
 loadPrinceThorald	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    private void loadPrinceThorald()$/;"	m	class:GameController	file:
 loadScene	hexanome-14/Assets/In_Game/C#/Screens/Screen.cs	/^    public void loadScene()$/;"	m	class:Screen
+loadVisibleWitches	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    private void loadVisibleWitches()$/;"	m	class:GameController	file:
 loadWells	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    private void loadWells()$/;"	m	class:GameController	file:
 loadedAssemblies	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestRunner/Utils/EditorAssembliesProxy.cs	/^        public IAssemblyWrapper[] loadedAssemblies$/;"	p	class:UnityEditor.TestTools.TestRunner.EditorAssembliesProxy
 loadedAssemblies	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestRunner/Utils/IEditorAssembliesProxy.cs	/^        IAssemblyWrapper[] loadedAssemblies { get; }$/;"	p	interface:UnityEditor.TestTools.TestRunner.IEditorAssembliesProxy
@@ -14638,6 +14640,11 @@ m_xAdvance	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/
 m_xOffset	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Editor/TMP_SpriteAssetEditor.cs	/^        float m_xOffset;$/;"	f	class:TMPro.EditorUtilities.TMP_SpriteAssetEditor	file:
 m_xmlAttribute	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_Text.cs	/^        protected RichTextTagAttribute[] m_xmlAttribute = new RichTextTagAttribute[8];$/;"	f	class:TMPro.TMP_Text
 m_yOffset	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Editor/TMP_SpriteAssetEditor.cs	/^        float m_yOffset;$/;"	f	class:TMPro.EditorUtilities.TMP_SpriteAssetEditor	file:
+madeFarmers	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public bool madeFarmers()$/;"	m	class:GameState
+madeFogTokens	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public bool madeFogTokens()$/;"	m	class:GameState
+madeGors	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public bool madeGors()$/;"	m	class:GameState
+madeSkrals	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public bool madeSkrals()$/;"	m	class:GameState
+madeWells	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public bool madeWells()$/;"	m	class:GameState
 mailOrAppId	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/Editor/PhotonEditor.cs	/^        private string mailOrAppId = string.Empty;$/;"	f	class:Photon.Pun.PhotonEditor	file:
 mainContainer	hexanome-14/Assets/Room/C#/PlayerDetails.cs	/^    public Transform mainContainer;$/;"	f	class:PlayerDetails
 mainContainer	hexanome-14/Assets/Room/C#/PlayerDetailsLoaded.cs	/^    public Transform mainContainer;$/;"	f	class:PlayerDetailsLoaded
@@ -16384,6 +16391,8 @@ stencilID	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/R
 stencilMaterial	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_MaterialManager.cs	/^            public Material stencilMaterial;$/;"	f	class:TMPro.TMP_MaterialManager.MaskingMaterial
 steps	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Tests/Runtime/ConnectWithDNSWorks/ConnectWithDNSWorks.cs	/^    int steps = 0;$/;"	f	class:ConnectWithDNSWorks	file:
 stepsPerCurve	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/BezierSplineInspector.cs	/^		private const int stepsPerCurve = 10;$/;"	f	class:Photon.Pun.Demo.SlotRacer.Utils.BezierSplineInspector	file:
+storeGors	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    private void storeGors()$/;"	m	class:GameController	file:
+storeSkrals	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    private void storeSkrals()$/;"	m	class:GameController	file:
 storeUsername	hexanome-14/Assets/Log_In/C#/For_Log_In.cs	/^public static class storeUsername$/;"	c
 str	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Tests/Runtime/ConnectLocalClientWorks/ConnectLocalClientWorks.cs	/^        public string str;$/;"	f	class:ConnectLocalClientWorks.TestMessage
 str	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Tests/Runtime/HavingManyLocalClientsSimultaneouslyWorks/HavingManyLocalClientsSimultaneouslyWorks.cs	/^        public string str;$/;"	f	class:HavingManyLocalClientsSimultaneouslyWorks.TestMessage
@@ -16980,6 +16989,7 @@ visList	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runti
 visRange	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkProximityChecker.cs	/^        public int visRange = 10;$/;"	f	class:UnityEngine.Networking.NetworkProximityChecker
 visUpdateInterval	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkProximityChecker.cs	/^        public float visUpdateInterval = 1.0f; \/\/ in seconds$/;"	f	class:UnityEngine.Networking.NetworkProximityChecker
 visibleCharacterCount	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_LineInfo.cs	/^        public int visibleCharacterCount;$/;"	f	struct:TMPro.TMP_LineInfo
+visibleWitches	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public List<int> visibleWitches;$/;"	f	class:GameState
 visible_CharacterCount	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMPro_MeshUtilities.cs	/^        public int visible_CharacterCount;$/;"	f	struct:TMPro.WordWrapState
 visible_LinkCount	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMPro_MeshUtilities.cs	/^        public int visible_LinkCount;$/;"	f	struct:TMPro.WordWrapState
 visible_SpriteCount	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMPro_MeshUtilities.cs	/^        public int visible_SpriteCount;$/;"	f	struct:TMPro.WordWrapState

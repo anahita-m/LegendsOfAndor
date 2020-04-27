@@ -30,8 +30,6 @@ public class GameState
     private Dictionary<Well, int> wells;
     private Dictionary<int, Merchant> merchants;
     private Dictionary<FogToken, int> fogTokens;
-    // private Dictionary<PrinceThorald, int> princeThor;
-    // private List<PrinceThorald> princeThor;
     private PrinceThorald princeThor = null;
     private List<MedicinalHerb> medicinalHerb;
     public int[] event_cards;
@@ -45,6 +43,7 @@ public class GameState
     //public bool eventcard19;
     public bool EVENTCARD_treeOfSongBonusIsActive = false;
     public int brewCost;
+    public List<int> visibleWitches;
     public int witchLocation;
     public bool witchFound;
     public Dictionary<string, List<Article>> equipmentBoard;
@@ -68,6 +67,7 @@ public class GameState
         fogTokens = new Dictionary<FogToken, int>();
         // princeThor = new List<PrinceThorald>();
         day = 1;
+        visibleWitches = new List<int>();
         farmers = new List<Farmer>();
         merchants = new Dictionary<int, Merchant>();
         equipmentBoard = new Dictionary<string, List<Article>>();
@@ -160,6 +160,11 @@ public class GameState
     {
         skrals.Add(s, s.getLocation());
     }
+
+    public bool madeSkrals()
+    {
+        return skrals.Count != 0;
+    }
     //////////////////////////////////gors//////////////////////////////////
     public Dictionary<Gor, int> getGors()
     {
@@ -168,6 +173,11 @@ public class GameState
     public void addGor(Gor g)
     {
         gors.Add(g, g.getLocation());
+    }
+
+    public bool madeGors()
+    {
+        return gors.Count != 0;
     }
 
     //////////////////////////////////wells//////////////////////////////////
@@ -192,6 +202,11 @@ public class GameState
         return wells;
     }
 
+    public bool madeWells()
+    {
+        return wells.Count != 0;
+    }
+
     public void setWells(Dictionary<Well, int> updatedWells)
     {
         this.wells = updatedWells;
@@ -212,6 +227,11 @@ public class GameState
         fogTokens.Add(f, f.getLocation());
     }
 
+    public bool madeFogTokens()
+    {
+        return fogTokens.Count != 0;
+    }
+
 
     public List<Farmer> getFarmers()
     {
@@ -222,20 +242,16 @@ public class GameState
         farmers.Add(f);
     }
 
+    public bool madeFarmers()
+    {
+        return farmers.Count != 0;
+    }
 
 
     public PrinceThorald getPrinceThorald()
     {
         return princeThor;
     }
-    // public void addPrince(PrinceThorald prince)
-    // {
-    //     if (alreadyMadePrince())
-    //     {
-    //         princeThor.Remove(princeThor[0]);
-    //     }
-    //     princeThor.Add(prince);
-    // }
 
     public bool alreadyMadePrince()
     {

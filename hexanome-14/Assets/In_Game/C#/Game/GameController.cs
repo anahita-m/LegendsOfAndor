@@ -344,14 +344,6 @@ public class GameController : MonoBehaviour
             // Update Player position
             foreach (Andor.Player player in Game.gameState.getPlayers())
             {
-                // hack for when loading scene
-                // maybe best option is to destroy this object every new scene.
-                // if (!playerObjects[player.getNetworkID()])
-                // {
-                //     loadPlayers();
-                //     loadMonsters();
-                //     loadWells();
-                // }
                 playerObjects[player.getNetworkID()].transform.position =
                     moveTowards(playerObjects[player.getNetworkID()].transform.position, tiles[Game.gameState.playerLocations[player.getNetworkID()]].getMiddle(), 0.5f);
 
@@ -435,16 +427,13 @@ public class GameController : MonoBehaviour
                 monsterObjects[monster].transform.position =
                     moveTowards(monsterObjects[monster].transform.position, tiles[monster.getLocation()].getMiddle(), 0.5f);
             }
-            // foreach(PrinceThorald princeT in Game.gameState.getPrinceThorald())
-            // {
+
             if (Game.gameState.alreadyMadePrince())
             {
                 loc = Game.gameState.getPrinceThorald().getLocation();
                 princeThoraldObject.transform.position = moveTowards(princeThoraldObject.transform.position, tiles[loc].getMiddle(), 0.5f);
             }
-            // }
-           // Update player turn
-            //turnLabel.text = Game.gameState.turnManager.currentPlayerTurn();
+
             if (Game.gameState.turnManager.currentPlayerTurn().Equals(Game.myPlayer.getNetworkID()))
             {
                 turnLabel.color = Game.myPlayer.getColor(130);
@@ -455,7 +444,6 @@ public class GameController : MonoBehaviour
             }
 
             updateHeroStats();
-            
 
             if (winScenario() && Game.gameState.outcome == "won")
             {
@@ -466,7 +454,6 @@ public class GameController : MonoBehaviour
 
         if (tradeRequestSent)
         {
-            
             if (Game.myPlayer.getNetworkID().Equals(playerTradeTo))
             {
                 processTradeRequest();
@@ -684,7 +671,6 @@ public class GameController : MonoBehaviour
             scrollTxt.text = "Archer pays 1 less gold for brew!";
             StartCoroutine(overtimeCoroutine(3));
         }
-        
     }
 
     public void overtime()
@@ -693,7 +679,7 @@ public class GameController : MonoBehaviour
         {
             scrollTxt.text = "You will now lose +" + Game.gameState.TIME_overtimeCost+ " willpower points for each additional hour!";
             StartCoroutine(overtimeCoroutine(3));
-        }       
+        }
     }
 
     public void cannotFinishMove()
@@ -727,6 +713,7 @@ public class GameController : MonoBehaviour
         //Debug.Log("sent the data");
         //PhotonNetwork.RaiseEvent((byte)53, data, sendToAllOptions, SendOptions.SendReliable);
     }
+
     public void foundWitch(int loc)
     {
         //instantiateTheWitch here
@@ -736,7 +723,9 @@ public class GameController : MonoBehaviour
         Debug.Log("Added witch at position: " + loc);
         //ned to make this true everywhere
         Game.gameState.witchFound = true;
-        //
+
+        Game.gameState.visibleWitches.Add(loc);
+
         GameObject wellObject = Instantiate(witch, tiles[loc].getMiddle(), transform.rotation);
         //Well w = new Well(Game.positionGraph.getNode(pos), wellObject);
         //Debug.Log(w);
@@ -787,7 +776,6 @@ public void updateGameConsoleText(string message)
     {
         scrollTxt.text = "Congratulations, you have successfully completed the legend!";
         StartCoroutine(overtimeCoroutine(10));
-        
     }
 
     public void invalidTradeNotify()
@@ -874,9 +862,7 @@ public void updateGameConsoleText(string message)
 
             setupEquipmentBoard();
 
-        
-
-        Debug.Log("INITIALIZING THE STRENGTH POINTS");
+            Debug.Log("INITIALIZING THE STRENGTH POINTS");
             initializeStrengthPoints();
 
             Debug.Log("INITIALIZING THE STRENGTH POINTS");
@@ -885,8 +871,17 @@ public void updateGameConsoleText(string message)
             Debug.Log("INITIALIZING THE MED HERB");
             instantiateMedicinalHerb(3);
 
+            loadVisibleWitches();
         }
 
+    }
+
+    private void loadVisibleWitches()
+    {
+        // named the same as foundWitch function in this class for consistency only.
+        GameObject wellObject;
+        foreach(int loc in Game.gameState.visibleWitches)
+             wellObject = Instantiate(witch, tiles[loc].getMiddle(), transform.rotation);
     }
 
 
@@ -1066,7 +1061,27 @@ public void updateGameConsoleText(string message)
     private void loadMonsters()
     {
         Vector3 boardScaling = new Vector3(1 / boardSpriteContainer.parent.lossyScale.x, 1 / boardSpriteContainer.parent.lossyScale.y, 1 / boardSpriteContainer.parent.lossyScale.z);
+        storeGors();
+        storeSkrals();
 
+        foreach (Monster monster in Game.gameState.getMonsters())
+        {
+            Debug.Log(monster.getPrefab());
+            GameObject tempObj = Instantiate(monster.getPrefab(), -transform.position, transform.rotation, monsterContainer);
+            monsterObjects.Add(monster, tempObj);
+            tempObj.transform.position = tiles[monster.getLocation()].getMiddle();
+            tempObj.transform.localScale = boardScaling;
+            // DontDestroyOnLoad(tempObj);
+        }
+
+    }
+
+    private void storeGors()
+    {
+        if (Game.gameState.madeGors())
+        {
+            return;
+        }
         //created all the monsters for Legend 2
         foreach (int gorTile in new int[]{8, 20, 21, 26, 48})
         {
@@ -1075,21 +1090,18 @@ public void updateGameConsoleText(string message)
             Game.gameState.addMonster(g);
             Game.gameState.addGor(g);
         }
+    }
+    private void storeSkrals()
+    {
+        if (Game.gameState.madeSkrals())
+        {
+            return;
+        }
         foreach (int skralTile in new int[]{19})
         {
             Skral s = new Skral(Game.gameState.positionGraph.getNode(skralTile));
             Game.gameState.addMonster(s);
             Game.gameState.addSkral(s);
-        }
-
-        foreach (Monster monster in Game.gameState.getMonsters())
-        {
-            Debug.Log(monster.getPrefab());
-            GameObject tempObj = Instantiate(monster.getPrefab(), -transform.position, transform.rotation, monsterContainer); ;
-            monsterObjects.Add(monster, tempObj);
-            tempObj.transform.position = tiles[monster.getLocation()].getMiddle();
-            tempObj.transform.localScale = boardScaling;
-            // DontDestroyOnLoad(tempObj);
         }
 
     }
@@ -1100,6 +1112,7 @@ public void updateGameConsoleText(string message)
         foreach(int loc in locations)
         {
             Merchant m = new Merchant(loc);
+            // only added if doesn't already exist.
             Game.gameState.addMerchant(loc, m);
         }
     }
@@ -1107,29 +1120,23 @@ public void updateGameConsoleText(string message)
 
     private void loadWells()
     {
-        //foreach (int pos in new int[] {5, 35, 45, 55})
-        //{
-        //    Debug.Log("Added well at position: " + pos);
-        //    Well w = new Well(Game.positionGraph.getNode(pos));
-        //    Debug.Log(w);
-        //    Debug.Log(w.getLocation());
-        //    Game.gameState.addWell(w);
-        //    //Debug.Log("Added well at position: " + pos);
-        //}
 
-        //foreach(Well well in Game.gameState.getWells().Keys)
-        //{
-        //    GameObject wellObject = Instantiate(well_front, tiles[well.getLocation()].getMiddle(), transform.rotation);
-        //}
+        Dictionary<Well, int> wells = new Dictionary<Well, int>();
         foreach (int pos in new int[] { 5, 35, 45, 55 })
         {
             Debug.Log("Added well at position: " + pos);
             GameObject wellObject = Instantiate(well_front, tiles[pos].getMiddle(), transform.rotation);
-            Well w = new Well(Game.gameState.positionGraph.getNode(pos),wellObject);
-            Debug.Log(w);
-            Debug.Log(w.getLocation());
-            Game.gameState.addWell(w);
-            //Debug.Log("Added well at position: " + pos);
+            wells.Add(new Well(Game.gameState.positionGraph.getNode(pos), wellObject), pos);
+            // Debug.Log(w);
+            // Debug.Log(w.getLocation());
+            // Game.gameState.addWell(w);
+            Debug.Log("Added well at position: " + pos);
+        }
+
+        // use this to avoid conflicts upon re-loading game scene
+        if (!Game.gameState.madeWells())
+        {
+            Game.gameState.setWells(wells);
         }
     }
 
@@ -1219,8 +1226,10 @@ public void updateGameConsoleText(string message)
             Debug.Log("Added fog at position: " + pos);
             GameObject fogToken = Instantiate(fog, tiles[pos].getMiddle(), transform.rotation);
             //Game.gameState.fogtoken_order[i]
-            FogToken f = new FogToken(Game.gameState.positionGraph.getNode(pos), fogToken, Game.gameState.fogtoken_order[i]);
-            Game.gameState.addFogToken(f);
+            if (!Game.gameState.madeFogTokens()){
+                FogToken f = new FogToken(Game.gameState.positionGraph.getNode(pos), fogToken, Game.gameState.fogtoken_order[i]);
+                Game.gameState.addFogToken(f);
+            }
             i++;
             //Debug.Log("Added well at position: " + pos);
         }
@@ -1274,7 +1283,6 @@ public void updateGameConsoleText(string message)
                     }
                     fogToken.transform.localScale = boardContainerScaling3;
                     f.Key.setPrefab(fogToken);
-                    
                 }
             }
 
@@ -1283,11 +1291,20 @@ public void updateGameConsoleText(string message)
 
     public void loadFarmers()
     {
-        foreach (int pos in new int[] { 24,36 })
-        {
+        var positions = new int[] { 24,36 };
+        bool madeFarmers = Game.gameState.madeFarmers();
+        var farmers = Game.gameState.getFarmers();
+
+        for(int i = 0; i < positions.Length; i++){
+            // instantiate farmer at location before scene switch if we just switched back to game scene.
+            int pos = madeFarmers ? farmers[i].getPos() : positions[i];
+            GameObject farmerObj = Instantiate(farmer, tiles[pos].getMiddle(), transform.rotation);
+
             Debug.Log("Added farmer at position: " + pos);
-            Farmer f = new Farmer(Game.gameState.positionGraph.getNode(pos), Instantiate(farmer, tiles[pos].getMiddle(), transform.rotation));
-            Game.gameState.addFarmer(f);
+            if (!madeFarmers)
+            {
+                Game.gameState.addFarmer(new Farmer(Game.gameState.positionGraph.getNode(pos), farmerObj));
+            }
         }
     }
 
@@ -1850,6 +1867,12 @@ public void updateGameConsoleText(string message)
 
     public void initializeStrengthPoints()
     {
+        // not rlly necessary to make two vars when both will be true at same times
+        if (Game.gameState.equipmentInitialized)
+        {
+            // don't increase stuff if we're just switching back to this scene from fight.
+            return;
+        }
         foreach(Andor.Player p in Game.gameState.getPlayers())
         {
             p.getHero().increaseStrength(2);
@@ -1861,6 +1884,11 @@ public void updateGameConsoleText(string message)
 
     public void initializeWineskin()
     {
+        if (Game.gameState.equipmentInitialized)
+        {
+            // don't increase stuff if we're just switching back to this scene from fight.
+            return;
+        }
         foreach (Andor.Player p in Game.gameState.getPlayers())
         {
             //p.getHero().increaseStrength(2);

@@ -16,6 +16,10 @@ public class PickDrop : Interactable, TileObject
         this.pickedUp = pickedUp;
     }
 
+    public int getPos()
+    {
+        return location.getIndex();
+    }
 
     public void interact(Player player)
     {
