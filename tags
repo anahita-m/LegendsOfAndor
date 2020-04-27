@@ -10869,6 +10869,8 @@ apiProfile	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/Unit
 apiProfile	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestSettings/TestSettings.cs	/^        public ApiCompatibilityLevel? apiProfile { get; set; }$/;"	p	class:UnityEditor.TestTools.TestRunner.TestSettings
 apiProfiles	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/RequireApiProfileAttribute.cs	/^        public ApiCompatibilityLevel[] apiProfiles { get; private set; }$/;"	p	class:UnityEditor.TestTools.RequireApiProfileAttribute
 app	hexanome-14/Assets/TextMesh Pro/Sprites/EmojiOne.json	/^	"app": "http:\/\/www.codeandweb.com\/texturepacker",$/;"	s	object:meta
+app_contents_path	hexanome-14/Library/EditorInstance.json	/^	"app_contents_path" : "\/home\/brendon\/Unity\/Hub\/Editor\/2019.2.11f1\/Editor\/Data"$/;"	s
+app_path	hexanome-14/Library/EditorInstance.json	/^	"app_path" : "\/home\/brendon\/Unity\/Hub\/Editor\/2019.2.11f1\/Editor\/Unity",$/;"	s
 appleDeveloperTeamID	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestSettings/ITestSettings.cs	/^        string appleDeveloperTeamID { get; set; }$/;"	p	interface:UnityEditor.TestTools.TestRunner.ITestSettings
 appleDeveloperTeamID	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestSettings/TestSettings.cs	/^        public string appleDeveloperTeamID { get; set; }$/;"	p	class:UnityEditor.TestTools.TestRunner.TestSettings
 appleEnableAutomaticSigning	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestSettings/ITestSettings.cs	/^        bool? appleEnableAutomaticSigning { get; set; }$/;"	p	interface:UnityEditor.TestTools.TestRunner.ITestSettings
@@ -15211,6 +15213,7 @@ private_button	hexanome-14/Assets/Main_Menu/C#/Create_Game.cs	/^    public Butto
 processAction	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public void processAction(Action a)$/;"	m	class:GameState
 processId	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/UnityTestProtocol/Message.cs	/^        public int processId;$/;"	f	class:UnityEditor.TestTools.TestRunner.UnityTestProtocol.Message
 processTradeRequest	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public void processTradeRequest()$/;"	m	class:GameController
+process_id	hexanome-14/Library/EditorInstance.json	/^	"process_id" : 924399,$/;"	n
 progress	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/SplineWalker.cs	/^		private float progress;$/;"	f	class:Photon.Pun.Demo.SlotRacer.Utils.SplineWalker	file:
 pronouns	hexanome-14/Assets/Room/C#/Hero.cs	/^    private string[] pronouns;$/;"	f	class:Hero	file:
 properties	hexanome-14/Assets/Photon/PhotonChat/Code/ChatChannel.cs	/^        private Dictionary<object, object> properties;$/;"	f	class:Photon.Chat.ChatChannel	file:
@@ -16847,6 +16850,7 @@ vector3Type	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/E
 vector4Type	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Editor/Tools/Weaver/UNetWeaver.cs	/^        public TypeReference vector4Type;$/;"	f	class:Unity.UNetWeaver.Weaver
 velocityThreshold	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkTransform.cs	/^        public float                velocityThreshold { get { return m_VelocityThreshold; } set /;"	p	class:UnityEngine.Networking.NetworkTransform
 version	hexanome-14/Assets/TextMesh Pro/Sprites/EmojiOne.json	/^	"version": "1.0",$/;"	s	object:meta
+version	hexanome-14/Library/EditorInstance.json	/^	"version" : "2019.2.11f1",$/;"	s
 version	hexanome-14/Library/PackageCache/com.unity.collab-proxy@1.2.16/package.json	/^  "version": "1.2.16",$/;"	s
 version	hexanome-14/Library/PackageCache/com.unity.ext.nunit@1.0.0/package.json	/^  "version": "1.0.0",$/;"	s
 version	hexanome-14/Library/PackageCache/com.unity.ide.rider@1.1.0/package.json	/^  "version": "1.1.0",$/;"	s

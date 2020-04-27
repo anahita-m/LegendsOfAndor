@@ -39,7 +39,7 @@ public class AndorBoardScreen : Screen
         Debug.Log("before add graph clickables " + screenName);
         if (clickables == null)
             clickables = new List<string>();
-        foreach(Node n in Game.positionGraph)
+        foreach(Node n in Game.gameState.positionGraph)
         {
 
             if (n == null)
