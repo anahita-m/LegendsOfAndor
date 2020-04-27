@@ -9,7 +9,15 @@ public enum Type
 {
     Move,
     PassTurn,
-    EndTurn
+    EndTurn,
+    InitiateTrade,
+    RespondTrade,
+    BuyFromMerchant,
+    MovePrinceThoald,
+    EmptyWell,
+    BuyBrew,
+    SendChat,
+    UseTelescope
 }
 
 public interface Action
