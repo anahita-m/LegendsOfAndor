@@ -9,9 +9,27 @@ public class AndorBoardScreen : Screen
     {
     }
 
-    protected override bool canOpenScreen(string playerTag)
+    public override void preSwitchSceneActions()
     {
-        Debug.Log("----------------- Player with tag: " + playerTag + "requested to switch to :" + screenName + "-----------------------------------");
+
+    }
+
+    // probably don't need to use this for this scene since this would just do the stuff
+    // that gameController currently does for button clicks.
+    // but if we ever want to, can clean up gameController and move all click stuff here.
+    public override void executeIfLegal(string buttonName)
+    {
+        //switch(buttonName)
+        //{
+        //    case
+        //}
+    }
+
+
+    public override bool canOpenScreen(string playerID)
+    {
+        // playerID is their networkID
+        Debug.Log("----------------- Player with networkID: " + playerID + " requested to switch to :" + screenName + "-----------------------------------");
         return true;
     }
 
@@ -19,6 +37,8 @@ public class AndorBoardScreen : Screen
     {
 
         Debug.Log("before add graph clickables " + screenName);
+        if (clickables == null)
+            clickables = new List<string>();
         foreach(Node n in Game.positionGraph)
         {
 

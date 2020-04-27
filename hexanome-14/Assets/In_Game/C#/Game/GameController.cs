@@ -5,6 +5,8 @@ using System.Drawing;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class GameController : MonoBehaviour
 {
@@ -57,6 +59,12 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+         if (instance == null) {
+            instance = this;
+        } else {
+        // don't create another gameController upon loading scene.
+            DestroyObject(gameObject);
+        }
 
         Game.started = true;
         Game.createPV();
@@ -70,7 +78,6 @@ public class GameController : MonoBehaviour
 
         initTransform = transform;
 
-        instance = this;
 
         // For drawing everything
         loadBoard();
@@ -111,7 +118,8 @@ public class GameController : MonoBehaviour
             }
         }
         screenManager = new ScreenManager();
-        DontDestroyOnLoad(this.gameObject);
+        Debug.Log("\nmade screen manager\n\n");
+        // DontDestroyOnLoad(this.gameObject);
     }
 
     void Update()
@@ -127,11 +135,41 @@ public class GameController : MonoBehaviour
                 this.displayPauseMenu();
             }
         }
+        switch(SceneManager.GetActiveScene().name)
+        {
+            case "Game":
+                gameSceneUpdate();
+                break;
+            case "fight-scene":
+                fightSceneUpdate();
+                break;
+            default:
+                Debug.Log("Unexpected input to switch statement in gameController's update function.");
+                gameSceneUpdate();
+                break;
+        }
+    }
+
+    private void fightSceneUpdate()
+    {
+
+    }
+
+    private void gameSceneUpdate()
+    {
         if(Game.gameState != null)
         {
             // Update Player position
             foreach (Andor.Player player in Game.gameState.getPlayers())
             {
+                // hack for when loading scene
+                // maybe best option is to destroy this object every new scene.
+                if (!playerObjects[player.getNetworkID()])
+                {
+                    loadPlayers();
+                    loadMonsters();
+                    loadWells();
+                }
                 playerObjects[player.getNetworkID()].transform.position =
                     moveTowards(playerObjects[player.getNetworkID()].transform.position, tiles[Game.gameState.playerLocations[player.getNetworkID()]].getMiddle(), 0.5f);
 
@@ -158,6 +196,8 @@ public class GameController : MonoBehaviour
             }
         }
     }
+
+
     public void moveToNewPos(Andor.Player player)
     {
         Vector3 playerPos = playerObjects[player.getNetworkID()].transform.position;
@@ -329,10 +369,13 @@ public class GameController : MonoBehaviour
             {
                 playerObject.transform.position = tiles[Game.getGame().playerLocations[player.getNetworkID()]].getMiddle();
             }
+            // idk why this isn't working :(
+            // DontDestroyOnLoad(playerObject);
 
             // Time Icons
             GameObject timeObject = Instantiate(circlePrefab, playerTimeContainer);
             timeObjects.Add(player.getNetworkID(), timeObject);
+            // DontDestroyOnLoad(timeObject);
             SpriteRenderer sr = timeObject.GetComponent<SpriteRenderer>();
             sr.color = player.getColor();
 
@@ -378,7 +421,7 @@ public class GameController : MonoBehaviour
             monsterObjects.Add(monster, tempObj);
             tempObj.transform.position = tiles[monster.getLocation()].getMiddle();
             tempObj.transform.localScale = boardScaling;
-
+            // DontDestroyOnLoad(tempObj);
         }
 
     }
@@ -466,6 +509,7 @@ public class GameController : MonoBehaviour
     public void fightClick()
     {
         Debug.Log("fight clicked");
+        ScreenManager.sceneSwitch("fight-scene", Game.myPlayer.getNetworkID());
     }
     public void passClick()
     {

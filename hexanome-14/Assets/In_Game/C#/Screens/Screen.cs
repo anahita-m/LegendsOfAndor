@@ -25,17 +25,21 @@ public class Screen : IEnumerable<string>
         }
     }
 
+    public virtual void preSwitchSceneActions() { }
+
     // overriden by children
     protected virtual void addAllClickables() { }
 
-    protected virtual bool canOpenScreen(string playerTag) { return true; }
+    public virtual bool canOpenScreen(string playerID) { return true; }
 
+    public virtual void executeIfLegal(string buttonName) { }
 
     public string getName()
     {
         // each screen is given its tag by its parent gameObject: ScreenManager.cs
         return screenName;
     }
+
 
     public List<string> getClickables()
     {
@@ -44,7 +48,6 @@ public class Screen : IEnumerable<string>
             Debug.Log("called GetClickables when clickables is still null");
             return null;
         }
-        // Debug.Log("returning clickables");
         return clickables;
     }
 

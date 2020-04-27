@@ -16,7 +16,7 @@
 0	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/package.json	/^    "TextMeshPro",$/;"	s	array:keywords
 0	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/package.json	/^    "TPD",$/;"	s	array:keywords
 0	hexanome-14/Library/PackageCache/nuget.mono-cecil@0.1.5-preview/package.json	/^	"keywords": ["ECMA", "CIL"],$/;"	s	array:keywords
-0	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1178],"m_Scroll/;"	n	array:m_ExpandedSceneGameObjectInstanceIDs
+0	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1202,-1198,1876/;"	n	array:m_ExpandedSceneGameObjectInstanceIDs
 1	hexanome-14/Library/EditorOnlyScriptingUserSettings.json	/^{"m_ScriptingRuntimeVersion":1,"m_DefineSymbols":[{"first":1,"second":"PHOTON_UNITY_NETWORKING;P/;"	o	array:m_DefineSymbols
 1	hexanome-14/Library/PackageCache/com.unity.collab-proxy@1.2.16/package.json	/^    "collaborate",$/;"	s	array:keywords
 1	hexanome-14/Library/PackageCache/com.unity.ext.nunit@1.0.0/package.json	/^  "keywords": ["nunit", "unittest", "test"],$/;"	s	array:keywords
@@ -27,6 +27,7 @@
 1	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/package.json	/^    "TextMesh Pro",$/;"	s	array:keywords
 1	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/package.json	/^    "Tracked Pose Driver",$/;"	s	array:keywords
 1	hexanome-14/Library/PackageCache/nuget.mono-cecil@0.1.5-preview/package.json	/^	"keywords": ["ECMA", "CIL"],$/;"	s	array:keywords
+1	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1202,-1198,1876/;"	n	array:m_ExpandedSceneGameObjectInstanceIDs
 10	hexanome-14/Library/EditorOnlyScriptingUserSettings.json	/^{"m_ScriptingRuntimeVersion":1,"m_DefineSymbols":[{"first":1,"second":"PHOTON_UNITY_NETWORKING;P/;"	o	array:m_DefineSymbols
 10	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 10	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData_Assets.json	/^        {$/;"	o	array:assetRecords
@@ -86,6 +87,7 @@
 2	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData_Assets.json	/^		{$/;"	o	array:assetRecords
 2	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/package.json	/^    "Text",$/;"	s	array:keywords
 2	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/package.json	/^    "XR",$/;"	s	array:keywords
+2	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1202,-1198,1876/;"	n	array:m_ExpandedSceneGameObjectInstanceIDs
 20	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 20	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData_Assets.json	/^        {$/;"	o	array:assetRecords
 2019-09-30	reports/2019-09-30.md	/^# 2019-09-30$/;"	c
@@ -138,6 +140,7 @@
 3	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData_Assets.json	/^        {$/;"	o	array:assetRecords
 3	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/package.json	/^    "SDF"$/;"	s	array:keywords
 3	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/package.json	/^    "Input",$/;"	s	array:keywords
+3	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1202,-1198,1876/;"	n	array:m_ExpandedSceneGameObjectInstanceIDs
 3 most critical bugs in current functionality (optional)	reports/2019-09-30.md	/^### 3 most critical bugs in current functionality (optional)$/;"	S
 3 most critical bugs in current functionality (optional)	reports/2019-10-07.md	/^### 3 most critical bugs in current functionality (optional)$/;"	S
 3 most critical bugs in current functionality (optional)	reports/2019-10-14.md	/^### 3 most critical bugs in current functionality (optional)$/;"	S
@@ -210,6 +213,7 @@
 4	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 4	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData_Assets.json	/^        {$/;"	o	array:assetRecords
 4	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/package.json	/^    "Helpers"$/;"	s	array:keywords
+4	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1202,-1198,1876/;"	n	array:m_ExpandedSceneGameObjectInstanceIDs
 40	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 41	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 42	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
@@ -224,6 +228,7 @@
 5	hexanome-14/Library/PackageCache/com.unity.collab-proxy@1.2.16/package.json	/^    "backup"$/;"	s	array:keywords
 5	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 5	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData_Assets.json	/^        {$/;"	o	array:assetRecords
+5	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1202,-1198,1876/;"	n	array:m_ExpandedSceneGameObjectInstanceIDs
 50	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 51	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 52	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
@@ -237,6 +242,7 @@
 6	hexanome-14/Library/EditorOnlyScriptingUserSettings.json	/^{"m_ScriptingRuntimeVersion":1,"m_DefineSymbols":[{"first":1,"second":"PHOTON_UNITY_NETWORKING;P/;"	o	array:m_DefineSymbols
 6	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 6	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData_Assets.json	/^        {$/;"	o	array:assetRecords
+6	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1202,-1198,1876/;"	n	array:m_ExpandedSceneGameObjectInstanceIDs
 60	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 61	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 62	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
@@ -250,6 +256,7 @@
 7	hexanome-14/Library/EditorOnlyScriptingUserSettings.json	/^{"m_ScriptingRuntimeVersion":1,"m_DefineSymbols":[{"first":1,"second":"PHOTON_UNITY_NETWORKING;P/;"	o	array:m_DefineSymbols
 7	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 7	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData_Assets.json	/^		{$/;"	o	array:assetRecords
+7	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1202,-1198,1876/;"	n	array:m_ExpandedSceneGameObjectInstanceIDs
 70	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 71	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 72	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
@@ -263,6 +270,7 @@
 8	hexanome-14/Library/EditorOnlyScriptingUserSettings.json	/^{"m_ScriptingRuntimeVersion":1,"m_DefineSymbols":[{"first":1,"second":"PHOTON_UNITY_NETWORKING;P/;"	o	array:m_DefineSymbols
 8	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 8	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData_Assets.json	/^        {$/;"	o	array:assetRecords
+8	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1202,-1198,1876/;"	n	array:m_ExpandedSceneGameObjectInstanceIDs
 80	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 81	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 82	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
@@ -276,6 +284,7 @@
 9	hexanome-14/Library/EditorOnlyScriptingUserSettings.json	/^{"m_ScriptingRuntimeVersion":1,"m_DefineSymbols":[{"first":1,"second":"PHOTON_UNITY_NETWORKING;P/;"	o	array:m_DefineSymbols
 9	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 9	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData_Assets.json	/^        {$/;"	o	array:assetRecords
+9	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1202,-1198,1876/;"	n	array:m_ExpandedSceneGameObjectInstanceIDs
 90	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 91	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
 92	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/PackageConversionData.json	/^        {$/;"	o	array:assetRecords
@@ -4088,6 +4097,7 @@ LayoutItems	hexanome-14/Library/PackageCache/com.unity.collab-proxy@1.2.16/Edito
 Leaf	hexanome-14/Assets/Photon/PhotonUnityNetworking/UtilityScripts/Culling/CullArea.cs	/^            Leaf$/;"	e	enum:Photon.Pun.UtilityScripts.CellTreeNode.ENodeType	file:
 Leave	hexanome-14/Assets/Photon/PhotonRealtime/Code/LoadbalancingPeer.cs	/^        public const byte Leave = (byte)254;$/;"	f	class:Photon.Realtime.EventCode
 Leave	hexanome-14/Assets/Photon/PhotonRealtime/Code/LoadbalancingPeer.cs	/^        public const byte Leave = (byte)254;$/;"	f	class:Photon.Realtime.OperationCode
+LeaveBattle	hexanome-14/Assets/In_Game/C#/Screens/fight/FightScreen.cs	/^public class LeaveBattle$/;"	c
 LeaveLobby	hexanome-14/Assets/Photon/PhotonRealtime/Code/LoadbalancingPeer.cs	/^        public const byte LeaveLobby = 228;$/;"	f	class:Photon.Realtime.OperationCode
 LeaveLobby	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs	/^        public static bool LeaveLobby()$/;"	m	class:Photon.Pun.PhotonNetwork
 LeaveRoom	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs	/^        public static bool LeaveRoom(bool becomeInactive = true)$/;"	m	class:Photon.Pun.PhotonNetwork
@@ -10796,6 +10806,7 @@ attack	hexanome-14/Assets/In_Game/C#/Monsters/Monster.cs	/^    public void attac
 attack	hexanome-14/Assets/In_Game/C#/Monsters/Rubble.cs	/^    public void attack(int damage)$/;"	m	class:Rubble
 audioPlay	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
 audioPlay	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
+audioPlay	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	b
 audioPlay	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
 audioPlay	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
 audioPlay	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
@@ -10872,6 +10883,7 @@ build	hexanome-14/Library/PackageCache/com.unity.ide.rider@1.1.0/Rider/Editor/Di
 builder	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Editor/Tools/MiniJSON.cs	/^			StringBuilder builder;$/;"	f	class:UnityEditor.Networking.Json.Serializer	file:
 builds	hexanome-14/Library/PackageCache/com.unity.ide.rider@1.1.0/Rider/Editor/Discovery.cs	/^      public List<string> builds;$/;"	f	class:Packages.Rider.Editor.RiderPathLocator.ActiveApplication
 builtInPropsCellList	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Controllers/PlayerDetailsController.cs	/^        Dictionary<string, PropertyCell> builtInPropsCellList = new Dictionary<string, PropertyC/;"	f	class:Photon.Pun.Demo.Cockpit.PlayerDetailsController	file:
+buttonClick	hexanome-14/Assets/In_Game/C#/Screens/ScreenManager.cs	/^    public static void buttonClick(string buttonTag)$/;"	m	class:ScreenManager
 buttonText	hexanome-14/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/StatusView.cs	/^        public string buttonText$/;"	p	class:UnityEditor.Collaboration.StatusView
 buttonsOn	hexanome-14/Assets/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/PhotonStatsGui.cs	/^        public bool buttonsOn;$/;"	f	class:Photon.Pun.UtilityScripts.PhotonStatsGui
 byteType	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Editor/Tools/Weaver/UNetWeaver.cs	/^        public TypeReference byteType;$/;"	f	class:Unity.UNetWeaver.Weaver
@@ -10889,15 +10901,16 @@ callbackTargets	hexanome-14/Assets/Photon/PhotonRealtime/Code/LoadBalancingClien
 cam	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/ProceduralController.cs	/^        private Camera cam;$/;"	f	class:Photon.Pun.Demo.Procedural.ProceduralController	file:
 cameraMode	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
 cameraMode	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
+cameraMode	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	o
 cameraMode	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
 cameraMode	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
 cameraMode	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
 cameraMode	hexanome-14/Library/StateCache/SceneView/f556e1-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
 cameraMode	hexanome-14/Library/StateCache/SceneView/fcc556-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
 cameraTransform	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/CameraWork.cs	/^        Transform cameraTransform;$/;"	f	class:Photon.Pun.Demo.PunBasics.CameraWork	file:
-canOpenScreen	hexanome-14/Assets/In_Game/C#/Screens/AndorBoardScreen.cs	/^    protected override bool canOpenScreen(string playerTag)$/;"	m	class:AndorBoardScreen
-canOpenScreen	hexanome-14/Assets/In_Game/C#/Screens/Screen.cs	/^    protected virtual bool canOpenScreen(string playerTag) { return true; }$/;"	m	class:Screen
-canOpenScreen	hexanome-14/Assets/In_Game/C#/Screens/fight/FightScreen.cs	/^    protected override bool canOpenScreen(string playerTag)$/;"	m	class:FightScreen
+canOpenScreen	hexanome-14/Assets/In_Game/C#/Screens/AndorBoardScreen.cs	/^    public override bool canOpenScreen(string playerID)$/;"	m	class:AndorBoardScreen
+canOpenScreen	hexanome-14/Assets/In_Game/C#/Screens/Screen.cs	/^    public virtual bool canOpenScreen(string playerID) { return true; }$/;"	m	class:Screen
+canOpenScreen	hexanome-14/Assets/In_Game/C#/Screens/fight/FightScreen.cs	/^    public override bool canOpenScreen(string playerID)$/;"	m	class:FightScreen
 cancelClick	hexanome-14/Assets/In_Game/C#/PauseMenu/SaveGame.cs	/^    public void cancelClick()$/;"	m	class:SaveGame
 canvasRenderer	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_SubMeshUI.cs	/^        public new CanvasRenderer canvasRenderer$/;"	p	class:TMPro.TMP_SubMeshUI
 canvasRenderer	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TextMeshProUGUI.cs	/^        public new CanvasRenderer canvasRenderer$/;"	p	class:TMPro.TextMeshProUGUI
@@ -10966,6 +10979,7 @@ childrenIds	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/Uni
 circlePrefab	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public GameObject circlePrefab;$/;"	f	class:GameController
 cleanupCacheOnLeave	hexanome-14/Assets/Photon/PhotonRealtime/Code/LoadbalancingPeer.cs	/^        private bool cleanupCacheOnLeave = true;$/;"	f	class:Photon.Realtime.RoomOptions	file:
 clearStatus	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RoomListView.cs	/^        IEnumerator clearStatus()$/;"	m	class:Photon.Pun.Demo.Cockpit.RoomListView	file:
+clickRouter	hexanome-14/Assets/In_Game/C#/Screens/fight/clickRouter.cs	/^public class clickRouter : MonoBehaviour$/;"	c
 clickables	hexanome-14/Assets/In_Game/C#/Screens/Screen.cs	/^    protected List<string> clickables;$/;"	f	class:Screen
 client	hexanome-14/Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs	/^        private LoadBalancingClient client;$/;"	f	class:Photon.Realtime.WebRpcCallbacksContainer	file:
 client	hexanome-14/Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs	/^        private readonly LoadBalancingClient client;$/;"	f	class:Photon.Realtime.ConnectionCallbacksContainer	file:
@@ -11117,6 +11131,7 @@ cullArea	hexanome-14/Assets/Photon/PhotonUnityNetworking/UtilityScripts/Culling/
 cullArea	hexanome-14/Assets/Photon/PhotonUnityNetworking/UtilityScripts/Culling/Editor/CullAreaEditor.cs	/^        private CullArea cullArea;$/;"	f	class:Photon.Pun.UtilityScripts.CullAreaEditor	file:
 curPage	hexanome-14/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/PagedListView.cs	/^        int curPage { get; }$/;"	p	interface:UnityEditor.Collaboration.IPagerData
 curPage	hexanome-14/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/PagedListView.cs	/^        public int curPage$/;"	p	class:UnityEditor.Collaboration.PagedListView
+currScene	hexanome-14/Assets/In_Game/C#/Screens/ScreenManager.cs	/^    private static string currScene()$/;"	m	class:ScreenManager	file:
 current	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/LogFilter.cs	/^        static public FilterLevel current = FilterLevel.Info;$/;"	f	class:UnityEngine.Networking.LogFilter
 currentArmModelComponent	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/Runtime/ArmModels/TransitionArmModel.cs	/^        public ArmModel currentArmModelComponent$/;"	p	class:UnityEngine.XR.LegacyInputHelpers.TransitionArmModel
 currentBlendAmount	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/Runtime/ArmModels/TransitionArmModel.cs	/^            public float currentBlendAmount;                  $/;"	f	struct:UnityEngine.XR.LegacyInputHelpers.TransitionArmModel.ArmModelBlendData
@@ -11241,6 +11256,7 @@ doubleType	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Ed
 doubleValue	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkBuffer.cs	/^        public double doubleValue;$/;"	f	struct:UnityEngine.Networking.UIntFloat
 drawMode	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:cameraMode
 drawMode	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:cameraMode
+drawMode	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	n	object:cameraMode
 drawMode	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:cameraMode
 drawMode	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:cameraMode
 drawMode	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:cameraMode
@@ -11305,6 +11321,10 @@ execute	hexanome-14/Assets/In_Game/C#/Action/Action.cs	/^    void execute(GameSt
 execute	hexanome-14/Assets/In_Game/C#/Action/EndTurn.cs	/^    public void execute(GameState gs)$/;"	m	class:EndTurn
 execute	hexanome-14/Assets/In_Game/C#/Action/Move.cs	/^    public void execute(GameState gs)$/;"	m	class:Move
 execute	hexanome-14/Assets/In_Game/C#/Action/PassTurn.cs	/^    public void execute(GameState gs)$/;"	m	class:PassTurn
+execute	hexanome-14/Assets/In_Game/C#/Screens/fight/FightScreen.cs	/^    public static void execute()$/;"	m	class:LeaveBattle
+executeIfLegal	hexanome-14/Assets/In_Game/C#/Screens/AndorBoardScreen.cs	/^    public override void executeIfLegal(string buttonName)$/;"	m	class:AndorBoardScreen
+executeIfLegal	hexanome-14/Assets/In_Game/C#/Screens/Screen.cs	/^    public virtual void executeIfLegal(string buttonName) { }$/;"	m	class:Screen
+executeIfLegal	hexanome-14/Assets/In_Game/C#/Screens/fight/FightScreen.cs	/^    public override void executeIfLegal(string buttonName)$/;"	m	class:FightScreen
 executer	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/CommandLineTest/TestStarter.cs	/^        static Executer executer$/;"	p	class:UnityEditor.TestTools.TestRunner.CommandLineTest.TestStarter
 executionSettings	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/Api/TestRunData.cs	/^        public ExecutionSettings executionSettings;$/;"	f	class:UnityEditor.TestTools.TestRunner.Api.TestRunData
 executionSettings	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/CommandLineTest/RunData.cs	/^        public ExecutionSettings executionSettings;$/;"	f	class:UnityEditor.TestTools.TestRunner.CommandLineTest.RunData
@@ -11348,6 +11368,8 @@ fallbackThreadId	hexanome-14/Assets/Photon/PhotonRealtime/Code/ConnectionHandler
 featureLookupFlags	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_FontFeaturesCommon.cs	/^        public FontFeatureLookupFlags featureLookupFlags { get { return m_FeatureLookupFlags; } /;"	p	class:TMPro.TMP_GlyphPairAdjustmentRecord
 feedbackText	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/Launcher.cs	/^		private Text feedbackText;$/;"	f	class:Photon.Pun.Demo.PunBasics.Launcher	file:
 fightClick	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public void fightClick()$/;"	m	class:GameController
+fightSceenButton	hexanome-14/Assets/In_Game/C#/Screens/fight/clickRouter.cs	/^    public void fightSceenButton()$/;"	m	class:clickRouter
+fightSceneUpdate	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    private void fightSceneUpdate()$/;"	m	class:GameController	file:
 filename	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_SpriteAssetImportFormats.cs	/^            public string filename;$/;"	f	struct:TMPro.SpriteAssetUtilities.TexturePacker.SpriteData
 filter	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/Api/ExecutionSettings.cs	/^        public Filter filter;$/;"	f	class:UnityEditor.TestTools.TestRunner.Api.ExecutionSettings
 filter	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEngine.TestRunner/TestRunner/PlaymodeTestsControllerSettings.cs	/^        public TestRunnerFilter filter;$/;"	f	class:UnityEngine.TestTools.TestRunner.PlaymodeTestsControllerSettings
@@ -11464,6 +11486,7 @@ gameObjectInequality	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlap
 gameObjectType	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Editor/Tools/Weaver/UNetWeaver.cs	/^        public TypeReference gameObjectType;$/;"	f	class:Unity.UNetWeaver.Weaver
 gamePlayerPrefab	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkLobbyManager.cs	/^        public GameObject gamePlayerPrefab   { get { return m_GamePlayerPrefab; } set { m_GamePl/;"	p	class:UnityEngine.Networking.NetworkLobbyManager
 gameSaveTimeLabel	hexanome-14/Assets/Main_Menu/C#/SaveGameDetails.cs	/^    public Text gameSaveTimeLabel;$/;"	f	class:SaveGameDetails
+gameSceneUpdate	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    private void gameSceneUpdate()$/;"	m	class:GameController	file:
 gameState	hexanome-14/Assets/In_Game/C#/Game/Game.cs	/^    public static GameState gameState;$/;"	f	class:Game
 gameState	hexanome-14/Assets/Main_Menu/C#/SaveGameDetails.cs	/^    private GameState gameState;$/;"	f	class:SaveGameDetails	file:
 gameVersion	hexanome-14/Assets/Network/C#/NetworkController.cs	/^    private int gameVersion = 1;$/;"	f	class:NetworkController	file:
@@ -11482,7 +11505,7 @@ geometrySortingOrder	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.
 getAdjacentNodes	hexanome-14/Assets/In_Game/C#/Board/Node.cs	/^    public List<Node> getAdjacentNodes()$/;"	m	class:Node
 getAllAssetPathsAction	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestRunner/TestFileCleanupVerifier.cs	/^        private Func<string[]> getAllAssetPathsAction;$/;"	f	class:UnityEditor.TestTools.TestRunner.TestFileCleanupVerifier	file:
 getClickables	hexanome-14/Assets/In_Game/C#/Screens/Screen.cs	/^    public List<string> getClickables()$/;"	m	class:Screen
-getClickables	hexanome-14/Assets/In_Game/C#/Screens/ScreenManager.cs	/^    public static List<string> getClickables(string screenName)$/;"	m	class:ScreenManager
+getClickables	hexanome-14/Assets/In_Game/C#/Screens/ScreenManager.cs	/^    public static List<string> getClickables(string screenName, string playerName)$/;"	m	class:ScreenManager
 getColor	hexanome-14/Assets/Room/C#/Player.cs	/^        public Color32 getColor(int alpha = 255)$/;"	m	class:Andor.Player
 getComponentReference	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Editor/Tools/Weaver/UNetWeaver.cs	/^        public MethodReference getComponentReference;$/;"	f	class:Unity.UNetWeaver.Weaver
 getDistance	hexanome-14/Assets/In_Game/C#/Board/Graph.cs	/^    public int getDistance(int src, int dest)$/;"	m	class:Graph
@@ -11569,6 +11592,7 @@ handlers	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runt
 handlers	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkServerSimple.cs	/^        public Dictionary<short, NetworkMessageDelegate> handlers { get { return m_MessageHandle/;"	p	class:UnityEngine.Networking.NetworkServerSimple
 hasAuthority	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkBehaviour.cs	/^        public bool hasAuthority { get { return myView.hasAuthority; } }$/;"	p	class:UnityEngine.Networking.NetworkBehaviour
 hasAuthority	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkIdentity.cs	/^        public bool hasAuthority    { get { return m_HasAuthority; } }$/;"	p	class:UnityEngine.Networking.NetworkIdentity
+hasButton	hexanome-14/Assets/In_Game/C#/Screens/ScreenManager.cs	/^    private static bool hasButton(string buttonTag)$/;"	m	class:ScreenManager	file:
 hasChanged	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TextContainer.cs	/^        public bool hasChanged$/;"	p	class:TMPro.TextContainer
 hasChildren	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEngine.TestRunner/TestRunner/RemoteHelpers/RemoteTestData.cs	/^        public bool hasChildren;$/;"	f	class:UnityEngine.TestRunner.TestLaunchers.RemoteTestData
 hasChildren	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEngine.TestRunner/TestRunner/RemoteHelpers/RemoteTestResultData.cs	/^        public bool hasChildren;$/;"	f	class:UnityEngine.TestRunner.TestLaunchers.RemoteTestResultData
@@ -11669,6 +11693,7 @@ image	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runti
 image	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_Dropdown.cs	/^            public Sprite image { get { return m_Image; } set { m_Image = value; } }$/;"	p	class:TMPro.TMP_Dropdown.OptionData
 in2DMode	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
 in2DMode	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
+in2DMode	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	b
 in2DMode	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
 in2DMode	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
 in2DMode	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
@@ -11692,7 +11717,7 @@ init	hexanome-14/Assets/In_Game/C#/Board/BoardPosition.cs	/^    public void init
 init	hexanome-14/Assets/Main_Menu/C#/SaveGameDetails.cs	/^    public void init(string gameName, GameState gs)$/;"	m	class:SaveGameDetails
 init	hexanome-14/Assets/Room/C#/PlayerDetailsLoaded.cs	/^    public void init(Andor.Player p)$/;"	m	class:PlayerDetailsLoaded
 initGame	hexanome-14/Assets/In_Game/C#/Game/Game.cs	/^    public static void initGame(Andor.Player player, bool addPlayer = true)$/;"	m	class:Game
-initScreen	hexanome-14/Assets/In_Game/C#/Screens/ScreenManager.cs	/^    public static void initScreen()$/;"	m	class:ScreenManager
+initScreen	hexanome-14/Assets/In_Game/C#/Screens/ScreenManager.cs	/^    public static void initScreen(string s)$/;"	m	class:ScreenManager
 initScreens	hexanome-14/Assets/In_Game/C#/Screens/ScreenManager.cs	/^    public void initScreens()$/;"	m	class:ScreenManager
 initTransform	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    private Transform initTransform;$/;"	f	class:GameController	file:
 inputField	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_DefaultControls.cs	/^            public Sprite inputField;$/;"	f	struct:TMPro.TMP_DefaultControls.Resources
@@ -11792,6 +11817,7 @@ isLegal	hexanome-14/Assets/In_Game/C#/Action/Action.cs	/^    bool isLegal(GameSt
 isLegal	hexanome-14/Assets/In_Game/C#/Action/EndTurn.cs	/^    public bool isLegal(GameState gs)$/;"	m	class:EndTurn
 isLegal	hexanome-14/Assets/In_Game/C#/Action/Move.cs	/^    public bool isLegal(GameState gs)$/;"	m	class:Move
 isLegal	hexanome-14/Assets/In_Game/C#/Action/PassTurn.cs	/^    public bool isLegal(GameState gs)$/;"	m	class:PassTurn
+isLegal	hexanome-14/Assets/In_Game/C#/Screens/fight/FightScreen.cs	/^    public static bool isLegal()$/;"	m	class:LeaveBattle
 isLinkedTextComponent	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_Text.cs	/^        public bool isLinkedTextComponent$/;"	p	class:TMPro.TMP_Text
 isLocalPlayer	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkBehaviour.cs	/^        public bool isLocalPlayer { get { return myView.isLocalPlayer; } }$/;"	p	class:UnityEngine.Networking.NetworkBehaviour
 isLocalPlayer	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkIdentity.cs	/^        public bool isLocalPlayer { get { return m_IsLocalPlayer; } }$/;"	p	class:UnityEngine.Networking.NetworkIdentity
@@ -12601,11 +12627,13 @@ m_ExpandTreeOnCreation	hexanome-14/Library/PackageCache/com.unity.test-framework
 m_Expanded	hexanome-14/Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/Views/CollabHistoryItem.cs	/^        private bool m_Expanded;$/;"	f	class:UnityEditor.Collaboration.CollabHistoryItem	file:
 m_ExpandedPrefabGameObjectFileIDs	hexanome-14/Library/StateCache/Hierarchy/64c001-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	a
 m_ExpandedPrefabGameObjectFileIDs	hexanome-14/Library/StateCache/Hierarchy/7c4cc4-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	a
-m_ExpandedPrefabGameObjectFileIDs	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1178],"m_Scroll/;"	a
+m_ExpandedPrefabGameObjectFileIDs	hexanome-14/Library/StateCache/Hierarchy/c86e50-6afbf9bed67cadd429.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	a
+m_ExpandedPrefabGameObjectFileIDs	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1202,-1198,1876/;"	a
 m_ExpandedPrefabGameObjectFileIDs	hexanome-14/Library/StateCache/Hierarchy/ed8c7a-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	a
 m_ExpandedSceneGameObjectInstanceIDs	hexanome-14/Library/StateCache/Hierarchy/64c001-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	a
 m_ExpandedSceneGameObjectInstanceIDs	hexanome-14/Library/StateCache/Hierarchy/7c4cc4-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	a
-m_ExpandedSceneGameObjectInstanceIDs	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1178],"m_Scroll/;"	a
+m_ExpandedSceneGameObjectInstanceIDs	hexanome-14/Library/StateCache/Hierarchy/c86e50-6afbf9bed67cadd429.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	a
+m_ExpandedSceneGameObjectInstanceIDs	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1202,-1198,1876/;"	a
 m_ExpandedSceneGameObjectInstanceIDs	hexanome-14/Library/StateCache/Hierarchy/ed8c7a-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	a
 m_ExpectedLogs	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/NUnitExtension/TestRunnerStateSerializer.cs	/^        private LogMatch[] m_ExpectedLogs;$/;"	f	class:UnityEditor.TestTools.TestRunner.TestRunnerStateSerializer	file:
 m_ExternalConnections	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkServer.cs	/^        HashSet<int> m_ExternalConnections;$/;"	f	class:UnityEngine.Networking.NetworkServer	file:
@@ -12876,11 +12904,13 @@ m_KeyboardType	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scri
 m_LastBufferedMessageCountTimer	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/ChannelBuffer.cs	/^        float m_LastBufferedMessageCountTimer = Time.realtimeSinceStartup;$/;"	f	class:UnityEngine.Networking.ChannelBuffer	file:
 m_LastClickedFileID	hexanome-14/Library/StateCache/Hierarchy/64c001-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	n
 m_LastClickedFileID	hexanome-14/Library/StateCache/Hierarchy/7c4cc4-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	n
-m_LastClickedFileID	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1178],"m_Scroll/;"	n
+m_LastClickedFileID	hexanome-14/Library/StateCache/Hierarchy/c86e50-6afbf9bed67cadd429.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	n
+m_LastClickedFileID	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1202,-1198,1876/;"	n
 m_LastClickedFileID	hexanome-14/Library/StateCache/Hierarchy/ed8c7a-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	n
 m_LastClickedInstanceID	hexanome-14/Library/StateCache/Hierarchy/64c001-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	n
 m_LastClickedInstanceID	hexanome-14/Library/StateCache/Hierarchy/7c4cc4-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	n
-m_LastClickedInstanceID	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1178],"m_Scroll/;"	n
+m_LastClickedInstanceID	hexanome-14/Library/StateCache/Hierarchy/c86e50-6afbf9bed67cadd429.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	n
+m_LastClickedInstanceID	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1202,-1198,1876/;"	n
 m_LastClickedInstanceID	hexanome-14/Library/StateCache/Hierarchy/ed8c7a-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	n
 m_LastClientSendTime	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkTranformChild.cs	/^        float           m_LastClientSendTime; \/\/ last time client send a sync to server$/;"	f	class:UnityEngine.Networking.NetworkTransformChild	file:
 m_LastClientSendTime	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkTransform.cs	/^        float           m_LastClientSendTime; \/\/ last time client send a sync to server$/;"	f	class:UnityEngine.Networking.NetworkTransform	file:
@@ -13379,7 +13409,8 @@ m_ScrollPosition	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Sc
 m_ScrollSensitivity	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_InputField.cs	/^        protected float m_ScrollSensitivity = 1.0f;$/;"	f	class:TMPro.TMP_InputField
 m_ScrollY	hexanome-14/Library/StateCache/Hierarchy/64c001-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	n
 m_ScrollY	hexanome-14/Library/StateCache/Hierarchy/7c4cc4-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	n
-m_ScrollY	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1178],"m_Scroll/;"	n
+m_ScrollY	hexanome-14/Library/StateCache/Hierarchy/c86e50-6afbf9bed67cadd429.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	n
+m_ScrollY	hexanome-14/Library/StateCache/Hierarchy/c86e50-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[-1202,-1198,1876/;"	n
 m_ScrollY	hexanome-14/Library/StateCache/Hierarchy/ed8c7a-mainStage.json	/^{"m_ExpandedPrefabGameObjectFileIDs":[],"m_ExpandedSceneGameObjectInstanceIDs":[],"m_ScrollY":0./;"	n
 m_ScrollbarScrollSensitivity	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Editor/TMP_InputFieldEditor.cs	/^        SerializedProperty m_ScrollbarScrollSensitivity;$/;"	f	class:TMPro.EditorUtilities.TMP_InputFieldEditor	file:
 m_SearchString	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/GUI/TestRunnerUIFilter.cs	/^        private string m_SearchString;$/;"	f	class:UnityEditor.TestTools.TestRunner.GUI.TestRunnerUIFilter	file:
@@ -14288,6 +14319,7 @@ name	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/pack
 name	hexanome-14/Library/PackageCache/nuget.mono-cecil@0.1.5-preview/package.json	/^	"name": "nuget.mono-cecil",$/;"	s
 name	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	s	object:cameraMode
 name	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	s	object:cameraMode
+name	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	s	object:cameraMode
 name	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	s	object:cameraMode
 name	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	s	object:cameraMode
 name	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	s	object:cameraMode
@@ -14440,6 +14472,7 @@ originalMaterial	hexanome-14/Assets/Photon/PhotonUnityNetworking/UtilityScripts/
 originalScene	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEngine.TestRunner/TestRunner/PlaymodeTestsControllerSettings.cs	/^        public string originalScene;$/;"	f	class:UnityEngine.TestTools.TestRunner.PlaymodeTestsControllerSettings
 orthographic	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
 orthographic	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
+orthographic	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	b
 orthographic	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
 orthographic	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
 orthographic	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
@@ -14530,6 +14563,7 @@ pivot	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runti
 pivot	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TextContainer.cs	/^        public Vector2 pivot$/;"	p	class:TMPro.TextContainer
 pivot	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
 pivot	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
+pivot	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	o
 pivot	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
 pivot	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
 pivot	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
@@ -14625,6 +14659,9 @@ positionGraph	hexanome-14/Assets/In_Game/C#/Game/Game.cs	/^    public static Gra
 positiveButton	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/Editor/SeedXRInputBindings/SeedXRInputBindings.cs	/^            public string positiveButton = "";$/;"	f	class:UnityEditor.XR.LegacyInputHelpers.SeedXRInputBindings.InputAxis
 postCompileActionsDone	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/Editor/PhotonEditor.cs	/^        private static bool postCompileActionsDone;$/;"	f	class:Photon.Pun.PhotonEditor	file:
 preLoadedGameState	hexanome-14/Assets/Room/C#/RoomLobbyController.cs	/^    public static GameState preLoadedGameState;$/;"	f	class:RoomLobbyController
+preSwitchSceneActions	hexanome-14/Assets/In_Game/C#/Screens/AndorBoardScreen.cs	/^    public override void preSwitchSceneActions()$/;"	m	class:AndorBoardScreen
+preSwitchSceneActions	hexanome-14/Assets/In_Game/C#/Screens/Screen.cs	/^    public virtual void preSwitchSceneActions() { }$/;"	m	class:Screen
+preSwitchSceneActions	hexanome-14/Assets/In_Game/C#/Screens/fight/FightScreen.cs	/^    public override void preSwitchSceneActions()$/;"	m	class:FightScreen
 prefLabel	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/Editor/ServerSettingsInspector.cs	/^    private string prefLabel;$/;"	f	class:ServerSettingsInspector	file:
 prefab	hexanome-14/Assets/In_Game/C#/BoardElements/Well.cs	/^    protected GameObject prefab;$/;"	f	class:Well
 prefab	hexanome-14/Assets/In_Game/C#/Monsters/Monster.cs	/^    protected GameObject prefab;$/;"	f	class:Monster
@@ -14654,7 +14691,7 @@ privateGameClick	hexanome-14/Assets/Main_Menu/C#/Create_Game.cs	/^    public voi
 private_button	hexanome-14/Assets/Main_Menu/C#/Create_Game.cs	/^    public Button private_button;$/;"	f	class:Create_Game
 processAction	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public void processAction(Action a)$/;"	m	class:GameState
 processId	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/UnityTestProtocol/Message.cs	/^        public int processId;$/;"	f	class:UnityEditor.TestTools.TestRunner.UnityTestProtocol.Message
-process_id	hexanome-14/Library/EditorInstance.json	/^	"process_id" : 279958,$/;"	n
+process_id	hexanome-14/Library/EditorInstance.json	/^	"process_id" : 875941,$/;"	n
 progress	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/SplineWalker.cs	/^		private float progress;$/;"	f	class:Photon.Pun.Demo.SlotRacer.Utils.SplineWalker	file:
 properties	hexanome-14/Assets/Photon/PhotonChat/Code/ChatChannel.cs	/^        private Dictionary<object, object> properties;$/;"	f	class:Photon.Chat.ChatChannel	file:
 propertiesKey	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Scripts/Cluster.cs	/^        private string propertiesKey;$/;"	f	class:Photon.Pun.Demo.Procedural.Cluster	file:
@@ -15143,6 +15180,7 @@ rotation	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scr
 rotation	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/Messages.cs	/^        public Quaternion rotation;$/;"	f	class:UnityEngine.Networking.NetworkSystem.ObjectSpawnMessage
 rotation	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
 rotation	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
+rotation	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	o
 rotation	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
 rotation	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
 rotation	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
@@ -15331,6 +15369,7 @@ sceneId	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runti
 sceneId	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkIdentity.cs	/^        public NetworkSceneId sceneId { get { return m_SceneId; } }$/;"	p	class:UnityEngine.Networking.NetworkIdentity
 sceneLighting	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
 sceneLighting	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
+sceneLighting	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	b
 sceneLighting	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
 sceneLighting	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
 sceneLighting	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
@@ -15338,9 +15377,10 @@ sceneLighting	hexanome-14/Library/StateCache/SceneView/f556e1-mainStage.json	/^{
 sceneLighting	hexanome-14/Library/StateCache/SceneView/fcc556-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b
 sceneName	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/Editor/PunSceneSettings.cs	/^        public string sceneName;$/;"	f	class:Photon.Pun.SceneSetting
 sceneNameProperty	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/Editor/PunSceneSettingsInspector.cs	/^        private SerializedProperty sceneNameProperty;$/;"	f	class:Photon.Pun.PunSceneSettingsInspector	file:
-sceneSwitch	hexanome-14/Assets/In_Game/C#/Screens/ScreenManager.cs	/^    public static void sceneSwitch(string newScene){$/;"	m	class:ScreenManager
+sceneSwitch	hexanome-14/Assets/In_Game/C#/Screens/ScreenManager.cs	/^    public static void sceneSwitch(string newScene, string playerID){$/;"	m	class:ScreenManager
 sceneViewState	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
 sceneViewState	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
+sceneViewState	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	o
 sceneViewState	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
 sceneViewState	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
 sceneViewState	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	o
@@ -15379,6 +15419,7 @@ secondGlyphAdjustments	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.
 secondGlyphIndex	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_FontFeaturesCommon.cs	/^        public uint secondGlyphIndex;$/;"	f	struct:TMPro.GlyphPairKey
 section	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	s	object:cameraMode
 section	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	s	object:cameraMode
+section	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	s	object:cameraMode
 section	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	s	object:cameraMode
 section	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	s	object:cameraMode
 section	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	s	object:cameraMode
@@ -15484,6 +15525,7 @@ showFailed	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/Unit
 showFailed	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/GUI/TestListBuilder/TestFilterSettings.cs	/^        public bool showFailed;$/;"	f	class:UnityEditor.TestTools.TestRunner.GUI.TestFilterSettings
 showFlares	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showFlares	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
+showFlares	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	b	object:sceneViewState
 showFlares	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showFlares	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showFlares	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
@@ -15491,6 +15533,7 @@ showFlares	hexanome-14/Library/StateCache/SceneView/f556e1-mainStage.json	/^{"ca
 showFlares	hexanome-14/Library/StateCache/SceneView/fcc556-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showFog	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showFog	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
+showFog	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	b	object:sceneViewState
 showFog	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showFog	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showFog	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
@@ -15505,6 +15548,7 @@ showIgnored	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/Uni
 showIgnored	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/GUI/TestListBuilder/TestFilterSettings.cs	/^        public bool showIgnored;$/;"	f	class:UnityEditor.TestTools.TestRunner.GUI.TestFilterSettings
 showImageEffects	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showImageEffects	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
+showImageEffects	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	b	object:sceneViewState
 showImageEffects	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showImageEffects	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showImageEffects	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
@@ -15513,6 +15557,7 @@ showImageEffects	hexanome-14/Library/StateCache/SceneView/fcc556-mainStage.json	
 showLobbyGUI	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkLobbyManager.cs	/^        public bool showLobbyGUI             { get { return m_ShowLobbyGUI; } set { m_ShowLobbyG/;"	p	class:UnityEngine.Networking.NetworkLobbyManager
 showMaterialUpdate	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showMaterialUpdate	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
+showMaterialUpdate	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	b	object:sceneViewState
 showMaterialUpdate	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showMaterialUpdate	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showMaterialUpdate	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
@@ -15522,6 +15567,7 @@ showNotRun	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/Unit
 showNotRunned	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/GUI/TestListBuilder/RenderingOptions.cs	/^        public bool showNotRunned;$/;"	f	class:UnityEditor.TestTools.TestRunner.GUI.RenderingOptions
 showParticleSystems	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showParticleSystems	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
+showParticleSystems	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	b	object:sceneViewState
 showParticleSystems	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showParticleSystems	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showParticleSystems	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
@@ -15530,6 +15576,7 @@ showParticleSystems	hexanome-14/Library/StateCache/SceneView/fcc556-mainStage.js
 showRpcs	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/Editor/ServerSettingsInspector.cs	/^    private bool showRpcs;$/;"	f	class:ServerSettingsInspector	file:
 showSkybox	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showSkybox	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
+showSkybox	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	b	object:sceneViewState
 showSkybox	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showSkybox	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
 showSkybox	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	b	object:sceneViewState
@@ -15545,6 +15592,7 @@ site	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEdito
 size	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TextContainer.cs	/^        public Vector2 size$/;"	p	class:TMPro.TextContainer
 size	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n
 size	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n
+size	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	n
 size	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n
 size	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n
 size	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n
@@ -16069,6 +16117,7 @@ uv2	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime
 uv4	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_CharacterInfo.cs	/^        public Vector2 uv4;$/;"	f	struct:TMPro.TMP_Vertex
 uvs0	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_MeshInfo.cs	/^        public Vector2[] uvs0;$/;"	f	struct:TMPro.TMP_MeshInfo
 uvs2	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_MeshInfo.cs	/^        public Vector2[] uvs2;$/;"	f	struct:TMPro.TMP_MeshInfo
+validClick	hexanome-14/Assets/In_Game/C#/Screens/ScreenManager.cs	/^    private static bool validClick(string buttonTag)$/;"	m	class:ScreenManager	file:
 validTemplate	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_Dropdown.cs	/^        private bool validTemplate = false;$/;"	f	class:TMPro.TMP_Dropdown	file:
 value	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Editor/NetworkInformationPreview.cs	/^            public GUIContent value;$/;"	f	class:UnityEditor.Networking.NetworkInformationPreview.NetworkIdentityInfo
 value	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/Messages.cs	/^        public int value;$/;"	f	class:UnityEngine.Networking.NetworkSystem.IntegerMessage
@@ -16160,6 +16209,7 @@ w	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/T
 w	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_SpriteAssetImportFormats.cs	/^            public float w;$/;"	f	struct:TMPro.SpriteAssetUtilities.TexturePacker.SpriteSize
 w	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:rotation
 w	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:rotation
+w	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	n	object:rotation
 w	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:rotation
 w	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:rotation
 w	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:rotation
@@ -16204,6 +16254,8 @@ x	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode"
 x	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:rotation
 x	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:pivot
 x	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:rotation
+x	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	n	object:pivot
+x	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	n	object:rotation
 x	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:pivot
 x	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:rotation
 x	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:pivot
@@ -16234,6 +16286,8 @@ y	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode"
 y	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:rotation
 y	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:pivot
 y	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:rotation
+y	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	n	object:pivot
+y	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	n	object:rotation
 y	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:pivot
 y	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:rotation
 y	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:pivot
@@ -16253,6 +16307,8 @@ z	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode"
 z	hexanome-14/Library/StateCache/SceneView/5b4379-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:rotation
 z	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:pivot
 z	hexanome-14/Library/StateCache/SceneView/713e91-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:rotation
+z	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	n	object:pivot
+z	hexanome-14/Library/StateCache/SceneView/91c9ee-6afbf9bed67cadd429.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"aud/;"	n	object:rotation
 z	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:pivot
 z	hexanome-14/Library/StateCache/SceneView/91c9ee-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:rotation
 z	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:pivot
