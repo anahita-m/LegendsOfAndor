@@ -10,6 +10,7 @@ public class FightScreenController : MonoBehaviour
     public Transform collabButton;
 
     public Transform fightLobby;
+    public Transform fightScreen;
     public Button nextButton;
     public Text selectedChoiceText;
     public Transform selectHeroFight;
@@ -104,6 +105,7 @@ public class FightScreenController : MonoBehaviour
     {
         if(fightType == 0)
         {
+            involvedPlayers.Add(Game.myPlayer.getNetworkID());
             //load solo fight scene
         }
         else{
@@ -113,6 +115,17 @@ public class FightScreenController : MonoBehaviour
             pickYourFighter();
 
         }
+    }
+
+    public void startSoloFight()
+    {
+        //display fight screen
+
+        //send an action
+
+        //create new fight
+
+       
     }
 
     public void pickYourFighter()

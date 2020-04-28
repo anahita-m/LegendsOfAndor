@@ -232,6 +232,11 @@ public class GameState
         return fogTokens.Count != 0;
     }
 
+    public void updateNarrator()
+    {
+
+    }
+
 
     public List<Farmer> getFarmers()
     {

@@ -2507,8 +2507,8 @@ Falcon	hexanome-14/Assets/In_Game/C#/Articles/Falcon.cs	/^public class Falcon : 
 FallbackMaterial	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_MaterialManager.cs	/^        private class FallbackMaterial$/;"	c	class:TMPro.TMP_MaterialManager
 FallbackThreadRunning	hexanome-14/Assets/Photon/PhotonRealtime/Code/ConnectionHandler.cs	/^        public bool FallbackThreadRunning$/;"	p	class:Photon.Realtime.ConnectionHandler
 Farmer	hexanome-14/Assets/In_Game/C#/Articles/Article.cs	/^    Shield, Bow, MedicinalHerb, Falcon, Wineskin, Telescope, WitchBrew, Helm, MedicinaHerb, Farm/;"	e	enum:ArticleType	file:
-Farmer	hexanome-14/Assets/In_Game/C#/BoardElements/Farmer.cs	/^    private Farmer() : base(null, null, false) { }$/;"	m	class:Farmer	file:
-Farmer	hexanome-14/Assets/In_Game/C#/BoardElements/Farmer.cs	/^    public Farmer(Node startingPos, GameObject instance) : base(startingPos, instance, false)$/;"	m	class:Farmer
+Farmer	hexanome-14/Assets/In_Game/C#/BoardElements/Farmer.cs	/^    private Farmer() : base(null, null, false, "NULL") { }$/;"	m	class:Farmer	file:
+Farmer	hexanome-14/Assets/In_Game/C#/BoardElements/Farmer.cs	/^    public Farmer(Node startingPos, GameObject instance) : base(startingPos, instance, false, "F/;"	m	class:Farmer
 Farmer	hexanome-14/Assets/In_Game/C#/BoardElements/Farmer.cs	/^public class Farmer : PickDrop$/;"	c
 Fast	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Editor/TMPro_FontAssetCreatorWindow.cs	/^        enum FontPackingModes { Fast = 0, Optimum = 4 };$/;"	e	enum:TMPro.EditorUtilities.TMPro_FontAssetCreatorWindow.FontPackingModes	file:
 FastAction	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/FastAction.cs	/^    public class FastAction$/;"	c	namespace:TMPro
@@ -4585,6 +4585,7 @@ NAME	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtim
 NECK_OFFSET	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/Runtime/ArmModels/ArmModel.cs	/^        protected static readonly Vector3 NECK_OFFSET = new Vector3(0.0f, 0.075f, 0.08f);$/;"	f	class:UnityEngine.XR.LegacyInputHelpers.ArmModel
 NONE	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Editor/Tools/MiniJSON.cs	/^				NONE,$/;"	e	enum:UnityEditor.Networking.Json.Parser.TOKEN	file:
 NON_BREAKING_HYPHEN	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_RichTextTagsCommon.cs	/^        NON_BREAKING_HYPHEN = 0x2011,$/;"	e	enum:TMPro.UnicodeCharacter	file:
+NON_SELECTED_COLOR	hexanome-14/Assets/In_Game/C#/Interactable/PickUpDetails.cs	/^    public static Color32 NON_SELECTED_COLOR = new Color32(0,255,255,255);$/;"	f	class:PickUpDetails
 NULL	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Editor/Tools/MiniJSON.cs	/^				NULL$/;"	e	enum:UnityEditor.Networking.Json.Parser.TOKEN	file:
 NUMBER	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Editor/Tools/MiniJSON.cs	/^				NUMBER,$/;"	e	enum:UnityEditor.Networking.Json.Parser.TOKEN	file:
 NUnitExceptionMessage	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEngine.TestRunner/Assertions/LogScope/LogScope.cs	/^        public string NUnitExceptionMessage { get; private set; }$/;"	p	class:UnityEngine.TestTools.Logging.LogScope
@@ -6449,8 +6450,10 @@ PhotonViewInspector	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/Editor/
 PhotonViews	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetworkPart.cs	/^        public static PhotonView[] PhotonViews$/;"	p	class:Photon.Pun.PhotonNetwork
 Physics2D	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkProximityChecker.cs	/^            Physics2D$/;"	e	enum:UnityEngine.Networking.NetworkProximityChecker.CheckMethod	file:
 Physics3D	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkProximityChecker.cs	/^            Physics3D,$/;"	e	enum:UnityEngine.Networking.NetworkProximityChecker.CheckMethod	file:
-PickDrop	hexanome-14/Assets/In_Game/C#/Interactable/PickDrop.cs	/^    public PickDrop(Node location, GameObject prefab, bool pickedUp)$/;"	m	class:PickDrop
+PickDrop	hexanome-14/Assets/In_Game/C#/Interactable/PickDrop.cs	/^    public PickDrop(Node location, GameObject prefab, bool pickedUp, string name)$/;"	m	class:PickDrop
 PickDrop	hexanome-14/Assets/In_Game/C#/Interactable/PickDrop.cs	/^public class PickDrop : Interactable, TileObject$/;"	c
+PickDropController	hexanome-14/Assets/In_Game/C#/Interactable/PickDropController.cs	/^public class PickDropController : MonoBehaviour$/;"	c
+PickUpDetails	hexanome-14/Assets/In_Game/C#/Interactable/PickUpDetails.cs	/^public class PickUpDetails : MonoBehaviour$/;"	c
 Pin	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_InputField.cs	/^            Pin,$/;"	e	enum:TMPro.TMP_InputField.ContentType	file:
 Ping	hexanome-14/Assets/Photon/PhotonRealtime/Code/Region.cs	/^        public int Ping { get; set; }$/;"	p	class:Photon.Realtime.Region
 PingBytes	hexanome-14/Assets/Photon/PhotonRealtime/Code/PhotonPing.cs	/^        protected internal byte[] PingBytes = new byte[] { 0x7d, 0x7d, 0x7d, 0x7d, 0x7d, 0x7d, 0/;"	f	class:Photon.Realtime.PhotonPing
@@ -7538,6 +7541,7 @@ SCUpdateMessage	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0
 SCUpdateMessage	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Tests/Runtime/NetworkMessagesWork/NetworkMessages.cs	/^    public SCUpdateMessage(byte ID, bool status)$/;"	m	class:SCUpdateMessage
 SCUpdateMessage	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Tests/Runtime/NetworkMessagesWork/NetworkMessages.cs	/^public class SCUpdateMessage : MessageBase$/;"	c
 SCUpdateMsgType	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Tests/Runtime/NetworkMessagesWork/NetworkMessages.cs	/^    public const short SCUpdateMsgType = MsgType.Highest + 3;$/;"	f	class:MessageTypes
+SELECTED_COLOR	hexanome-14/Assets/In_Game/C#/Interactable/PickUpDetails.cs	/^    public static Color32 SELECTED_COLOR = new Color32(0, 255, 0, 255);$/;"	f	class:PickUpDetails
 SHOULDER_POSITION	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/Runtime/ArmModels/ArmModel.cs	/^        protected static readonly Vector3 SHOULDER_POSITION = new Vector3(0.17f, -0.2f, -0.03f);$/;"	f	class:UnityEngine.XR.LegacyInputHelpers.ArmModel
 SIZE	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_RichTextTagsCommon.cs	/^        SIZE = 3061285,                 \/\/ <size>$/;"	e	enum:TMPro.RichTextTag	file:
 SLASH_BOLD	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_RichTextTagsCommon.cs	/^        SLASH_BOLD = 1613,              \/\/ <\/b>$/;"	e	enum:TMPro.RichTextTag	file:
@@ -7685,6 +7689,7 @@ SelectTab	hexanome-14/Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/TabV
 SelectTestListGUI	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestRunnerWindow.cs	/^        private void SelectTestListGUI(int testTypeToolbarIndex)$/;"	m	class:UnityEditor.TestTools.TestRunner.TestRunnerWindow	file:
 Selectable	hexanome-14/Assets/Photon/PhotonChat/Demos/Common/TextButtonTransition.cs	/^		public Selectable Selectable;$/;"	f	class:Photon.Chat.UtilityScripts.TextButtonTransition
 Selectable	hexanome-14/Assets/Photon/PhotonUnityNetworking/UtilityScripts/UI/TextButtonTransition.cs	/^		public Selectable Selectable;$/;"	f	class:Photon.Pun.UtilityScripts.TextButtonTransition
+Selected	hexanome-14/Assets/In_Game/C#/Interactable/PickUpDetails.cs	/^    public bool Selected = false;$/;"	f	class:PickUpDetails
 SelectedFolderContainsTestAssembly	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/GUI/TestListGuiHelper.cs	/^        public static bool SelectedFolderContainsTestAssembly()$/;"	m	class:UnityEditor.TestTools.TestRunner.GUI.TestListGUIHelper
 SelectedLoggingLevel	hexanome-14/Library/PackageCache/com.unity.ide.rider@1.1.0/Rider/Editor/PluginSettings.cs	/^    public static LoggingLevel SelectedLoggingLevel$/;"	p	class:Packages.Rider.Editor.PluginSettings
 SelectionEvent	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_InputField.cs	/^        public class SelectionEvent : UnityEvent<string> { }$/;"	c	class:TMPro.TMP_InputField
@@ -10885,8 +10890,6 @@ apiProfile	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/Unit
 apiProfile	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestSettings/TestSettings.cs	/^        public ApiCompatibilityLevel? apiProfile { get; set; }$/;"	p	class:UnityEditor.TestTools.TestRunner.TestSettings
 apiProfiles	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/RequireApiProfileAttribute.cs	/^        public ApiCompatibilityLevel[] apiProfiles { get; private set; }$/;"	p	class:UnityEditor.TestTools.RequireApiProfileAttribute
 app	hexanome-14/Assets/TextMesh Pro/Sprites/EmojiOne.json	/^	"app": "http:\/\/www.codeandweb.com\/texturepacker",$/;"	s	object:meta
-app_contents_path	hexanome-14/Library/EditorInstance.json	/^	"app_contents_path" : "\/home\/brendon\/Unity\/Hub\/Editor\/2019.2.11f1\/Editor\/Data"$/;"	s
-app_path	hexanome-14/Library/EditorInstance.json	/^	"app_path" : "\/home\/brendon\/Unity\/Hub\/Editor\/2019.2.11f1\/Editor\/Unity",$/;"	s
 appleDeveloperTeamID	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestSettings/ITestSettings.cs	/^        string appleDeveloperTeamID { get; set; }$/;"	p	interface:UnityEditor.TestTools.TestRunner.ITestSettings
 appleDeveloperTeamID	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestSettings/TestSettings.cs	/^        public string appleDeveloperTeamID { get; set; }$/;"	p	class:UnityEditor.TestTools.TestRunner.TestSettings
 appleEnableAutomaticSigning	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestSettings/ITestSettings.cs	/^        bool? appleEnableAutomaticSigning { get; set; }$/;"	p	interface:UnityEditor.TestTools.TestRunner.ITestSettings
@@ -11160,6 +11163,8 @@ clear	hexanome-14/Assets/In_Game/C#/Screens/TradeScreen.cs	/^    public void cle
 clearDropdown	hexanome-14/Assets/In_Game/C#/Screens/TradeScreen.cs	/^    public void clearDropdown()$/;"	m	class:TradeScreen
 clearStatus	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/PunCockpit/Scripts/Lists/RoomListView.cs	/^        IEnumerator clearStatus()$/;"	m	class:Photon.Pun.Demo.Cockpit.RoomListView	file:
 clearTrade	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public void clearTrade()$/;"	m	class:GameController
+clickExit	hexanome-14/Assets/In_Game/C#/Interactable/PickDropController.cs	/^    public void clickExit()$/;"	m	class:PickDropController
+clickPickUp	hexanome-14/Assets/In_Game/C#/Interactable/PickUpDetails.cs	/^    public void clickPickUp()$/;"	m	class:PickUpDetails
 clickRouter	hexanome-14/Assets/In_Game/C#/Screens/fight/clickRouter.cs	/^public class clickRouter : MonoBehaviour$/;"	c
 clickTelescope	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public void  clickTelescope()$/;"	m	class:GameController
 clickables	hexanome-14/Assets/In_Game/C#/Screens/Screen.cs	/^    protected List<string> clickables;$/;"	f	class:Screen
@@ -11478,8 +11483,12 @@ drawMode	hexanome-14/Library/StateCache/SceneView/c57a5f-mainStage.json	/^{"came
 drawMode	hexanome-14/Library/StateCache/SceneView/ea46b7-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:cameraMode
 drawMode	hexanome-14/Library/StateCache/SceneView/f556e1-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:cameraMode
 drawMode	hexanome-14/Library/StateCache/SceneView/fcc556-mainStage.json	/^{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audi/;"	n	object:cameraMode
+dropClick	hexanome-14/Assets/In_Game/C#/Interactable/PickDropController.cs	/^    public void dropClick()$/;"	m	class:PickDropController
+dropContent	hexanome-14/Assets/In_Game/C#/Interactable/PickDropController.cs	/^    public Transform dropContent;$/;"	f	class:PickDropController
+dropInteractableDetails	hexanome-14/Assets/In_Game/C#/Interactable/PickDropController.cs	/^    private List<GameObject> dropInteractableDetails;$/;"	f	class:PickDropController	file:
 dropPickButton	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public Button dropPickButton;$/;"	f	class:GameController
 dropPickClick	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public void dropPickClick()$/;"	m	class:GameController
+dropableItems	hexanome-14/Assets/In_Game/C#/Interactable/PickDropController.cs	/^    private List<Interactable> dropableItems;$/;"	f	class:PickDropController	file:
 dropdown	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_DefaultControls.cs	/^            public Sprite dropdown;$/;"	f	struct:TMPro.TMP_DefaultControls.Resources
 dropdowns	hexanome-14/Assets/In_Game/C#/Screens/TradeScreen.cs	/^    public GameObject dropdowns;$/;"	f	class:TradeScreen
 duration	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/GUI/TestListBuilder/ResultSummarizer.cs	/^        public double duration$/;"	p	class:UnityEditor.TestTools.TestRunner.GUI.ResultSummarizer
@@ -11637,6 +11646,7 @@ farmer	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public GameObj
 farmers	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    private List<Farmer> farmers;$/;"	f	class:GameState	file:
 featureLookupFlags	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_FontFeaturesCommon.cs	/^        public FontFeatureLookupFlags featureLookupFlags { get { return m_FeatureLookupFlags; } /;"	p	class:TMPro.TMP_GlyphPairAdjustmentRecord
 feedbackText	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/Launcher.cs	/^		private Text feedbackText;$/;"	f	class:Photon.Pun.Demo.PunBasics.Launcher	file:
+fightButton	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public Button fightButton;$/;"	f	class:GameController
 fightChoice	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public Transform fightChoice;$/;"	f	class:FightScreenController
 fightClick	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public void fightClick()$/;"	m	class:GameController
 fightLobby	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public Transform fightLobby;$/;"	f	class:FightScreenController
@@ -11645,6 +11655,7 @@ fightRequest	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public T
 fightRequestSent	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    private bool fightRequestSent;$/;"	f	class:GameController	file:
 fightSceenButton	hexanome-14/Assets/In_Game/C#/Screens/fight/clickRouter.cs	/^    public void fightSceenButton()$/;"	m	class:clickRouter
 fightSceneUpdate	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    private void fightSceneUpdate()$/;"	m	class:GameController	file:
+fightScreen	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public Transform fightScreen;$/;"	f	class:FightScreenController
 fightScreenController	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public Transform fightScreenController;$/;"	f	class:GameController
 fightType	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    private int fightType; \/\/solo = 0, collab = 1$/;"	f	class:FightScreenController	file:
 filename	hexanome-14/Assets/TextMesh Pro/Sprites/EmojiOne.json	/^	"filename": "1f600.png",$/;"	s	object:frames.4
@@ -12216,6 +12227,7 @@ intValue	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Test
 interact	hexanome-14/Assets/In_Game/C#/Interactable/Interactable.cs	/^    void interact(Andor.Player player);$/;"	m	interface:Interactable
 interact	hexanome-14/Assets/In_Game/C#/Interactable/PickDrop.cs	/^    public void interact(Player player)$/;"	m	class:PickDrop
 interactID	hexanome-14/Assets/In_Game/C#/Interactable/PickDrop.cs	/^    private int interactID;$/;"	f	class:PickDrop	file:
+interactableDetailsPrefab	hexanome-14/Assets/In_Game/C#/Interactable/PickDropController.cs	/^    public GameObject interactableDetailsPrefab;$/;"	f	class:PickDropController
 interactableID	hexanome-14/Assets/In_Game/C#/Action/Interact.cs	/^    private int interactableID;$/;"	f	class:Interact	file:
 interactables	hexanome-14/Assets/In_Game/C#/Board/Node.cs	/^    private List<Interactable> interactables;$/;"	f	class:Node	file:
 interactionPossible	hexanome-14/Assets/In_Game/C#/Screens/TradeScreen.cs	/^    public bool interactionPossible()$/;"	m	class:TradeScreen
@@ -12634,6 +12646,7 @@ keywords	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/package.js
 keywords	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/package.json	/^  "keywords": [$/;"	a
 keywords	hexanome-14/Library/PackageCache/nuget.mono-cecil@0.1.5-preview/package.json	/^	"keywords": ["ECMA", "CIL"],$/;"	a
 knob	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_DefaultControls.cs	/^            public Sprite knob;$/;"	f	struct:TMPro.TMP_DefaultControls.Resources
+label	hexanome-14/Assets/In_Game/C#/Interactable/PickUpDetails.cs	/^    public Text label;$/;"	f	class:PickUpDetails
 label	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/TestResultSerializer.cs	/^        [SerializeField] private string label;$/;"	f	class:UnityEditor.TestTools.TestRunner.TestResultSerializer	file:
 label	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Editor/TMP_BaseShaderGUI.cs	/^            public GUIContent label;$/;"	f	class:TMPro.EditorUtilities.TMP_BaseShaderGUI.ShaderFeature
 label	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Editor/TMP_UIStyleManager.cs	/^        public static GUIStyle label;$/;"	f	class:TMPro.EditorUtilities.TMP_UIStyleManager
@@ -12667,6 +12680,8 @@ leadingCharacters	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/S
 learnMore	hexanome-14/Assets/In_Game/C#/Screens/MerchantScreen.cs	/^    public void learnMore()$/;"	m	class:MerchantScreen
 leaveRoomClick	hexanome-14/Assets/Room/C#/RoomLobbyController.cs	/^    public void leaveRoomClick()$/;"	m	class:RoomLobbyController
 legendLabel	hexanome-14/Assets/Room/C#/RoomLobbyController.cs	/^    public Text legendLabel;$/;"	f	class:RoomLobbyController
+legendTiles	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public Dictionary<int, Bounds> legendTiles;$/;"	f	class:GameController
+legendTrackContainer	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public Transform legendTrackContainer;$/;"	f	class:GameController
 length	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_LineInfo.cs	/^        public float length;$/;"	f	struct:TMPro.TMP_LineInfo
 length	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_Text.cs	/^            public int length;$/;"	f	struct:TMPro.TMP_Text.UnicodeChar
 length	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMPro_MeshUtilities.cs	/^        public int length;$/;"	f	struct:TMPro.TagAttribute
@@ -14815,6 +14830,7 @@ myHero	hexanome-14/Assets/Room/C#/Player.cs	/^        private Hero myHero;$/;"	f
 myPlayer	hexanome-14/Assets/In_Game/C#/Game/Game.cs	/^    public static Andor.Player myPlayer;\/\/applies to my player only$/;"	f	class:Game
 myTag	hexanome-14/Assets/Room/C#/Hero.cs	/^    private string myTag;$/;"	f	class:Hero	file:
 myView	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkBehaviour.cs	/^        NetworkIdentity myView$/;"	p	class:UnityEngine.Networking.NetworkBehaviour
+name	hexanome-14/Assets/In_Game/C#/Interactable/PickDrop.cs	/^    public string name;$/;"	f	class:PickDrop
 name	hexanome-14/Assets/Photon/PhotonRealtime/Code/RoomInfo.cs	/^        protected string name;$/;"	f	class:Photon.Realtime.RoomInfo
 name	hexanome-14/Library/PackageCache/com.unity.collab-proxy@1.2.16/package.json	/^  "name": "com.unity.collab-proxy",$/;"	s
 name	hexanome-14/Library/PackageCache/com.unity.ext.nunit@1.0.0/package.json	/^  "name": "com.unity.ext.nunit",$/;"	s
@@ -14849,6 +14865,7 @@ nameFilter	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/Unit
 nameHashCode	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMPro_MeshUtilities.cs	/^        public int nameHashCode;$/;"	f	struct:TMPro.RichTextTagAttribute
 nameLabel	hexanome-14/Assets/Room/C#/PlayerDetails.cs	/^    public Text nameLabel;$/;"	f	class:PlayerDetails
 nameLabel	hexanome-14/Assets/Room/C#/PlayerDetailsLoaded.cs	/^    public Text nameLabel;$/;"	f	class:PlayerDetailsLoaded
+narrator	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public GameObject narrator;$/;"	f	class:GameController
 native_height	hexanome-14/Assets/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/StatesGui.cs	/^        float native_height = 480;$/;"	f	class:Photon.Pun.UtilityScripts.StatesGui	file:
 native_width	hexanome-14/Assets/Photon/PhotonUnityNetworking/UtilityScripts/Debugging/StatesGui.cs	/^        float native_width = 800;$/;"	f	class:Photon.Pun.UtilityScripts.StatesGui	file:
 neckPosition	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/Runtime/ArmModels/ArmModel.cs	/^        public Vector3 neckPosition$/;"	p	class:UnityEngine.XR.LegacyInputHelpers.ArmModel
@@ -14927,6 +14944,7 @@ numClients	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Te
 numClientsConnected	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Tests/Runtime/PlayWithReadyState/PlayWithReadyState.cs	/^    public int numClientsConnected = 0;$/;"	f	class:PlayWithReadyState
 numConnects	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Tests/Runtime/NetworkClientDisconnectWorks/NetworkClientDisconnectWorks.cs	/^    private int numConnects = 0;$/;"	f	class:NetworkClientDisconnectWorks	file:
 numDestroyClient	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Tests/Runtime/SpawningTests/BaseClass/SpawningTestBase.cs	/^    public static int numDestroyClient = 0;$/;"	f	class:SpawningTestBase
+numDice	hexanome-14/Assets/Room/C#/Hero.cs	/^    public Dictionary<int, int> numDice; \/\/<wp, numberOfDice>$/;"	f	class:Hero
 numEvents	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Tests/Runtime/CommandsAndRPCCallsWork/CommandsAndRPCCallsWork.cs	/^        public static int numEvents = 0;$/;"	f	class:CommandsAndRPCCallsWork.CommandTestPlayerBehaviour
 numFarmers	hexanome-14/Assets/Room/C#/Hero.cs	/^    private int numFarmers;$/;"	f	class:Hero	file:
 numMsgsIn	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/ChannelBuffer.cs	/^        public int numMsgsIn { get; private set; }$/;"	p	class:UnityEngine.Networking.ChannelBuffer
@@ -15090,10 +15108,15 @@ photonView	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/PunClasses.cs	/^
 photonView	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Asteroid.cs	/^        private PhotonView photonView;$/;"	f	class:Photon.Pun.Demo.Asteroids.Asteroid	file:
 photonView	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Spaceship.cs	/^        private PhotonView photonView;$/;"	f	class:Photon.Pun.Demo.Asteroids.Spaceship	file:
 photonViewList	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetworkPart.cs	/^        static Dictionary<int, PhotonView> photonViewList = new Dictionary<int, PhotonView>();$/;"	f	class:Photon.Pun.PhotonNetwork	file:
+pickDropContainer	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public Transform pickDropContainer;$/;"	f	class:GameController
 pickSize	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/Editor/BezierSplineInspector.cs	/^		private const float pickSize = 0.06f;$/;"	f	class:Photon.Pun.Demo.SlotRacer.Utils.BezierSplineInspector	file:
 pickUp	hexanome-14/Assets/In_Game/C#/BoardElements/MedicinalHerb.cs	/^    public void pickUp()$/;"	m	class:MedicinalHerb
+pickUpContent	hexanome-14/Assets/In_Game/C#/Interactable/PickDropController.cs	/^    public Transform pickUpContent;$/;"	f	class:PickDropController
+pickUpItems	hexanome-14/Assets/In_Game/C#/Interactable/PickDropController.cs	/^    private List<Interactable> pickUpItems;$/;"	f	class:PickDropController	file:
 pickYourFighter	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public void pickYourFighter()$/;"	m	class:FightScreenController
 pickedUp	hexanome-14/Assets/In_Game/C#/Interactable/PickDrop.cs	/^    private bool pickedUp = false;$/;"	f	class:PickDrop	file:
+pickupClick	hexanome-14/Assets/In_Game/C#/Interactable/PickDropController.cs	/^    public void pickupClick()$/;"	m	class:PickDropController
+pickupInteractableDetails	hexanome-14/Assets/In_Game/C#/Interactable/PickDropController.cs	/^    private List<GameObject> pickupInteractableDetails;$/;"	f	class:PickDropController	file:
 ping	hexanome-14/Assets/Photon/PhotonRealtime/Code/RegionHandler.cs	/^        private PhotonPing ping;$/;"	f	class:Photon.Realtime.RegionPinger	file:
 pingMax	hexanome-14/Assets/Photon/PhotonRealtime/Code/SupportLogger.cs	/^        private int pingMax;$/;"	f	class:Photon.Realtime.SupportLogger	file:
 pingMin	hexanome-14/Assets/Photon/PhotonRealtime/Code/SupportLogger.cs	/^        private int pingMin;$/;"	f	class:Photon.Realtime.SupportLogger	file:
@@ -15287,7 +15310,6 @@ processAction	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public void 
 processFightRequest	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public void processFightRequest(bool otherPlayers)$/;"	m	class:GameController
 processId	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEditor.TestRunner/UnityTestProtocol/Message.cs	/^        public int processId;$/;"	f	class:UnityEditor.TestTools.TestRunner.UnityTestProtocol.Message
 processTradeRequest	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public void processTradeRequest()$/;"	m	class:GameController
-process_id	hexanome-14/Library/EditorInstance.json	/^	"process_id" : 990220,$/;"	n
 progress	hexanome-14/Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Scripts/BezierCurve/SplineWalker.cs	/^		private float progress;$/;"	f	class:Photon.Pun.Demo.SlotRacer.Utils.SplineWalker	file:
 pronouns	hexanome-14/Assets/Room/C#/Hero.cs	/^    private string[] pronouns;$/;"	f	class:Hero	file:
 properties	hexanome-14/Assets/Photon/PhotonChat/Code/ChatChannel.cs	/^        private Dictionary<object, object> properties;$/;"	f	class:Photon.Chat.ChatChannel	file:
@@ -15545,6 +15567,7 @@ removePlayerFromInvite	hexanome-14/Assets/In_Game/C#/Screens/FightScreenControll
 removePlayerInteractable	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public Interactable removePlayerInteractable(string playerID, Interactable interactable)$/;"	m	class:GameState
 removePlayers	hexanome-14/Assets/Room/C#/RoomLobbyController.cs	/^    private void removePlayers()$/;"	m	class:RoomLobbyController	file:
 removePrevRooms	hexanome-14/Assets/Network/C#/RoomController.cs	/^    private void removePrevRooms()$/;"	m	class:RoomController	file:
+removeSelection	hexanome-14/Assets/In_Game/C#/Interactable/PickUpDetails.cs	/^    public void removeSelection()$/;"	m	class:PickUpDetails
 remove_button	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/Editor/ReordableList/ReorderableListResources.cs	/^            remove_button,$/;"	e	enum:Photon.Pun.ReorderableListResources.ResourceName	file:
 remove_button_active	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/Editor/ReordableList/ReorderableListResources.cs	/^            remove_button_active,$/;"	e	enum:Photon.Pun.ReorderableListResources.ResourceName	file:
 removedFromLocalViewList	hexanome-14/Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs	/^        protected internal bool removedFromLocalViewList;$/;"	f	class:Photon.Pun.PhotonView
@@ -16369,6 +16392,7 @@ startFightClick	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/
 startGameClick	hexanome-14/Assets/Room/C#/RoomLobbyController.cs	/^    public void startGameClick()$/;"	m	class:RoomLobbyController
 startIndex	hexanome-14/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMPro_MeshUtilities.cs	/^        public int startIndex;$/;"	f	struct:TMPro.TagAttribute
 startPositions	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkManager.cs	/^        public List<Transform> startPositions { get { return s_StartPositions; }}$/;"	p	class:UnityEngine.Networking.NetworkManager
+startSoloFight	hexanome-14/Assets/In_Game/C#/Screens/FightScreenController.cs	/^    public void startSoloFight()$/;"	m	class:FightScreenController
 startStopwatch	hexanome-14/Assets/Photon/PhotonRealtime/Code/SupportLogger.cs	/^        private Stopwatch startStopwatch;$/;"	f	class:Photon.Realtime.SupportLogger	file:
 startTime	hexanome-14/Assets/Photon/PhotonUnityNetworking/UtilityScripts/Room/CountdownTimer.cs	/^        private float startTime;$/;"	f	class:Photon.Pun.UtilityScripts.CountdownTimer	file:
 startTime	hexanome-14/Library/PackageCache/com.unity.test-framework@1.0.13/UnityEngine.TestRunner/TestRunner/RemoteHelpers/RemoteTestResultData.cs	/^        public DateTime startTime;$/;"	f	class:UnityEngine.TestRunner.TestLaunchers.RemoteTestResultData
@@ -16853,7 +16877,9 @@ updateGameConsoleText	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^pub
 updateGold	hexanome-14/Assets/In_Game/C#/Screens/MerchantScreen.cs	/^    public void updateGold()$/;"	m	class:MerchantScreen
 updateGorLocations	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public void updateGorLocations()$/;"	m	class:GameState
 updateHeroStats	hexanome-14/Assets/In_Game/C#/Game/GameController.cs	/^    public void updateHeroStats()$/;"	m	class:GameController
+updateInteractables	hexanome-14/Assets/In_Game/C#/Interactable/PickDropController.cs	/^    public void updateInteractables()$/;"	m	class:PickDropController
 updateLabel	hexanome-14/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2/Editor/TrackedPoseDriver/TrackedPoseDriverEditor.cs	/^            public static GUIContent updateLabel = EditorGUIUtility.TrTextContent("Update Type",/;"	f	class:UnityEngine.SpatialTracking.TrackedPoseDriverEditor.Styles
+updateNarrator	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public void updateNarrator()$/;"	m	class:GameState
 updatePlayer	hexanome-14/Assets/In_Game/C#/Game/Game.cs	/^    public static void updatePlayer(Andor.Player p)$/;"	m	class:Game
 updatePlayer	hexanome-14/Assets/In_Game/C#/Game/GameState.cs	/^    public void updatePlayer(Player p)$/;"	m	class:GameState
 updatePlayer	hexanome-14/Assets/Network/C#/NetworkHandler.cs	/^    public void updatePlayer(Andor.Player p)$/;"	m	class:NetworkHandler
@@ -16957,7 +16983,6 @@ vector3Type	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/E
 vector4Type	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Editor/Tools/Weaver/UNetWeaver.cs	/^        public TypeReference vector4Type;$/;"	f	class:Unity.UNetWeaver.Weaver
 velocityThreshold	hexanome-14/Library/PackageCache/com.unity.multiplayer-hlapi@1.0.2/Runtime/NetworkTransform.cs	/^        public float                velocityThreshold { get { return m_VelocityThreshold; } set /;"	p	class:UnityEngine.Networking.NetworkTransform
 version	hexanome-14/Assets/TextMesh Pro/Sprites/EmojiOne.json	/^	"version": "1.0",$/;"	s	object:meta
-version	hexanome-14/Library/EditorInstance.json	/^	"version" : "2019.2.11f1",$/;"	s
 version	hexanome-14/Library/PackageCache/com.unity.collab-proxy@1.2.16/package.json	/^  "version": "1.2.16",$/;"	s
 version	hexanome-14/Library/PackageCache/com.unity.ext.nunit@1.0.0/package.json	/^  "version": "1.0.0",$/;"	s
 version	hexanome-14/Library/PackageCache/com.unity.ide.rider@1.1.0/package.json	/^  "version": "1.1.0",$/;"	s

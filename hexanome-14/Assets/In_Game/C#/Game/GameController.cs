@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     public Transform notification;
     public Transform merchantScreenController;
     public Transform fightScreenController;
+    
 
     public Transform fightRequest;
    
@@ -33,11 +34,14 @@ public class GameController : MonoBehaviour
     public Transform boardSpriteContainer;
     public Transform playerContainer;
     public Transform playerTimeContainer;
+    public Transform legendTrackContainer;
     public Transform monsterContainer;
     public Transform heroInfoContainer;
     public static ScreenManager screenManager;
+    public Transform pickDropContainer;
 
     public Button moveButton;
+    public Button fightButton;
     public Button movePrinceButton;
     public Button emptyWellButton;
     public Button buyBrewButton;
@@ -96,11 +100,15 @@ public class GameController : MonoBehaviour
     public GameObject medicinalHerb3;
     public GameObject witch;
 
+    public GameObject narrator;
+
 
     public Dictionary<int, BoardPosition> tiles;
     public Dictionary<string, GameObject> playerObjects;
     public Dictionary<string, GameObject> timeObjects;
     public Dictionary<int, Bounds> timeTileBounds;
+    public Dictionary<int, Bounds> legendTiles;
+
     public Bounds timeObjectBounds;
     public Dictionary<string, Vector3> rndPosInTimeBox;
     public Dictionary<Monster, GameObject> monsterObjects;
@@ -168,6 +176,7 @@ public class GameController : MonoBehaviour
         playerObjects = new Dictionary<string, GameObject>();
         timeObjects = new Dictionary<string, GameObject>();
         timeTileBounds = new Dictionary<int, Bounds>();
+        legendTiles = new Dictionary<int, Bounds>();
         rndPosInTimeBox = new Dictionary<string, Vector3>();
         monsterObjects = new Dictionary<Monster, GameObject>();
         // princeThoraldObject = new Dictionary<PrinceThorald, GameObject>();
@@ -316,6 +325,7 @@ public class GameController : MonoBehaviour
                 this.displayPauseMenu();
             }
         }
+
         switch(SceneManager.GetActiveScene().name)
         {
             case "Game":
@@ -338,7 +348,7 @@ public class GameController : MonoBehaviour
 
     private void gameSceneUpdate()
     {
-        if(Game.gameState != null)
+        if (Game.gameState != null)
         {
 
             // Update Player position
@@ -354,15 +364,15 @@ public class GameController : MonoBehaviour
 
             int loc = Game.gameState.getPlayerLocations()[Game.myPlayer.getNetworkID()];
             bool wellValid = false;
-                foreach (Well w in Game.gameState.getWells().Keys)
+            foreach (Well w in Game.gameState.getWells().Keys)
+            {
+                if (w.getLocation() == loc && !w.used)
                 {
-                    if (w.getLocation() == loc && !w.used)
-                    {
-                        GameController.instance.emptyWellButton.gameObject.SetActive(true);
-                        wellValid = true;
-                    }
-
+                    GameController.instance.emptyWellButton.gameObject.SetActive(true);
+                    wellValid = true;
                 }
+
+            }
 
             if (!wellValid)
             {
@@ -378,8 +388,8 @@ public class GameController : MonoBehaviour
                 GameController.instance.useTelescope.gameObject.SetActive(false);
             }
 
-                bool brewValid = false;
-            if(loc == Game.gameState.witchLocation && Game.gameState.witchLocation != -1)
+            bool brewValid = false;
+            if (loc == Game.gameState.witchLocation && Game.gameState.witchLocation != -1)
             {
                 GameController.instance.buyBrewButton.gameObject.SetActive(true);
                 brewValid = true;
@@ -433,7 +443,8 @@ public class GameController : MonoBehaviour
                 loc = Game.gameState.getPrinceThorald().getLocation();
                 princeThoraldObject.transform.position = moveTowards(princeThoraldObject.transform.position, tiles[loc].getMiddle(), 0.5f);
             }
-
+            // Update player turn
+            //turnLabel.text = Game.gameState.turnManager.currentPlayerTurn();
             if (Game.gameState.turnManager.currentPlayerTurn().Equals(Game.myPlayer.getNetworkID()))
             {
                 turnLabel.color = Game.myPlayer.getColor(130);
@@ -450,57 +461,56 @@ public class GameController : MonoBehaviour
                 Game.gameState.outcome = "wonNotified";
                 winNotify();
             }
-        }
 
-        if (tradeRequestSent)
-        {
-            if (Game.myPlayer.getNetworkID().Equals(playerTradeTo))
+            if (tradeRequestSent)
             {
-                processTradeRequest();
-            }
-        }
 
-        //if (ts.tradeType[0] != "")
-        //{
-        //    Debug.Log("trade type " + ts.tradeType[0]);
-        //}
-
-        if (notificationOn)
-        {
-            notify();
-            notifTime -= Time.deltaTime;
-        }
-
-
-        bool onMerchant = false;
-
-        foreach (int merchantLoc in Game.gameState.getMerchants().Keys)
-        {
-            if (Game.gameState.getPlayerLocations()[Game.myPlayer.getNetworkID()] == merchantLoc)
-            {
-                onMerchant = true;
-                updateGameConsoleText("You've landed on the same space as a merchant. Click the merchatn button to buy articles");
-
-            }
-        }
-        merchantButton.gameObject.SetActive(onMerchant);
-
-        //if(Game.gameState.playerLocations[Game.myPlayer.getNetworkID()])
-        foreach (string player in playersToNotify)
-        {
-            if (Game.myPlayer.getNetworkID() == player)
-            {
-                updateGameConsoleText(this.gameConsoleText.text.ToString());
-            }
-        }
-
-        if (fightRequestSent)
-        {
-
-            foreach(string p in invitedFighters)
-            {
-                if (Game.myPlayer.getNetworkID().Equals(p))
+                if (Game.myPlayer.getNetworkID().Equals(playerTradeTo))
                 {
+                    processTradeRequest();
+                }
+            }
+
+            //if (ts.tradeType[0] != "")
+            //{
+            //    Debug.Log("trade type " + ts.tradeType[0]);
+            //}
+
+            if (notificationOn)
+            {
+                notify();
+                notifTime -= Time.deltaTime;
+            }
+
+
+            bool onMerchant = false;
+
+            foreach (int merchantLoc in Game.gameState.getMerchants().Keys)
+            {
+                if (Game.gameState.getPlayerLocations()[Game.myPlayer.getNetworkID()] == merchantLoc)
+                {
+                    onMerchant = true;
+                    updateGameConsoleText("You've landed on the same space as a merchant. Click the merchatn button to buy articles");
+
+                }
+            }
+            merchantButton.gameObject.SetActive(onMerchant);
+
+            //if(Game.gameState.playerLocations[Game.myPlayer.getNetworkID()])
+            foreach (string player in playersToNotify)
+            {
+                if (Game.myPlayer.getNetworkID() == player)
+                {
+                    updateGameConsoleText(this.gameConsoleText.text.ToString());
+                }
+            }
+
+            if (fightRequestSent)
+            {
+
+                foreach (string p in invitedFighters)
+                {
+
                     if (!Game.myPlayer.getNetworkID().Equals(invitedFighters[0]))
                     {
                         processFightRequest(true);
@@ -512,15 +522,55 @@ public class GameController : MonoBehaviour
                     }
                     
                 }
+
             }
-            
         }
 
-        if (invitedFighters[0] != null && Game.myPlayer.getNetworkID().Equals(invitedFighters[0])
-            && fsc.allResponded())
+        // if (invitedFighters[0] != null && Game.myPlayer.getNetworkID().Equals(invitedFighters[0])
+        //     && fsc.allResponded())
+        if (invitedFighters != null)
         {
-            fsc.fightReady();
+            if (Game.myPlayer.getNetworkID().Equals(invitedFighters[0])
+            && fsc.allResponded())
+            {
+                fsc.fightReady();
+            }
         }
+        
+
+        bool canFight = false;
+        if (Game.myPlayer.getNetworkID().Equals(Game.gameState.turnManager.currentPlayerTurn())){
+            //check if player is on the same space as a monster
+            
+            int myLocation = Game.gameState.getPlayerLocations()[Game.myPlayer.getNetworkID()];
+            
+            foreach (Monster m in Game.gameState.getMonsters())
+            {
+                
+                int monsterLoc = m.getLocation();
+                
+                if (monsterLoc == myLocation)
+                {
+                    canFight = true;
+                }
+                else
+                {
+                    if (Game.myPlayer.getHero().hasArticle("Bow"))
+                    {
+                        List<Node> neighbours = Game.gameState.positionGraph.getNode(myLocation).getAdjacentNodes();
+                        foreach (Node n in neighbours)
+                        {
+                            if (monsterLoc == n.getIndex())
+                            {
+                                canFight = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        fightButton.interactable = canFight;
+
 
 
     }
@@ -558,8 +608,6 @@ public class GameController : MonoBehaviour
         Debug.Log(boardContainerPos);
 
 
-
-
         // load sprites
         Sprite[] sprites = Resources.LoadAll<Sprite>("BoardSprites");
         // Requirement: have Resources/Sprites folder under Assets
@@ -588,6 +636,22 @@ public class GameController : MonoBehaviour
             Destroy(temp);
         }
 
+        sprites = Resources.LoadAll<Sprite>("LegendTrack");
+        // Requirement: have Resources/Sprites folder under Assets
+        if (sprites == null)
+            print("Could not load Legend Track sprites");
+
+        foreach (Sprite sprite in sprites)
+        {
+            GameObject temp = Instantiate(emptyPrefab, boardContainerPos, boardSpriteContainer.transform.rotation, legendTrackContainer);
+            temp.AddComponent<SpriteRenderer>().sprite = sprite;
+
+            TileBounds tb = new TileBounds(temp.AddComponent<PolygonCollider2D>(), boardSpriteContainer);
+            Bounds b = tb.createBounds();
+
+            legendTiles.Add(Int32.Parse(sprite.name.Split('-')[1]), b);
+            Destroy(temp);
+        }
     }
 
     private void createBoardPosition(Sprite sprite, Vector3 pos, Vector3 scaling)
@@ -623,6 +687,7 @@ public class GameController : MonoBehaviour
         string message = input.text;
         Game.sendAction(new SendChat(message, Game.myPlayer.getNetworkID(), PhotonNetwork.LocalPlayer.NickName));
     }
+
 
     public void wellClick()
     {
@@ -859,6 +924,8 @@ public void updateGameConsoleText(string message)
             loadPrinceThorald();
 
             loadFarmers();
+
+            loadNarrator();
 
             setupEquipmentBoard();
 
@@ -1251,6 +1318,12 @@ public void updateGameConsoleText(string message)
         }
     }
 
+    public void loadNarrator()
+    {
+        Debug.Log("Added Narrator at position: ");
+        GameObject Narrator = Instantiate(narrator, legendTiles[1].center, transform.rotation);
+    }
+
     public void tele(int loc)
     {
         Vector3 boardContainerScaling3 = new Vector3(0.15f / boardSpriteContainer.parent.lossyScale.x, 0.15f / boardSpriteContainer.parent.lossyScale.y, 0.15f / boardSpriteContainer.parent.lossyScale.z);
@@ -1323,12 +1396,6 @@ public void updateGameConsoleText(string message)
             }
         }
     }
-
-    public void loadNarrator()
-    {
-        Debug.Log("Added Narrator at position: " );
-    }
-
 
     public void setTime(string PlayerID, int hour)
     {
@@ -1777,8 +1844,11 @@ public void updateGameConsoleText(string message)
 
     public void dropPickClick()
     {
+
+        pickDropContainer.gameObject.SetActive(true);
+        pickDropContainer.GetChild(0).GetChild(0).GetComponent<PickDropController>().updateInteractables();
         // Dropping Item
-        foreach(Interactable interact in Game.gameState.getInteractables(Game.myPlayer.getNetworkID()))
+        /*foreach (Interactable interact in Game.gameState.getInteractables(Game.myPlayer.getNetworkID()))
         {
             if(interact is PickDrop)
             {
@@ -1797,7 +1867,7 @@ public void updateGameConsoleText(string message)
                 Game.sendAction(new Interact(Game.myPlayer.getNetworkID(), interact.getInteractableID(), Game.gameState.playerLocations[Game.myPlayer.getNetworkID()]));
                 return;
             }
-        }
+        }*/
     }
 
 
