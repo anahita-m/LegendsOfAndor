@@ -17,6 +17,14 @@ public class Well
 
     private Well() { }
 
+
+    // this is used when switching back to main game scene where the previous prefab obj will
+    // have been destroyed by switching scenes.
+    public void setPrefab(GameObject prefab)
+    {
+        this.prefab = prefab;
+    }
+
     public void emptyWell()
     {
         //this.prefab =

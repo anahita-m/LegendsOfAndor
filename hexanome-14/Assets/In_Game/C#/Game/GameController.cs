@@ -1127,6 +1127,11 @@ public void updateGameConsoleText(string message)
             Debug.Log("Added well at position: " + pos);
             GameObject wellObject = Instantiate(well_front, tiles[pos].getMiddle(), transform.rotation);
             wells.Add(new Well(Game.gameState.positionGraph.getNode(pos), wellObject), pos);
+            if (Game.gameState.madeWells())
+            {
+                // necessary since the prev prefab has been destroyed since madeWells is true if we just switched back to game scene
+                updateWellPrefab(wellObject, pos);
+            }
             // Debug.Log(w);
             // Debug.Log(w.getLocation());
             // Game.gameState.addWell(w);
@@ -1137,6 +1142,17 @@ public void updateGameConsoleText(string message)
         if (!Game.gameState.madeWells())
         {
             Game.gameState.setWells(wells);
+        }
+    }
+
+    private void updateWellPrefab(GameObject wellObj, int pos)
+    {
+        foreach(KeyValuePair<Well, int> w in Game.gameState.getWells())
+        {
+            if (w.Value != pos) continue;
+
+            w.Key.setPrefab(wellObj);
+            break;
         }
     }
 
