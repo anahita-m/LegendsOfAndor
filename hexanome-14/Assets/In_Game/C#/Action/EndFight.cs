@@ -6,9 +6,7 @@ public class EndFight : Action
 {
     string[] players;
     Type type;
-//     Monster monster;
    
-//    bool wonBattle;
     
 
     public EndFight(string[] players)
@@ -16,9 +14,7 @@ public class EndFight : Action
         type = Type.EndFight;
 
         this.players = players;
-
-        // this.monster = m;
-        // wonBattle = won;
+        
     }
 
     public string[] playersInvolved()
@@ -40,9 +36,6 @@ public class EndFight : Action
             gs.getPlayer(playerId).getHero().usingShield= false;
 
         }
-        // if(wonBattle){
-        //     monster.setCantMove();
-        // }     
         Array.Clear(players, 0, players.Length);
         GameController.instance.fsc.fightOverAction();
 

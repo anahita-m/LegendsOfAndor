@@ -14,8 +14,6 @@ public class Monster : Fightable, MoveStrategy
     private bool herbGor;
     private bool skralTower;
 
-    private bool defeated;
-
     public Monster(Node startingPos, GameObject prefab)
     {
         location = startingPos;
@@ -23,7 +21,6 @@ public class Monster : Fightable, MoveStrategy
         canMove = true;
         herbGor = false;
         skralTower = false;
-        defeated = false;
     }
     private Monster() { }
 
@@ -32,13 +29,6 @@ public class Monster : Fightable, MoveStrategy
         throw new System.NotImplementedException();
     }
 
-public void setDefeated(){
-    this.defeated = true;
-}
-
-public bool getDefeated(){
-    return this.defeated;
-}
     public void setCantMove()
     {
         canMove = false;

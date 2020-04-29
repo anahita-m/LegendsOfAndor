@@ -99,7 +99,6 @@ public class GameController : MonoBehaviour
     public GameObject gold1;
 
     public GameObject narrator;
-    public GameObject star;
     public Dictionary<int, GameObject> Narrator;
 
     public Dictionary<int, BoardPosition> tiles;
@@ -545,7 +544,6 @@ public class GameController : MonoBehaviour
     }
 
 
-    
     private void loadBoard()
     {
         boardSpriteContainer.gameObject.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
@@ -688,14 +686,6 @@ public class GameController : MonoBehaviour
         //scroll.SetActive(true);
         Game.gameState.outcome = "lost";
         StartCoroutine(overtimeCoroutine(10));
-    }
-
-      public void skralFoundMessage()
-    {
-        scrollTxt.text = "The skral on the tower has been defeated!";
-        //scroll.SetActive(true);
-        Game.gameState.outcome = "lost";
-        StartCoroutine(overtimeCoroutine(5));
     }
 
     public void archerBuysBrew()
@@ -907,10 +897,6 @@ public void updateGameConsoleText(string message)
             loadNarrator();
 
             loadSkralOnTower();
-            Debug.Log("loaded the skral!");
-            foreach(Monster m in Game.gameState.getMonsters()){
-                Debug.Log("monster at position: " + m.getLocation());
-            }
 
             setupEquipmentBoard();
 
@@ -1295,9 +1281,6 @@ public void updateGameConsoleText(string message)
         Debug.Log("Added Narrator at position: ");
         GameObject temp = Instantiate(narrator, legendTiles[1].center, transform.rotation);
         Narrator.Add(0, temp);
-        GameObject star1 = Instantiate(star, legendTiles[3].center, transform.rotation);
-        GameObject star2 = Instantiate(star, legendTiles[7].center, transform.rotation);
-        GameObject star3 = Instantiate(star, legendTiles[14].center, transform.rotation);
 
     }
 
@@ -1537,6 +1520,21 @@ public void updateGameConsoleText(string message)
         ms.displayAvailableItems();
     }
 
+    public void useHelmInFight()
+    {
+        Game.sendAction(new UseHelm(Game.myPlayer.getNetworkID()));
+    }
+
+    public void useWitchBrewInFight()
+    {
+        Game.sendAction(new UseWitchBrew(Game.myPlayer.getNetworkID()));
+    
+    }
+    public void useBowInFight()
+    {
+        Game.sendAction(new UseBow(Game.myPlayer.getNetworkID()));
+
+    }
 
     public void sendFightRequest(string[] players)
     {
