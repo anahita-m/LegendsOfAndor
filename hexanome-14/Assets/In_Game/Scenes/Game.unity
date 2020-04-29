@@ -9293,6 +9293,7 @@ MonoBehaviour:
   gold1: {fileID: 3109603652966310442, guid: 01a8f93eb5b344715870d783421eec7a, type: 3}
   narrator: {fileID: 5938980581296725290, guid: 3d1c324a49fbf4777b268567e1cdeb5f,
     type: 3}
+  star: {fileID: 4206964685205544410, guid: e95848b5a42994b299bc2fa21b707aa8, type: 3}
   timeObjectBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}

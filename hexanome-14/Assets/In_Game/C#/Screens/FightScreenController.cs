@@ -846,6 +846,9 @@ IEnumerator articleroutine(int sleep)
 
             
             Game.gameState.removeMonster(fight.monster);
+            //advance narrator 
+             Game.gameState.legend += 1;
+            GameController.instance.advanceNarrator(Game.gameState.legend);
         }else if(outcome == 2)
         {
             fight.monster.recover();
@@ -905,6 +908,9 @@ IEnumerator articleroutine(int sleep)
             //rewardScreen.gameObject.SetActive(true);
 
             Game.gameState.removeMonster(fight.monster);
+            //advancing narrator
+            Game.gameState.legend += 1;
+            GameController.instance.advanceNarrator(Game.gameState.legend);
         }
         else if (outcome == 2)
         {
