@@ -25,7 +25,8 @@ public enum Type
     UseWitchBrew,
     UseBow,
     UseShield,
-    StartFight
+    StartFight,
+    ExitFight
 
 }
 

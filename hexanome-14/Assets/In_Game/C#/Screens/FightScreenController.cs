@@ -593,6 +593,15 @@ public class FightScreenController : MonoBehaviour
 
         }
 
+        //need to clear the use values and in battle
+       // clearFight();
+
+    }
+
+    public void clearFight()
+    {
+        //resets all article usage checks and in battle checks
+        Game.sendAction(new ExitFight(Game.myPlayer.getNetworkID()));
     }
 
     public void getReward(string type)

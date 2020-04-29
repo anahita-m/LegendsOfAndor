@@ -254,6 +254,7 @@ public class GameController : MonoBehaviour
         {
             string text = p.getHeroType() + " hour: " + p.getHero().getHour() + " , gold: " + p.getHero().getGold() + " , will: " + p.getHero().getWillpower() + " ,strength: " + p.getHero().getStrength() + " " + p.getHero().allArticlesAsString() + "\n" + "\n";
             update += text;
+            update += "Monsters Allowed in Castle: " + Game.gameState.maxMonstersAllowedInCastle;
 
         }
         //string update = Game.myPlayer.getHeroType()
@@ -481,6 +482,7 @@ public class GameController : MonoBehaviour
                 fsc.fightReady();
             }
         }
+
         
 
         bool canFight = false;
@@ -728,6 +730,8 @@ public class GameController : MonoBehaviour
         Debug.Log("Added witch at position: " + loc);
         //ned to make this true everywhere
         Game.gameState.witchFound = true;
+        updateWitchFound();
+        //TRIGGER NEXT TASK
         //
         GameObject wellObject = Instantiate(witch, tiles[loc].getMiddle(), transform.rotation);
         //Well w = new Well(Game.positionGraph.getNode(pos), wellObject);
@@ -824,6 +828,11 @@ public void updateGameConsoleText(string message)
     public void updateDayCount(int day)
     {
         dayCountText.text = "Day: " + day;
+    }
+
+    public void updateWitchFound()
+    {
+        witchText.text += " Found";
     }
 
     public void advanceNarrator(int legend)
