@@ -173,28 +173,34 @@ public class GameState
         gors.Add(g, g.getLocation());
     }
 
-    public void removeMonster(Monster m)
+
+public void removeMonster(Monster m)
     {
 
         Node monsterLoc = positionGraph.getNode(80);
         m.setLocationNode(monsterLoc);
-        m.move();
-        
+       //m.setCantMove();
         if(m.getMonsterType() == "Gor")
         {
             Gor g = (Gor)m;
-            gors.Remove(g);
+            //gors.Remove(g);
         }
         if (m.getMonsterType() == "Skral")
         {
             Skral s = (Skral)m;
-            skrals.Remove(s);
+            //skrals.Remove(s);
         }
         
-        monsters.Remove(m);
+        //monsters.Remove(m);
         
     }
 
+IEnumerator waitroutine(int sleep)
+    {
+        yield return new WaitForSeconds(sleep);
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+    }
     //////////////////////////////////wells//////////////////////////////////
 
     public void addMerchant(int location, Merchant m)

@@ -545,6 +545,7 @@ public class GameController : MonoBehaviour
     }
 
 
+    
     private void loadBoard()
     {
         boardSpriteContainer.gameObject.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);

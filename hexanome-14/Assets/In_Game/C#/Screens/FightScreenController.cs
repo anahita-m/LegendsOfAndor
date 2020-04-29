@@ -846,8 +846,9 @@ IEnumerator articleroutine(int sleep)
 
             
             Game.gameState.removeMonster(fight.monster);
+            //fight.monster.setCantMove();
             //advance narrator 
-             Game.gameState.legend += 1;
+            Game.gameState.legend += 1;
             GameController.instance.advanceNarrator(Game.gameState.legend);
         }else if(outcome == 2)
         {
@@ -975,7 +976,10 @@ IEnumerator articleroutine(int sleep)
             h.increaseWillpower(reward);
         }
         string[] players = fight.fighters;
-        Game.sendAction(new EndFight(players));
+
+        fight.monster.setCantMove();
+       Game.sendAction(new EndFight(players));
+
     }
 
     public void okClick()
