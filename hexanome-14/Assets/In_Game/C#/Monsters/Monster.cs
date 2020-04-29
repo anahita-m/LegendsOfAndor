@@ -49,6 +49,12 @@ public class Monster : Fightable, MoveStrategy
         skralTower = true;
     }
 
+    public void setLocation(int g)
+    {
+        this.location = Game.gameState.positionGraph.getNode(g);
+    }
+
+
     public void setHerbGor()
     {
         herbGor = true;

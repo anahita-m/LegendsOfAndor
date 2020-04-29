@@ -1091,8 +1091,56 @@ public void updateGameConsoleText(string message)
     {
         Vector3 boardScaling = new Vector3(1 / boardSpriteContainer.parent.lossyScale.x, 1 / boardSpriteContainer.parent.lossyScale.y, 1 / boardSpriteContainer.parent.lossyScale.z);
 
-        //created all the monsters for Legend 2
-        foreach (int gorTile in new int[]{8, 20, 21, 26, 48})
+        //GameObject g = Instantiate(gor, tiles[pos].getMiddle(), transform.rotation);
+        //Gor g = new Gor(Game.gameState.positionGraph.getNode(pos), princeThorald);
+
+        //Debug.Log("Added well at position: " + pos);
+        //GameObject wellObject = Instantiate(well_front, tiles[pos].getMiddle(), transform.rotation);
+        //Well w = new Well(Game.gameState.positionGraph.getNode(pos), wellObject);
+        //Debug.Log(w);
+        //Debug.Log(w.getLocation());
+        //Game.gameState.addWell(w);
+
+
+
+        ////created all the monsters for Legend 2
+        //foreach (int gorTile in new int[] { 8, 20, 21, 26, 48 })
+        //{
+        //    GameObject g = Instantiate(gor, tiles[pos].getMiddle(), transform.rotation);
+        //    Gor g = new Gor(Game.gameState.positionGraph.getNode(gorTile));
+        //    g.setMonsterType("Gor");
+        //    g.setStrength(2);
+        //    g.setWillpower(4);
+        //    g.setReward(2);
+        //    //Debug.Log("Gor" + g);
+        //    Game.gameState.addMonster(g);
+        //    Game.gameState.addGor(g);
+        //}
+        //foreach (int skralTile in new int[] { 19 })
+        //{
+        //    Skral s = new Skral(Game.gameState.positionGraph.getNode(skralTile));
+        //    s.setMonsterType("Skral");
+        //    s.setStrength(6);
+        //    s.setWillpower(5);
+        //    s.setReward(4);
+        //    Game.gameState.addMonster(s);
+        //    Game.gameState.addSkral(s);
+        //}
+
+        //foreach (Monster monster in Game.gameState.getMonsters())
+        //{
+        //    Debug.Log(monster.getPrefab());
+        //    GameObject tempObj = Instantiate(monster.getPrefab(), -transform.position, transform.rotation, monsterContainer);
+        //    monsterObjects.Add(monster, tempObj);
+        //    tempObj.transform.position = tiles[monster.getLocation()].getMiddle();
+        //    tempObj.transform.localScale = boardScaling;
+
+        //}
+
+
+
+        ////created all the monsters for Legend 2
+        foreach (int gorTile in new int[] { 8, 20, 21, 26, 48 })
         {
             Gor g = new Gor(Game.gameState.positionGraph.getNode(gorTile));
             g.setMonsterType("Gor");
@@ -1103,7 +1151,7 @@ public void updateGameConsoleText(string message)
             Game.gameState.addMonster(g);
             Game.gameState.addGor(g);
         }
-        foreach (int skralTile in new int[]{19})
+        foreach (int skralTile in new int[] { 19 })
         {
             Skral s = new Skral(Game.gameState.positionGraph.getNode(skralTile));
             s.setMonsterType("Skral");
@@ -1117,10 +1165,10 @@ public void updateGameConsoleText(string message)
         foreach (Monster monster in Game.gameState.getMonsters())
         {
             Debug.Log(monster.getPrefab());
-            GameObject tempObj = Instantiate(monster.getPrefab(), -transform.position, transform.rotation, monsterContainer); ;
+            GameObject tempObj = Instantiate(monster.getPrefab(), tiles[monster.getLocation()].getMiddle(), transform.rotation);
             monsterObjects.Add(monster, tempObj);
             tempObj.transform.position = tiles[monster.getLocation()].getMiddle();
-            tempObj.transform.localScale = boardScaling;
+            //tempObj.transform.localScale = boardScaling;
 
         }
 
@@ -1529,21 +1577,6 @@ public void updateGameConsoleText(string message)
         ms.displayAvailableItems();
     }
 
-    public void useHelmInFight()
-    {
-        Game.sendAction(new UseHelm(Game.myPlayer.getNetworkID()));
-    }
-
-    public void useWitchBrewInFight()
-    {
-        Game.sendAction(new UseWitchBrew(Game.myPlayer.getNetworkID()));
-    
-    }
-    public void useBowInFight()
-    {
-        Game.sendAction(new UseBow(Game.myPlayer.getNetworkID()));
-
-    }
 
     public void sendFightRequest(string[] players)
     {
