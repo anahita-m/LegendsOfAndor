@@ -21,11 +21,14 @@ public enum Type
     InviteFighter,
     RespondFight,
     UseWineskin,
+    StartFight,
+    EndFight,
     UseHelm,
     UseWitchBrew,
     UseBow,
     UseShield,
-    StartFight
+    FightTurn
+    
 
 }
 
