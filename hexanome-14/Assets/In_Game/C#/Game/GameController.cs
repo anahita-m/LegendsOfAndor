@@ -98,7 +98,10 @@ public class GameController : MonoBehaviour
     public Text shieldCountText;
     public Text dayCountText;
     public Text witchText;
+    public Text skralTowerText;
+    public Text medHerbText;
     public Text heroStatsText;
+    
 
 
     public GameObject emptyPrefab;
@@ -270,27 +273,27 @@ public class GameController : MonoBehaviour
 
     public void updateHeroStats()
     {
-        //string update = Game.myPlayer.getHeroType()
-        //    + "\nGold: " + Game.myPlayer.getHero().getGold().ToString()
-        //    + "\nStrength: " + Game.myPlayer.getHero().getStrength().ToString()
-        //    + "\nWillpower: " + Game.myPlayer.getHero().getWillpower().ToString()
-        //    + "\nHour: " + Game.myPlayer.getHero().getHour().ToString()
-        //    + "\nArticles: " + Game.myPlayer.getHero().allArticlesAsString();
+        // //string update = Game.myPlayer.getHeroType()
+        // //    + "\nGold: " + Game.myPlayer.getHero().getGold().ToString()
+        // //    + "\nStrength: " + Game.myPlayer.getHero().getStrength().ToString()
+        // //    + "\nWillpower: " + Game.myPlayer.getHero().getWillpower().ToString()
+        // //    + "\nHour: " + Game.myPlayer.getHero().getHour().ToString()
+        // //    + "\nArticles: " + Game.myPlayer.getHero().allArticlesAsString();
 
-        //heroStatsText.text = update;
-        string update = "";
-        foreach (Andor.Player p in Game.gameState.getPlayers())
-        {
-            string text = p.getHeroType() + " hour: " + p.getHero().getHour() + " , gold: " + p.getHero().getGold() + " , will: " + p.getHero().getWillpower() + " ,strength: " + p.getHero().getStrength() + " " + p.getHero().allArticlesAsString() + "\n" + "\n";
-            update += text;
+        // //heroStatsText.text = update;
+        // string update = "";
+        // foreach (Andor.Player p in Game.gameState.getPlayers())
+        // {
+        //     string text = p.getHeroType() + " hour: " + p.getHero().getHour() + " , gold: " + p.getHero().getGold() + " , will: " + p.getHero().getWillpower() + " ,strength: " + p.getHero().getStrength() + " " + p.getHero().allArticlesAsString() + "\n" + "\n";
+        //     update += text;
 
-        }
-        //string update = Game.myPlayer.getHeroType()
-        //   + "\nG: " + Game.myPlayer.getHero().getGold().ToString()
-        //   + "\nStrength: " + Game.myPlayer.getHero().getStrength().ToString()
-        //   + "\nWillpower: " + Game.myPlayer.getHero().getWillpower().ToString()
-        //   + "\nHour: " + Game.myPlayer.getHero().getHour().ToString()
-        //   + "\nArticles: " + Game.myPlayer.getHero().allArticlesAsString();
+        // }
+        string update = Game.myPlayer.getHeroType()
+          + "\nG: " + Game.myPlayer.getHero().getGold().ToString()
+          + "\nStrength: " + Game.myPlayer.getHero().getStrength().ToString()
+          + "\nWillpower: " + Game.myPlayer.getHero().getWillpower().ToString()
+          + "\nHour: " + Game.myPlayer.getHero().getHour().ToString()
+          + "\nArticles: " + Game.myPlayer.getHero().allArticlesAsString();
 
         heroStatsText.text = update;
     }
@@ -961,7 +964,7 @@ public void rolledSkralStronghold(){
         if (Game.myPlayer == player)
         {
             Debug.Log("invalid trade");
-            scrollTxt.text = "Invalid Trade Request!";
+            scrollTxt.text = "Invalid Trade Request! Either you or the hero you are attempting to trade with does not have adequate storage for the trade!";
             StartCoroutine(overtimeCoroutine(6));
         }
 
@@ -999,6 +1002,17 @@ public void rolledSkralStronghold(){
     {
         dayCountText.text = "Day: " + day;
     }
+
+     public void medHerbUpdate()
+    {
+        medHerbText.text = "Herb: in castle ";
+    }
+
+ public void updateTowerSkralText()
+    {
+        skralTowerText.text = "Tower Skral: defeated";
+    }
+
 
     public void advanceNarrator(int legend)
     {
