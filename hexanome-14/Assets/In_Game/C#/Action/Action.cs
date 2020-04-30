@@ -33,8 +33,8 @@ public enum Type
     CreatureTurn,
     WinBattle,
     DistributeReward,
-    GetMyReward
-
+    GetMyReward,
+    InstantiateMedicinalHerb
 }
 
 public interface Action
